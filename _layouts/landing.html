@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<header class="intro">
+  <h1>{{ page.title }}</h1>
+</header>
+
+<ul class="listing-journals">
+  {% assign journals = site.journals | sort: 'journal-num' %}
+  {% for journal in journals reversed%}
+    <li>
+      <h2>
+        <a href="{{ journal.url | relative_url }}">{{ journal.title }}</a>
+      </h2>
+    </li>
+  {% endfor %}
+</ul>
+
+{{  content }}

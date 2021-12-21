@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<h1>{{ page.name }}</h1>
+<h2>{{ page.position }}</h2>
+
+<img
+  src="{{ page.image_url }}"
+  alt="{{ page.name }} image"
+  height="250">
+
+
+{{ content }}
+
+<h2>Articles</h2>
+<ul>
+  {% assign filtered_articles = site.articles | where: 'author', page.short_name %}
+  {% for article in filtered_articles %}
+    <li><a href="{{ article.url }}">{{ article.title }}</a></li>
+  {% endfor %}
+</ul>
