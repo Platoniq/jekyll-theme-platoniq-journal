@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+{% assign journal = site.journals | where: "journal-num", page.journal-num | first %}
+
+<h3>
+  <a href="{{ journal.url | relative_url }}">{{ journal.title }}</a>
+</h3>
+
+<p>
+  <mark>{{ page.category }}</mark>
+</p>
+
+{{ content }}
+
+{% include article/author.liquid author=page.author %}
