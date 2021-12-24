@@ -1,0 +1,33 @@
+{% assign journal = site.journals | where: "journal-num", page.journal-num | first %}
+{% assign hero_image = site.static_files | where: "name", page.image.name | first %}
+{% assign article_author = site.authors | where: "short_name", page.author | first %}
+
+<div class="pj-hero jumbotron jumbotron-fluid">
+  <div class="container text-center">
+    <h1 class="display-6">{{ page.title | markdownify }}</h1>
+
+    <p class="lead">{{ page.description | markdownify }}</p>
+
+    <p>
+      <a href="{{ journal.url | relative_url }}">{{ journal.title }}</a>
+      >
+      <mark>{{ page.category }}</mark>
+    </p>
+
+    <p>
+      <a href="{{ article_author.url | relative_url }}">{{ article_author.name }}</a>
+    </p>
+
+    <figure>
+      <img src="{{ hero_image.path | relative_url}}"
+           alt="{{ page.image.alt}}"
+           class="img-fluid">
+
+      <figcaption>
+        {{ page.image.caption }}
+        <small>{{ page.image.credits }}</small>
+      </figcaption>
+    </figure>
+
+  </div>
+</div>

@@ -1,11 +1,18 @@
 ---
-layout: article
+layout: default
 ---
-
-<h1>
-    {{ page.title }}
-</h1>
+{% include article/nav_categories.html %}
 
 <div class="article--deep-dive">
-  {{ content }}
+  {% include article/deep_dive/hero.html %}
+
+  <div class="article--deep-dive_content">
+    {{ content }}
+  </div>
+
+  {% include article/deep_dive/share.html %}
+
+  {% include article/deep_dive/related_articles.html %}
 </div>
+
+{% include article/join_newsletter.html %}

@@ -1,13 +1,11 @@
 @charset "utf-8";
 
-$font-family-sans-serif: 'PT Sans', sans-serif;
+$font-family-sans-serif: 'Roboto', sans-serif;
+
+@import "_articles_deep_dive";
 
 body{
   font-family: $font-family-sans-serif;
   color: #030303;
   padding: 3rem;
-}
-
-.article--deep-dive{
-  background-color: aqua;
 }

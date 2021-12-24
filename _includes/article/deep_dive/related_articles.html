@@ -1,0 +1,14 @@
+<h4>
+  For further purusal
+</h4>
+
+<ul>
+  {% for related_article_id in page.related_article_ids %}
+    {% assign article = site.articles | where:"article-id", related_article_id | first %}
+    <li>
+      <a href="{{ article.url | relative_url }}">
+        {{ article.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

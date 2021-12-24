@@ -1,0 +1,11 @@
+{% assign categories = site.articles | group_by: "category" | sort: "name" %}
+
+<ul>
+{% for category in categories %}
+  <li>
+    <a href="{{ category.url | relative_url }}">
+      <strong>{{ category.name }}</strong>
+    </a>
+  </li>
+{% endfor %}
+</ul>
