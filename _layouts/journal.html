@@ -17,14 +17,17 @@ layout: default
 {{ content }}
 
 <ul class="listing-articles">
-  {% assign articles = site.articles | where:"journal-num", page.journal-num | sort: 'article-order' %}
+  {% assign articles = site.posts | where:"journal-num", page.journal-num | sort: 'article-order' %}
   {% for article in articles %}
     <li>
         <h3><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h3>
 
-        <mark>{{ article.category }}</mark>
+        <mark>{{ article.categories }}</mark>
         &nbsp;
         <em>{{ article.author }}</em>
+        &nbsp;
+        <mark>{{ article.tags }}</mark>
+
     </li>
   {% endfor %}
 </ul>

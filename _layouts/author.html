@@ -15,7 +15,7 @@ layout: default
 
 <h2>Articles</h2>
 <ul>
-  {% assign filtered_articles = site.articles | where: 'author', page.short_name %}
+  {% assign filtered_articles = site.posts | where: 'author', page.short_name %}
   {% for article in filtered_articles %}
     <li><a href="{{ article.url }}">{{ article.title }}</a></li>
   {% endfor %}

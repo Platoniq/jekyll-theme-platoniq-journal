@@ -1,0 +1,11 @@
+<p>
+  <a href="{{ journal.url | relative_url }}">{{ journal.title }}</a>
+  >
+  {% for category in page.categories %}
+    {% capture category_slug %}category/{{ category | slugify }}{% endcapture %}
+
+    <a href="{{ category_slug  | relative_url }}">
+        {{ category }}
+    </a>
+  {% endfor %}
+</p>

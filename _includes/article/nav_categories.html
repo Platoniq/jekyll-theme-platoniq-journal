@@ -1,10 +1,12 @@
-{% assign categories = site.articles | group_by: "category" | sort: "name" %}
-
 <ul>
-{% for category in categories %}
+{% for category in site.categories %}
+  {% capture category_slug %}category/{{ category | first | slugify }}{% endcapture %}
+
   <li>
-    <a href="{{ category.url | relative_url }}">
-      <strong>{{ category.name }}</strong>
+    <a href="{{ category_slug  | relative_url }}">
+      <strong>
+        {{ category | first }}
+      </strong>
     </a>
   </li>
 {% endfor %}

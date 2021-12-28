@@ -8,11 +8,7 @@
 
     <p class="lead">{{ page.description | markdownify }}</p>
 
-    <p>
-      <a href="{{ journal.url | relative_url }}">{{ journal.title }}</a>
-      >
-      <mark>{{ page.category }}</mark>
-    </p>
+    {% include article/breadcrumb.html %}
 
     <p>
       <a href="{{ article_author.url | relative_url }}">{{ article_author.name }}</a>

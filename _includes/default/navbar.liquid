@@ -13,14 +13,13 @@
       {% assign name_page = "" %}
 
       {% for page in site.pages %}
-        {% unless page.title == null or page.hide or name_page contains page.title %}
+        {% if page.navbar %}
         <li>
           <a class="clear" aria-label="{{ page.title }}" title="{{ page.title }}" href="{{ page.url | relative_url }}">
             {{ page.title }}
           </a>
         </li>
-        {% endunless %}
-        {% assign name_page = page.title | append: name_page %}
+        {% endif %}
       {% endfor %}
   </ul>
 </div>
