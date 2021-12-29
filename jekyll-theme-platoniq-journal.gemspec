@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-platoniq-journal"
-  spec.version       = "0.0.5"
+  spec.version       = "0.0.6"
   spec.authors       = ["Agustí B.R."]
   spec.email         = ["agusti@platoniq.net"]
 
@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.license       = "AGPL-3.0"
 
   spec.files         = `git ls-files -z`.split("\x0").select do |f|
-    f.match(%r!^(assets|_layouts|_includes|_plugins|_sass|LICENSE|README|_config\.yml)!i)
+    f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README|_config\.yml)!i)
   end
 
   spec.required_ruby_version = ">= 2.5"

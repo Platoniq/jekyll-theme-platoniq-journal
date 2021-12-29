@@ -5,12 +5,15 @@ layout: default
 
 <ul class="posts">
   {% for post in page.posts %}
-    <li>
-      <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-      <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="badge bg-secondary">
-        {{ post.tags }}
-      </span>
-    </li>
+  {% assign journal = site.journals | where: "journal-num", post.journal-num | first %}
+    {% if journal %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="badge bg-secondary">
+          {{ post.tags }}
+        </span>
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>

@@ -1,14 +1,18 @@
-<h4>
-  For further purusal
-</h4>
+<div class="card mb-3">
+  <div class="card-body">
+    <h4>
+      For further purusal
+    </h4>
 
-<ul>
-  {% for related_article_id in page.related_article_ids %}
-    {% assign article = site.posts | where:"article-id", related_article_id | first %}
-    <li>
-      <a href="{{ article.url | relative_url }}">
-        {{ article.title }}
-      </a>
-    </li>
-  {% endfor %}
-</ul>
+    <ul>
+      {% for related_article_id in page.related_article_ids %}
+        {% assign article = site.posts | where:"article-id", related_article_id | first %}
+        <li>
+          <a href="{{ article.url | relative_url }}">
+            {{ article.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
