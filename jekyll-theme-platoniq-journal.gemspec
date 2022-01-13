@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rubocop-jekyll", "~> 0.12"
   spec.add_runtime_dependency "jekyll-plugin-platoniq-journal", "~>0.0.1"
   spec.add_runtime_dependency "jekyll-seo-tag", "~>2.6"
+  spec.add_runtime_dependency "jekyll_version_plugin"
   # spec.add_runtime_dependency "jekyll-menus"
   # spec.add_runtime_dependency 'jekyll-spark'
 end

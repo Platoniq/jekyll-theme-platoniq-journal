@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: base
 ---
 
 <header class="intro">
@@ -8,12 +8,14 @@ layout: default
 
 <ul class="listing-journals">
   {% assign journals = site.journals | sort: 'journal-num' %}
-  {% for journal in journals reversed%}
-    <li>
-      <h2>
-        <a href="{{ journal.url | relative_url }}">{{ journal.title }}</a>
-      </h2>
-    </li>
+  {% for journal in journals reversed %}
+    {% unless journal.draft %}
+      <li>
+        <h2>
+          <a href="{{ journal.url | relative_url }}">{{ journal.title }}</a>
+        </h2>
+      </li>
+    {% endunless %}
   {% endfor %}
 </ul>
 

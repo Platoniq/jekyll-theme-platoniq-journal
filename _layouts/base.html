@@ -4,8 +4,15 @@
 -->
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {% include default/head.liquid %}
+
   <body>
-    {{ content }}
+    {% include default/navbar.liquid %}
+
+    <div class="container content">
+      {{ content }}
+    </div>
+
+    {% include default/footer.liquid %}
 
     {% include default/foot.html %}
   </body>
