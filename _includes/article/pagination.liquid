@@ -1,4 +1,4 @@
-{% assign articles = site.posts | where:"journal-num", page.journal-num | sort: 'article-order' %}
+{% assign articles = site.posts | where:"journal-num", page.journal-num | where:"locale", page.locale | sort: 'article-order' %}
 
 {% for article in articles %}
   {% if article == page %}
@@ -18,30 +18,39 @@
   {% endif %}
 {% endfor %}
 
-<div class="card mb-3">
-  <div class="card-body">
-    <div class="row align-items-center">
-      <div class="col">
-        {% if previous_post %}
-          <a href="{{ previous_post.url | relative_url }}" title="next Post: {{previous_post.title}}">
-            <div>
-              <h6>← Previous Article</h6>
-              <h4>{{ previous_post.title }}</h4>
-            </div>
-          </a>
-        {% endif %}
-      </div>
+{% if articles %}
 
-      <div class="col text-end">
-        {% if next_post %}
-          <a href="{{ next_post.url | relative_url }}" title="next Post: {{next_post.title}}">
-            <div>
-              <h6>Next Article →</h6>
-              <h4>{{ next_post.title }}</h4>
-            </div>
-          </a>
-        {% endif %}
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="row align-items-center">
+        <div class="col">
+          {% if previous_post %}
+            <a href="{{ previous_post.url | relative_url }}" title="next Post: {{previous_post.title}}">
+              <div>
+                <h6>
+                  ← {{ site.data.i18n[page.locale].pagination.previous }}
+                </h6>
+
+                <h4>{{ previous_post.title }}</h4>
+              </div>
+            </a>
+          {% endif %}
+        </div>
+
+        <div class="col text-end">
+          {% if next_post %}
+            <a href="{{ next_post.url | relative_url }}" title="next Post: {{next_post.title}}">
+              <div>
+                <h6>
+                  {{ site.data.i18n[page.locale].pagination.next }} →
+                </h6>
+
+                <h4>{{ next_post.title }}</h4>
+              </div>
+            </a>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
-</div>
+{% endif %}

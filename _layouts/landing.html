@@ -7,7 +7,7 @@ layout: base
 </header>
 
 <ul class="listing-journals">
-  {% assign journals = site.journals | sort: 'journal-num' %}
+  {% assign journals = site.journals | where: "locale", page.locale | sort: 'journal-num' %}
   {% for journal in journals reversed %}
     {% unless journal.draft %}
       <li>

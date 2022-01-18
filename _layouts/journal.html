@@ -6,7 +6,7 @@ layout: base
     journal template, num {{ page.journal-num }}
 </code>
 
-{% assign journal = site.journals | where: "journal-num", page.journal-num | first %}
+{% assign journal = site.journals | where: "locale", page.locale | where: "journal-num", page.journal-num | first %}
 
 <h1>
   <a href="{{ journal.url | relative_url }}">{{ journal.title }}</a>
@@ -17,7 +17,7 @@ layout: base
 {{ content }}
 
 <ul class="listing-articles">
-  {% assign articles = site.posts | where:"journal-num", page.journal-num | sort: 'article-order' %}
+  {% assign articles = site.posts | where:"locale", page.locale | where:"journal-num", page.journal-num | sort: 'article-order' %}
   {% for article in articles %}
     <li>
         <h3><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h3>

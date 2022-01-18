@@ -1,20 +1,27 @@
 ---
 layout: base
 ---
+{% assign journal = site.journals | where: "journal-num", page.journal-num | where: "locale", page.locale | first %}
+
 {% include article/nav_categories.html %}
 
-{% assign journal = site.journals | where: "journal-num", page.journal-num | first %}
+<div class="article--deep-dive">
+  {% include article/deep_dive/hero.html %}
 
-<h3>
-  <a href="{{ journal.url | relative_url }}">{{ journal.title }}</a>
-</h3>
+  <div class="article--deep-dive_content">
+    {{ content }}
+  </div>
 
-{% include article/breadcrumb.html %}
+  {% include article/deep_dive/share.html %}
 
-{{ content }}
+  {% include article/deep_dive/related_articles.html %}
+</div>
 
 {% include article/author.liquid %}
 
+{% include article/pagination.liquid %}
+
+{% include article/join_newsletter.html %}
+
 {% include article/improve.liquid %}
 
-{% include article/pagination.liquid %}

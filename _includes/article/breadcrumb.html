@@ -2,10 +2,12 @@
   <a href="{{ journal.url | relative_url }}">{{ journal.title }}</a>
   >
   {% for category in page.categories %}
-    {% capture category_slug %}category/{{ category | slugify }}{% endcapture %}
+    {% capture category_key %}{{ category | slugify }}{% endcapture %}
+    {% capture category_slug %}category/{{ category_key }}{% endcapture %}
+    {% assign category_name = site.data.i18n[page.locale].categories[category_key] %}
 
     <a href="{{ category_slug  | relative_url }}">
-        {{ category }}
+        {{ category_name }}
     </a>
   {% endfor %}
 </p>

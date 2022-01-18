@@ -1,4 +1,4 @@
-{% assign article_author = site.authors | where: "short_name", page.author | first %}
+{% assign article_author = site.authors | where: "uid", page.author | where: "locale", page.locale | first %}
 
 <div class="card mb-3">
   <div class="card-body">

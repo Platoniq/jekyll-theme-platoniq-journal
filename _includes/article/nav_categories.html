@@ -1,11 +1,13 @@
 <ul>
 {% for category in site.categories %}
-  {% capture category_slug %}category/{{ category | first | slugify }}{% endcapture %}
+  {% capture category_key %}{{ category | first | slugify }}{% endcapture %}
+  {% capture category_slug %}category/{{ category_key }}{% endcapture %}
+  {% assign category_name = site.data.i18n[page.locale].categories[category_key] %}
 
   <li>
     <a href="{{ category_slug  | relative_url }}">
       <strong>
-        {{ category | first }}
+        {{ category_name }}
       </strong>
     </a>
   </li>

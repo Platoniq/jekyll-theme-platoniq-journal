@@ -6,7 +6,7 @@
 
     <ul>
       {% for related_article_id in page.related_article_ids %}
-        {% assign article = site.posts | where:"article-id", related_article_id | first %}
+        {% assign article = site.posts | where: "article-id", related_article_id | where: "locale", page.locale | first %}
         <li>
           <a href="{{ article.url | relative_url }}">
             {{ article.title }}

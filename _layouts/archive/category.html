@@ -5,7 +5,7 @@ layout: base
 
 <ul class="posts">
   {% for post in page.posts %}
-  {% assign journal = site.journals | where: "journal-num", post.journal-num | first %}
+  {% assign journal = site.journals | where: "journal-num", post.journal-num | where: "locale", post.locale | first %}
     {% unless journal.draft %}
       <li>
         <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
