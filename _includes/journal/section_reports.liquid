@@ -1,0 +1,31 @@
+<section id="reports" class="container-fluid">
+  <div class="container grid">
+    {% for article in articles_reports %}
+      {% assign mod = forloop.index0 | modulo: 2 %}
+
+      <article class="destecat destecat--fila{{ mod | plus: 1 }}">
+        <div class="col1">
+          <h4>
+            <a href="{{ '/category/reports' | prepend: page.locale | relative_url }}">
+              {{ t_reports }}
+            </a>
+          </h4>
+
+          <img src="{{ article.cover.path | relative_url }}" alt="{{ article.cover.alt }}">
+        </div>
+
+        <div class="col2">
+          <h3>{{ article.title }}</h3>
+
+          <a href="{{ article.url | relative_url }}" class="link link--negatiu">
+            <span class="link__label">{{ t_know_more }}</span>
+
+            {% include svg/icon-arrow_right.liquid
+                  class="link__icon link__icon--right"
+                  alt=t_continue_reading %}
+          </a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<div class="header__idiome">
+  <a class="burguer" status="on" href="">
+    <span class="burguer__label">
+      {{ page.locale | upcase }}
+    </span>
+
+    {% include svg/icon-close.liquid
+        class="burguer__icon-close burguer__icon-close--right"
+        alt=t_close %}
+
+    {% include svg/icon-world.liquid
+        class="burguer__icon-open burguer__icon-open--right"
+        alt=t_locale_menu %}
+  </a>
+
+  <ul class="menu-idiome">
+    {% for translation in page_translations %}
+      <li class="{% if page.locale == translation.locale %} active {% endif %}">
+        <a href="{{ translation.url | relative_url }}">
+          {{ site.data.i18n[page.locale].global.locales[translation.locale] }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

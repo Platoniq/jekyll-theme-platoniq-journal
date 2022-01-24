@@ -1,0 +1,33 @@
+<section id="stories" class="container-fluid">
+  <div class="container grid">
+    {% for article in articles_stories %}
+      <article class="destecat destecat--fila{{ forloop.index }}">
+        <div class="col1">
+          <h4>
+            <a href="{{ '/category/stories' | prepend: page.locale | relative_url }}">
+              {{ t_stories }}
+            </a>
+          </h4>
+
+          <img src="{{ article.cover.path | relative_url }}" alt="{{ article.cover.alt }}">
+        </div>
+
+        <div class="col2">
+          <h3>{{ article.title }}</h3>
+
+          <p>{{ article.description | prepend: "“" | append: "”" }} </p>
+
+          <a href="{{ article.url | relative_url }}" class="link link--negatiu">
+            <span class="link__label">
+              {{ t_continue_reading }}
+            </span>
+
+            {% include svg/icon-arrow_right.liquid
+                class="link__icon link__icon--right"
+                alt=t_continue_reading %}
+          </a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

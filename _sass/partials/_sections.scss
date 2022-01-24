@@ -1,0 +1,135 @@
+
+
+#page-section {
+  padding-top: 136px;
+
+  @media (min-width : $bp-tablet) {
+    padding-top: 224px;
+  }
+
+  .simple-header{
+    //Grid
+    grid-column: 4 / -3;
+
+    h1 {
+      font-family: $tipo--primary;
+      font-size: 36px;
+      font-weight: $bold--primary;
+      color: $color--primary;
+      letter-spacing: -1px;
+      line-height: 105%;
+      @media (min-width : $bp-tablet) {
+        font-size: 80px;
+      }
+    }
+  }
+
+  .llistat-sections{
+    margin-bottom: $grid-row--xxl;
+    //Grid
+    grid-column: 4 / -3;
+
+    li{
+      @media (min-width : $bp-tablet) {
+        display: grid;
+        grid-template-columns: repeat(19, 1fr);
+        grid-gap: 16px;
+        grid-column-gap: 16px;
+        @include alinear_grid--centrat;
+      }
+
+      border-bottom: 1px solid $color--grey;
+      padding-top: $grid-row--lg;
+      padding-bottom: $grid-row--lg;
+    }
+
+    .llistat-sections__text{
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+      //Grid
+      grid-column: 2 / span 11;
+    }
+
+    .llistat-sections__img{
+      margin-top: 1.5em;
+
+      @media (min-width : $bp-tablet) {
+        //Grid
+        grid-column: 15 / -2;
+        justify-self: center;
+        align-self: center;
+        margin-top: 0;
+      }
+
+      img.horitzontal{
+        max-width: 227px;
+      }
+      img.vertical{
+        max-width: 160px;
+      }
+    }
+
+    & h3 {
+      font-family: $tipo--primary;
+      font-weight: $bold--primary;
+      font-size: 28px;
+      color: $color--base;
+      letter-spacing: -0.2px;
+      line-height: 115%;
+      margin-top: 0;
+      @media (min-width : $bp-tablet) {
+        font-size: 32px;
+      }
+
+      .entrevistat {
+        font-family: $tipo--primary;
+        font-size: 1em;
+        line-height: 115%;
+        color: $color--primary--negatiu;
+        letter-spacing: -0.4px;
+        background-color: $color--primary;
+        display: block;
+        width: fit-content;
+        padding: 0.188em 0.375em;
+        margin-bottom: .25em;
+      }
+
+      a {
+        color: $color--base;
+
+        &:hover, &.select {
+          background: transparent linear-gradient(90deg , $color--primary 50%, $color--primary 0) no-repeat;
+          background-size: 200% 2px;
+          background-position: 100% 100%;
+          color: $color--primary;
+        }
+      }
+    }
+
+    & h5 {
+      font-family: $tipo--secundary;
+      font-weight: $reg--secundary;
+      font-size: 15px;
+      color: $color--base;
+      letter-spacing: -0.7px;
+      text-align: right;
+      margin-top: 1em;
+      position: relative;
+      align-self: flex-end;
+      @media (min-width : $bp-tablet) {
+        font-size: 16px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 3px;
+        left: -24px;
+        width: 16px;
+        height: 2px;
+        background-color: $color--primary;
+      }
+    }
+  }
+}

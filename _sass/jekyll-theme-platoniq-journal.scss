@@ -1,11 +1,18 @@
 @charset "utf-8";
 
-$font-family-sans-serif: 'Roboto', sans-serif;
+@import "utils/reset",
+        "utils/fonts",
+        "utils/keyframes",
 
-@import "_articles_deep_dive";
+        "base/variables",
+        "base/global",
+        "base/burger",
+        "base/buttons",
+        "base/links",
 
-body{
-  font-family: $font-family-sans-serif;
-  color: #030303;
-  padding: 3rem;
-}
+        "partials/grid",
+        "partials/header",
+        "partials/home",
+        "partials/page",
+        "partials/sections",
+        "partials/footer";

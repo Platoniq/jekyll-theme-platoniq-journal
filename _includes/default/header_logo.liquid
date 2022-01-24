@@ -1,0 +1,9 @@
+<div class="header__logo">
+  {% if current_journal %}
+    <h4>{{ current_journal.journal-num | prepend: "#"}} - {{ current_journal.title }}</h4>
+  {% endif %}
+
+  <a href="{{ '/' | relative_url }}">
+    {% include svg/logo-header-wilder-journal.liquid %}
+  </a>
+</div>

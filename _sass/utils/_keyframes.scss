@@ -1,0 +1,15 @@
+/* K E Y  F R A M E S - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+@keyframes none-transform{
+	100%{
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@keyframes none-opacity{
+	100%{
+		-webkit-opacity: 1;
+		opacity: 1;
+	}
+}
