@@ -1,12 +1,12 @@
 <div class="card mb-3">
   <div class="card-body">
     <h4>
-      For further purusal
+      {{ site.data.i18n[page.locale].related_articles }}
     </h4>
 
     <ul>
-      {% for related_article_id in page.related_article_ids %}
-        {% assign article = site.posts | where: "article-id", related_article_id | where: "locale", page.locale | first %}
+      {% for related_article_uid in page.related_article_uids %}
+        {% assign article = site.posts | where: "uid", related_article_uid | where: "locale", page.locale | first %}
         <li>
           <a href="{{ article.url | relative_url }}">
             {{ article.title }}

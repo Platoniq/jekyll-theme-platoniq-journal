@@ -1,0 +1,20 @@
+<nav class="nav-vertical">
+  <ul>
+  {% for category in site.categories %}
+    {% capture category_key %}{{ category | first | slugify }}{% endcapture %}
+    {% capture category_slug %}{{ page.locale }}/category/{{ category_key }}{% endcapture %}
+    {% assign category_name = site.data.i18n[page.locale].categories[category_key] %}
+
+    {% if category_key == "stickers" %}
+      {% continue %}
+    {% endif %}
+    <li>
+      <a href="{{ category_slug  | relative_url }}" class="{% if page.category == category_key %}select{% endif %}">
+        <strong>
+          {{ category_name }}
+        </strong>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</nav>

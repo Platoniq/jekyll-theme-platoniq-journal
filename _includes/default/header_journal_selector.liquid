@@ -1,0 +1,37 @@
+<div class="header__volum">
+  <a class="burguer" status="on" href="">
+    {% include svg/icon-close.liquid
+        class="burguer__icon-close burguer__icon-close--left"
+        alt=t_close %}
+
+    {% include svg/icon-dots.liquid
+        class="burguer__icon-open burguer__icon-open--left"
+        alt=t_journal_menu %}
+
+    <span class="burguer__label">
+      {{ t_journal_number }}
+    </span>
+  </a>
+
+  <ul class="menu-volum">
+    {% for journal in journals %}
+    <li>
+      <a class="{% if journal.uid == current_journal.uid %} select {% endif%}"
+          aria-label="{{ journal.title }}"
+          href="{{ journal.url | relative_url }}">
+        <img src="{{ journal.thumbnail | relative_url }}" alt="{{ journal.title }}" class="menu-volum__img">
+
+        <div class="menu-volum__text">
+          <h4 class="menu-volum__numero">
+            {{ journal.journal-num | prepend: "#"}}
+          </h4>
+
+          <h3 class="menu-volum__titol">
+            {{ journal.title }}
+          </h3>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

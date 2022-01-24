@@ -1,9 +1,10 @@
 ---
 layout: base
 ---
-{% assign journal = site.journals | where: "journal-num", page.journal-num | where: "locale", page.locale | first %}
 
-{% include article/nav_categories.html %}
+<!-- {% assign journal = site.journals | where: "journal-num", page.journal-num | where: "locale", page.locale | first %} -->
+
+{% include journal/nav_categories.liquid %}
 
 <div class="article--deep-dive">
   {% include article/deep_dive/hero.html %}

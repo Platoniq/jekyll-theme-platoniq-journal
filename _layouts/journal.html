@@ -1,33 +1,23 @@
 ---
-layout: base
+layout: default
 ---
+{% include journal/assigns.liquid %}
 
-<code>
-    journal template, num {{ page.journal-num }}
-</code>
+{% include default/header.liquid %}
 
-{% assign journal = site.journals | where: "locale", page.locale | where: "journal-num", page.journal-num | first %}
+{% include journal/nav_categories.liquid %}
 
-<h1>
-  <a href="{{ journal.url | relative_url }}">{{ journal.title }}</a>
-</h1>
+{% include journal/hero_image.liquid %}
 
+{% include journal/section_varis.liquid %}
+{% include journal/section_stories.liquid %}
+{% include journal/section_reports.liquid %}
+{% include journal/section_stickers.liquid %}
 
+<article class="container-fluid">
+  <div class="container">
+    {{content }}
+  </div>
+</article>
 
-{{ content }}
-
-<ul class="listing-articles">
-  {% assign articles = site.posts | where:"locale", page.locale | where:"journal-num", page.journal-num | sort: 'article-order' %}
-  {% for article in articles %}
-    <li>
-        <h3><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h3>
-
-        <mark>{{ article.categories }}</mark>
-        &nbsp;
-        <em>{{ article.author }}</em>
-        &nbsp;
-        <mark>{{ article.tags }}</mark>
-
-    </li>
-  {% endfor %}
-</ul>
+{% include default/footer.liquid %}

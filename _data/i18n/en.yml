@@ -1,10 +1,25 @@
 categories:
-  blue-prints: Blue prints
+  blueprints: Blue prints
   deep-dives: Deep dives
   interviews: Interviews
-  papers: Papers
+  reports: Reports
   stickers: Stickers
-home: Home
+  stories: Stories
+global:
+  authored_by: by
+  close: Close
+  continue_reading: Continue reading
+  home: Home # not used?
+  journal_number: Volume
+  journals_menu: Journals menu
+  know_more: Know more
+  locale_menu: Language menu
+  locales:
+    en: English
+    es: Español
+  skip_to_content: Skip to content
 pagination:
   previous: Next article
   next: Previous article
+related_articles: For further purusal
+

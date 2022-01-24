@@ -2,9 +2,23 @@ categories:
   blueprints: Esbozos
   deep-dives: Apneas
   interviews: Entrevistas
-  papers: Papers
+  reports: Informes
   stickers: Stickers
-home: Inicio
+  stories: Historias
+global:
+  authored_by: por
+  close: Cerrar
+  continue_reading: Sigue leyendo
+  home: Inicio # not used?
+  journal_number: Volumen
+  journals_menu: Menú de Journals
+  know_more: Saber más
+  locale_menu: Menú de idiomas
+  locales:
+    en: English
+    es: Español
+  skip_to_content: Ir al contenido
 pagination:
   previous: Anterior articulo
   next: Siguiente articulo
+related_articles: Artículos relacionados

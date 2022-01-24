@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-platoniq-journal"
-  spec.version       = "0.0.7"
+  spec.version       = "0.0.8"
   spec.authors       = ["Agustí B.R."]
   spec.email         = ["agusti@platoniq.net"]
 
@@ -11,17 +11,17 @@ Gem::Specification.new do |spec|
   spec.license       = "AGPL-3.0"
 
   spec.files         = `git ls-files -z`.split("\x0").select do |f|
-    f.match(%r!^(admin|assets|_data|_layouts|_includes|_sass|LICENSE|README|_config\.yml)!i)
+    f.match(%r!^(assets|_data|_layouts|_includes|_sass|LICENSE|README|_config\.yml)!i)
   end
 
   spec.required_ruby_version = ">= 2.5"
 
   spec.add_dependency "jekyll", "~> 4.2"
   spec.add_development_dependency "rubocop-jekyll", "~> 0.12"
-  spec.add_runtime_dependency "jekyll-data"
+  spec.add_runtime_dependency "jekyll-data", "~> 1.1.1"
   spec.add_runtime_dependency "jekyll-plugin-platoniq-journal", "~>0.0.1"
   spec.add_runtime_dependency "jekyll-seo-tag", "~>2.6"
-  spec.add_runtime_dependency "jekyll_version_plugin"
+  spec.add_runtime_dependency "jekyll_version_plugin", "~>2.0.0"
   # spec.add_runtime_dependency "jekyll-menus"
   # spec.add_runtime_dependency 'jekyll-spark'
 end

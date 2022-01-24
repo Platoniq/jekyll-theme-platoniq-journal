@@ -14,6 +14,7 @@ layout: base
 {{ content }}
 
 <h2>Articles</h2>
+
 <ul>
   {% assign filtered_articles = site.posts | where: 'author', page.uid | where: 'locale', page.locale %}
   {% for article in filtered_articles %}

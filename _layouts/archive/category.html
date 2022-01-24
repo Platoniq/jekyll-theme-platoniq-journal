@@ -1,19 +1,58 @@
 ---
-layout: base
+layout: default
 ---
-<h1>Archive of posts with {{ page.type }} '{{ page.title }}'</h1>
+<!-- {% include journal/assigns.liquid %} -->
+{% assign t_category = site.data.i18n[page.locale].categories[page.category] %}
+{% assign articles = site.posts
+  | where: "categories", page.category
+  | where: "locale", page.locale
+  | sort: "article-order", "last"
+  | sort: "journal-num", "last" %}
 
-<ul class="posts">
-  {% for post in page.posts %}
-  {% assign journal = site.journals | where: "journal-num", post.journal-num | where: "locale", post.locale | first %}
-    {% unless journal.draft %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <span class="badge bg-secondary">
-          {{ post.tags }}
-        </span>
-      </li>
-    {% endunless %}
-  {% endfor %}
-</ul>
+{% capture t_authored_by %}
+  {{ site.data.i18n[page.locale].global.authored_by | append: " "}}
+{% endcapture %}
+
+{% include default/header.liquid %}
+
+{% include journal/nav_categories.liquid %}
+
+<section id="page-section">
+  <article class="container-fluid">
+    <div class="container grid">
+      <header class="simple-header">
+        <div class="header-page__text">
+          <h1>{{ t_category }}</h1>
+        </div>
+      </header>
+
+      <ul class="llistat-sections">
+        {% for article in articles %}
+          <li>
+            <div class="llistat-sections__text">
+              <h3>
+                <a href="{{ article.url | relative_url }}">
+                  {% if article.category == "interviews" %}
+                    <span class="entrevistat">{{ article.interviewee }}</span>
+                  {% endif %}
+
+                  {{ article.title }}
+                </a>
+              </h3>
+
+              {% assign author = site.authors | where: 'uid', article.author | where: 'locale', page.locale | first %}
+
+              <h5>{{ author.name | prepend: t_authored_by }}</h5>
+            </div>
+
+            <div class="llistat-sections__img">
+              <img src="{{ article.cover.path | relative_url }}" alt="{{ article.cover.alt }}" class="horitzontal">
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </article>
+</section>
+
+{% include default/footer.liquid %}

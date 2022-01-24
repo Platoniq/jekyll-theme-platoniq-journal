@@ -1,0 +1,101 @@
+// Buttons
+
+.btn {
+  display: flex;
+  padding: 18px 40px 17px;
+  border: none;
+  background-color: $bgcolor--primary;
+  text-align: center;
+  text-decoration: none;
+  font-family: $tipo--primary;
+  font-weight: $bold--primary;
+  font-size: 1em;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  @media (min-width : 577px) {
+    width: auto;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: $bgcolor--primary-hover;
+    transition: all 0.25s ease-out;
+  }
+
+  &--negatiu{
+    background-color: $bgcolor--primary--negatiu;
+
+    &:hover{
+      background-color: $bgcolor--primary--negatiu-hover;
+    }
+  }
+
+  &__label {
+    position: relative;
+    color: $color--white;
+
+    .btn--negatiu & {
+      color: $color--primary--negatiu;
+    }
+
+    &--sufix {
+      font-size: 13px;
+      color: $color--white;
+      display: block;
+
+      .btn--negatiu & {
+        color: $color--black;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+
+    &--left {
+      margin-right: 6px;
+    }
+
+    &--right {
+      margin-left: 0;
+    }
+  }
+
+  &--link-extern {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 16px;
+      height: 16px;
+      background: url("../img/ico/link__exterior--small.svg") 0 0/cover no-repeat;
+    }
+  }
+
+  &--link-extern-negatiu {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 16px;
+      height: 16px;
+      background: url("../img/ico/link__exterior--small.svg") 0 0/cover no-repeat;
+    }
+  }
+}

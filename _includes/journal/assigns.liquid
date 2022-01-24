@@ -1,0 +1,25 @@
+{% comment %}
+  {% assign journal = site.journals | where: "locale", page.locale | where: "journal-num", page.journal-num | first %}
+{% endcomment %}
+
+{% assign articles_all = site.posts
+    | where: "journal-num", page.journal-num
+    | where: "locale", page.locale
+    | sort: "article-order", "last" %}
+{% assign articles_blueprints = articles_all | where: "categories", "blueprints" %}
+{% assign articles_deep_dives = articles_all | where: "category", "deep-dives" %}
+{% assign articles_interviews = articles_all | where: "category", "interviews" %}
+{% assign articles_reports = articles_all | where: "categories", "reports" %}
+{% assign articles_stickers = articles_all | where: "categories", "stickers" %}
+{% assign articles_stories = articles_all | where: "categories", "stories" %}
+
+{% assign t_reports = site.data.i18n[page.locale].categories.reports %}
+{% assign t_stickers = site.data.i18n[page.locale].categories.stickers %}
+{% assign t_stories = site.data.i18n[page.locale].categories.stories %}
+
+{% assign t_continue_reading = site.data.i18n[page.locale].global.continue_reading %}
+{% assign t_know_more = site.data.i18n[page.locale].global.know_more %}
+{% capture t_authored_by %}
+ {{ site.data.i18n[page.locale].global.authored_by | append: " "}}
+{% endcapture %}
+
