@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<!--
-    Platoniq Journal jekyll theme
--->
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  {% include default/head.liquid %}
+---
+layout: default
+---
 
-  <body>
-    {% include default/navbar.liquid %}
+{% include default/header.liquid %}
 
-    <div class="container content">
+<section id="page">
+  <article class="container-fluid">
+    <div class="container">
       {{ content }}
     </div>
+  </article>
+</section>
 
-    {% include default/footer.liquid %}
-
-    {% include default/foot.html %}
-  </body>
-</html>
+{% include default/footer.liquid %}

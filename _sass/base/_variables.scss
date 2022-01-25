@@ -1,0 +1,97 @@
+// Tipografia
+$tipo--primary: 'gt_cinetypebold', sans-serif;
+$tipo--secundary: 'Karla', sans-serif;
+// Tipografia weight
+$bold--primary: 700;
+$reg--secundary: 400;
+$med--secundary: 500;
+$bold--secundary: 700;
+// Backgrounds
+$bgcolor--primary: #fd4022;
+$bgcolor--primary-hover: rgba(253, 64, 34, .8);
+$bgcolor--primary--negatiu: #000000;
+$bgcolor--primary--negatiu-hover: rgba(0, 0, 0, .8);
+$bgcolor--secundary: #ffdfda;
+$bgcolor--secundary-hover: rgba(255, 253, 218, .8);
+$bgcolor--fosc: #000000;
+// Colors
+$color--primary: #fd4022;
+$color--primary-hover: rgba(240, 0, 64, .8);
+$color--primary--negatiu: #FFFFFF;
+$color--primary--negatiu-hover: rgba(255, 255, 255, .8);
+$color--secundary: #ffdfda;
+$color--base: #380f09;
+$color--base--negatiu: #ffdfda;
+$color--black: #000000;
+$color--white: #FFFFFF;
+$color--grey: #ffcdc5;
+// Columns
+$num_column: 12;
+$column_12: calc(100/12);
+$column_24: calc(100/24);
+// Maxim width
+$maxwidht-container:1440px;
+// Margins
+$margin_outside: 20px;
+$margin_outside_sm: 40px;
+$margin_outside_md: 60px;
+$margin_outside_lg: 80px;
+$margin_outside_xl: 120px;
+$margin_outside_xxl: 160px;
+// Grid row
+$grid-row--sm: 8px;
+$grid-row--md: 16px;
+$grid-row--lg: 32px;
+$grid-row--xl: 96px;
+$grid-row--xxl: 128px;
+
+// Paddings
+$padding_outside: 20px;
+$padding_outside_sm: 40px;
+$padding_outside_md: 60px;
+$padding_outside_lg: 60px;
+$padding_outside_xl: 60px;
+$padding_outside_xxl: 60px;
+
+// Intercolumnats
+$column_gap: 40px;
+$column_gap_sm: null !default;
+$column_gap_md: null !default;
+$column_gap_lg: null !default;
+$column_gap_xl: null !default;
+$column_gap_xxl: 80px !default;
+$margin_blocks: calc(amplada/2);
+
+//Breackpoints
+$bp-mobile: 320px;
+$bp-tablet: 768px;
+$bp-desktop: 992px;
+$bp-desktop-xl: 1200px;
+
+// Imatges
+@mixin adaptar_img {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+// Text
+@mixin adaptar_text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+// Aliniar grid
+@mixin alinear_grid {
+  // Alinear Horitzontal
+  justify-items: start;
+  // Alinear Vertical
+  align-items: start;
+}
+@mixin alinear_grid--centrat {
+  // Alinear Horitzontal
+  justify-items: start;
+  // Alinear Vertical
+  align-items: center;
+}

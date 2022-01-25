@@ -1,0 +1,16 @@
+{% assign t_skip_to_content = site.data.i18n[page.locale].global.skip_to_content %}
+
+<section class="heroimage container-fluid grid">
+  <div class="heroimage__text">
+    <h4>{{ page.journal-num | prepend: "#" }}</h4>
+    <h1>{{ page.title }}</h1>
+  </div>
+
+  <div class="heroimage__arrow">
+    {% include svg/icon-arrow_down.liquid alt=t_skip_to_content %}
+  </div>
+
+  <div class="img-fullsize">
+    <img src="{{ page.cover.path | relative_url}}" alt="{{ page.cover.alt }}">
+  </div>
+</section>

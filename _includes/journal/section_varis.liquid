@@ -1,0 +1,52 @@
+{% assign articles_mixed = articles_blueprints
+                 | concat: articles_deep_dives
+                 | concat: articles_interviews
+                 | uniq
+                 | sort: "article-order", "last" %}
+
+<section id="varis" class="container-fluid">
+  <div class="container grid">
+    {% for article in articles_mixed %}
+      {% assign mod = forloop.index0 | modulo: 2 %}
+        {% if mod == 0 %}
+          <div class="row-articles">
+        {% endif %}
+
+        {% capture class %}
+          destecat--{% if mod == 0 %}vertical{% else %}horitzontal{% endif %}
+          destecat--{{ article.category | slu}}
+        {% endcapture %}
+
+        {% capture category_key %}{{ article.category | slugify }}{% endcapture %}
+        {% capture category_slug %}{{ page.locale }}/category/{{ category_key }}{% endcapture %}
+        {% assign category_name = site.data.i18n[page.locale].categories[category_key] %}
+
+
+        <article class="destecat {{ class }}">
+          <img src="{{ article.cover.path | relative_url }}" alt="{{ article.cover.alt }}">
+
+          <h4>
+            <a href="{{ category_slug  | relative_url }}">{{ category_name }}</a>
+          </h4>
+
+          <h3>
+            <a href="{{ article.url | relative_url }}">
+              {% if article.category == "interviews" %}
+                <span class="entrevistat">{{ article.interviewee }}</span>
+              {% endif %}
+              {{ article.title }}
+            </a>
+          </h3>
+
+          {% assign author = site.authors | where: 'uid', article.author | where: 'locale', page.locale | first %}
+
+          <h5>{{ author.name | prepend: t_authored_by }}</h5>
+        </article>
+      {% if mod != 0 %}
+        </div> <!-- mod != 0  -->
+      {% elsif forloop.last == true %}
+        </div> <!-- forloop.last  -->
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

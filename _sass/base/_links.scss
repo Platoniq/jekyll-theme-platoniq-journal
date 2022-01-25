@@ -1,0 +1,86 @@
+// Links
+
+.link {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  text-decoration: none;
+  width: fit-content;
+
+  &--right{
+    text-align:right;
+  }
+
+
+  &__label {
+    font-size: 1em;
+    font-weight: $bold--secundary;
+    color: $color--base;
+    letter-spacing: -0.5px;
+    position: relative;
+    padding-bottom: 0.375em;
+
+    &--extern:after {
+        content: "";
+        position: absolute;
+        top: -8px;
+        right: -24px;
+        width: 24px;
+        height: 24px;
+        background: url(../img/ico/link_outside.svg) 0 0/cover no-repeat;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    align-items: center;
+    justify-content: center;
+    margin-top: -0.375em;
+
+    &--left {
+      margin-right: 8px;
+    }
+
+    &--right {
+      margin-left: 8px;
+    }
+
+    &--close{
+      display: none;
+    }
+  }
+
+  &--negatiu{
+
+    .link__label {
+      color: $color--base--negatiu;
+
+      &--extern:after {
+          background: url(../img/ico/link_outside.svg) 0 0/cover no-repeat;
+      }
+    }
+  }
+
+
+    &:hover {
+      .link__label{
+        color: $color--primary-hover;
+        font-weight: $bold--secundary;
+        background: transparent linear-gradient(90deg , $color--primary 50%, $color--primary 0) no-repeat;
+        background-size: 200% 2px;
+        background-position: 100% 100%;
+      }
+
+      &.link--negatiu{
+         .link__label{
+            color: $color--primary--negatiu-hover;
+            background: transparent linear-gradient(90deg , $color--primary--negatiu 50%, $color--primary--negatiu 0) no-repeat;
+            background-size: 200% 2px;
+            background-position: 100% 100%;
+          }
+      }
+    }
+}
