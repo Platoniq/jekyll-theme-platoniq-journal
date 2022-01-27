@@ -1,7 +1,11 @@
 {% include default/assigns.liquid %}
 
 <header class="header container-fluid">
-  {% include default/header_journal_selector.liquid %}
+  {% comment %}
+    {% include default/header_journal_selector.liquid %}
+  {% endcomment %}
+
+  {% include default/header_link_to_about.liquid %}
 
   {% include default/header_logo.liquid %}
 
