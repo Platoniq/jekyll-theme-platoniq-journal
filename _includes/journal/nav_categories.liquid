@@ -1,17 +1,14 @@
 <nav class="nav-vertical">
   <ul>
-  {% for category in site.categories %}
-    {% capture category_key %}{{ category | first | slugify }}{% endcapture %}
-    {% capture category_slug %}{{ page.locale }}/category/{{ category_key }}{% endcapture %}
-    {% assign category_name = site.data.i18n[page.locale].categories[category_key] %}
+  {% assign archives = site.archives | where: "locale", page.locale %}
 
-    {% if category_key == "stickers" %}
-      {% continue %}
-    {% endif %}
+  {% for archive in archives %}
+    {% assign t_category_name = site.data.i18n[page.locale].categories[archive.category] %}
+
     <li>
-      <a href="{{ category_slug  | relative_url }}" class="{% if page.category == category_key %}select{% endif %}">
+      <a href="{{ archive.url  | relative_url }}" class="{% if page.category == archive.category %}select{% endif %}">
         <strong>
-          {{ category_name }}
+          {{ t_category_name }}
         </strong>
       </a>
     </li>

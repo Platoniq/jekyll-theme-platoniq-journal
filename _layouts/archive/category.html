@@ -1,20 +1,21 @@
 ---
 layout: default
 ---
-<!-- {% include journal/assigns.liquid %} -->
-{% assign t_category = site.data.i18n[page.locale].categories[page.category] %}
-{% assign articles = site.posts
-  | where: "categories", page.category
+{% assign articles = site.articles
+  | where: "journal-uid", page.journal-uid
+  | where: "category", page.category
   | where: "locale", page.locale
-  | sort: "article-order", "last"
-  | sort: "journal-num", "last" %}
+  | sort: "article-order", "last" %}
+
+
+{% include journal/assigns.liquid %}
+{% assign t_category = site.data.i18n[page.locale].categories[page.category] %}
 
 {% capture t_authored_by %}
-  {{ site.data.i18n[page.locale].global.authored_by | append: " "}}
+  {{ site.data.i18n[page.locale].global.authored_by | append: " " }}
 {% endcapture %}
 
 {% include default/header.liquid %}
-
 {% include journal/nav_categories.liquid %}
 
 <section id="page-section">
@@ -31,7 +32,10 @@ layout: default
           <li>
             <div class="llistat-sections__text">
               <h3>
-                <a href="{{ article.url | relative_url }}">
+                {% capture article_slug %}
+                /{{ article.locale }}/{{ article.journal-uid }}/{{ article.category }}/{{ article.uid }}/
+                {% endcapture %}
+                <a href="{{ article.url }}">
                   {% if article.category == "interviews" %}
                     <span class="entrevistat">{{ article.interviewee }}</span>
                   {% endif %}

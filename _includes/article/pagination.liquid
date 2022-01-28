@@ -1,4 +1,4 @@
-{% assign articles = site.posts | where:"journal-num", page.journal-num | where:"locale", page.locale | sort: 'article-order' %}
+{% assign articles = site.articles | where:"journal-num", page.journal-num | where:"locale", page.locale | sort: 'article-order' %}
 
 {% for article in articles %}
   {% if article == page %}
