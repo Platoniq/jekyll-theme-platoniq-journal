@@ -17,16 +17,14 @@
           destecat--{{ article.category | slu}}
         {% endcapture %}
 
-        {% capture category_key %}{{ article.category | slugify }}{% endcapture %}
-        {% capture category_slug %}{{ page.locale }}/category/{{ category_key }}{% endcapture %}
-        {% assign category_name = site.data.i18n[page.locale].categories[category_key] %}
-
+        {% assign category_name = site.data.i18n[page.locale].categories[article.category] %}
+        {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
 
         <article class="destecat {{ class }}">
-          <img src="{{ article.cover.path | relative_url }}" alt="{{ article.cover.alt }}">
+          <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}">
 
           <h4>
-            <a href="{{ category_slug  | relative_url }}">{{ category_name }}</a>
+            <a href="{{ category_archive.url  | relative_url }}">{{ category_name }}</a>
           </h4>
 
           <h3>

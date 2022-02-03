@@ -5,13 +5,15 @@
 
       <article class="destecat destecat--fila{{ mod | plus: 1 }}">
         <div class="col1">
+          {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
+
           <h4>
-            <a href="{{ '/category/reports' | prepend: page.locale | relative_url }}">
+            <a href="{{ category_archive.url | relative_url }}">
               {{ t_reports }}
             </a>
           </h4>
 
-          <img src="{{ article.cover.path | relative_url }}" alt="{{ article.cover.alt }}">
+          <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}">
         </div>
 
         <div class="col2">
