@@ -1,0 +1,47 @@
+{% raw %}
+- name: "articles"
+  label: "Articles"
+  label_singular: "Article"
+  folder: "_articles/"
+  i18n:
+    structure: multiple_folders
+    locales: *locales
+  create: true # Allow users to create new documents in this collection
+  slug: "{{uid}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  view_filters:
+    - label: Article order
+      field: article-order
+      pattern: 'This is article #'
+    - label: Article category
+      field: category
+      pattern: front matter category
+    - label: By Journal
+      field: journal-iud
+      pattern: true
+  view_groups:
+    - label: Journal Volume
+      field: journal-uid
+    - label: Category
+      field: category
+  editor:
+    preview: true
+  fields: # The fields for each document, usually in front matter
+    - { label: "Layout", name: "layout", widget: "hidden", default: "article", i18n: duplicate }
+    - { label: "Article order", name: "article-order", widget: "number", default: 0, value_type: "int", min: 1, max: 101, step: 1, i18n: duplicate }
+    - { label: "Title", name: "title", widget: "string", i18n: translate }
+    - { label: "Publish Date", name: "date", widget: "date", i18n: duplicate }
+    - { label: "Slug", name: "uid", widget: "string", i18n: duplicate }
+    - {
+        label: "Category",
+        name: "category",
+        widget: "select",
+        options: [
+          { label: "Blueprints", value: "blueprints" },
+          { label: "Deep dives", value: "deep-dives" },
+          { label: "Interviews", value: "interviews" },
+          { label: "Reports", value: "reports" },
+          { label: "Stories", value: "stories" }
+        ],
+        i18n: duplicate
+      }
+{% endraw %}

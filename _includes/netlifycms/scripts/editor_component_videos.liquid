@@ -1,0 +1,39 @@
+{% raw %}
+
+CMS.registerEditorComponent({
+  id:"videos",
+  label: "Videos",
+  fields:[{
+      name: "link",
+      label: "link",
+      widget: "string"
+  }],
+  pattern: /{{< videos link="(.*)" >}}/,
+  fromBlock: function(match){
+      return{
+        link: match[1]
+      };
+  },
+  toBlock: ({link}) =>
+      `{{< videos link="${link}" >}}`,
+
+  toPreview: ({link}) => {
+    return `
+      <div class="flex flex-wrap w-full justify-center px-4">
+        <div class="videos-wrapper mx-auto">
+            <div class="pt-5">
+              <iframe width="560" height="315" src=${link}
+                  frameborder="0";
+                  allow="accelerometer; autoplay;
+                        clipboard-write; encrypted-media;
+                        gyroscope; picture-in-picture" allowfullscreen>
+              </iframe>
+            </div>
+        </div>
+      </div>
+    `
+  }
+})
+
+{% endraw %}
+

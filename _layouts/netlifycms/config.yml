@@ -1,0 +1,18 @@
+---
+layout: none
+dir_path: netlifycms/collections/
+models:
+  - Journal.liquid
+  - Article.liquid
+  - Author.liquid
+---
+{% assign path = layout.dir_path | append: "Site.yml" %}
+
+{% include {{ path }} %}
+
+collections:
+{% for model in layout.models %}
+  {% assign path = layout.dir_path | append: model %}
+
+  {% include {{ path }} %}
+{% endfor %}

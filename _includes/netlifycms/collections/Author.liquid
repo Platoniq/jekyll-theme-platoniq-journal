@@ -1,0 +1,28 @@
+{% raw %}
+- name: "authors"
+  label: "Authors"
+  folder: "_authors/"
+  slug: "{{uid}}"
+  i18n:
+    structure: multiple_files
+    locales: *locales
+  create: true
+  editor:
+    preview: true
+  fields:
+    - { label: "Layout", name: "layout", widget: "hidden", default: "author" }
+    - { label: "Short Name", name: "uid", widget: "string", i18n: duplicate }
+    - { label: "Diplay Name", name: "name", widget: "string", i18n: duplicate }
+    - {
+        label: "Featured Image",
+        hint: The author's avatar,
+        name: "image_url",
+        widget: "image",
+        choose_url: true,
+        default: "/media/authors/none.png",
+        media_library: { config: { multiple: false },
+        i18n: duplicate }
+    }
+    - { label: "Position", name: "position", widget: "string", i18n: translate }
+    - { label: "Body", name: "body", widget: "markdown", i18n: translate }
+{% endraw %}
