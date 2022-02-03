@@ -32,9 +32,6 @@ layout: default
           <li>
             <div class="llistat-sections__text">
               <h3>
-                {% capture article_slug %}
-                /{{ article.locale }}/{{ article.journal-uid }}/{{ article.category }}/{{ article.uid }}/
-                {% endcapture %}
                 <a href="{{ article.url }}">
                   {% if article.category == "interviews" %}
                     <span class="entrevistat">{{ article.interviewee }}</span>
@@ -50,7 +47,7 @@ layout: default
             </div>
 
             <div class="llistat-sections__img">
-              <img src="{{ article.cover.path | relative_url }}" alt="{{ article.cover.alt }}" class="horitzontal">
+              <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}" class="horitzontal">
             </div>
           </li>
         {% endfor %}

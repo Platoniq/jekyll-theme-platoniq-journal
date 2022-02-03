@@ -3,13 +3,15 @@
     {% for article in articles_stories %}
       <article class="destecat destecat--fila{{ forloop.index }}">
         <div class="col1">
+        {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
+
           <h4>
-            <a href="{{ '/category/stories' | prepend: page.locale | relative_url }}">
+            <a href="{{ category_archive.url | relative_url }}">
               {{ t_stories }}
             </a>
           </h4>
 
-          <img src="{{ article.cover.path | relative_url }}" alt="{{ article.cover.alt }}">
+          <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}">
         </div>
 
         <div class="col2">

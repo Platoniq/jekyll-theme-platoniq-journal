@@ -2,7 +2,7 @@
   {% for article in articles_stickers %}
     <article class="destecat destecat--fila{{ forloop.index }}">
       <a href="{{ article.url | relative_url }}">
-        <img src="{{ article.cover.path | relative_url }}" alt="{{ article.cover.alt }}" width="200px">
+        <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}" width="200px">
 
         <h3>{{ article.title }}</h3>
 
