@@ -1,0 +1,50 @@
+figure.pj-quote {
+  position: relative;
+  font-family: $tipo--primary;
+  font-weight: $bold--primary;
+  font-size: 28px;
+  color: $color--base;
+  letter-spacing: -0.8px;
+  line-height: 120%;
+  margin-top: $grid-row--lg;
+  margin-bottom: $grid-row--lg;
+  //Grid
+  grid-column: 7 / span 15;
+  @media (min-width: $bp-tablet) {
+    font-size: 48px;
+    margin-top: $grid-row--xl;
+    margin-bottom: $grid-row--xl;
+  }
+
+  figcaption.pj-quote--author {
+    font-family: $tipo--secundary;
+    font-weight: $reg--secundary;
+    font-style: normal;
+    font-size: 14px;
+    color: $color--base;
+    letter-spacing: -0.7px;
+    display: block;
+    margin-top: 1em;
+    @media (min-width: $bp-tablet) {
+      font-size: 16px;
+      margin-top: 2em;
+    }
+  }
+
+  &:before {
+    position: relative;
+    display: inline-block;
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: url("../img/ico/cometes--primary.svg") 0 0 / cover no-repeat;
+
+    @media (min-width: $bp-tablet) {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      top: -36px;
+      left: -96px;
+    }
+  }
+}
