@@ -1,0 +1,48 @@
+{% raw %}
+- name: "journals"
+  label: "Journals"
+  label_singular: "Journal"
+  folder: "_journals/"
+  i18n:
+    structure: multiple_folders
+    locales: *locales
+  create: true
+  delete: true
+  editor:
+    preview: true
+  fields:
+    - { label: "Layout", name: "layout", widget: "hidden", default: "journal", i18n: duplicate }
+    - { label: "Journal volume number", name: "journal-num", widget: "number", default: 0, value_type: "int", min: 1, max: 101, step: 1, i18n: duplicate }
+    - { label: "Title", name: "title", widget: "string", i18n: true }
+    - { label: "Publish Date", name: "date", widget: "date", i18n: duplicate }
+    - { label: "Slug", name: "uid", widget: "string", i18n: duplicate }
+    - label: "Cover image"
+      name: "cover"
+      widget: "object"
+      fields:
+        - {
+            label: "Hero Image",
+            hint: Big cover image,
+            name: "path",
+            widget: "image",
+            choose_url: true,
+            default: "/media/volumes/heroes/none.png",
+            media_library: { config: { multiple: false } },
+            media_folder: "/media/volumes/heroes",
+            i18n: duplicate
+          }
+        - {
+            label: "Thumbnail Image",
+            hint: Small image used in lists,
+            name: "thumbnail",
+            widget: "image",
+            choose_url: true,
+            default: "/media/volumes/thumbnails/none.png",
+            media_library: { config: { multiple: false } },
+            media_folder: "/media/volumes/thumbnails",
+            i18n: duplicate
+          }
+        - { label: "Image alt text", name: "alt", widget: "string", i18n: translate }
+        - { label: "Image Credits", name: "credits", widget: "string", i18n: translate }
+        - { label: "Image Caption", name: "caption", widget: "string", i18n: translate }
+{% endraw %}

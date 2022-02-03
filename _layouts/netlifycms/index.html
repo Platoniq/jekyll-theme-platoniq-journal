@@ -1,3 +1,7 @@
+---
+layout: none
+---
+
 <!doctype html>
 <html>
 <head>
@@ -14,23 +18,9 @@
   <!-- <script type="module" src="/admin/preview-templates/index.js"></script> -->
 
   <script>
-    CMS.registerPreviewStyle("{{ '/assets/admin.css' | relative_url }}");
+    CMS.registerPreviewStyle("{{ '/assets/css/admin.css' | relative_url }}");
   </script>
 
-  <script>
-    var JournalPreview = createClass({
-      render: function() {
-        var entry = this.props.entry;
-        var cmsTitle = entry.getIn(['data', 'title'])
-        var cmsJournalNum = entry.getIn(['data', 'journal-num'])
-        var cmsCoverImage = entry.getIn(['data', 'cover', 'path']);
-
-        var htmlString =`{% include journal/hero_image.liquid %}`;
-          return h('div', {"dangerouslySetInnerHTML": {"__html": htmlString}} );
-      }
-    });
-
-    CMS.registerPreviewTemplate("journals", JournalPreview);
-  </script>
+  <script src="{{ '/assets/js/cms.js' | relative_url }}"></script>
 </body>
 </html>
