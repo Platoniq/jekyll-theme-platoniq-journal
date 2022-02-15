@@ -31,13 +31,11 @@ figure.pj-quote {
     }
   }
 
-  &:before {
+  .svg-icon-quote {
     position: relative;
     display: inline-block;
-    content: "";
     width: 40px;
     height: 40px;
-    background: url("../img/ico/cometes--primary.svg") 0 0 / cover no-repeat;
 
     @media (min-width: $bp-tablet) {
       position: absolute;
