@@ -1,7 +1,7 @@
 ---
 layout: none
 dir_path: netlifycms/collections/
-models:
+collections:
   - Journal.liquid
   - Article.liquid
   - Author.liquid
@@ -11,8 +11,8 @@ models:
 {% include {{ path }} %}
 
 collections:
-{% for model in layout.models %}
-  {% assign path = layout.dir_path | append: model %}
+{% for collection in layout.collections %}
+  {% assign path = layout.dir_path | append: collection %}
 
   {% include {{ path }} %}
 {% endfor %}

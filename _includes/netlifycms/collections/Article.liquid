@@ -44,4 +44,71 @@
         ],
         i18n: duplicate
       }
+    - {
+        label: "Author",
+        name: "author",
+        widget: "relation",
+        collection: "authors",
+        display_fields: [name],
+        search_fields: [name],
+        value_field: "uid",
+        i18n: duplicate
+      }
+    - {
+        label: "Journal Volume",
+        name: "journal-uid",
+        widget: "relation",
+        collection: "journals",
+        display_fields: [title],
+        search_fields: [title],
+        value_field: "uid",
+        i18n: duplicate
+      }
+    - label: "Main image"
+      name: "cover"
+      widget: "object"
+      i18n: true
+      fields:
+        - {
+            label: "Hero Image",
+            hint: Big cover image,
+            name: "path",
+            widget: "image",
+            choose_url: true,
+            default: "/media/articles/heroes/none.png",
+            media_library: { config: { multiple: false } },
+            media_folder: "/media/articles/heroes",
+            i18n: duplicate
+          }
+        - {
+            label: "Thumbnail Image",
+            hint: Small image used in lists,
+            name: "thumbnail",
+            widget: "image",
+            choose_url: true,
+            default: "/media/articles/thumbnails/none.png",
+            media_library: { config: { multiple: false } },
+            media_folder: "/media/articles/thumbnails",
+            i18n: duplicate
+          }
+        - { label: "Image alt text", name: "alt", widget: "string", i18n: translate }
+        - { label: "Image Credits", name: "credits", widget: "string", i18n: translate }
+        - { label: "Image Caption", name: "caption", widget: "string", i18n: translate }
+    - { label: "Article Body", name: "body", widget: "markdown", editor_components: ["image", "collapsible-note", "videos"], i18n: true }
+    - label: "Related articles"
+      name: "related_articles_uid"
+      widget: "list"
+      required: false
+      i18n: true
+      field:
+        {
+          label: "Related article",
+          name: "related_article_uid",
+          widget: "relation",
+          collection: "articles",
+          display_fields: [title],
+          search_fields: [title, uid],
+          value_field: "uid",
+          i18n: duplicate
+        }
 {% endraw %}
