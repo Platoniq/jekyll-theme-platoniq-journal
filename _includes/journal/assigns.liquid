@@ -1,5 +1,3 @@
-{% assign current_journal = page %}
-
 {% assign articles_all = site.articles
     | where: "journal-uid", page.uid
     | where: "locale", page.locale
