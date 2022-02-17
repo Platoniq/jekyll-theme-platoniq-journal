@@ -1,7 +1,9 @@
 .pj-links {
-  padding-left: 0;
-  //Grid
-  grid-column: 7 / span 13;
+  ul {
+    padding-left: 0;
+    //Grid
+    grid-column: 7 / span 13;
+  }
 
   li {
     border-bottom: 1px solid $color--grey;
