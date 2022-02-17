@@ -8,11 +8,27 @@
     margin-top: $grid-row--xl;
     margin-bottom: $grid-row--xl;
   }
+
   padding-left: 0;
   margin-top: $grid-row--lg;
   margin-bottom: $grid-row--lg;
-  //Grid
+
+  // Grid
   grid-column: 5 / span 17;
+
+  li:nth-child(1),
+  li:nth-child(5) {
+    // Grid
+    grid-column: 1 / -1;
+  }
+
+  li:nth-child(2n) {
+    grid-column: 3 / -1;
+  }
+
+  li:nth-child(3) {
+    grid-column: 6 / -1;
+  }
 
   strong {
     font-family: $tipo--primary;
@@ -28,19 +44,6 @@
 
     &::before {
       display: none;
-    }
-
-    &--row1 {
-      //Grid
-      grid-column: 1 / -1;
-    }
-
-    &--row2 {
-      grid-column: 3 / -1;
-    }
-
-    &--row3 {
-      grid-column: 6 / -1;
     }
   }
 
@@ -59,7 +62,7 @@
     }
   }
 
-  &__ico {
+  .pj-number--icon {
     width: 24px;
     height: 24px;
     margin-right: 0.125em;
