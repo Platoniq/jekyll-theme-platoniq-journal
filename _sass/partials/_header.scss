@@ -64,7 +64,7 @@
     }
   }
 
-  &__idiome {
+  &__locale-selector {
     @media (min-width : $bp-tablet) {
       grid-column: -4 / span 3;
     }
@@ -155,8 +155,9 @@
     }
   }
 }
+
 // Menú Idiome
-.menu-idiome {
+.menu__locale-selector {
   position: fixed;
   top: 0;
   right: 0;
@@ -165,11 +166,15 @@
   background-color: $bgcolor--fosc;
   z-index: 3;
   padding: 120px 20px 20px;
-  display: flex;
   flex-flow: column;
   justify-content: flex-start;
   overflow: scroll;
   display: none;
+
+  &.status-open {
+    display: flex;
+  }
+
   @media (min-width : $bp-desktop) {
     width: 43vw;
     padding: 120px 60px;
@@ -196,11 +201,12 @@
       opacity: 1;
     }
 
-    &.select {
+    &.active {
       opacity: 1;
     }
   }
 }
+
 // Navegació vertical
 .nav-vertical {
   // display: none;
