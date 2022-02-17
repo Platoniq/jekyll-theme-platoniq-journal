@@ -1,5 +1,5 @@
-<div class="header__idiome">
-  <a class="burguer" status="on" href="">
+<div class="header__locale-selector">
+  <button type="button" class="burguer">
     <span class="burguer__label">
       {{ page.locale | upcase }}
     </span>
@@ -11,12 +11,12 @@
     {% include svg/icon-world.liquid
         class="burguer__icon-open burguer__icon-open--right"
         alt=t_locale_menu %}
-  </a>
+  </button>
 
-  <ul class="menu-idiome">
+  <ul class="menu__locale-selector">
     {% for translation in page_translations %}
-      <li class="{% if page.locale == translation.locale %} active {% endif %}">
-        <a href="{{ translation.url | relative_url }}">
+      <li>
+        <a href="{{ translation.url | relative_url }}" class="{% if page.locale == translation.locale %}active{% endif %}">
           {{ site.data.i18n[page.locale].global.locales[translation.locale] }}
         </a>
       </li>
