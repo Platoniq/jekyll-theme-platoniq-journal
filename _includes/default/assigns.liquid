@@ -3,8 +3,8 @@
     | where: "locale", page.locale
     | sort: "journal-num" %}
 {% assign current_journal = journals | find: "uid", page.journal-uid %}
-{% if page.type == "journal" %}
-  {% assign current_journal = page %}
+{% if page.collection == "journals" %}
+  {% assign current_journal = journals | find: "uid", page.uid %}
 {% endif %}
 
 {% assign page_translations = site.pages | where: "uid", page.uid %}

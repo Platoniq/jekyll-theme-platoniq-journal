@@ -1,13 +1,23 @@
 ---
 layout: base
 ---
+{% include article/assigns.liquid %}
+
 {% include journal/nav_categories.liquid %}
 
-<div class="article--deep-dive">
+<section id="page">
+  <article class="container-fluid">
+    <div class="container grid">
+      {{ content }}
+    </div>
+  </article>
+</section>
+
+    <div class="article--deep-dive">
   {% include article/deep_dive/hero.html %}
 
   <div class="article--deep-dive_content">
-    {{ content }}
+
   </div>
 
   {% include article/deep_dive/share.html %}

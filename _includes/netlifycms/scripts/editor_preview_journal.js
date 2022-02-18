@@ -6,7 +6,8 @@ var JournalPreview = createClass({
     var cmsCoverImage = entry.getIn(['data', 'cover', 'path']);
 
     var htmlString =`{% include journal/hero_image.liquid %}`;
-      return h('div', {"dangerouslySetInnerHTML": {"__html": htmlString}} );
+
+    return h('div', {"dangerouslySetInnerHTML": {"__html": htmlString}} );
   }
 });
 

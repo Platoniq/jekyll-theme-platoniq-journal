@@ -75,7 +75,7 @@
             name: "path",
             widget: "image",
             choose_url: true,
-            default: "/media/articles/heroes/none.png",
+            default: "/assets/media/no_image-hero.png",
             media_library: { config: { multiple: false } },
             media_folder: "/media/articles/heroes",
             i18n: duplicate
@@ -86,7 +86,7 @@
             name: "thumbnail",
             widget: "image",
             choose_url: true,
-            default: "/media/articles/thumbnails/none.png",
+            default: "/assets/media/no_image-thumbnail.png",
             media_library: { config: { multiple: false } },
             media_folder: "/media/articles/thumbnails",
             i18n: duplicate
@@ -94,7 +94,7 @@
         - { label: "Image alt text", name: "alt", widget: "string", i18n: translate }
         - { label: "Image Credits", name: "credits", widget: "string", i18n: translate }
         - { label: "Image Caption", name: "caption", widget: "string", i18n: translate }
-    - { label: "Article Body", name: "body", widget: "markdown", editor_components: ["image", "collapsible-note", "videos"], i18n: true }
+    - { label: "Article Body", name: "body", widget: "markdown", editor_components: ["image", "quote-tag", "collapsible-note", "videos"], i18n: true }
     - label: "Related articles"
       name: "related_articles_uid"
       widget: "list"

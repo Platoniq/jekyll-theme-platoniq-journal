@@ -2,6 +2,9 @@
 // Burguer
 
 .burguer {
+  position: relative;
+  background-color: transparent;
+  border: none;
   display: flex;
   flex-flow: row;
   align-items: center;
@@ -43,24 +46,21 @@
     }
   }
 
-  .header__idiome &__icon-open{
+  .burguer__icon-open {
     width: 20px;
     width: 20px;
-  }
-
-  &[status="on"] .burguer__icon-open {
     display: block;
   }
 
-  &[status="on"] .burguer__icon-close {
+  .burguer__icon-close {
     display: none;
   }
 
-  &[status="off"] .burguer__icon-open {
+  &.status-open .burguer__icon-open {
     display: none;
   }
 
-  &[status="off"] .burguer__icon-close {
+  &.status-open .burguer__icon-close {
     display: block;
   }
 }
