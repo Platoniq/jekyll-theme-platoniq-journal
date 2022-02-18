@@ -1,0 +1,18 @@
+.pj-links {
+  ul {
+    padding-left: 0;
+    //Grid
+    grid-column: 7 / span 13;
+  }
+
+  li {
+    border-bottom: 1px solid $color--grey;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    font-size: 18px;
+    letter-spacing: -0.04em;
+    @media (min-width: $bp-tablet) {
+      font-size: 19px;
+    }
+  }
+}
