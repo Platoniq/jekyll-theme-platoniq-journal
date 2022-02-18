@@ -29,6 +29,11 @@
     - { label: "Layout", name: "layout", widget: "hidden", default: "article", i18n: duplicate }
     - { label: "Article order", name: "article-order", widget: "number", default: 0, value_type: "int", min: 1, max: 101, step: 1, i18n: duplicate }
     - { label: "Title", name: "title", widget: "string", i18n: translate }
+    - label: "Description"
+      hint: "Mainly for SEO pourposes"
+      name: "description"
+      widget: "string"
+      i18n: translate
     - { label: "Publish Date", name: "date", widget: "date", i18n: duplicate }
     - { label: "Slug", name: "uid", widget: "string", i18n: duplicate }
     - {
@@ -94,21 +99,23 @@
         - { label: "Image alt text", name: "alt", widget: "string", i18n: translate }
         - { label: "Image Credits", name: "credits", widget: "string", i18n: translate }
         - { label: "Image Caption", name: "caption", widget: "string", i18n: translate }
-    - { label: "Article Body", name: "body", widget: "markdown", editor_components: ["image", "quote-tag", "collapsible-note", "videos"], i18n: true }
+    - label: "Article Body"
+      name: "body"
+      widget: "markdown"
+      editor_components: ["image", "quote-tag", "collapsible-note", "videos"]
+      i18n: true
     - label: "Related articles"
       name: "related_articles_uid"
       widget: "list"
       required: false
-      i18n: true
+      i18n: false # todo: duplicate to other locales
       field:
-        {
-          label: "Related article",
-          name: "related_article_uid",
-          widget: "relation",
-          collection: "articles",
-          display_fields: [title],
-          search_fields: [title, uid],
-          value_field: "uid",
-          i18n: duplicate
-        }
+        label: "Related article"
+        name: "related_article_uid"
+        widget: "relation"
+        collection: "articles"
+        display_fields: [title]
+        search_fields: [title, uid]
+        value_field: "uid"
+        i18n: duplicate
 {% endraw %}
