@@ -214,7 +214,7 @@
     }
   }
 
-  p {
+  p, ul, ol {
     font-family: $tipo--secundary;
     font-size: 18px;
     font-weight: $reg--secundary;
@@ -226,6 +226,22 @@
     @media (min-width : $bp-tablet) {
       font-size: 19px;
     }
+  }
+
+  .article__content ul,
+  .article__content ol {
+    list-style: disc;
+    margin: 1em 0;
+    padding: 0 0 0 40px;
+
+    li {
+      display: list-item;
+      list-style-type: disc;
+    }
+  }
+
+  .article__content ol li{
+      list-style-type: decimal;
   }
 
   h2,
