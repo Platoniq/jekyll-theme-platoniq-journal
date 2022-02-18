@@ -8,12 +8,18 @@ figure.pj-quote {
   line-height: 120%;
   margin-top: $grid-row--lg;
   margin-bottom: $grid-row--lg;
+
   //Grid
   grid-column: 7 / span 15;
   @media (min-width: $bp-tablet) {
     font-size: 48px;
     margin-top: $grid-row--xl;
     margin-bottom: $grid-row--xl;
+  }
+
+  blockquote::after {
+    content: "”";
+    margin-left: -0.75rem;
   }
 
   figcaption.pj-quote--author {
