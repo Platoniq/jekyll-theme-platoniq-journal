@@ -1,0 +1,30 @@
+<header class="multiple-header">
+  <div class="multiple-header__text">
+    <h4>
+      <a href="{{ category_archive.url | relative_url }}">
+        {{ category_name }}
+      </a>
+    </h4>
+
+    <h1>
+      {{ page.title }}
+    </h1>
+
+    <div class="multiple-header__dades">
+      <h5 class="multiple-header__dades__data">
+        {{ article_date }}
+      </h5>
+
+      <h5 class="multiple-header__dades__autor">
+        {{ author.name | prepend: t_authored_by }}
+      </h5>
+    </div>
+  </div>
+
+  <div class="multiple-header__img">
+    <img src="{{ page.cover.path | relative_url }}" alt="{{ article.cover.alt }}">
+    <!-- <div class="caption">{{ article.cover.caption }}</div>
+    <div class="credits">{{ article.cover.credits }}</div> -->
+  </div>
+</header>
+
