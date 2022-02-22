@@ -1,0 +1,18 @@
+<div class="cta-box cta__donate">
+  <div class="cta-box__img">
+    <img src="{{ call_to_action.image.path | relative_url }}"
+         alt="{{ call_to_action.image.alt }}">
+  </div>
+  <div class="cta-box__text">
+      <h3>{{ call_to_action.title }}</h3>
+
+      {{ call_to_action.content }}
+  </div>
+  <div class="cta-box__cta">
+    <a href="{{ call_to_action.button.link }}" target="_blank" class="btn btn--negatiu">
+      <span class="btn__label">
+        {{ call_to_action.button.label }}
+      </span>
+    </a>
+  </div>
+</div>

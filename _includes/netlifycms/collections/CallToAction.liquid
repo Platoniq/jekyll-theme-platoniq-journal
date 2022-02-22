@@ -1,0 +1,134 @@
+{% raw %}
+- name: "call_to_actions"
+  label: "Call to Actions"
+  editor:
+    preview: false
+  files:
+    - label: "Contact"
+      name: "contact"
+      file: "_call_to_actions/contact.md"
+      fields:
+        - label: CTA Contact English
+          name: en
+          widget: object
+          fields: &cta_contact_fields
+            - label: Title
+              name: title
+              widget: string
+            - label: Body
+              name: content
+              widget: text
+            - label: Button
+              name: button
+              widget: object
+              fields:
+                - label: "Label"
+                  name: label
+                  widget: string
+            - label: Image
+              name: image
+              widget: object
+              fields:
+                - label: Image
+                  name: path
+                  widget: image
+                  default: "/assets/media/no_image-cta.png"
+                  media_library: { config: { multiple: false } }
+                  media_folder: "/media/call_to_actions/"
+                - label: Alternative text
+                  name: alt
+                  widget: string
+
+        - label: "CTA Contact Español"
+          name: es
+          widget: object
+          fields: *cta_contact_fields
+
+    - label: Donate
+      name: donate
+      editor:
+        preview: false
+      file: "_call_to_actions/donate.md"
+      fields:
+        - label: CTA Donate English
+          name: en
+          widget: object
+          fields: &cta_donate_fields
+            - label: Title
+              name: title
+              widget: string
+            - label: Body
+              name: content
+              widget: text
+            - label: Button
+              name: button
+              widget: object
+              fields:
+                - label: "Label"
+                  name: label
+                  widget: string
+                - label: "Link to"
+                  name: link
+                  hint: "Insert a valid url, ex: 'https://www.goteo.org'"
+                  widget: string
+            - label: Image
+              name: image
+              widget: object
+              fields:
+                - label: Image
+                  name: path
+                  widget: image
+                  default: "/assets/media/no_image-cta.png"
+                  media_library: { config: { multiple: false } }
+                  media_folder: "/media/call_to_actions/"
+                - label: Alternative text
+                  name: alt
+                  widget: string
+
+        - label: "CTA Donate Español"
+          name: es
+          widget: object
+          fields: *cta_donate_fields
+
+    - label: Newsletter
+      name: newsletter
+      editor:
+        preview: false
+      file: "_call_to_actions/newsletter.md"
+      fields:
+        - label: CTA Newsletter English
+          name: en
+          widget: object
+          fields: &cta_newsletter_fields
+            - label: Title
+              name: title
+              widget: string
+            - label: Body
+              name: content
+              widget: text
+            - label: Button
+              name: button
+              widget: object
+              fields:
+                - label: "Label"
+                  name: label
+                  widget: string
+            - label: Image
+              name: image
+              widget: object
+              fields:
+                - label: Image
+                  name: path
+                  widget: image
+                  default: "/assets/media/no_image-cta.png"
+                  media_library: { config: { multiple: false } }
+                  media_folder: "/media/call_to_actions/"
+                - label: Alternative text
+                  name: alt
+                  widget: string
+
+        - label: "CTA Newsletter Español"
+          name: es
+          widget: object
+          fields: *cta_newsletter_fields
+{% endraw %}
