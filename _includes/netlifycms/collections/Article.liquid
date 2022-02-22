@@ -8,6 +8,7 @@
     locales: *locales
   create: true # Allow users to create new documents in this collection
   slug: "{{uid}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  sort: "article-order:asc"
   view_filters:
     - label: Article order
       field: article-order
@@ -118,4 +119,12 @@
         search_fields: [title, uid]
         value_field: "uid"
         i18n: duplicate
+    - label: "Call to action"
+      name: "call_to_action"
+      widget: "relation"
+      collection: "call_to_actions"
+      display_fields: [uid]
+      search_fields: [uid]
+      value_field: "uid"
+      i18n: duplicate
 {% endraw %}

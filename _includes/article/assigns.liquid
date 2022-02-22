@@ -5,3 +5,7 @@
 {% assign month_number = page.date | date: "%-m" %}
 {% assign month_name = site.data.i18n[page.locale].month_names[month_number] %}
 {% capture article_date %}{{ page.date | date: "%d" }}/{{ month_name }}/{{ page.date | date: "%Y" }}{% endcapture %}
+
+{% assign call_to_action_page = site.call_to_actions | where: "uid", page.call_to_action | first %}
+{% capture call_to_action_template %}article/call_to_actions/{{ page.call_to_action | remove: "cta-"}}.liquid{% endcapture %}
+{% assign call_to_action = call_to_action_page[page.locale] %}
