@@ -1,7 +1,7 @@
 
 {% assign journals = site.journals
     | where: "locale", page.locale
-    | sort: "journal-num" %}
+    | sort: "journal-num", "last" %}
 {% assign current_journal = journals | find: "uid", page.journal-uid %}
 {% if page.collection == "journals" %}
   {% assign current_journal = journals | find: "uid", page.uid %}

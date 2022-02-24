@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-{% assign journals = site.journals | where: "locale", page.locale | sort: "journal-num" %}
+{% assign journals = site.journals | where: "locale", page.locale | sort: "journal-num", "last" %}
 
 <header>
   <h1>{{ page.title }}</h1>

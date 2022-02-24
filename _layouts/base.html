@@ -8,6 +8,10 @@ layout: default
   <article class="container-fluid">
     <div class="container">
       {{ content }}
+
+      {% if page.call_to_action %}
+        {% include default/call_to_action_block.liquid %}
+      {% endif %}
     </div>
   </article>
 </section>
