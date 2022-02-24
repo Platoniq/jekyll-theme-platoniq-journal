@@ -1,0 +1,52 @@
+{% capture call_to_action_name %}{{ page.call_to_action | remove: "cta-"}}{% endcapture %}
+
+{% if call_to_action.form_fields %}
+  {% assign is_form = true %}
+{% else %}
+  {% assign is_form = false %}
+{% endif %}
+
+{% if is_form %}
+  <form name="{{ call_to_action_name }}" netlify class="cta-box {{ call_to_action_name | prepend: 'cta__' }}">
+{% else %}
+  <div class="cta-box {{ call_to_action_name | prepend: 'cta__' }}">
+{% endif %}
+
+  <div class="cta-box__img">
+    <img src="{{ call_to_action.image.path | relative_url }}"
+         alt="{{ call_to_action.image.alt }}">
+  </div>
+
+  <div class="cta-box__text">
+    <h3>{{ call_to_action.title }}</h3>
+
+      {{ call_to_action.content }}
+
+      {{ call_to_action.form_fields }}
+
+    {% if is_form %}
+      <input type="hidden" name="lang" value="{{ page.locale }}">
+      <input type="hidden" name="page_uid" value="{{ page.uid }}">
+      <input type="hidden" name="site_url" value="{{ site.url }}">
+    {% endif %}
+  </div>
+
+  <div class="cta-box__cta">
+    {% if is_form %}
+      <button type="submit" name="button" class="btn btn--negatiu">
+        <span class="btn__label">{{ call_to_action.button.label }}</span>
+      </button>
+    {% else %}
+      <a href="{{ call_to_action.button.link }}" target="_blank" class="btn btn--negatiu">
+        <span class="btn__label">
+          {{ call_to_action.button.label }}
+        </span>
+      </a>
+    {% endif %}
+  </div>
+
+{% if is_form %}
+  </form>
+{% else %}
+  </div>
+{% endif %}
