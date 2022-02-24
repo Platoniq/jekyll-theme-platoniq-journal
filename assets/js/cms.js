@@ -4,6 +4,7 @@ dir_path: netlifycms/scripts/
 scripts:
   - editor_preview_journal.js
   - editor_component_quote_tag.liquid
+  - editor_component_links_tag.liquid
   - editor_component_collapsible_note.js
   - editor_component_videos.liquid
 ---
