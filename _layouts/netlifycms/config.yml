@@ -5,6 +5,7 @@ collections:
   - Journal.liquid
   - Article.liquid
   - Author.liquid
+  - CallToAction.liquid
 ---
 {% assign path = layout.dir_path | append: "Site.yml" %}
 

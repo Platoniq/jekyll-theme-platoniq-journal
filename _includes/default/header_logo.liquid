@@ -3,7 +3,7 @@
     <h4>{{ current_journal.journal-num | prepend: "#"}} - {{ current_journal.title }}</h4>
   {% endif %}
 
-  <a href="{{ '/' | relative_url }}">
+  <a href="{{ current_journal.url | default: "/" }}">
     {% include svg/logo-header-wilder-journal.liquid %}
   </a>
 </div>
