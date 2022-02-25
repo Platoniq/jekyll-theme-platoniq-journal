@@ -163,57 +163,6 @@
     }
   }
 
-  // Navegació Share
-  .nav-share {
-
-    @media (min-width : $bp-tablet) {
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      right: 64px;
-    }
-
-    & ul {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: flex-start;
-      @media (min-width : $bp-tablet) {
-        transform: rotate(-90deg);
-        transform-origin: left top;
-        position: absolute;
-        top: calc(100vh - (100vh - 205px)/2);
-        width: 205px;
-      }
-      font-weight: $bold--secundary;
-      color: $color--base;
-    }
-
-    & li {
-      margin: auto 0 auto 12px;
-    }
-
-    & a {
-      text-align: right;
-      font-family: $tipo--secundary;
-      font-weight: $reg--secundary;
-      font-size: 14px;
-      color: $color--base;
-      letter-spacing: -0.7px;
-      padding-bottom: 6px !important;
-
-      @media (min-width : $bp-tablet) {
-        font-size: 16px;
-      }
-
-      &:hover, &.select {
-        background: transparent linear-gradient(90deg , $color--primary 50%, $color--primary 0) no-repeat;
-        background-size: 200% 2px;
-        background-position: 100% 89%;
-        color: $color--primary;
-      }
-    }
-  }
-
   p, ul, ol {
     font-family: $tipo--secundary;
     font-size: 18px;

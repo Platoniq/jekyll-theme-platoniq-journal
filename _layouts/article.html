@@ -13,6 +13,10 @@ layout: default
     <div class="container grid article__content">
       {% include article/hero.liquid %}
 
+      <div class="nav-share">
+        {% include article/share.liquid %}
+      </div>
+
       {{ content }}
 
       {% if page.call_to_action %}
@@ -28,7 +32,7 @@ layout: default
 {% comment %}
 <div class="article--deep-dive">
 
-  {% include article/deep_dive/share.html %}
+
 
   {% include article/deep_dive/related_articles.html %}
 </div>
