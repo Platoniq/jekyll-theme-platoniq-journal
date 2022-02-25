@@ -15,16 +15,16 @@ url: https://github.com/liquid-utilities/includes-share-page
 {% assign share__text = page.share.text | default: page.description | default: page.excerpt | default: nil %}
 
 
-{% assign share__figcaption = page.share.figcaption %}
+{% assign figcaption = page.share.figcaption | default: true %}
 {% unless share__figcaption == false or share__figcaption %}
-  {% assign share__figcaption = site.share.figcaption %}
+  {% assign share__figcaption = site.share.figcaption | default: site.data.i18n[page.locale].global.share %}
 {% endunless %}
 
 
 {% assign share__disable_text = page.share.disable_text | default: site.share.disable_text | default: false %}
 {% assign share__disable_facebook = page.share.disable_facebook | default: site.share.disable_facebook %}
-{% assign share__disable_linkedin = page.share.disable_linkedin | default: site.share.disable_linkedin %}
-{% assign share__disable_reddit = page.share.disable_reddit | default: site.share.disable_reddit %}
+{% assign share__disable_linkedin = page.share.disable_linkedin | default: site.share.disable_linkedin | default: true %}
+{% assign share__disable_reddit = page.share.disable_reddit | default: site.share.disable_reddit | default: true %}
 {% assign share__disable_twitter = page.share.disable_twitter | default: site.share.disable_twitter %}
 
 
