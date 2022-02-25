@@ -1,0 +1,51 @@
+.pager {
+  border-top: 1px solid $color--grey;
+  margin-top: $grid-row--lg;
+  padding: 40px 20px 40px 80px;
+  @media (min-width : $bp-tablet) {
+    padding: 80px 0;
+  }
+
+  li {
+    //Grid
+    grid-column: 4 / span 9;
+    @media (max-width : $bp-tablet) {
+      &:first-child{
+        margin-bottom: 1em;
+      }
+    }
+
+    &:nth-child(even) {
+      //Grid
+      grid-column: 13 / span 10;
+      justify-self: self-end;
+    }
+
+    a {
+      font-family: $tipo--primary;
+      font-size: 21px;
+      color: $color--primary;
+      letter-spacing: -0.4px;
+      @media (max-width : $bp-tablet) {
+        flex-flow: column;
+        align-items: flex-start;
+        &.link--right{
+          align-items: flex-end;
+        }
+
+      }
+      @media (min-width : $bp-tablet) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .link__icon {
+    width: 40px;
+    height: 40px;
+    @media (min-width : $bp-tablet) {
+      width: 64px;
+      height: 64px;
+    }
+  }
+}
