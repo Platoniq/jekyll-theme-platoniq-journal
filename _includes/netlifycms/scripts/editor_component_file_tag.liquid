@@ -8,19 +8,22 @@ CMS.registerEditorComponent({
   // Fields the user need to fill out when adding an instance of the component
   fields: [
     {
-      name: 'title',
-      label: 'Title',
-      widget: 'string'
+      name: "title",
+      label: "Title",
+      widget: "string"
     },
     {
-      name: 'file',
-      label: 'File', 
-      widget: 'file'
+      name: "file",
+      label: "File", 
+      widget: "file"
     },
     {
-      name: 'image',
-      label: 'Image', 
-      widget: 'image'
+      name: "image",
+      label: "Image", 
+      widget: "image",
+      default: "/assets/media/no_image-file.png",
+      media_library: { config: { multiple: false } },
+      media_folder: "/media/files/"
     }
   ],
   // Regex pattern used to search for instances of this block in the markdown document.
