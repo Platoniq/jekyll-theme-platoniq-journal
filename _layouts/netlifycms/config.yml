@@ -4,6 +4,7 @@ dir_path: netlifycms/collections/
 collections:
   - Journal.liquid
   - Article.liquid
+  - Page.liquid
   - Author.liquid
   - CallToAction.liquid
 ---
