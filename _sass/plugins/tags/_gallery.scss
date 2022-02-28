@@ -1,0 +1,42 @@
+$icon-size: 160px;
+$half-icon-size: $icon-size / 2;
+
+.pj-gallery {
+  grid-column: 5 / span 17;
+
+  &--button {
+    background: none;
+    border: none;
+
+    position: absolute;
+    z-index: 10;
+
+    cursor: pointer;
+  
+    &-previous {
+      top: $icon-size;
+      left: -$half-icon-size;
+    }
+  
+    &-next {
+      bottom: $icon-size;
+      right: -$half-icon-size;
+    }
+  }
+
+  &--icon {
+    width: $icon-size;
+    height: $icon-size;
+
+    fill: $color--primary;
+  }
+
+
+  &--images {
+    display: grid;
+  }
+  
+  &--image {
+    grid-row: 1;
+  }
+}
