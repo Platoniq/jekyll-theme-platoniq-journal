@@ -1,7 +1,12 @@
-$icon-size: 160px;
-$half-icon-size: $icon-size / 2;
+$icon-size: 40px;
 
-.pj-gallery {
+$icon-size--desktop-factor: 4;
+
+$icon-space-x: -$icon-size / 2;
+$icon-space-y: $icon-size * 2;
+
+.pj-gallery,
+.page .pj-gallery {
   grid-column: 5 / span 17;
 
   &--button {
@@ -12,31 +17,47 @@ $half-icon-size: $icon-size / 2;
     z-index: 10;
 
     cursor: pointer;
-  
+
     &-previous {
-      top: $icon-size;
-      left: -$half-icon-size;
+      left: $icon-space-x;
+      top: $icon-space-y;
     }
-  
+
     &-next {
-      bottom: $icon-size;
-      right: -$half-icon-size;
+      bottom: $icon-space-y;
+      right: $icon-space-x;
+    }
+
+    @media (min-width: $bp-tablet) {
+      &-previous {
+        left: $icon-space-x * $icon-size--desktop-factor;
+        top: $icon-space-y * $icon-size--desktop-factor;
+      }
+
+      &-next {
+        right: $icon-space-x * $icon-size--desktop-factor;
+        bottom: $icon-space-y * $icon-size--desktop-factor;
+      }
     }
   }
 
   &--icon {
+    fill: $color--primary;
+
     width: $icon-size;
     height: $icon-size;
 
-    fill: $color--primary;
+    @media (min-width: $bp-tablet) {
+      width: $icon-size * $icon-size--desktop-factor;
+      height: $icon-size * $icon-size--desktop-factor;
+    }
   }
-
 
   &--images {
     display: grid;
   }
-  
+
   &--image {
-    grid-row: 1;
+    margin: 0;
   }
 }

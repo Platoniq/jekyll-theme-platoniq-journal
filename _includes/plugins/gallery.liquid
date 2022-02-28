@@ -15,11 +15,13 @@
 
   <div class="pj-gallery--images">
     {% for image in gallery.images %}
-      <figure class="pj-gallery--image">
-        <img src="{{ image.path | relative_url }}"
-            alt="{{ image.alt }}">
-        <figcaption>{{ image.credits }}</figcaption>
-      </figure>
+      <div class="pj-gallery--image-container">
+        <figure class="pj-gallery--image">
+          <img src="{{ image.path | relative_url }}"
+              alt="{{ image.alt }}">
+          <figcaption>{{ image.credits }}</figcaption>
+        </figure>
+      </div>
     {% endfor %}
   </div>
 </section>
