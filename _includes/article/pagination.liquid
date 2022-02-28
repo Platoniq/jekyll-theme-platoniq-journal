@@ -1,4 +1,6 @@
 {% assign articles = site.articles | where:"journal-num", page.journal-num | where:"locale", page.locale | sort: "article-order", "last" %}
+{% assign t_previous_article = site.data.i18n[page.locale].pagination.previous %}
+{% assign t_next_article = site.data.i18n[page.locale].pagination.next %}
 
 {% for article in articles %}
   {% if article == page %}
@@ -19,38 +21,41 @@
 {% endfor %}
 
 {% if articles %}
+  <ul class="pager grid">
+    <li>
+      {% if previous_post %}
+        <a class="link"
+           href="{{ previous_post.url | relative_url }}"
+           title="{{ t_previous_article | append: ': ' | append: previous_post.title }}">
 
-  <div class="card mb-3">
-    <div class="card-body">
-      <div class="row align-items-center">
-        <div class="col">
-          {% if previous_post %}
-            <a href="{{ previous_post.url | relative_url }}" title="next Post: {{previous_post.title}}">
-              <div>
-                <h6>
-                  ← {{ site.data.i18n[page.locale].pagination.previous }}
-                </h6>
+          <span class="link__icon link__icon--left">
+            {% include svg/icon-arrow_left_big.liquid
+                       alt=t_previous_article %}
+          </span>
 
-                <h4>{{ previous_post.title }}</h4>
-              </div>
-            </a>
-          {% endif %}
-        </div>
+          <span class="link__label">
+            {{ previous_post.title }}
+          </span>
+        </a>
+      {% endif %}
+    </li>
 
-        <div class="col text-end">
-          {% if next_post %}
-            <a href="{{ next_post.url | relative_url }}" title="next Post: {{next_post.title}}">
-              <div>
-                <h6>
-                  {{ site.data.i18n[page.locale].pagination.next }} →
-                </h6>
+    <li>
+      {% if next_post %}
+        <a class="link link--right"
+           href="{{ next_post.url | relative_url }}"
+           title="{{ t_next_article | append: ': ' | append: next_post.title }}">
 
-                <h4>{{ next_post.title }}</h4>
-              </div>
-            </a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  </div>
+          <span class="link__label">
+            {{ next_post.title }}
+          </span>
+
+          <span class="link__icon link__icon--right">
+            {% include svg/icon-arrow_right_big.liquid
+                       alt=t_next_article %}
+          </span>
+        </a>
+      {% endif %}
+    </li>
+  </ul>
 {% endif %}

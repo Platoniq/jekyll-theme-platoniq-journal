@@ -1,0 +1,50 @@
+{% raw %}
+- name: pages
+  label: Pages
+  label_singular: Page
+  folder: "_pages/"
+  slug: "{{uid}}"
+  i18n:
+    structure: multiple_folders
+    locales: *locales
+  create: true
+  editor:
+    preview: true
+  fields:
+    - label: Slug
+      name: uid
+      widget: string
+      i18n: duplicate
+
+    - label: published
+      name: published
+      widget: boolean
+      default: false
+      i18n: duplicate
+
+    - label: Title
+      name: title
+      widget: string
+      i18n: translate
+
+    - label: Description
+      hint: Mainly for SEO pourposes
+      name: description
+      widget: string
+      i18n: translate
+
+    - label: Body
+      name: body
+      widget: markdown
+      editor_components: ["image", "quote-tag", "file-tag", "documents-tag", "links-tag", "numbers-tag"]
+      i18n: true
+
+    - label: "Call to action"
+      name: call_to_action
+      widget: relation
+      collection: call_to_actions
+      display_fields: [uid]
+      search_fields: [uid]
+      value_field: uid
+      i18n: duplicate
+{% endraw %}
