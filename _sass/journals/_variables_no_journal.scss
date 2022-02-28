@@ -1,0 +1,30 @@
+// This is the "NO JOURNAL Volume" style for pages
+
+// Tipografia
+$tipo--primary: 'gt_cinetypebold', sans-serif;
+$tipo--secundary: 'Karla', sans-serif;
+// Tipografia weight
+$bold--primary: 700;
+$reg--secundary: 400;
+$med--secundary: 500;
+$bold--secundary: 700;
+// Backgrounds
+$bgcolor--primary: #dfdfdf;
+$bgcolor--primary-hover: rgba($bgcolor--primary, .8);
+$bgcolor--primary--negatiu: #000000;
+$bgcolor--primary--negatiu-hover: rgba($bgcolor--primary--negatiu, .8);
+$bgcolor--secundary: white;
+$bgcolor--secundary-hover: rgba($bgcolor--secundary, .8);
+$bgcolor--fosc: #000000;
+
+// Colors
+$color--primary: #000000;
+$color--primary-hover: rgba($color--primary, .8);
+$color--primary--negatiu: #7c7c7c;
+$color--primary--negatiu-hover: rgba($color--primary--negatiu, .8);
+$color--secundary: #dfdfdf;
+$color--base: #272727;
+$color--base--negatiu: #fdfdfdf;
+$color--black: #000000;
+$color--white: #FFFFFF;
+$color--grey: #dfdfdf;
