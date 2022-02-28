@@ -2,25 +2,33 @@
 
 CMS.registerEditorComponent({
   // Internal id of the component
-  id: "links-tag",
+  id: "file-tag",
   // Visible label
-  label: "Links Tag",
+  label: "File Tag",
   // Fields the user need to fill out when adding an instance of the component
   fields: [
     {
-      name: 'title',
-      label: 'Title',
-      widget: 'string'
+      name: "title",
+      label: "Title",
+      widget: "string"
     },
     {
-      name: 'items',
-      label: 'Items',
-      widget: 'list',
-      summary: '{{fields.title}} - {{fields.url}}',
-      fields: [
-        { label: 'Title', name: 'title',  widget: 'string' },
-        { label: 'URL', name: 'url',  widget: 'string' }
-      ]
+      name: "info",
+      label: "Info",
+      widget: "string"
+    },
+    {
+      name: "file",
+      label: "File", 
+      widget: "file"
+    },
+    {
+      name: "image",
+      label: "Image", 
+      widget: "image",
+      default: "/assets/media/no_image-file.png",
+      media_library: { config: { multiple: false } },
+      media_folder: "/media/files/"
     }
   ],
   // Regex pattern used to search for instances of this block in the markdown document.
@@ -32,7 +40,7 @@ CMS.registerEditorComponent({
   //
   // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
   // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-  pattern: /{% links { "title": "(.*)", "items": (.*) } %}/,
+  pattern: /{% file { "title": "(.*)", "info": "(.*)", "file": "(.*)", "image": "(.*)" } %}/,
   // Given a RegExp Match object
   // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
   // return an object with one property for each field defined in `fields`.
@@ -40,9 +48,11 @@ CMS.registerEditorComponent({
   // This is used to populate the custom widget in the markdown editor in the CMS.
   fromBlock: function(match) {
     const title = match[1];
-    const items = JSON.parse(match[2]);
+    const info = match[2];
+    const file = match[3];
+    const image = match[4];
     
-    return { title, items };
+    return { title, info, file, image };
   },
   // Given an object with one property for each field defined in `fields`,
   // return the string you wish to be inserted into your markdown.
@@ -50,39 +60,33 @@ CMS.registerEditorComponent({
   // This is used to serialize the data from the custom widget to the
   // markdown document
   toBlock: function(data) {
-    const items = data.items || [];
-
     return (
-      `{% links { "title": "${data.title}", "items": ${JSON.stringify(items)} } %}`
+      `{% file { "title": "${data.title}", "info": "${data.info}", "file": "${data.file}", "image": "${data.image}" } %}`
     );
   },
   // Preview output for this component. Can either be a string or a React component
   // (component gives better render performance)
   toPreview: function(data) {
-    let items = data.items.map(item => {
-      return `
-        <li>
-          <a href="${item.url}" class="link link--extern">
-            <span class="link__icon link__icon--left">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon-link " alt="A link icon">
-                <path fill="#fd4022" fill-rule="evenodd" d="M8.2 5.2c.3-.3.7-.5 1.2-.5s.9.2 1.2.5l6.2 6.2c.4-1.3.1-2.4-.9-3.4l-4-4c-.7-.7-1.5-1-2.5-1S7.6 3.3 7 4l-.9.9C5.4 5.6 5 6.5 5 7.4s.4 1.8 1.1 2.4l4.1 4.1c.9.9 2 1.2 3.3.9L7.2 8.6c-.3-.3-.5-.7-.5-1.2s.2-.9.5-1.2l1-1zM12.1 20c.7.7 1.5 1 2.5 1s1.8-.3 2.5-1l.9-.9c.7-.7 1.1-1.5 1.1-2.5s-.4-1.8-1.1-2.4L13.9 10c-.9-.9-2-1.2-3.3-.9l6.2 6.2c.3.3.5.7.5 1.2s-.2.9-.5 1.2l-.9.9c-.3.3-.7.5-1.2.5s-.9-.2-1.2-.5l-6.2-6.2c-.4 1.3-.1 2.4.9 3.4l3.9 4.2z" clip-rule="evenodd"></path>
+    return  `
+      <section class="resource-box">
+        <div class="resource-box__img">
+          <img src="${data.image}"/>
+        </div>
+        <div class="resource-box__text">
+          <h3>${data.title}</h3>
+          <h4>${data.info}</h4>
+        </div>
+        <div class="resource-box__cta">
+          <a href="${data.file}" target="_blank" class="btn btn--negatiu">
+            <span class="btn__icon btn__icon--left">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon-download">
+                <path fill="#ffffff" fill-rule="evenodd" d="M6 15.5v3h12v-3h2v4l-.9 1H5l-1-.9v-4.1h2zM13.4 4v10.1l2.9-3.1 1.2 1.2L13 17h-1l-4.5-4.8L8.7 11l2.9 3.1V4h1.8z"/>
               </svg>
             </span>
-            
-            <span class="link__label">
-              ${item.title}
-            </span>
-          </a>
-        </li>
-      `;
-    });
 
-    return  `
-      <section class="pj-links">
-        <h3>${data.title}</h3>
-        <ul>
-          ${items.join("")}
-        </ul>
+            <span class="btn__label">Download</span>
+          </a>
+        </div>
       </section>
      `
   }

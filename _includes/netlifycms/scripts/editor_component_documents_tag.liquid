@@ -50,7 +50,6 @@ CMS.registerEditorComponent({
   // This is used to serialize the data from the custom widget to the
   // markdown document
   toBlock: function(data) {
-    console.dir(data)
     const items = data.items || [];
 
     return (
@@ -82,7 +81,7 @@ CMS.registerEditorComponent({
       <section class="pj-links">
         <h3>${data.title}</h3>
         <ul>
-          ${items.join()}
+          ${items.join("")}
         </ul>
       </section>
      `
