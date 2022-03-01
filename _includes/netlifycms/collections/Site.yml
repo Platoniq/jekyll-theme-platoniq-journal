@@ -8,6 +8,7 @@ backend:
   name: {{ page.backend.name | default: "git-gateway" }}
   repo: {{ page.backend.repo | default: "Platoniq/journal-content" }}
   branch: {{ page.backend.branch | default: "main" }}
+  squash_merges: {{ page.backend.squash_merges | default: true }}
 {% raw %}
 locale: es
 
