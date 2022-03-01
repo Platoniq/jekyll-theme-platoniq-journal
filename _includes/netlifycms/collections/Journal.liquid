@@ -12,16 +12,50 @@
     preview: true
   # identifier_field: uid
   fields:
-    - { label: "Layout", name: "layout", widget: "hidden", default: "journal", i18n: duplicate }
-    - { label: "Journal volume number", name: "journal-num", widget: "number", default: 0, value_type: "int", min: 1, max: 101, step: 1, i18n: duplicate }
-    - { label: "Title", name: "title", widget: "string", i18n: true }
-    - label: "Description"
-      hint: "Mainly for SEO pourposes"
-      name: "description"
-      widget: "string"
+    - label: published
+      name: published
+      widget: boolean
+      default: false
+      i18n: duplicate
+
+    - label: Slug
+      name: uid
+      hint: "Identificador unico, compartido entre los idiomas, parte final de la url al recurso"
+      widget: string
+      i18n: duplicate
+
+    - label: Layout
+      name: layout
+      widget: hidden
+      default: journal
+      i18n: duplicate
+
+    - label: "Journal volume number"
+      name: journal-num
+      widget: number
+      default: 0
+      value_type: int
+      min: 1
+      max: 101
+      step: 1
+      i18n: duplicate
+
+    - label: Title
+      name: title
+      widget: string
       i18n: translate
-    - { label: "Publish Date", name: "date", widget: "date", i18n: duplicate }
-    - { label: "Slug", name: "uid", widget: "string", i18n: duplicate }
+
+    - label: Description
+      hint: "Mainly for SEO pourposes"
+      name: description
+      widget: string
+      i18n: translate
+
+    - label: "Publish Date"
+      name: date
+      widget: date
+      i18n: duplicate
+
     - label: "Cover image"
       name: "cover"
       widget: "object"
@@ -51,4 +85,25 @@
           }
         - { label: "Image alt text", name: "alt", widget: "string", i18n: translate }
         - { label: "Image Credits", name: "credits", widget: "string", i18n: translate }
+
+    - label: "Share image"
+      name: image
+      hint: "Viewed when element is shared in social media, as a preview of the url."
+      widget: object
+      i18n: true
+      required: false
+      fields:
+        - label: Image
+          hint: "Images for summary cards should be 144px × 144px and not more than 1MB in file size."
+          name: path
+          widget: image
+          default: "/assets/media/no_image-social_media.png"
+          media_library: { config: { multiple: false } }
+          media_folder: "/media/volumes/social"
+          i18n: duplicate
+
+        - label: "Image alt text"
+          name: alt
+          widget: string
+          i18n: translate
 {% endraw %}
