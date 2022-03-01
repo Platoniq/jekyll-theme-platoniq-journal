@@ -16,6 +16,7 @@ CMS.registerEditorComponent({
           name: "path",
           label: "Image",
           widget: "image",
+          default: "/assets/media/no_image-gallery.png",
           media_library: {
             media_folder: "/media/gallery"
           }
@@ -23,6 +24,11 @@ CMS.registerEditorComponent({
         {
           name: "alt",
           label: "Image description",
+          widget: "string"
+        },
+        {
+          name: "credits",
+          label: "Image credits",
           widget: "string"
         }
       ]
