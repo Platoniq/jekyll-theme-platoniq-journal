@@ -1,4 +1,5 @@
 #!/usr/bin/env/ruby
+# frozen_string_literal: true
 
 #
 # This ruby script is to create the front matter files which contain
@@ -24,9 +25,9 @@ volume_number = ARGV[0]
 source_directory = ARGV[1]
 target_directory = ARGV[2]
 
-puts "JOURNAL VOLUME: " + volume_number
-puts "SOURCE: " + source_directory
-puts "TARGET: " + target_directory
+puts "JOURNAL VOLUME: #{volume_number}"
+puts "SOURCE: #{source_directory}"
+puts "TARGET: #{target_directory}"
 
 Dir.foreach(source_directory) do |filename|
   next if (filename == ".") || (filename == "..")
@@ -45,5 +46,5 @@ Dir.foreach(source_directory) do |filename|
     ---
   CONTENT
 
-  File.write(File.join(target_directory, uid + ".md"), content)
+  File.write(File.join(target_directory, "#{uid}.md"), content)
 end

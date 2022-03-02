@@ -5,6 +5,7 @@ inherit_gem:
 AllCops:
   Exclude:
     - vendor/bundle/**/*
+    - scripts/**/*
 
 Style/HashSyntax:
   EnforcedStyle: ruby19
