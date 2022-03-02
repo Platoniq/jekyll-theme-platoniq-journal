@@ -1,0 +1,10 @@
+{% assign t_sticker_emoji = site.data.i18n[page.locale].global.sticker_emoji %}
+{% assign cms_name = "${cmsName}" %}
+{% assign cms_path = "${cmsPath}" %}
+{% assign cms_emoji = "${cmsEmoji}" %}
+
+<div class="pj-sticker--preview">
+  <h1>{{cms_name}}</h1>
+  <h2>{{t_sticker_emoji}}: {{cms_emoji}}</h2>
+  <img class="pj-sticker" src="{{ cms_path }}" alt="{{ cms_name }}">
+</div>

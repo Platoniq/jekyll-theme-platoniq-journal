@@ -1,0 +1,31 @@
+{% raw %}
+- name: "stickers"
+  label: "Stickers"
+  label_singular: "Sticker"
+  folder: "_stickers/"
+  create: false
+  delete: false
+  editor:
+    preview: true
+  fields:
+    - label: Journal Volume
+      name: journal-num
+      widget: relation
+      collection: journals
+      display_fields:
+        - title
+      search_fields:
+        - title
+      value_field: uid
+      i18n: duplicate
+    - label: Path
+      name: path
+      widget: string
+    - label: Name
+      name: name
+      widget: string
+      i18n: translate
+    - label: Emoji
+      name: emoji
+      widget: string
+{% endraw %}
