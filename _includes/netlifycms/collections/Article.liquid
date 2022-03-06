@@ -125,6 +125,39 @@
         search_fields: [title, uid]
         value_field: "uid"
         i18n: duplicate
+    - label: "Stickers"
+      name: "stickers"
+      widget: "object"
+      collapsed: true
+      i18n: true
+      fields:
+        - label: "Sticker Layout"
+          name: layout
+          widget: select
+          options:
+            - label: One
+              value: layout-one
+            - label: Two
+              value: layout-two
+          i18n: duplicate
+        - label: Sticker One
+          name: sticker_one
+          widget: relation
+          collection: stickers
+          display_fields: [emoji]
+          search_fields: [name]
+          value_field: path
+          i18n: duplicate
+          required: false
+        - label: Sticker Two
+          name: sticker_two
+          widget: relation
+          collection: stickers
+          display_fields: [emoji]
+          search_fields: [name]
+          value_field: path
+          i18n: duplicate
+          required: false
     - label: "Call to action"
       name: "call_to_action"
       widget: "relation"

@@ -1,14 +1,59 @@
-.pj-sticker {
-  max-height: 20rem;
-  width: auto;
-  object-fit: contain;
+$sticker-width-desktop: 20rem;
+$sticker-width-mobile: 5rem;
 
-  &--preview {
-    display: flex;
-    flex-direction: column;
-    max-width: 20rem;
-    gap: 1rem;
-    margin: auto;
-    margin-top: 3rem;
+@mixin sticker-layout($first-x, $first-y, $last-x, $last-y) {
+  .pj-sticker {
+    &-one {
+      left: $first-x;
+      top: $first-y;
+    }
+    &-two {
+      right: $last-x;
+      top: $last-y;
+    }
+  }
+}
+
+.pj-sticker {
+  position: fixed;
+  z-index: 2;
+
+  width: $sticker-width-mobile;
+
+  @media (min-width: $bp-tablet) {
+    width: $sticker-width-desktop;
+  }
+}
+
+// Layout: One
+.pj-stickers--layout-one {
+  @include sticker-layout(
+    2rem,
+    40vh,
+    -2rem,
+    80vh);
+    
+  @media (min-width: $bp-tablet) {
+    @include sticker-layout(
+      calc((100vw - #{$container-max-width}) / 2 - #{$sticker-width-desktop}),
+      25vh,
+      calc((100vw - #{$container-max-width}) / 2),
+      50vh);
+  }
+}
+
+// Preview for CMS
+
+.pj-sticker--preview {
+  display: flex;
+  flex-direction: column;
+  max-width: $sticker-width-desktop * 4;
+  gap: 1rem;
+  margin: auto;
+  margin-top: 3rem;
+
+  .pj-sticker {
+    width: $sticker-width-desktop * 2;
+    object-fit: contain;
   }
 }
