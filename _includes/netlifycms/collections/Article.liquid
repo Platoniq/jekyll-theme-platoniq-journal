@@ -131,13 +131,16 @@
       collapsed: true
       i18n: true
       fields:
-        - label: "Sticker Layout"
+        - label: "Stickers Layout"
           name: layout
           widget: select
+          default: layout-none
           options:
-            - label: One
+            - label: No stickers
+              value: layout-none
+            - label: Top left, bottom right
               value: layout-one
-            - label: Two
+            - label: Bottom left, top right
               value: layout-two
           i18n: duplicate
         - label: Sticker One
@@ -149,6 +152,18 @@
           value_field: path
           i18n: duplicate
           required: false
+        - label: "Sticker One: Animation"
+          name: sticker_one_animation
+          widget: select
+          default: animation-none
+          options: &sticker-animations
+            - label: No animation
+              value: animation-none
+            - label: Glitch
+              value: animation-glitch
+            - label: Breathe
+              value: animation-breathe
+          i18n: duplicate
         - label: Sticker Two
           name: sticker_two
           widget: relation
@@ -158,6 +173,12 @@
           value_field: path
           i18n: duplicate
           required: false
+        - label: "Sticker Two: Animation"
+          name: sticker_two_animation
+          widget: select
+          default: animation-none
+          options: *sticker-animations
+          i18n: duplicate
     - label: "Call to action"
       name: "call_to_action"
       widget: "relation"
