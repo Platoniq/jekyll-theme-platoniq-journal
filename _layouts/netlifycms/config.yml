@@ -8,6 +8,7 @@ collections:
   - Author.liquid
   - CallToAction.liquid
   - Sticker.liquid
+  - StickerPack.liquid
 ---
 {% assign path = layout.dir_path | append: "Site.yml" %}
 

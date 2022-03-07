@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+{% include article/assigns.liquid %}
+
+{% include default/header.liquid %}
+
+{% include journal/nav_categories.liquid %}
+
+<section class="page">
+  <article class="container-fluid">
+    <div class="container grid article__content">
+      <div class="nav-share">
+        {% include article/share.liquid %}
+      </div>
+
+      {{ content }}
+    </div>
+  </article>
+</section>
+
+{% include article/pagination.liquid %}
+
+{% include default/footer.liquid %}

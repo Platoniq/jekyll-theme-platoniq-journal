@@ -1,0 +1,48 @@
+{% raw %}
+- name: "sticker_pack"
+  label: "Sticker Packs"
+  label_singular: "Sticker Pack"
+  folder: "_sticker_packs/"
+  create: true
+  delete: true
+  i18n:
+    structure: multiple_folders
+    locales: *locales
+  # editor:
+  #   preview: true
+  # identifier_field: uid
+  fields:
+    - { label: "Layout", name: "layout", widget: "hidden", default: "sticker_pack", i18n: duplicate }
+    - label: Journal Volume
+      name: volume-uid
+      widget: relation
+      collection: journals
+      display_fields:
+        - title
+      search_fields:
+        - title
+      value_field: uid
+      i18n: duplicate
+    - label: Title
+      name: title
+      widget: string
+      i18n: translate
+    - label: Description
+      hint: Mainly for SEO pourposes
+      name: description
+      widget: string
+      i18n: translate
+    - label: Author
+      name: author
+      widget: string
+      i18n: duplicate
+    - label: License
+      name: license
+      widget: text
+      i18n: translate
+    - label: Sticer Page Body
+      name: body
+      widget: markdown
+      editor_components: ["image", "gallery", "quote-tag", "file-tag", "documents-tag", "links-tag", "numbers-tag", "collapsible-note", "videos"]
+      i18n: translate
+{% endraw %}
