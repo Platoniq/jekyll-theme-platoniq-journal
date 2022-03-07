@@ -8,18 +8,55 @@ layout: default
 
 {% include journal/nav_categories.liquid %}
 
-<section class="page">
+{% capture t_authored_by %}
+  {{ site.data.i18n[page.locale].global.authored_by | append: " " }}
+{% endcapture %}
+
+<section class="page sticker-pack">
   <article class="container-fluid">
     <div class="container grid article__content">
+      <header class="multiple-header">
+        <div class="multiple-header__text">
+          <h1>
+            {{ page.title }}
+          </h1>
+      
+          <div class="multiple-header__dades">
+            <h5 class="multiple-header__dades__autor">
+              {{ page.author | prepend: t_authored_by }}
+            </h5>
+          </div>
+        </div>
+      
+        <div class="multiple-header__img">
+          <img src="{{ page.cover.path | relative_url }}" alt="{{ article.cover.alt }}">
+        </div>
+      </header>
+
       <div class="nav-share">
         {% include article/share.liquid %}
       </div>
 
       {{ content }}
     </div>
+
+    
+    <div class="container grid">
+      <hr/>
+      <h2>{{ site.data.i18n[page.locale].global.license }}</h2>
+
+      <p>
+        {{ page.license }}
+      </p>
+      
+      {% assign title = page.title %}
+      {% assign image = page.cover.thumbnail %}
+      {% assign file = page.file.path %}
+      {% assign info = page.file.info %}
+      
+      {% include plugins/file.liquid %}
+    </div>
   </article>
 </section>
-
-{% include article/pagination.liquid %}
 
 {% include default/footer.liquid %}

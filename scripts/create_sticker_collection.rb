@@ -12,10 +12,10 @@
 # ```
 #
 # ---
-# journal-num: journal-0
+# volume-uid: journal-0
 # uid: journal-0-thumbs_up
 # path: /assets/media/stickers/journal-0/thumbs_up.png
-# emoji: 🏳️
+# emoji: 🏳️ (Check https://unicode.org/emoji/charts/full-emoji-list.html)
 # name: Fill in with sticker description
 # ---
 #
@@ -33,14 +33,14 @@ Dir.foreach(source_directory) do |filename|
   next if (filename == ".") || (filename == "..")
 
   basename = File.basename(filename, ".png")
-  journal_uid = "journal-#{volume_number}"
-  uid = "#{journal_uid}-#{basename}"
+  volume_uid = "journal-#{volume_number}"
+  uid = "#{volume_uid}-#{basename}"
 
   content = <<~CONTENT
     ---
-    journal-num: #{journal_uid}
+    volume-uid: #{volume_uid}
     uid: #{uid}
-    path: /assets/media/stickers/#{journal_uid}/#{filename}
+    path: /assets/media/stickers/#{volume_uid}/#{filename}
     emoji: 🏳️
     name: Fill in with sticker description
     ---

@@ -15,14 +15,38 @@
     - { label: "Layout", name: "layout", widget: "hidden", default: "sticker_pack", i18n: duplicate }
     - label: Journal Volume
       name: volume-uid
-      widget: relation
-      collection: journals
-      display_fields:
-        - title
-      search_fields:
-        - title
-      value_field: uid
+      widget: hidden
       i18n: duplicate
+    - label: "Main image"
+      name: "cover"
+      widget: "object"
+      i18n: true
+      fields:
+        - {
+            label: "Hero Image",
+            hint: Big cover image,
+            name: "path",
+            widget: "image",
+            choose_url: false,
+            default: "/assets/media/no_image-hero.png",
+            media_library: { config: { multiple: false } },
+            media_folder: "/media/sticker_packs/heroes/",
+            i18n: duplicate
+          }
+        - {
+            label: "Thumbnail Image",
+            hint: Small image used in lists,
+            name: "thumbnail",
+            widget: "image",
+            choose_url: false,
+            default: "/assets/media/no_image-thumbnail.png",
+            media_library: { config: { multiple: false } },
+            media_folder: "/media/sticker_packs/thumbnails/",
+            i18n: duplicate
+          }
+        - { label: "Image alt text", name: "alt", widget: "string", i18n: translate }
+        - { label: "Image Credits", name: "credits", widget: "string", i18n: translate }
+        - { label: "Image Caption", name: "caption", widget: "string", i18n: translate }
     - label: Title
       name: title
       widget: string
@@ -45,4 +69,10 @@
       widget: markdown
       editor_components: ["image", "gallery", "quote-tag", "file-tag", "documents-tag", "links-tag", "numbers-tag", "collapsible-note", "videos"]
       i18n: translate
+    - label: "Zip file"
+      name: "file"
+      widget: "object"
+      fields:
+        - { label: "Path", name: "path", widget: "hidden" }
+        - { label: "Info", name: "info", widget: "hidden" }
 {% endraw %}

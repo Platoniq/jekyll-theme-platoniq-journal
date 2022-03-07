@@ -163,7 +163,7 @@
     }
   }
 
-  p, ul, ol {
+  p, ul, ol, hr {
     font-family: $tipo--secundary;
     font-size: 18px;
     font-weight: $reg--secundary;
@@ -175,6 +175,11 @@
     @media (min-width : $bp-tablet) {
       font-size: 19px;
     }
+  }
+
+  hr {
+    margin-top: .75em;
+    margin-bottom: .75em;
   }
 
   .article__content ul,
