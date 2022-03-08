@@ -22,7 +22,7 @@ $step: random($steps);
 }
 @keyframes breathe-effect {
   0% {
-    transform: scale(.9);
+    transform: scale(0.9);
   }
   100% {
     transform: scale(1);
@@ -121,9 +121,11 @@ $step: random($steps);
   gap: 1rem;
   margin: auto;
   margin-top: 3rem;
+  align-items: center;
 
   .pj-sticker {
-    width: $sticker-width-desktop * 2;
+    position: relative;
+    width: $sticker-width-desktop;
     object-fit: contain;
   }
 }

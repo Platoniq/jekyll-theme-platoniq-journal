@@ -3,8 +3,8 @@
   label: "Sticker Packs"
   label_singular: "Sticker Pack"
   folder: "_sticker_packs/"
-  create: true
-  delete: true
+  create: false
+  delete: false
   i18n:
     structure: multiple_folders
     locales: *locales
@@ -17,6 +17,28 @@
       name: volume-uid
       widget: hidden
       i18n: duplicate
+    - label: Title
+      name: title
+      widget: string
+      i18n: translate
+    - label: Description
+      hint: Mainly for SEO pourposes
+      name: description
+      widget: string
+      i18n: translate
+    - label: Author
+      name: author
+      widget: string
+      i18n: duplicate
+    - label: License
+      name: license
+      widget: text
+      i18n: translate
+    - label: Sticer Page Body
+      name: body
+      widget: markdown
+      editor_components: ["image", "gallery", "quote-tag", "file-tag", "documents-tag", "links-tag", "numbers-tag", "collapsible-note", "videos"]
+      i18n: translate
     - label: "Main image"
       name: "cover"
       widget: "object"
@@ -47,32 +69,13 @@
         - { label: "Image alt text", name: "alt", widget: "string", i18n: translate }
         - { label: "Image Credits", name: "credits", widget: "string", i18n: translate }
         - { label: "Image Caption", name: "caption", widget: "string", i18n: translate }
-    - label: Title
-      name: title
-      widget: string
-      i18n: translate
-    - label: Description
-      hint: Mainly for SEO pourposes
-      name: description
-      widget: string
-      i18n: translate
-    - label: Author
-      name: author
-      widget: string
-      i18n: duplicate
-    - label: License
-      name: license
-      widget: text
-      i18n: translate
-    - label: Sticer Page Body
-      name: body
-      widget: markdown
-      editor_components: ["image", "gallery", "quote-tag", "file-tag", "documents-tag", "links-tag", "numbers-tag", "collapsible-note", "videos"]
-      i18n: translate
     - label: "Zip file"
       name: "file"
       widget: "object"
+      collapsed: true
+      hint: Configured by developers
+      i18n: true
       fields:
-        - { label: "Path", name: "path", widget: "hidden" }
-        - { label: "Info", name: "info", widget: "hidden" }
+        - { label: "Path", name: "path", widget: "hidden", i18n: duplicate }
+        - { label: "Info", name: "info", widget: "hidden", i18n: duplicate }
 {% endraw %}
