@@ -17,7 +17,7 @@
 {% assign terms_page = site.pages | where: "uid", "terms" | where: "locale", page.locale | first %}
 {% assign privacy_page = site.pages | where: "uid", "privacy" | where: "locale", page.locale | first %}
 
-{% assign sticker_pack_page = site.sticker_packs | where: "volume-uid", page.journal-uid | where: "locale", page.locale | first %}
+{% assign sticker_pack_page = site.sticker_packs | where: "volume-uid", current_journal.uid | where: "locale", page.locale | first %}
 
 {% assign t_close = site.data.i18n[page.locale].global.close %}
 {% assign t_journals_menu = site.data.i18n[page.locale].global.journals_menu %}
