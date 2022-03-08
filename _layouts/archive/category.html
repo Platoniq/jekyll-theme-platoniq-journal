@@ -2,7 +2,7 @@
 layout: default
 ---
 {% assign articles = site.articles
-  | where: "journal-uid", page.journal-uid
+  | where: "volume-uid", page.volume-uid
   | where: "category", page.category
   | where: "locale", page.locale
   | sort: "article-order", "last" %}

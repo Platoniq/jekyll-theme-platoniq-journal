@@ -1,5 +1,5 @@
 {% assign articles_all = site.articles
-    | where: "journal-uid", page.uid
+    | where: "volume-uid", page.uid
     | where: "locale", page.locale
     | sort: "article-order", "last" %}
 {% assign articles_blueprints = articles_all | where: "category", "blueprints" %}
