@@ -111,19 +111,20 @@
       widget: "markdown"
       editor_components: ["image", "gallery", "quote-tag", "file-tag", "documents-tag", "links-tag", "numbers-tag", "collapsible-note", "videos"]
       i18n: true
+
     - label: "Related articles"
-      name: "related_articles_uid"
+      name: related_articles_uid
       widget: "list"
       required: false
       i18n: false # todo: duplicate to other locales
       field:
         label: "Related article"
-        name: "related_article_uid"
-        widget: "relation"
-        collection: "articles"
+        name: related_article_uid
+        widget: relation
+        collection: articles
         display_fields: [title]
         search_fields: [title, uid]
-        value_field: "uid"
+        value_field: uid
         i18n: duplicate
     - label: "Stickers"
       name: "stickers"
@@ -180,11 +181,31 @@
           options: *sticker-animations
           i18n: duplicate
     - label: "Call to action"
-      name: "call_to_action"
-      widget: "relation"
-      collection: "call_to_actions"
+      name: call_to_action
+      widget: relation
+      collection: call_to_actions
       display_fields: [uid]
       search_fields: [uid]
-      value_field: "uid"
+      value_field: uid
       i18n: duplicate
+    - label: "Share image"
+      name: image
+      hint: "Viewed when element is shared in social media, as a preview of the url."
+      widget: object
+      i18n: true
+      required: false
+      fields:
+        - label: Image
+          hint: "Images for summary cards should be 144px × 144px and not more than 1MB in file size."
+          name: path
+          widget: image
+          default: "/assets/media/no_image-social_media.png"
+          media_library: { config: { multiple: false } }
+          media_folder: "/media/volumes/social"
+          i18n: duplicate
+
+        - label: "Image alt text"
+          name: alt
+          widget: string
+          i18n: translate
 {% endraw %}
