@@ -1,0 +1,11 @@
+{% assign stickers = page.stickers %}
+
+{% capture sticker_params %}
+  {
+    "layout": "{{ stickers.layout | default 'layout-one' }}",
+    "sticker_one": "{{stickers.sticker_one}}",
+    "sticker_two": "{{stickers.sticker_two}}"
+  }
+{% endcapture %}
+
+{% stickers {{sticker_params}} %}

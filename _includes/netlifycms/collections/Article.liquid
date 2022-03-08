@@ -126,7 +126,60 @@
         search_fields: [title, uid]
         value_field: uid
         i18n: duplicate
-
+    - label: "Stickers"
+      name: "stickers"
+      widget: "object"
+      collapsed: true
+      i18n: true
+      fields:
+        - label: "Stickers Layout"
+          name: layout
+          widget: select
+          default: layout-none
+          options:
+            - label: No stickers
+              value: layout-none
+            - label: Top left, bottom right
+              value: layout-one
+            - label: Bottom left, top right
+              value: layout-two
+          i18n: duplicate
+        - label: Sticker One
+          name: sticker_one
+          widget: relation
+          collection: stickers
+          display_fields: [emoji]
+          search_fields: [name]
+          value_field: path
+          i18n: duplicate
+          required: false
+        - label: "Sticker One: Animation"
+          name: sticker_one_animation
+          widget: select
+          default: animation-none
+          options: &sticker-animations
+            - label: No animation
+              value: animation-none
+            - label: Glitch
+              value: animation-glitch
+            - label: Breathe
+              value: animation-breathe
+          i18n: duplicate
+        - label: Sticker Two
+          name: sticker_two
+          widget: relation
+          collection: stickers
+          display_fields: [emoji]
+          search_fields: [name]
+          value_field: path
+          i18n: duplicate
+          required: false
+        - label: "Sticker Two: Animation"
+          name: sticker_two_animation
+          widget: select
+          default: animation-none
+          options: *sticker-animations
+          i18n: duplicate
     - label: "Call to action"
       name: call_to_action
       widget: relation
@@ -135,7 +188,6 @@
       search_fields: [uid]
       value_field: uid
       i18n: duplicate
-
     - label: "Share image"
       name: image
       hint: "Viewed when element is shared in social media, as a preview of the url."

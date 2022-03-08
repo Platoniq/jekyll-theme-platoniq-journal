@@ -8,9 +8,11 @@ home: Inicio # not used?
 journal_number: Volumen
 journals_menu: Menú de Journals
 know_more: Saber más
+license: Licencia
 locale_menu: Menú de idiomas
 locales:
   en: English
   es: Español
 share: "Compartir:"
 skip_to_content: Ir al contenido
+sticker_emoji: Emoji relacionado con el sticker
