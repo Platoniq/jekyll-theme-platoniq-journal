@@ -2,7 +2,7 @@
 layout: none
 dir_path: netlifycms/scripts/
 scripts:
-  - editor_preview_journal.js
+  - editor_preview_volume.js
   - editor_preview_sticker.js
   - editor_component_gallery.liquid
   - editor_component_quote_tag.liquid

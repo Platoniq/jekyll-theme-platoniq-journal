@@ -1,8 +1,8 @@
 {% raw %}
-- name: "journals"
-  label: "Journals"
-  label_singular: "Journal"
-  folder: "_journals/"
+- name: "volumes"
+  label: "Volumes"
+  label_singular: "Volume"
+  folder: "_volumes/"
   i18n:
     structure: multiple_folders
     locales: *locales
@@ -31,7 +31,7 @@
       i18n: duplicate
 
     - label: "Journal volume number"
-      name: journal-num
+      name: volume-number
       widget: number
       default: 0
       value_type: int

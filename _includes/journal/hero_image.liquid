@@ -1,12 +1,12 @@
 {% assign t_skip_to_content = site.data.i18n[page.locale].global.skip_to_content %}
 {% assign cms_title = "${cmsTitle}" %}
-{% assign cms_journal_num = "${cmsJournalNum}" %}
+{% assign cms_volume_number = "${cmsVolumeNumber}" %}
 {% assign cms_cover_image = "${cmsCoverImage}" %}
 
 
 <section class="heroimage container-fluid grid">
   <div class="heroimage__text">
-    <h4>#{{ page.journal-num | default: cms_journal_num }}</h4>
+    <h4>#{{ page.volume-number | default: cms_volume_number }}</h4>
     <h1>{{ page.title | default: cms_title }}</h1>
   </div>
 

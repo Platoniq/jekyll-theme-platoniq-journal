@@ -2,7 +2,7 @@
 layout: none
 dir_path: netlifycms/collections/
 collections:
-  - Journal.liquid
+  - Volume.liquid
   - Article.liquid
   - Page.liquid
   - Author.liquid

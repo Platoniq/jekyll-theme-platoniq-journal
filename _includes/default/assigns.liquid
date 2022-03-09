@@ -1,10 +1,10 @@
 
-{% assign journals = site.journals
+{% assign volumes = site.volumes
     | where: "locale", page.locale
-    | sort: "journal-num", "last" %}
-{% assign current_journal = journals | find: "uid", page.volume-uid %}
-{% if page.collection == "journals" %}
-  {% assign current_journal = journals | find: "uid", page.uid %}
+    | sort: "volume-number", "last" %}
+{% assign current_volume = volumes | find: "uid", page.uid %}
+{% if page.collection == "volumes" %}
+  {% assign current_volume = volumes | find: "uid", page.uid %}
 {% endif %}
 
 {% assign page_translations = site.pages | where: "uid", page.uid %}
@@ -17,11 +17,11 @@
 {% assign terms_page = site.pages | where: "uid", "terms" | where: "locale", page.locale | first %}
 {% assign privacy_page = site.pages | where: "uid", "privacy" | where: "locale", page.locale | first %}
 
-{% assign sticker_pack_page = site.sticker_packs | where: "volume-uid", current_journal.uid | where: "locale", page.locale | first %}
+{% assign sticker_pack_page = site.sticker_packs | where: "volume-uid", current_volume.uid | where: "locale", page.locale | first %}
 
 {% assign t_close = site.data.i18n[page.locale].global.close %}
-{% assign t_journals_menu = site.data.i18n[page.locale].global.journals_menu %}
+{% assign t_volumes_menu = site.data.i18n[page.locale].global.volumes_menu %}
 {% assign t_locale_menu = site.data.i18n[page.locale].global.locale_menu %}
-{% assign t_journal_number = site.data.i18n[page.locale].global.journal_number %}
+{% assign t_volumes_number = site.data.i18n[page.locale].global.journal_number %}
 {% assign t_gallery_previous = site.data.i18n[page.locale].global.gallery_previous %}
 {% assign t_gallery_next = site.data.i18n[page.locale].global.gallery_next %}
