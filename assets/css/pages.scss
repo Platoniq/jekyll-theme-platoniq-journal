@@ -2,20 +2,6 @@
 ---
 @charset "utf-8";
 
-$gt-cinetype-bold_paths: (
-  "otf": "{{ "/assets/fonts/gt-cinetype-bold-webfont.otf" | relative_url }}",
-  "woff": "{{ "/assets/fonts/gt-cinetype-bold-webfont.woff" | relative_url }}",
-  "woff2": "{{ "/assets/fonts/gt-cinetype-bold-webfont.woff2" | relative_url }}"
-);
-@font-face {
-  font-family: 'gt_cinetypebold';
-  src: url( map-get($gt-cinetype-bold_paths, "otf") ) format('otf'),
-        url( map-get($gt-cinetype-bold_paths, "woff2") ) format('woff2'),
-       url( map-get($gt-cinetype-bold_paths, "woff") ) format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 // @import "jekyll-theme-platoniq-journal";
 
 @charset "utf-8";
@@ -30,16 +16,6 @@ $gt-cinetype-bold_paths: (
         "base/buttons",
         "base/links",
 
-        "partials/grid",
-        "partials/header",
-        "partials/share",
-        "partials/home",
-        "partials/page",
-        "partials/sections",
-        "partials/pagination",
-        "partials/footer",
+        "partials/all",
 
-        "plugins/tags/links",
-        "plugins/tags/file",
-        "plugins/tags/numbers",
-        "plugins/tags/quote";
+        "plugins/plugins";
