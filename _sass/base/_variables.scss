@@ -22,26 +22,40 @@ $grid-row-xl: 96px;
 $grid-row-xxl: 128px;
 
 // Paddings
-$padding: 20px;
-$padding-sm: 40px;
-$padding-md: 60px;
-$padding-lg: 60px;
-$padding-xl: 60px;
-$padding-xxl: 60px;
 
-// Intercolumnats
-$column-gap: 40px;
-$column-gap-sm: null !default;
-$column-gap-md: null !default;
-$column-gap-lg: null !default;
-$column-gap-xl: null !default;
-$column-gap-xxl: 80px !default;
+$padding: (
+  "default": 20px,
+  "sm": 40px,
+  "md": 60px,
+  "lg": 60px,
+  "xl": 60px,
+  "xxl": 60px,
+);
+
+// Column gaps
+
+$column-gap: (
+  "default": 40px,
+  "sm": null,
+  "md": null,
+  "lg": null,
+  "xl": null,
+  "xxl": 80px,
+);
+
+$column-gap-sm: map-get($column-gap, sm) !default;
+$column-gap-md: map-get($column-gap, md) !default;
+$column-gap-lg: map-get($column-gap, lg) !default;
+$column-gap-xl: map-get($column-gap, xl) !default;
+$column-gap-xxl: map-get($column-gap, xxl) !default;
 
 // Breakpoints
 $bp-mobile: 320px;
+$bp-phablet: 576px;
 $bp-tablet: 768px;
 $bp-desktop: 992px;
 $bp-desktop-xl: 1200px;
+$bp-desktop-xxl: 1520px;
 
 // Aliniar grid
 @mixin grid-align {

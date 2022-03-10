@@ -1,7 +1,6 @@
 // Grid
 
 .container {
-  // width        : calc(100vw - (#{$padding}*2));
   width: 100%;
   margin-right: auto !important;
   margin-left: auto !important;
@@ -55,198 +54,66 @@
 
 // Grid - Small
 
-@media (min-width: 576px) {
-  // .container {
-  //   @if $margin-sm==null {
-  //     width : calc(100vw - (#{$margin}*2));
-  //   } @else {
-  //     width : calc(100vw - (#{$margin-sm}*2));
-  //   }
-  // }
+@mixin grid-system($size) {
+  $padding-size: map-get($padding, $size);
+  $column-gap-size: map-get($column-gap, $size);
+
+  @if not $padding-size {
+    $padding-size: map-get($padding, default);
+  }
+
+  @if not $column-gap-size {
+    $column-gap-size: map-get($column-gap, default);
+  }
 
   .container-fluid {
     width: 100vw;
-    @if $padding-sm==null {
-      padding-right: #{$padding};
-      padding-left: #{$padding};
-    } @else {
-      padding-right: #{$padding-sm};
-      padding-left: #{$padding-sm};
-    }
+    padding-right: $padding-size;
+    padding-left: $padding-size;
   }
 
   .row {
-    @if $column-gap-sm==null {
-      margin-left: -#{$column-gap};
-    } @else {
-      margin-left: -#{$column-gap-sm};
-    }
+    margin-left: -$column-gap-size;
   }
+
   @for $i from 1 through $grid-columns {
     $a: (($grid-columns * $i) / $grid-columns)-1;
 
     .sm-cols-#{$i} {
-      // background-color : black;
-      //   border: 10px solid black;
-      @if $column-gap-sm==null {
-        width: calc((100% - (#{$grid-columns}*#{$column-gap})) /#{$grid-columns}*#{$i} + (#{$a}*#{$column-gap}));
-        margin-left: $column-gap;
-      } @else {
-        width: calc((100% - (#{$grid-columns}*#{$column-gap-sm})) /#{$grid-columns}*#{$i} + (#{$a}*#{$column-gap-sm}));
-        margin-left: $column-gap-sm;
-      }
+      width: calc(
+        (100% - (#{$grid-columns} * #{$column-gap-size})) / #{$grid-columns} * #{$i} + (#{$a} * #{$column-gap-size})
+      );
+      margin-left: $column-gap-size;
     }
   }
+}
+
+@media (min-width: $bp-phablet) {
+  @include grid-system(sm);
 }
 
 // Grid - Medium
-
-@media (min-width: 768px) {
-  // .container {
-  //   @if $margin-md==null {
-  //     width : calc(100vw - (#{$margin}*2));
-  //   } @else {
-  //     width : calc(100vw - (#{$margin-md}*2));
-  //   }
-  // }
-
-  .container-fluid {
-    width: 100vw;
-    @if $padding-md==null {
-      padding-right: #{$padding};
-      padding-left: #{$padding};
-    } @else {
-      padding-right: #{$padding-md};
-      padding-left: #{$padding-md};
-    }
-  }
-
-  .row {
-    @if $column-gap-md==null {
-      margin-left: -#{$column-gap};
-    } @else {
-      margin-left: -#{$column-gap-md};
-    }
-  }
-  @for $i from 1 through $grid-columns {
-    $a: (($grid-columns * $i) / $grid-columns)-1;
-
-    .md-cols-#{$i} {
-      // background-color : red;
-      //   border: 10px solid red;
-      @if $column-gap-md==null {
-        width: calc((100% - (#{$grid-columns}*#{$column-gap})) /#{$grid-columns}*#{$i} + (#{$a}*#{$column-gap}));
-        margin-left: $column-gap;
-      } @else {
-        width: calc((100% - (#{$grid-columns}*#{$column-gap-md})) /#{$grid-columns}*#{$i} + (#{$a}*#{$column-gap-md}));
-        margin-left: $column-gap-md;
-      }
-    }
-  }
+@media (min-width: $bp-tablet) {
+  @include grid-system(md);
 }
 
 // Grid - Large
-
-@media (min-width: 992px) {
-  // .container {
-  //   @if $margin-lg==null {
-  //     width : calc(100vw - (#{$margin}*2));
-  //   } @else {
-  //     width : calc(100vw - (#{$margin-lg}*2));
-  //   }
-  // }
-
-  .container-fluid {
-    width: 100vw;
-    @if $padding-lg==null {
-      padding-right: #{$padding};
-      padding-left: #{$padding};
-    } @else {
-      padding-right: #{$padding-lg};
-      padding-left: #{$padding-lg};
-    }
-  }
-
-  .row {
-    @if $column-gap-lg==null {
-      margin-left: -#{$column-gap};
-    } @else {
-      margin-left: -#{$column-gap-lg};
-    }
-  }
-  @for $i from 1 through $grid-columns {
-    $a: (($grid-columns * $i) / $grid-columns)-1;
-
-    .lg-cols-#{$i} {
-      // background-color : yellow;
-      // border: 10px solid yellow;
-      @if $column-gap-lg==null {
-        width: calc((100% - (#{$grid-columns}*#{$column-gap})) /#{$grid-columns}*#{$i} + (#{$a}*#{$column-gap}));
-        margin-left: $column-gap;
-      } @else {
-        width: calc((100% - (#{$grid-columns}*#{$column-gap-lg})) /#{$grid-columns}*#{$i} + (#{$a}*#{$column-gap-lg}));
-        margin-left: $column-gap-lg;
-      }
-    }
-  }
+@media (min-width: $bp-desktop) {
+  @include grid-system(lg);
 }
 
 // Grid - XLarge
-
-@media (min-width: 1200px) {
-  // .container {
-  //   @if $margin-xl==null {
-  //     width : calc(100vw - (#{$margin}*2));
-  //   } @else {
-  //     width : calc(100vw - (#{$margin-xl}*2));
-  //   }
-  // }
+@media (min-width: $bp-desktop-xl) {
+  @include grid-system(xl);
 
   .container-fluid {
     width: calc(100vw - (100vw - 100%));
-    @if $padding-xl==null {
-      padding-right: #{$padding};
-      padding-left: #{$padding};
-    } @else {
-      padding-right: #{$padding-xl};
-      padding-left: #{$padding-xl};
-    }
-  }
-
-  .row {
-    @if $column-gap-xl==null {
-      margin-left: -#{$column-gap};
-    } @else {
-      margin-left: -#{$column-gap-xl};
-    }
-  }
-  @for $i from 1 through $grid-columns {
-    $a: (($grid-columns * $i) / $grid-columns)-1;
-
-    .xl-cols-#{$i} {
-      // background-color : orange;
-      //   border: 10px solid orange;
-      @if $column-gap-xl==null {
-        width: calc((100% - (#{$grid-columns}*#{$column-gap})) /#{$grid-columns}*#{$i} + (#{$a}*#{$column-gap}));
-        margin-left: $column-gap;
-      } @else {
-        width: calc((100% - (#{$grid-columns}*#{$column-gap-xl})) /#{$grid-columns}*#{$i} + (#{$a}*#{$column-gap-xl}));
-        margin-left: $column-gap-xl;
-      }
-    }
   }
 }
 
 // Grid - XXLarge
-
-@media (min-width: 1520px) {
-  // .container {
-  //   @if $margin-xl==null {
-  //     width : calc(100vw - (#{$margin}*2));
-  //   } @else {
-  //     width : calc(100vw - (#{$margin-xxl}*2));
-  //   }
-  // }
+@media (min-width: $bp-desktop-xxl) {
+  @include grid-system(xxl);
 
   .container {
     max-width: $container-max-width;
@@ -254,41 +121,10 @@
 
   .container-fluid {
     width: calc(100vw - (100vw - 100%));
-    @if $padding-xxl==null {
-      padding-right: #{$padding};
-      padding-left: #{$padding};
-    } @else {
-      padding-right: #{$padding-xxl};
-      padding-left: #{$padding-xxl};
-    }
-  }
-
-  .row {
-    @if $column-gap-xxl==null {
-      margin-left: -#{$column-gap};
-    } @else {
-      margin-left: -#{$column-gap-xxl};
-    }
-  }
-  @for $i from 1 through $grid-columns {
-    $a: (($grid-columns * $i) / $grid-columns)-1;
-
-    .xxl-cols-#{$i} {
-      @if $column-gap-xxl==null {
-        width: calc((100% - (#{$grid-columns}*#{$column-gap})) /#{$grid-columns}*#{$i} + (#{$a}*#{$column-gap}));
-        margin-left: $column-gap;
-      } @else {
-        width: calc(
-          (100% - (#{$grid-columns}*#{$column-gap-xxl})) /#{$grid-columns}*#{$i} + (#{$a}*#{$column-gap-xxl})
-        );
-        margin-left: $column-gap-xxl;
-      }
-    }
   }
 }
 
 // Recaptcha de Google
-
 @media screen and (min-width: 319px) and (max-width: 320px) {
   .g-recaptcha {
     transform: scale(0.79);
