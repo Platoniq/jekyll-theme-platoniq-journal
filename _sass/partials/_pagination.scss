@@ -20,8 +20,7 @@
     }
 
     a {
-      font-family: $font-family-heading;
-      font-size: 21px;
+      @include font-heading(21px);
       color: $color-fg-primary;
       letter-spacing: -0.4px;
       @media (max-width: $bp-tablet) {

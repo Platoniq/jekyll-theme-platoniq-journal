@@ -28,9 +28,7 @@
   }
 
   h1 {
-    font-family: $font-family-heading;
-    font-weight: $font-weight-heading;
-    font-size: 56px;
+    @include font-heading(56px);
     color: $color-white;
     letter-spacing: -1px;
     @media (min-width: $bp-tablet) {
@@ -39,9 +37,7 @@
   }
 
   h4 {
-    font-family: $font-family-heading;
-    font-weight: $font-weight-heading;
-    font-size: 40px;
+    @include font-heading(40px);
     line-height: 122%;
     color: $color-white;
     letter-spacing: 0;
@@ -159,9 +155,7 @@
     }
     // Elements
     & h3 {
-      font-family: $font-family-heading;
-      font-weight: $font-weight-heading;
-      font-size: 28px;
+      @include font-heading(28px);
       color: $color-base;
       letter-spacing: -0.4px;
       line-height: 115%;
@@ -186,8 +180,7 @@
     & h4 {
       transform: rotate(-90deg);
       transform-origin: left top;
-      font-family: $font-family-body;
-      font-size: 14px;
+      @include font-body;
       color: $color-fg-primary;
       letter-spacing: 0.62px;
       text-transform: uppercase;
@@ -208,9 +201,7 @@
     }
 
     & h5 {
-      font-family: $font-family-body;
-      font-weight: $font-weight-regular;
-      font-size: 14px;
+      @include font-body;
       color: $color-base;
       letter-spacing: -0.7px;
       text-align: right;
@@ -252,8 +243,7 @@
 
     &--interviews {
       .entrevistat {
-        font-family: $font-family-heading;
-        font-size: 1em;
+        @include font-heading(1em);
         line-height: 115%;
         color: $color-fg-primary-negative;
         letter-spacing: -0.4px;
@@ -339,9 +329,7 @@
     }
     // Elements
     & h3 {
-      font-family: $font-family-heading;
-      font-weight: $font-weight-heading;
-      font-size: 28px;
+      @include font-heading(28px);
       color: $color-fg-primary-negative;
       letter-spacing: -0.4px;
       text-align: center;
@@ -362,8 +350,7 @@
     & h4 {
       transform: rotate(-90deg);
       transform-origin: left top;
-      font-family: $font-family-heading;
-      font-size: 14px;
+      @include font-heading(14px);
       color: $color-fg-primary-negative;
       letter-spacing: 0.62px;
       text-transform: uppercase;
@@ -391,9 +378,7 @@
     }
 
     & p {
-      font-family: $font-family-body;
-      font-weight: $font-weight-medium;
-      font-size: 22px;
+      @include font-body-medium(22px);
       line-height: 120%;
       color: $color-fg-primary-negative;
       letter-spacing: -1px;
@@ -493,9 +478,7 @@
     }
     // Elements
     & h3 {
-      font-family: $font-family-heading;
-      font-weight: $font-weight-heading;
-      font-size: 28px;
+      @include font-heading(28px);
       line-height: 110%;
       color: $color-white;
       letter-spacing: -0.4px;
@@ -517,8 +500,7 @@
     & h4 {
       transform: rotate(-90deg);
       transform-origin: left top;
-      font-family: $font-family-heading;
-      font-size: 14px;
+      @include font-heading(14px);
       color: $color-fg-primary;
       letter-spacing: 0.62px;
       text-transform: uppercase;

@@ -1,8 +1,7 @@
 figure.pj-quote {
+  @include font-heading(28px);
+
   position: relative;
-  font-family: $font-family-heading;
-  font-weight: $font-weight-heading;
-  font-size: 28px;
   color: $color-base;
   letter-spacing: -0.8px;
   line-height: 120%;
@@ -10,6 +9,7 @@ figure.pj-quote {
   margin-bottom: $grid-row-lg;
 
   grid-column: 7 / span 15;
+
   @media (min-width: $bp-tablet) {
     font-size: 48px;
     margin-top: $grid-row-xl;
@@ -22,10 +22,8 @@ figure.pj-quote {
   }
 
   figcaption.pj-quote--author {
-    font-family: $font-family-body;
-    font-weight: $font-weight-regular;
+    @include font-body;
     font-style: normal;
-    font-size: 14px;
     color: $color-base;
     letter-spacing: -0.7px;
     display: block;

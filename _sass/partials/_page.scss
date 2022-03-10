@@ -19,9 +19,7 @@
     grid-column: 4 / -3;
 
     h1 {
-      font-family: $font-family-heading;
-      font-size: 36px;
-      font-weight: $font-weight-heading;
+      @include font-heading(36px);
       color: $color-fg-primary;
       letter-spacing: -1px;
       line-height: 105%;
@@ -62,9 +60,7 @@
       }
 
       h5 {
-        font-family: $font-family-body;
-        font-size: 14px;
-        font-weight: $font-weight-regular;
+        @include font-body;
         color: $color-base;
         letter-spacing: -0.7px;
         margin-bottom: 1em;
@@ -104,9 +100,7 @@
     }
 
     h1 {
-      font-family: $font-family-heading;
-      font-size: 36px;
-      font-weight: $font-weight-heading;
+      @include font-heading(36px);
       color: $color-fg-primary;
       letter-spacing: -1px;
       line-height: 105%;
@@ -117,8 +111,7 @@
       }
 
       .entrevistat {
-        font-family: $font-family-heading;
-        font-size: 0.75em;
+        @include font-heading(0.75em);
         line-height: 115%;
         color: $color-fg-secondary;
         letter-spacing: -0.5px;
@@ -131,9 +124,7 @@
     }
 
     h4 {
-      font-family: $font-family-body;
-      font-size: 16px;
-      font-weight: $font-weight-medium;
+      @include font-body-medium(16px);
       color: $color-fg-primary;
       letter-spacing: 0.8px;
       text-transform: uppercase;
@@ -162,9 +153,7 @@
   ul,
   ol,
   hr {
-    font-family: $font-family-body;
-    font-size: 18px;
-    font-weight: $font-weight-regular;
+    @include font-body(18px);
     color: $color-base;
     letter-spacing: -0.5px;
     line-height: 160%;
@@ -198,9 +187,8 @@
 
   h2,
   .article__content p:first-of-type {
-    font-family: $font-family-body;
-    font-weight: $font-weight-regular;
-    font-size: 24px;
+    @include font-body(24px);
+
     color: $color-base;
     letter-spacing: -1px;
     line-height: 130%;
@@ -213,15 +201,15 @@
   }
 
   h3 {
-    font-family: $font-family-body;
-    font-size: 21px;
-    font-weight: $font-weight-body-bold;
+    @include font-body-bold(21px);
+
     color: $color-base;
     letter-spacing: -0.8px;
     line-height: 130%;
     margin-top: 0.75em;
 
     grid-column: 7 / span 13;
+
     @media (min-width: $bp-tablet) {
       font-size: 22px;
       margin-top: 1.5em;
@@ -246,12 +234,13 @@
     }
 
     figcaption {
-      font-family: $font-family-body;
-      font-size: 14px;
+      @include font-body;
+
       color: $color-base;
       letter-spacing: -0.7px;
       text-align: right;
       margin-top: 1em;
+
       @media (min-width: $bp-tablet) {
         font-size: 16px;
       }
@@ -259,14 +248,14 @@
   }
 
   .llistat-text {
-    font-family: $font-family-body;
-    font-size: 18px;
-    font-weight: $font-weight-regular;
+    @include font-body(18px);
+
     color: $color-base;
     letter-spacing: -0.5px;
     padding-left: 2em;
 
     grid-column: 7 / span 13;
+
     @media (min-width: $bp-tablet) {
       font-size: 19px;
     }
@@ -290,6 +279,14 @@
 
   .cta-box {
     padding: 16px;
+    margin-top: $grid-row-xl;
+    margin-bottom: $grid-row-lg;
+
+    grid-column: 5 / span 17;
+    background-color: $color-bg-primary;
+
+    @include grid-align;
+
     @media (min-width: $bp-tablet) {
       display: grid;
       grid-template-columns: minmax(149px, 149px) 1fr auto;
@@ -298,12 +295,6 @@
       margin-top: $grid-row-xl;
       margin-bottom: $grid-row-xl;
     }
-    margin-top: $grid-row-xl;
-    margin-bottom: $grid-row-lg;
-    @include grid-align;
-
-    grid-column: 5 / span 17;
-    background-color: $color-bg-primary;
 
     &__img {
       img {
@@ -317,31 +308,31 @@
     &__text {
       margin-top: 1em;
       margin-bottom: 1em;
+
       @media (min-width: $bp-tablet) {
         justify-self: start;
         margin: 0;
       }
 
       h3 {
-        font-family: $font-family-heading;
-        font-weight: $font-weight-heading;
-        font-size: 28px;
+        @include font-heading(28px);
+
         color: $color-fg-primary-negative;
         letter-spacing: -0.4px;
         margin-bottom: 0.25em;
         margin-top: 0;
+
         @media (min-width: $bp-tablet) {
           font-size: 32px;
         }
       }
 
       p {
-        font-family: $font-family-body;
-        font-weight: $font-weight-medium;
-        font-size: 18px;
+        @include font-body-medium(18px);
         color: $color-fg-primary-negative;
         letter-spacing: -0.5px;
         line-height: 120%;
+
         @media (min-width: $bp-tablet) {
           font-size: 19px;
         }

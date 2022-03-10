@@ -17,8 +17,7 @@
   &__label {
     text-decoration: none;
     text-transform: uppercase;
-    font-family: $font-family-body;
-    font-size: 1em;
+    @include font-body(1em);
     color: $color-base;
     letter-spacing: 0;
     position: relative;

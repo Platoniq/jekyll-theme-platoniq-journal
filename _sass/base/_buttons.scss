@@ -5,11 +5,9 @@
   padding: 18px 40px 17px;
   border: none;
   background-color: $color-bg-primary;
+  @include font-heading(1em);
   text-align: center;
   text-decoration: none;
-  font-family: $font-family-heading;
-  font-weight: $font-weight-heading;
-  font-size: 1em;
   flex-flow: row;
   justify-content: center;
   align-items: center;

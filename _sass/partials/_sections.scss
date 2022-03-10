@@ -9,9 +9,7 @@
     grid-column: 4 / -3;
 
     h1 {
-      font-family: $font-family-heading;
-      font-size: 36px;
-      font-weight: $font-weight-heading;
+      @include font-heading(36px);
       color: $color-fg-primary;
       letter-spacing: -1px;
       line-height: 105%;
@@ -67,9 +65,7 @@
     }
 
     & h3 {
-      font-family: $font-family-heading;
-      font-weight: $font-weight-heading;
-      font-size: 28px;
+      @include font-heading(28px);
       color: $color-base;
       letter-spacing: -0.2px;
       line-height: 115%;
@@ -79,8 +75,7 @@
       }
 
       .entrevistat {
-        font-family: $font-family-heading;
-        font-size: 1em;
+        @include font-heading(1em);
         line-height: 115%;
         color: $color-fg-primary-negative;
         letter-spacing: -0.4px;
@@ -105,9 +100,7 @@
     }
 
     & h5 {
-      font-family: $font-family-body;
-      font-weight: $font-weight-regular;
-      font-size: 15px;
+      @include font-body(15px);
       color: $color-base;
       letter-spacing: -0.7px;
       text-align: right;

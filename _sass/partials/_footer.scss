@@ -16,8 +16,7 @@
   }
 
   &__copyright {
-    font-family: $font-family-body;
-    font-size: 14px;
+    @include font-body;
     color: $color-base;
     letter-spacing: -0.4px;
     margin-bottom: 1em;
@@ -38,8 +37,7 @@
     }
 
     a {
-      font-family: $font-family-body;
-      font-size: 14px;
+      @include font-body;
       color: $color-base;
       letter-spacing: -0.4px;
       @media (min-width: $bp-tablet) {

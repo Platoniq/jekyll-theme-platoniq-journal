@@ -47,9 +47,8 @@
     dd {
       grid-row: 1;
 
-      font-family: $font-family-heading;
-      font-weight: $font-weight-heading;
-      font-size: 72px;
+      @include font-heading(72px);
+
       color: $color-fg-primary;
       letter-spacing: -6px;
       margin-bottom: 0.5em;
@@ -67,9 +66,7 @@
       grid-row: 2;
 
       display: block;
-      font-family: $font-family-heading;
-      font-weight: $font-weight-heading;
-      font-size: 20px;
+      @include font-heading(20px);
       color: $color-base;
       letter-spacing: -0.6px;
       display: flex;
