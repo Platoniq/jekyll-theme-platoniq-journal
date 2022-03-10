@@ -1,9 +1,9 @@
 <div class="header__logo">
-  {% if current_journal %}
-    <h4>{{ current_journal.journal-num | prepend: "#"}} - {{ current_journal.title }}</h4>
+  {% if current_volume %}
+    <h4>{{ current_volume.volume-number | prepend: "#"}} - {{ current_volume.title }}</h4>
   {% endif %}
 
-  <a href="{{ current_journal.url | default: "/" }}">
+  <a href="{{ current_volume.url | default: "/" }}">
     {% include svg/logo-header-wilder-journal.liquid %}
   </a>
 </div>

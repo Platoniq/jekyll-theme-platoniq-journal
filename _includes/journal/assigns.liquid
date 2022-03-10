@@ -2,6 +2,7 @@
     | where: "volume-uid", page.uid
     | where: "locale", page.locale
     | sort: "article-order", "last" %}
+
 {% assign articles_blueprints = articles_all | where: "category", "blueprints" %}
 {% assign articles_deep_dives = articles_all | where: "category", "deep-dives" %}
 {% assign articles_interviews = articles_all | where: "category", "interviews" %}
