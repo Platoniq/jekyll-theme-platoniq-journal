@@ -118,7 +118,8 @@
 
         &.select,
         &:hover {
-          background: transparent linear-gradient(90deg, $color-fg-primary-negative 50%, $color-fg-primary-negative 0)
+          background:
+            transparent linear-gradient(90deg, $color-fg-primary-negative 50%, $color-fg-primary-negative 0)
             no-repeat;
           background-size: 200% 2px;
           background-position: 100% 89%;

@@ -7,6 +7,8 @@
   "ignoreFiles": [
     "_sass/slick.scss",
     "_sass/jekyll-theme-platoniq-journal.scss",
-    "_sass/utils/_reset.scss"
+    "_sass/utils/_reset.scss",
+    "_sass/plugins/_plugins.scss",
+    "_sass/partials/_all.scss"
   ]
 }
