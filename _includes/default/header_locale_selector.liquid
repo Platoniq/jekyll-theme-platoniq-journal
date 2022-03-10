@@ -1,15 +1,15 @@
 <div class="header__locale-selector">
-  <button type="button" class="burguer">
-    <span class="burguer__label">
+  <button type="button" class="burger">
+    <span class="burger__label">
       {{ page.locale | upcase }}
     </span>
 
     {% include svg/icon-close.liquid
-        class="burguer__icon-close burguer__icon-close-right"
+        class="burger__icon-close burger__icon-close-right"
         alt=t_close %}
 
     {% include svg/icon-world.liquid
-        class="burguer__icon-open burguer__icon-open-right"
+        class="burger__icon-open burger__icon-open-right"
         alt=t_locale_menu %}
   </button>
 
