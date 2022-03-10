@@ -1,7 +1,5 @@
 $icon-size: 40px;
-
 $icon-size--desktop-factor: 4;
-
 $icon-space-x: -$icon-size / 2;
 $icon-space-y: $icon-size * 2;
 
@@ -12,10 +10,8 @@ $icon-space-y: $icon-size * 2;
   &--button {
     background: none;
     border: none;
-
     position: absolute;
     z-index: 10;
-
     cursor: pointer;
 
     &-previous {
@@ -42,8 +38,7 @@ $icon-space-y: $icon-size * 2;
   }
 
   &--icon {
-    fill: $color--primary;
-
+    fill: $color-fg-primary;
     width: $icon-size;
     height: $icon-size;
 

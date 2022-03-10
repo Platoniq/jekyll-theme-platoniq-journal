@@ -1,12 +1,13 @@
 .grid {
   display: flex;
   flex-flow: column;
-  @media (min-width : $bp-tablet) {
+
+  @media (min-width: $bp-tablet) {
     display: grid;
     grid-template-columns: repeat(24, 1fr);
     grid-gap: 16px;
     grid-column-gap: 16px;
-    grid-row-gap: $grid-row--xxl;
+    grid-row-gap: $grid-row-xxl;
   }
 }
 
@@ -16,7 +17,7 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: $bgcolor--primary;
+  background-color: $color-bg-primary;
 
   &.grid {
     align-content: center;
@@ -24,34 +25,34 @@
   }
 
   &__text {
-    grid-column: 3/span 16;
+    grid-column: 3 / span 16;
   }
 
   h1 {
-    font-family: $tipo--primary;
-    font-weight: $bold--primary;
-    font-size: 56px;
-    color: $color--white;
+    @include font-heading(56px);
+
+    color: $color-white;
     letter-spacing: -1px;
-    @media (min-width : $bp-tablet) {
+
+    @media (min-width: $bp-tablet) {
       font-size: 120px;
     }
   }
 
   h4 {
-    font-family: $tipo--primary;
-    font-weight: $bold--primary;
-    font-size: 40px;
+    @include font-heading(40px);
+
     line-height: 122%;
-    color: $color--white;
+    color: $color-white;
     letter-spacing: 0;
     text-align: center;
-    border-bottom: 6px solid $color--white;
+    border-bottom: 6px solid $color-white;
     display: inline-block;
     margin-bottom: 16px;
-    @media (min-width : $bp-tablet) {
+
+    @media (min-width: $bp-tablet) {
       font-size: 80px;
-      border-bottom: 11px solid $color--white;
+      border-bottom: 11px solid $color-white;
       margin-bottom: 56px;
       margin-left: 98px;
     }
@@ -81,14 +82,14 @@
       object-position: center bottom;
     }
 
-    &:after {
-      content: '';
+    &::after {
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, .1);
+      background: rgba(0, 0, 0, 10%);
     }
   }
 }
@@ -96,20 +97,22 @@
 #varis {
   padding-top: 80px;
   padding-bottom: 24px;
-  @media (min-width : $bp-tablet) {
+
+  @media (min-width: $bp-tablet) {
     padding-top: 224px;
     padding-bottom: 224px;
-    grid-row-gap: $grid-row--lg;
+    grid-row-gap: $grid-row-lg;
   }
 
   .row-articles {
     width: 100%;
     padding-left: 60px;
-    @media (min-width : $bp-tablet) {
+
+    @media (min-width: $bp-tablet) {
       padding-left: 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(100,auto);
+      grid-template-rows: repeat(100, auto);
       grid-gap: 129px;
       grid-row-gap: 0;
 
@@ -154,31 +157,33 @@
     flex-flow: column;
     align-items: flex-start;
     margin-bottom: 64px;
-    @media (min-width : $bp-tablet) {
+
+    @media (min-width: $bp-tablet) {
       margin-bottom: inherit;
     }
+
     // Elements
     & h3 {
-      font-family: $tipo--primary;
-      font-weight: $bold--primary;
-      font-size: 28px;
-      color: $color--base;
+      @include font-heading(28px);
+
+      color: $color-base;
       letter-spacing: -0.4px;
       line-height: 115%;
-      @media (min-width : $bp-tablet) {
+
+      @media (min-width: $bp-tablet) {
         font-size: 40px;
         padding-top: 8px;
       }
 
       a {
-        color: $color--base;
+        color: $color-base;
 
         &.select,
         &:hover {
-          background: transparent linear-gradient(90deg , $color--primary 50%, $color--primary 0) no-repeat;
+          background: transparent linear-gradient(90deg, $color-fg-primary 50%, $color-fg-primary 0) no-repeat;
           background-size: 200% 2px;
           background-position: 100% 100%;
-          color: $color--primary;
+          color: $color-fg-primary;
         }
       }
     }
@@ -186,49 +191,50 @@
     & h4 {
       transform: rotate(-90deg);
       transform-origin: left top;
-      font-family: $tipo--secundary;
-      font-size: 14px;
-      color: $color--primary;
+
+      @include font-body;
+
+      color: $color-fg-primary;
       letter-spacing: 0.62px;
       text-transform: uppercase;
       padding-top: 24px;
 
       a {
-        color: $color--primary;
+        color: $color-fg-primary;
         padding-bottom: 6px;
 
         &.select,
         &:hover {
-          background: transparent linear-gradient(90deg , $color--primary 50%, $color--primary 0) no-repeat;
+          background: transparent linear-gradient(90deg, $color-fg-primary 50%, $color-fg-primary 0) no-repeat;
           background-size: 200% 2px;
           background-position: 100% 89%;
-          color: $color--primary;
+          color: $color-fg-primary;
         }
       }
     }
 
     & h5 {
-      font-family: $tipo--secundary;
-      font-weight: $reg--secundary;
-      font-size: 14px;
-      color: $color--base;
+      @include font-body;
+
+      color: $color-base;
       letter-spacing: -0.7px;
       text-align: right;
       margin-top: 1em;
       position: relative;
       align-self: flex-end;
-      @media (min-width : $bp-tablet) {
+
+      @media (min-width: $bp-tablet) {
         font-size: 16px;
       }
 
-      &:before {
-        content: '';
+      &::before {
+        content: "";
         position: absolute;
         bottom: 3px;
         left: -24px;
         width: 16px;
         height: 2px;
-        background-color: $bgcolor--primary;
+        background-color: $color-bg-primary;
       }
     }
 
@@ -252,12 +258,12 @@
 
     &--interviews {
       .entrevistat {
-        font-family: $tipo--primary;
-        font-size: 1em;
+        @include font-heading(1em);
+
         line-height: 115%;
-        color: $color--primary--negatiu;
+        color: $color-fg-primary-negative;
         letter-spacing: -0.4px;
-        background-color: $bgcolor--primary;
+        background-color: $color-bg-primary;
         display: block;
         width: fit-content;
         padding: 0.188em 0.375em;
@@ -268,13 +274,14 @@
 }
 
 #stories {
-  background-color: $bgcolor--primary;
+  background-color: $color-bg-primary;
   padding-top: 80px;
   padding-bottom: 80px;
-  @media (min-width : $bp-tablet) {
+
+  @media (min-width: $bp-tablet) {
     padding-top: 224px;
     padding-bottom: 224px;
-    grid-row-gap: $grid-row--lg;
+    grid-row-gap: $grid-row-lg;
   }
 
   .destecat {
@@ -287,8 +294,10 @@
     &:last-child {
       margin-bottom: 0;
     }
-    @media (min-width : $bp-tablet) {
+
+    @media (min-width: $bp-tablet) {
       margin-left: inherit;
+
       // Grid
       display: grid;
       grid-template-columns: repeat(16, 1fr);
@@ -303,13 +312,13 @@
       align-items: center;
     }
 
-    @media (max-width : 575px) {
-        .col1{
-          padding: 0 2em 1.5em;
-        }
+    @media (max-width: 575px) {
+      .col1 {
+        padding: 0 2em 1.5em;
       }
+    }
 
-    @media (min-width : $bp-tablet) {
+    @media (min-width: $bp-tablet) {
       // Disposició
       &--fila1 {
         grid-column: 6 / span 17;
@@ -337,21 +346,22 @@
         }
       }
     }
+
     // Elements
     & h3 {
-      font-family: $tipo--primary;
-      font-weight: $bold--primary;
-      font-size: 28px;
-      color: $color--primary--negatiu;
+      @include font-heading(28px);
+
+      color: $color-fg-primary-negative;
       letter-spacing: -0.4px;
       text-align: center;
       margin-bottom: 0.375em;
-      @media (min-width : $bp-tablet) {
+
+      @media (min-width: $bp-tablet) {
         font-size: 64px;
       }
 
       a {
-        color: $color--primary--negatiu;
+        color: $color-fg-primary-negative;
 
         &:hover {
           text-decoration: underline;
@@ -362,43 +372,47 @@
     & h4 {
       transform: rotate(-90deg);
       transform-origin: left top;
-      font-family: $tipo--primary;
-      font-size: 14px;
-      color: $color--primary--negatiu;
+
+      @include font-heading(14px);
+
+      color: $color-fg-primary-negative;
       letter-spacing: 0.62px;
       text-transform: uppercase;
       position: absolute;
       top: 60px;
       left: 0;
-      @media (min-width : $bp-tablet) {
+
+      @media (min-width: $bp-tablet) {
         top: 72px;
         left: -32px;
       }
 
       a {
-        color: $color--primary--negatiu;
+        color: $color-fg-primary-negative;
         padding-bottom: 6px;
 
         &.select,
         &:hover {
-          background: transparent linear-gradient(90deg , $color--primary--negatiu 50%, $color--primary--negatiu 0) no-repeat;
+          background:
+            transparent linear-gradient(90deg, $color-fg-primary-negative 50%, $color-fg-primary-negative 0)
+            no-repeat;
           background-size: 200% 2px;
           background-position: 100% 89%;
-          color: $color--primary--negatiu;
+          color: $color-fg-primary-negative;
         }
       }
     }
 
     & p {
-      font-family: $tipo--secundary;
-      font-weight: $med--secundary;
-      font-size: 22px;
+      @include font-body-medium(22px);
+
       line-height: 120%;
-      color: $color--primary--negatiu;
+      color: $color-fg-primary-negative;
       letter-spacing: -1px;
       text-align: center;
       margin-bottom: 1em;
-      @media (min-width : $bp-tablet) {
+
+      @media (min-width: $bp-tablet) {
         font-size: 32px;
       }
     }
@@ -409,10 +423,10 @@
   padding-top: 80px;
   padding-bottom: 80px;
 
-  @media (min-width : $bp-tablet) {
+  @media (min-width: $bp-tablet) {
     padding-top: 224px;
     padding-bottom: 224px;
-    grid-row-gap: $grid-row--lg;
+    grid-row-gap: $grid-row-lg;
   }
 
   .destecat {
@@ -422,13 +436,14 @@
     margin-bottom: 96px;
     margin-left: 60px;
 
-    &:last-child{
+    &:last-child {
       margin-bottom: 0;
     }
 
     .col1 {
       padding-left: 40px;
-      @media (min-width : $bp-tablet) {
+
+      @media (min-width: $bp-tablet) {
         padding-left: inherit;
       }
     }
@@ -437,19 +452,21 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      background-color: $bgcolor--primary;
+      background-color: $color-bg-primary;
       padding: 24px;
       margin: -40px auto 0 0;
       width: calc(100% - 20px);
-      @media (min-width : $bp-tablet) {
+
+      @media (min-width: $bp-tablet) {
         padding: 32px;
         margin: auto;
         width: 100%;
       }
     }
 
-    @media (min-width : $bp-tablet) {
+    @media (min-width: $bp-tablet) {
       margin-left: inherit;
+
       // Grid
       display: grid;
       grid-template-columns: repeat(16, 1fr);
@@ -490,22 +507,23 @@
         }
       }
     }
+
     // Elements
     & h3 {
-      font-family: $tipo--primary;
-      font-weight: $bold--primary;
-      font-size: 28px;
+      @include font-heading(28px);
+
       line-height: 110%;
-      color: $color--white;
+      color: $color-white;
       letter-spacing: -0.4px;
       margin-bottom: 0.6em;
-      @media (min-width : $bp-tablet) {
+
+      @media (min-width: $bp-tablet) {
         font-size: 40px;
         line-height: 120%;
       }
 
       a {
-        color: $color--white;
+        color: $color-white;
 
         &:hover {
           text-decoration: underline;
@@ -516,34 +534,36 @@
     & h4 {
       transform: rotate(-90deg);
       transform-origin: left top;
-      font-family: $tipo--primary;
-      font-size: 14px;
-      color: $color--primary;
+
+      @include font-heading(14px);
+
+      color: $color-fg-primary;
       letter-spacing: 0.62px;
       text-transform: uppercase;
       position: absolute;
       top: 64px;
       left: 0;
-      @media (min-width : $bp-tablet) {
+
+      @media (min-width: $bp-tablet) {
         top: 80px;
         left: -32px;
       }
 
       a {
-        color: $color--primary;
+        color: $color-fg-primary;
         padding-bottom: 6px;
 
         &.select,
         &:hover {
-          background: transparent linear-gradient(90deg , $color--primary 50%, $color--primary 0) no-repeat;
+          background: transparent linear-gradient(90deg, $color-fg-primary 50%, $color-fg-primary 0) no-repeat;
           background-size: 200% 2px;
           background-position: 100% 89%;
-          color: $color--primary;
+          color: $color-fg-primary;
         }
       }
     }
 
-    @media (min-width : $bp-tablet) {
+    @media (min-width: $bp-tablet) {
       &--fila1 h4 {
         transform-origin: right bottom;
         right: -32px;

@@ -5,30 +5,25 @@
     grid-gap: 16px;
     grid-column-gap: 16px;
     grid-row-gap: 32px;
-    margin-top: $grid-row--xl;
-    margin-bottom: $grid-row--xl;
+    margin-top: $grid-row-xl;
+    margin-bottom: $grid-row-xl;
   }
 
   padding-left: 0;
-  margin-top: $grid-row--lg;
-  margin-bottom: $grid-row--lg;
+  margin-top: $grid-row-lg;
+  margin-bottom: $grid-row-lg;
 
   // Grid
   grid-column: 5 / span 17;
 
   .pj-numbers--item {
     display: grid;
-
     grid-template-rows: 72px 24px;
     margin-top: 2rem;
 
     @media (min-width: $bp-tablet) {
       grid-template-rows: 160px 24px;
       margin-top: 0;
-    }
-
-    dt {
-      grid-row: 2;
     }
 
     &:nth-of-type(1),
@@ -45,14 +40,13 @@
     }
 
     dd {
-      grid-row: 1;
+      @include font-heading(72px);
 
-      font-family: $tipo--primary;
-      font-weight: $bold--primary;
-      font-size: 72px;
-      color: $color--primary;
+      grid-row: 1;
+      color: $color-fg-primary;
       letter-spacing: -6px;
       margin-bottom: 0.5em;
+
       @media (min-width: $bp-tablet) {
         font-size: 160px;
         margin-bottom: 0;
@@ -64,13 +58,10 @@
     }
 
     dt {
-      grid-row: 2;
+      @include font-heading(20px);
 
-      display: block;
-      font-family: $tipo--primary;
-      font-weight: $bold--primary;
-      font-size: 20px;
-      color: $color--base;
+      grid-row: 2;
+      color: $color-base;
       letter-spacing: -0.6px;
       display: flex;
       margin-top: 0.5rem;

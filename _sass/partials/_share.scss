@@ -1,5 +1,5 @@
-.page .article__content .nav-share{
-  @media (min-width : $bp-tablet) {
+.page .article__content .nav-share {
+  @media (min-width: $bp-tablet) {
     position: fixed;
     z-index: 1;
     top: calc(100vh / 2);
@@ -11,7 +11,7 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
 
-    @media (min-width : $bp-tablet) {
+    @media (min-width: $bp-tablet) {
       transform: rotate(-90deg);
       transform-origin: center;
       position: absolute;
@@ -22,8 +22,8 @@
 
     figcaption {
       margin: 0;
-      font-weight: $bold--secundary;
-      color: $color--base;
+      font-weight: $font-weight-body-bold;
+      color: $color-base;
       line-height: 1.5rem;
     }
 
@@ -38,27 +38,28 @@
 
     & li {
       list-style-type: none;
-      margin: auto 0 auto .8rem;
+      margin: auto 0 auto 0.8rem;
     }
 
     & a {
       text-align: right;
-      font-family: $tipo--secundary;
-      font-weight: $reg--secundary;
-      font-size: 14px;
-      color: $color--base;
+
+      @include font-body;
+
+      color: $color-base;
       letter-spacing: -0.7px;
       padding-bottom: 6px !important;
 
-      @media (min-width : $bp-tablet) {
+      @media (min-width: $bp-tablet) {
         font-size: 16px;
       }
 
-      &:hover, &.select {
-        background: transparent linear-gradient(90deg , $color--primary 50%, $color--primary 0) no-repeat;
+      &:hover,
+      &.select {
+        background: transparent linear-gradient(90deg, $color-fg-primary 50%, $color-fg-primary 0) no-repeat;
         background-size: 200% 2px;
         background-position: 100% 89%;
-        color: $color--primary;
+        color: $color-fg-primary;
       }
     }
   }

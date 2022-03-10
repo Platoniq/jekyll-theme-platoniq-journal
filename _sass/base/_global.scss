@@ -1,9 +1,9 @@
-
 html {
-  background-color: $bgcolor--secundary;
+  background-color: $color-bg-secondary;
 }
 
 body {
-  font-family: $tipo--secundary;
-  background-color: $bgcolor--secundary;
+  @include font-body;
+
+  background-color: $color-bg-secondary;
 }

@@ -1,1 +1,23 @@
-//
+@mixin font-heading($size: 1rem) {
+  font-family: $font-family-heading;
+  font-weight: $font-weight-heading;
+  font-size: $size;
+}
+
+@mixin font-body($size: 14px) {
+  font-family: $font-family-body;
+  font-weight: $font-weight-body;
+  font-size: $size;
+}
+
+@mixin font-body-medium($size: 14px) {
+  font-family: $font-family-body;
+  font-weight: $font-weight-medium;
+  font-size: $size;
+}
+
+@mixin font-body-bold($size: 14px) {
+  font-family: $font-family-body;
+  font-weight: $font-weight-body-bold;
+  font-size: $size;
+}

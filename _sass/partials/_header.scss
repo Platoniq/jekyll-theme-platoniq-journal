@@ -5,7 +5,8 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 2em;
-  @media (min-width : $bp-tablet) {
+
+  @media (min-width: $bp-tablet) {
     display: grid;
     grid-template-columns: repeat(24, 1fr);
     grid-gap: 16px;
@@ -14,15 +15,16 @@
   }
 
   &__volum {
-    @media (min-width : $bp-tablet) {
+    @media (min-width: $bp-tablet) {
       grid-column: 1 / span 3;
     }
+
     justify-self: left;
 
     & .link__label {
-      font-family: $tipo--secundary;
-      font-size: 15px;
-      color: $color--base;
+      @include font-body(15px);
+
+      color: $color-base;
       letter-spacing: 0.62px;
       text-transform: uppercase;
     }
@@ -33,41 +35,46 @@
   }
 
   &__logo {
-    @media (min-width : $bp-tablet) {
+    @media (min-width: $bp-tablet) {
       grid-column: 4 / span 18;
     }
+
     // justify-self: center;
     text-align: center;
 
     & h4 {
-      font-weight: normal;
-      font-family: "gt_cinetypebold", sans-serif;
-      font-size: 11px;
-      color: $color--base;
+      @include font-heading(11px);
+
+      font-weight: $font-weight-regular;
+      color: $color-base;
       letter-spacing: 0;
       text-align: center;
       text-transform: uppercase;
       display: block;
-      margin-bottom: .5em;
-      @media (min-width : 768px) {
+      margin-bottom: 0.5em;
+
+      @media (min-width: 768px) {
         margin-bottom: 1em;
         font-size: 13px;
       }
     }
 
-    & img, & svg {
+    & img,
+    & svg {
       max-width: 224px;
-      fill: $color--base;
-      @media (max-width : 575px) {
-        max-width:129px;
+      fill: $color-base;
+
+      @media (max-width: 575px) {
+        max-width: 129px;
       }
     }
   }
 
   &__locale-selector {
-    @media (min-width : $bp-tablet) {
+    @media (min-width: $bp-tablet) {
       grid-column: -4 / span 3;
     }
+
     justify-self: right;
 
     .link {
@@ -76,7 +83,6 @@
   }
 }
 
-
 // Menú Volum
 .menu-volum {
   position: fixed;
@@ -84,19 +90,22 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: $bgcolor--fosc;
+  background-color: $color-bg-dark;
   z-index: 3;
   padding: 120px 20px 20px;
-  display: flex;
   flex-flow: column;
   justify-content: flex-start;
   overflow: scroll;
+
+  // display: flex;
   display: none;
-  @media (min-width : $bp-desktop) {
+
+  @media (min-width: $bp-desktop) {
     width: 43vw;
     padding: 120px 60px;
   }
-  @media (min-width : $bp-desktop-xl) {
+
+  @media (min-width: $bp-desktop-xl) {
     width: 33vw;
   }
 
@@ -128,29 +137,29 @@
   }
 
   &__numero {
-    font-family: $tipo--primary;
-    font-weight: $bold--primary;
-    font-size: 18px;
-    color: $color--white;
+    @include font-heading(18px);
+
+    color: $color-white;
     letter-spacing: 0;
     text-align: center;
-    border-bottom: 3px solid $color--white;
-    padding-bottom: .25em;
+    border-bottom: 3px solid $color-white;
+    padding-bottom: 0.25em;
     margin-bottom: 1em;
     margin-left: 1em;
-    @media (min-width : $bp-tablet) {
+
+    @media (min-width: $bp-tablet) {
       font-size: 20px;
       margin-left: 1.5em;
     }
   }
 
   &__titol {
-    font-family: $tipo--primary;
-    font-weight: $bold--primary;
-    font-size: 24px;
-    color: $color--white;
+    @include font-heading(24px);
+
+    color: $color-white;
     letter-spacing: -0.4px;
-    @media (min-width : $bp-tablet) {
+
+    @media (min-width: $bp-tablet) {
       font-size: 28px;
     }
   }
@@ -163,7 +172,7 @@
   right: 0;
   width: 33vw;
   height: 100vh;
-  background-color: $bgcolor--fosc;
+  background-color: $color-bg-dark;
   z-index: 3;
   padding: 120px 20px 20px;
   flex-flow: column;
@@ -175,25 +184,26 @@
     display: flex;
   }
 
-  @media (min-width : $bp-desktop) {
+  @media (min-width: $bp-desktop) {
     width: 43vw;
     padding: 120px 60px;
   }
-  @media (min-width : $bp-desktop-xl) {
+
+  @media (min-width: $bp-desktop-xl) {
     width: 33vw;
   }
 
   & li a {
-    font-family: $tipo--primary;
-    font-weight: $bold--primary;
-    font-size: 24px;
-    color: $color--white;
+    @include font-heading(24px);
+
+    color: $color-white;
     letter-spacing: -0.4px;
     display: flex;
     flex-flow: row;
     margin-bottom: 24px;
     opacity: 0.4;
-    @media (min-width : $bp-tablet) {
+
+    @media (min-width: $bp-tablet) {
       font-size: 28px;
     }
 
@@ -214,8 +224,9 @@
   z-index: 1;
   top: 0;
   left: 16px;
+
   // mix-blend-mode: difference;
-  @media (min-width : $bp-tablet) {
+  @media (min-width: $bp-tablet) {
     left: 64px;
   }
 
@@ -226,38 +237,41 @@
     transform: rotate(-90deg);
     transform-origin: left top;
     position: absolute;
-    top: calc(100vh - (100vh - 491px)/2);
+    top: calc(100vh - (100vh - 491px) / 2);
     width: 491px;
-    @media (min-width : $bp-tablet) {
-      top: calc(100vh - (100vh - 516px)/2);
+
+    @media (min-width: $bp-tablet) {
+      top: calc(100vh - (100vh - 516px) / 2);
       width: 516px;
     }
   }
 
   & li {
     margin: auto 8px;
-    @media (min-width : $bp-tablet) {
+
+    @media (min-width: $bp-tablet) {
       margin: auto 12px;
     }
   }
 
   & a {
-    font-family: $tipo--secundary;
-    font-size: 12px;
-    color: $color--base;
+    @include font-body(12px);
+
+    color: $color-base;
     letter-spacing: 0.62px;
     text-transform: uppercase;
     padding-bottom: 6px !important;
 
-    @media (min-width : $bp-tablet) {
+    @media (min-width: $bp-tablet) {
       font-size: 15px;
     }
 
-    &:hover, &.select {
-      background: transparent linear-gradient(90deg , $color--primary 50%, $color--primary 0) no-repeat;
+    &:hover,
+    &.select {
+      background: transparent linear-gradient(90deg, $color-fg-primary 50%, $color-fg-primary 0) no-repeat;
       background-size: 200% 2px;
       background-position: 100% 89%;
-      color: $color--primary;
+      color: $color-fg-primary;
     }
   }
 }
