@@ -7,7 +7,6 @@ figure.pj-quote {
   line-height: 120%;
   margin-top: $grid-row-lg;
   margin-bottom: $grid-row-lg;
-
   grid-column: 7 / span 15;
 
   @media (min-width: $bp-tablet) {
@@ -23,11 +22,13 @@ figure.pj-quote {
 
   figcaption.pj-quote--author {
     @include font-body;
+
     font-style: normal;
     color: $color-base;
     letter-spacing: -0.7px;
     display: block;
     margin-top: 1em;
+
     @media (min-width: $bp-tablet) {
       font-size: 16px;
       margin-top: 2em;

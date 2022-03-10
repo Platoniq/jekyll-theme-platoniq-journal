@@ -4,5 +4,6 @@ html {
 
 body {
   @include font-body;
+
   background-color: $color-bg-secondary;
 }

@@ -23,14 +23,12 @@
 
 .column {
   display: flex;
-  display: -webkit-flex;
   flex-flow: column wrap;
 }
 
 .align-content-center {
   align-content: center;
-  -webkit-align-content: center;
-  -webkit-align-items: center;
+  align-items: center;
 }
 
 .none {
@@ -47,8 +45,8 @@
 
 .grecaptcha-badge {
   position: relative !important;
-  right: 0px !important;
-  bottom: 0px !important;
+  right: 0 !important;
+  bottom: 0 !important;
   margin: 20px 0;
 }
 
@@ -77,12 +75,13 @@
   }
 
   @for $i from 1 through $grid-columns {
-    $a: (($grid-columns * $i) / $grid-columns)-1;
+    $a: (($grid-columns * $i) / $grid-columns) -1;
 
     .sm-cols-#{$i} {
-      width: calc(
-        (100% - (#{$grid-columns} * #{$column-gap-size})) / #{$grid-columns} * #{$i} + (#{$a} * #{$column-gap-size})
-      );
+      width:
+        calc(
+          (100% - (#{$grid-columns} * #{$column-gap-size})) / #{$grid-columns} * #{$i} + (#{$a} * #{$column-gap-size})
+        );
       margin-left: $column-gap-size;
     }
   }
@@ -128,8 +127,6 @@
 @media screen and (min-width: 319px) and (max-width: 320px) {
   .g-recaptcha {
     transform: scale(0.79);
-    -webkit-transform: scale(0.79);
     transform-origin: left;
-    -webkit-transform-origin: left;
   }
 }

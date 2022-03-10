@@ -43,7 +43,9 @@
 
     & a {
       text-align: right;
+
       @include font-body;
+
       color: $color-base;
       letter-spacing: -0.7px;
       padding-bottom: 6px !important;

@@ -42,7 +42,6 @@ $column-gap: (
   "xl": null,
   "xxl": 80px,
 );
-
 $column-gap-sm: map-get($column-gap, sm) !default;
 $column-gap-md: map-get($column-gap, md) !default;
 $column-gap-lg: map-get($column-gap, lg) !default;
@@ -61,6 +60,7 @@ $bp-desktop-xxl: 1520px;
 @mixin grid-align {
   // Horizontal
   justify-items: start;
+
   // Vertical
   align-items: start;
 }
@@ -68,6 +68,7 @@ $bp-desktop-xxl: 1520px;
 @mixin grid-align-center {
   // Horizontal
   justify-items: start;
+
   // Vertical
   align-items: center;
 }

@@ -5,7 +5,9 @@
   padding: 18px 40px 17px;
   border: none;
   background-color: $color-bg-primary;
+
   @include font-heading(1em);
+
   text-align: center;
   text-decoration: none;
   flex-flow: row;
@@ -13,6 +15,7 @@
   align-items: center;
   cursor: pointer;
   width: 100%;
+
   @media (min-width: 577px) {
     width: auto;
   }
@@ -72,7 +75,7 @@
   &--link-extern {
     position: relative;
 
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       top: 6px;
@@ -86,7 +89,7 @@
   &--link-extern-negatiu {
     position: relative;
 
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       top: 10px;

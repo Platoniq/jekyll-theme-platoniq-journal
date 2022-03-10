@@ -2,9 +2,7 @@
   @include grid-align;
 
   grid-column: 7 / span 13;
-
   background-color: $color-bg-primary;
-
   margin-top: $grid-row-md;
   margin-bottom: $grid-row-md;
   padding: 16px;
@@ -27,6 +25,7 @@
     @media (min-width: $bp-tablet) {
       margin: 0;
     }
+
     h3 {
       @include font-heading(22px);
 

@@ -17,9 +17,11 @@
 
   &__copyright {
     @include font-body;
+
     color: $color-base;
     letter-spacing: -0.4px;
     margin-bottom: 1em;
+
     @media (min-width: $bp-tablet) {
       font-size: 15px;
     }
@@ -38,8 +40,10 @@
 
     a {
       @include font-body;
+
       color: $color-base;
       letter-spacing: -0.4px;
+
       @media (min-width: $bp-tablet) {
         font-size: 15px;
       }

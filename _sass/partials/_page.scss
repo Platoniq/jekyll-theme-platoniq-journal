@@ -9,6 +9,7 @@
 
   .grid {
     grid-row-gap: $grid-row-lg;
+
     @media (max-width: $bp-tablet) {
       padding-left: 60px;
       grid-row-gap: $grid-row-md;
@@ -20,9 +21,11 @@
 
     h1 {
       @include font-heading(36px);
+
       color: $color-fg-primary;
       letter-spacing: -1px;
       line-height: 105%;
+
       @media (min-width: $bp-tablet) {
         font-size: 80px;
       }
@@ -36,10 +39,9 @@
       grid-template-columns: repeat(16, 1fr);
       grid-gap: 16px;
       grid-column-gap: 16px;
-
       grid-column: 4 / -3;
+
       @include grid-align;
-      margin-bottom: $grid-row-xl;
 
       &__text {
         grid-column: 1 / 11;
@@ -52,6 +54,7 @@
       display: flex;
       flex-flow: column;
       margin-bottom: 0.75em;
+
       @media (min-width: $bp-tablet) {
         display: grid;
         grid-template-columns: repeat(10, 1fr);
@@ -61,9 +64,11 @@
 
       h5 {
         @include font-body;
+
         color: $color-base;
         letter-spacing: -0.7px;
         margin-bottom: 1em;
+
         @media (min-width: $bp-tablet) {
           font-size: 16px;
         }
@@ -81,7 +86,7 @@
           margin-left: 24px;
         }
 
-        &:before {
+        &::before {
           content: "";
           position: absolute;
           bottom: 3px;
@@ -101,6 +106,7 @@
 
     h1 {
       @include font-heading(36px);
+
       color: $color-fg-primary;
       letter-spacing: -1px;
       line-height: 105%;
@@ -112,6 +118,7 @@
 
       .entrevistat {
         @include font-heading(0.75em);
+
         line-height: 115%;
         color: $color-fg-secondary;
         letter-spacing: -0.5px;
@@ -125,6 +132,7 @@
 
     h4 {
       @include font-body-medium(16px);
+
       color: $color-fg-primary;
       letter-spacing: 0.8px;
       text-transform: uppercase;
@@ -154,11 +162,12 @@
   ol,
   hr {
     @include font-body(18px);
+
     color: $color-base;
     letter-spacing: -0.5px;
     line-height: 160%;
-
     grid-column: 7 / span 13;
+
     @media (min-width: $bp-tablet) {
       font-size: 19px;
     }
@@ -192,7 +201,6 @@
     color: $color-base;
     letter-spacing: -1px;
     line-height: 130%;
-
     grid-column: 7 / span 13;
 
     @media (min-width: $bp-tablet) {
@@ -207,7 +215,6 @@
     letter-spacing: -0.8px;
     line-height: 130%;
     margin-top: 0.75em;
-
     grid-column: 7 / span 13;
 
     @media (min-width: $bp-tablet) {
@@ -229,7 +236,6 @@
     &.first-img {
       margin-top: 0;
       margin-bottom: 0;
-
       grid-column: 3 / -1;
     }
 
@@ -253,7 +259,6 @@
     color: $color-base;
     letter-spacing: -0.5px;
     padding-left: 2em;
-
     grid-column: 7 / span 13;
 
     @media (min-width: $bp-tablet) {
@@ -281,7 +286,6 @@
     padding: 16px;
     margin-top: $grid-row-xl;
     margin-bottom: $grid-row-lg;
-
     grid-column: 5 / span 17;
     background-color: $color-bg-primary;
 
@@ -301,6 +305,7 @@
         @media (max-width: $bp-tablet) {
           max-width: 50%;
         }
+
         margin-top: -84px;
       }
     }
@@ -329,6 +334,7 @@
 
       p {
         @include font-body-medium(18px);
+
         color: $color-fg-primary-negative;
         letter-spacing: -0.5px;
         line-height: 120%;

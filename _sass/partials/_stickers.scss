@@ -1,6 +1,5 @@
 $sticker-width-desktop: 20rem;
 $sticker-width-mobile: 5rem;
-
 $steps: 100;
 $step: random($steps);
 
@@ -20,10 +19,12 @@ $step: random($steps);
     }
   }
 }
+
 @keyframes breathe-effect {
   0% {
     transform: scale(0.9);
   }
+
   100% {
     transform: scale(1);
   }
@@ -37,6 +38,7 @@ $step: random($steps);
 
 @mixin sticker-animation-glitch {
   @include sticker-animation;
+
   animation-delay: #{random(5)}s;
   animation-duration: #{random(5) + 5}s;
   animation-name: glitch-effect;
@@ -44,6 +46,7 @@ $step: random($steps);
 
 @mixin sticker-animation-breathe {
   @include sticker-animation;
+
   animation-delay: #{random(10)}s;
   animation-duration: #{random(10) + 20}s;
   animation-name: breathe-effect;
@@ -53,6 +56,7 @@ $step: random($steps);
   &.animation-glitch {
     @include sticker-animation-glitch;
   }
+
   &.animation-breathe {
     @include sticker-animation-breathe;
   }
@@ -63,11 +67,14 @@ $step: random($steps);
     &-one {
       left: $first-x;
       top: $first-y;
+
       @include sticker-animations;
     }
+
     &-two {
       right: $last-x;
       top: $last-y;
+
       @include sticker-animations;
     }
   }
@@ -76,7 +83,6 @@ $step: random($steps);
 .pj-sticker {
   position: fixed;
   z-index: 2;
-
   width: $sticker-width-mobile;
 
   @media (min-width: $bp-tablet) {

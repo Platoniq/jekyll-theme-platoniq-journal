@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "scss/no-global-function-names": null,
+    "color-function-notation": "legacy"
+  },
+  "ignoreFiles": [
+    "_sass/slick.scss",
+    "_sass/jekyll-theme-platoniq-journal.scss",
+    "_sass/utils/_reset.scss"
+  ]
+}

@@ -1,28 +1,29 @@
 // This is the "NO JOURNAL Volume" style for pages
 
-// Fonts
+// Font families
+$font-family-heading: "gt_cinetypebold", sans-serif;
+$font-family-body: "Karla", sans-serif;
+
+// Font weights
+
 $font-weight-regular: 400;
 $font-weight-bold: 700;
 $font-weight-medium: 500;
-
-$font-family-heading: "gt_cinetypebold", sans-serif;
 $font-weight-heading: $font-weight-bold;
-
-$font-family-body: "Karla", sans-serif;
 $font-weight-body: $font-weight-regular;
 $font-weight-body-bold: $font-weight-bold;
 
+// Links
 $link-text-decoration-hover: underline;
 
 // Colors
-$color-black: #000000;
-$color-white: #ffffff;
+$color-black: #000;
+$color-white: #fff;
 $color-grey: #dfdfdf;
 $color-grey-dark: #7c7c7c;
 $color-base: #272727;
 $color-base-negative: #fdfdfd;
-
-$hover-opacity: .5;
+$hover-opacity: 0.5;
 
 // Background
 $color-bg-primary: $color-grey;
