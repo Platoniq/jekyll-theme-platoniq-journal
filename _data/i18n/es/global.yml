@@ -5,8 +5,8 @@ download: Download
 gallery_next: Imagen siguiente
 gallery_previous: Imagen anterior
 home: Inicio # not used?
-journal_number: Volumen
-journals_menu: Menú de Journals
+volume_number: Volumen
+volumes_menu: Menú de volúmenes
 know_more: Saber más
 license: Licencia
 locale_menu: Menú de idiomas

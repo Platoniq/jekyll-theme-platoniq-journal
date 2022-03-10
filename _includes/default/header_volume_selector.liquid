@@ -6,28 +6,28 @@
 
     {% include svg/icon-dots.liquid
         class="burguer__icon-open burguer__icon-open--left"
-        alt=t_journal_menu %}
+        alt=t_volumes_menu %}
 
     <span class="burguer__label">
-      {{ t_journal_number }}
+      {{ t_volumes_number }}
     </span>
   </a>
 
   <ul class="menu-volum">
-    {% for journal in journals %}
+    {% for volume in volumes %}
     <li>
-      <a class="{% if journal.uid == current_journal.uid %} select {% endif%}"
-          aria-label="{{ journal.title }}"
-          href="{{ journal.url | relative_url }}">
-        <img src="{{ journal.thumbnail | relative_url }}" alt="{{ journal.title }}" class="menu-volum__img">
+      <a class="{% if volume.uid == current_volume.uid %} select {% endif%}"
+          aria-label="{{ volume.title }}"
+          href="{{ volume.url | relative_url }}">
+        <img src="{{ volume.thumbnail | relative_url }}" alt="{{ volume.title }}" class="menu-volum__img">
 
         <div class="menu-volum__text">
           <h4 class="menu-volum__numero">
-            {{ journal.journal-num | prepend: "#"}}
+            {{ volume.volume-number | prepend: "#"}}
           </h4>
 
           <h3 class="menu-volum__titol">
-            {{ journal.title }}
+            {{ volume.title }}
           </h3>
         </div>
       </a>

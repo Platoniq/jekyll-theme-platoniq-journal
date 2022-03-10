@@ -16,8 +16,8 @@
     - label: Article category
       field: category
       pattern: front matter category
-    - label: By Journal
-      field: journal-iud
+    - label: By Volume
+      field: volume-uid
       pattern: true
   view_groups:
     - label: Journal Volume
@@ -70,7 +70,7 @@
         label: "Journal Volume",
         name: "volume-uid",
         widget: "relation",
-        collection: "journals",
+        collection: "volumes",
         display_fields: [title],
         search_fields: [title],
         value_field: "uid",

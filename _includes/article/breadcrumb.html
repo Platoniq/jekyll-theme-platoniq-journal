@@ -1,5 +1,5 @@
 <p>
-  <a href="{{ journal.url | relative_url }}">{{ journal.title }}</a>
+  <a href="{{ volume.url | relative_url }}">{{ volume.title }}</a>
   >
   {% for category in page.categories %}
     {% capture category_key %}{{ category | slugify }}{% endcapture %}
