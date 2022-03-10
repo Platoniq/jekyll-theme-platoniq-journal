@@ -1,5 +1,15 @@
 // Links
 
+a {
+  color: $color-link;
+
+  &:focus,
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: $link-text-decoration-hover;
+  }
+}
+
 .link {
   display: flex;
   flex-flow: row;

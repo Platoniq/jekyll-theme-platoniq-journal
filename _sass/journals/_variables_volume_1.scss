@@ -12,6 +12,8 @@ $font-family-body: "Karla", sans-serif;
 $font-weight-body: $font-weight-regular;
 $font-weight-body-bold: $font-weight-bold;
 
+$link-text-decoration-hover: none;
+
 // Colors
 $color-black: #000000;
 $color-white: #ffffff;
@@ -21,20 +23,22 @@ $color-base-negative: #ffdfda;
 
 $color-accent: #fd4022;
 
+$hover-opacity: .8;
+
 // Backgrounds
 $color-bg-primary: $color-accent;
-$color-bg-primary-hover: rgba(253, 64, 34, 0.8);
+$color-bg-primary-hover: rgba(253, 64, 34, $hover-opacity);
 $color-bg-primary-negative: $color-black;
-$color-bg-primary-negative-hover: rgba($color-bg-primary-negative, 0.8);
+$color-bg-primary-negative-hover: rgba($color-bg-primary-negative, $hover-opacity);
 $color-bg-secondary: $color-base-negative;
-$color-bg-secondary-hover: rgba(255, 253, 218, 0.8);
+$color-bg-secondary-hover: rgba(255, 253, 218, $hover-opacity);
 $color-bg-dark: $color-black;
 
 // Foregrond
 $color-fg-primary: $color-accent;
-$color-fg-primary-hover: rgba(240, 0, 64, 0.8);
+$color-fg-primary-hover: rgba(240, 0, 64, $hover-opacity);
 $color-fg-primary-negative: $color-white;
-$color-fg-primary-negative-hover: rgba($color-fg-primary-negative, 0.8);
+$color-fg-primary-negative-hover: rgba($color-fg-primary-negative, $hover-opacity);
 $color-fg-secondary: $color-base-negative;
 
 // Links
