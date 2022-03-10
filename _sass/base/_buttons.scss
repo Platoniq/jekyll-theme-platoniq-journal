@@ -29,7 +29,7 @@
     transition: all 0.25s ease-out;
   }
 
-  &--negatiu {
+  &--negative {
     background-color: $color-bg-primary-negative;
 
     &:hover {
@@ -41,7 +41,7 @@
     position: relative;
     color: $color-white;
 
-    .btn--negatiu & {
+    .btn--negative & {
       color: $color-fg-primary-negative;
     }
 
@@ -50,7 +50,7 @@
       color: $color-white;
       display: block;
 
-      .btn--negatiu & {
+      .btn--negative & {
         color: $color-black;
       }
     }
@@ -86,7 +86,7 @@
     }
   }
 
-  &--link-extern-negatiu {
+  &--link-extern-negative {
     position: relative;
 
     &::after {
