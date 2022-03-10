@@ -9,7 +9,6 @@ figure.pj-quote {
   margin-top: $grid-row-lg;
   margin-bottom: $grid-row-lg;
 
-  //Grid
   grid-column: 7 / span 15;
   @media (min-width: $bp-tablet) {
     font-size: 48px;

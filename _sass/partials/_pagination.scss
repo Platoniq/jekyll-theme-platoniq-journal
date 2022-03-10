@@ -7,7 +7,6 @@
   }
 
   li {
-    //Grid
     grid-column: 4 / span 9;
     @media (max-width: $bp-tablet) {
       &:first-child {
@@ -16,7 +15,6 @@
     }
 
     &:nth-child(even) {
-      //Grid
       grid-column: 13 / span 10;
       justify-self: self-end;
     }

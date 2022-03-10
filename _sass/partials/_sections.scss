@@ -6,7 +6,6 @@
   }
 
   .simple-header {
-    //Grid
     grid-column: 4 / -3;
 
     h1 {
@@ -24,7 +23,7 @@
 
   .llistat-sections {
     margin-bottom: $grid-row-xxl;
-    //Grid
+
     grid-column: 4 / -3;
 
     li {
@@ -45,7 +44,7 @@
       display: flex;
       flex-flow: column;
       align-items: flex-start;
-      //Grid
+
       grid-column: 2 / span 11;
     }
 
@@ -53,7 +52,6 @@
       margin-top: 1.5em;
 
       @media (min-width: $bp-tablet) {
-        //Grid
         grid-column: 15 / -2;
         justify-self: center;
         align-self: center;
