@@ -1,20 +1,17 @@
 // Buttons
 
 .btn {
-  display: flex;
-  padding: 18px 40px 17px;
-  border: none;
-  background-color: $color-bg-primary;
-
+  @include flex-center;
   @include font-heading(1em);
 
+  flex-flow: row;
+  padding: 18px 40px 17px;
+  width: 100%;
+  background-color: $color-bg-primary;
+  border: none;
   text-align: center;
   text-decoration: none;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
-  width: 100%;
 
   @media (min-width: 577px) {
     width: auto;
@@ -57,11 +54,10 @@
   }
 
   &__icon {
-    display: flex;
+    @include flex-center;
+
     width: 30px;
     height: 30px;
-    align-items: center;
-    justify-content: center;
 
     &-left {
       margin-right: 6px;

@@ -41,12 +41,11 @@ a {
   }
 
   &__icon {
-    display: flex;
+    @include flex-center;
+
     width: 24px;
     height: 24px;
     min-width: 24px;
-    align-items: center;
-    justify-content: center;
     margin-top: -0.375em;
 
     &-left {
@@ -84,10 +83,9 @@ a {
     &.link-negative {
       .link__label {
         color: $color-fg-primary-negative-hover;
-        background: transparent linear-gradient(90deg, $color-fg-primary-negative 50%, $color-fg-primary-negative 0)
+        background:
+          transparent linear-gradient(90deg, $color-fg-primary-negative 50%, $color-fg-primary-negative 0)
           no-repeat;
-        background-size: 200% 2px;
-        background-position: 100% 100%;
       }
     }
   }
