@@ -7,27 +7,26 @@
   text-decoration: none;
   width: fit-content;
 
-  &--right{
-    text-align:right;
+  &--right {
+    text-align: right;
   }
-
 
   &__label {
     font-size: 1em;
-    font-weight: $bold--secundary;
-    color: $color--base;
+    font-weight: $font-weight-body-bold;
+    color: $color-base;
     letter-spacing: -0.5px;
     position: relative;
     padding-bottom: 0.375em;
 
     &--extern:after {
-        content: "";
-        position: absolute;
-        top: -8px;
-        right: -24px;
-        width: 24px;
-        height: 24px;
-        background: url(../img/ico/link_outside.svg) 0 0/cover no-repeat;
+      content: "";
+      position: absolute;
+      top: -8px;
+      right: -24px;
+      width: 24px;
+      height: 24px;
+      background: url(../img/ico/link_outside.svg) 0 0 / cover no-repeat;
     }
   }
 
@@ -48,39 +47,38 @@
       margin-left: 8px;
     }
 
-    &--close{
+    &--close {
       display: none;
     }
   }
 
-  &--negatiu{
-
+  &--negatiu {
     .link__label {
-      color: $color--base--negatiu;
+      color: $color-base-negative;
 
       &--extern:after {
-          background: url(../img/ico/link_outside.svg) 0 0/cover no-repeat;
+        background: url(../img/ico/link_outside.svg) 0 0 / cover no-repeat;
       }
     }
   }
 
+  &:hover {
+    .link__label {
+      color: $color-fg-primary-hover;
+      font-weight: $font-weight-body-bold;
+      background: transparent linear-gradient(90deg, $color-fg-primary 50%, $color-fg-primary 0) no-repeat;
+      background-size: 200% 2px;
+      background-position: 100% 100%;
+    }
 
-    &:hover {
-      .link__label{
-        color: $color--primary-hover;
-        font-weight: $bold--secundary;
-        background: transparent linear-gradient(90deg , $color--primary 50%, $color--primary 0) no-repeat;
+    &.link--negatiu {
+      .link__label {
+        color: $color-fg-primary-negative-hover;
+        background: transparent linear-gradient(90deg, $color-fg-primary-negative 50%, $color-fg-primary-negative 0)
+          no-repeat;
         background-size: 200% 2px;
         background-position: 100% 100%;
       }
-
-      &.link--negatiu{
-         .link__label{
-            color: $color--primary--negatiu-hover;
-            background: transparent linear-gradient(90deg , $color--primary--negatiu 50%, $color--primary--negatiu 0) no-repeat;
-            background-size: 200% 2px;
-            background-position: 100% 100%;
-          }
-      }
     }
+  }
 }

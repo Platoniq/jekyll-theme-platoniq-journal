@@ -7,12 +7,12 @@
     padding: 32px;
   }
 
-  margin-top: $grid-row--md;
-  margin-bottom: $grid-row--md;
-  @include alinear_grid;
+  margin-top: $grid-row-md;
+  margin-bottom: $grid-row-md;
+  @include grid-align;
   //Grid
   grid-column: 7 / span 13;
-  background-color: $bgcolor--primary;
+  background-color: $color-bg-primary;
 
   &__img {
     max-width: 45px;
@@ -25,10 +25,10 @@
       margin: 0;
     }
     h3 {
-      font-family: $tipo--primary;
-      font-weight: $bold--primary;
+      font-family: $font-family-heading;
+      font-weight: $font-weight-heading;
       font-size: 22px;
-      color: $color--primary--negatiu;
+      color: $color-fg-primary-negative;
       letter-spacing: -0.4px;
       margin-bottom: 0.25em;
       margin-top: 0;
@@ -38,10 +38,10 @@
     }
 
     h4 {
-      font-family: $tipo--secundary;
-      font-weight: $med--secundary;
+      font-family: $font-family-body;
+      font-weight: $font-weight-medium;
       font-size: 15px;
-      color: $color--primary--negatiu;
+      color: $color-fg-primary-negative;
       letter-spacing: -0.7px;
       @media (min-width: $bp-tablet) {
         font-size: 16px;

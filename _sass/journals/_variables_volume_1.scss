@@ -1,27 +1,42 @@
-// Tipografia
-$tipo--primary: 'gt_cinetypebold', sans-serif;
-$tipo--secundary: 'Karla', sans-serif;
-// Tipografia weight
-$bold--primary: 700;
-$reg--secundary: 400;
-$med--secundary: 500;
-$bold--secundary: 700;
-// Backgrounds
-$bgcolor--primary: #fd4022;
-$bgcolor--primary-hover: rgba(253, 64, 34, .8);
-$bgcolor--primary--negatiu: #000000;
-$bgcolor--primary--negatiu-hover: rgba(0, 0, 0, .8);
-$bgcolor--secundary: #ffdfda;
-$bgcolor--secundary-hover: rgba(255, 253, 218, .8);
-$bgcolor--fosc: #000000;
+// This are the variables for the first volume of the Journal
+
+// Fonts
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-weight-medium: 500;
+
+$font-family-heading: "gt_cinetypebold", sans-serif;
+$font-weight-heading: $font-weight-bold;
+
+$font-family-body: "Karla", sans-serif;
+$font-weight-body: $font-weight-regular;
+$font-weight-body-bold: $font-weight-bold;
+
 // Colors
-$color--primary: #fd4022;
-$color--primary-hover: rgba(240, 0, 64, .8);
-$color--primary--negatiu: #FFFFFF;
-$color--primary--negatiu-hover: rgba(255, 255, 255, .8);
-$color--secundary: #ffdfda;
-$color--base: #380f09;
-$color--base--negatiu: #ffdfda;
-$color--black: #000000;
-$color--white: #FFFFFF;
-$color--grey: #ffcdc5;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-grey: #ffcdc5;
+$color-base: #380f09;
+$color-base-negative: #ffdfda;
+
+$color-accent: #fd4022;
+
+// Backgrounds
+$color-bg-primary: $color-accent;
+$color-bg-primary-hover: rgba(253, 64, 34, 0.8);
+$color-bg-primary-negative: $color-black;
+$color-bg-primary-negative-hover: rgba($color-bg-primary-negative, 0.8);
+$color-bg-secondary: $color-base-negative;
+$color-bg-secondary-hover: rgba(255, 253, 218, 0.8);
+$color-bg-dark: $color-black;
+
+// Foregrond
+$color-fg-primary: $color-accent;
+$color-fg-primary-hover: rgba(240, 0, 64, 0.8);
+$color-fg-primary-negative: $color-white;
+$color-fg-primary-negative-hover: rgba($color-fg-primary-negative, 0.8);
+$color-fg-secondary: $color-base-negative;
+
+// Links
+$color-link: $color-fg-primary;
+$color-link-hover: $color-fg-primary-hover;

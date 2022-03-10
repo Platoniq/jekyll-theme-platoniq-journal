@@ -1,30 +1,41 @@
 // This is the "NO JOURNAL Volume" style for pages
 
-// Tipografia
-$tipo--primary: 'gt_cinetypebold', sans-serif;
-$tipo--secundary: 'Karla', sans-serif;
-// Tipografia weight
-$bold--primary: 700;
-$reg--secundary: 400;
-$med--secundary: 500;
-$bold--secundary: 700;
-// Backgrounds
-$bgcolor--primary: #dfdfdf;
-$bgcolor--primary-hover: rgba($bgcolor--primary, .8);
-$bgcolor--primary--negatiu: #000000;
-$bgcolor--primary--negatiu-hover: rgba($bgcolor--primary--negatiu, .8);
-$bgcolor--secundary: white;
-$bgcolor--secundary-hover: rgba($bgcolor--secundary, .8);
-$bgcolor--fosc: #000000;
+// Fonts
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-weight-medium: 500;
+
+$font-family-heading: "gt_cinetypebold", sans-serif;
+$font-weight-heading: $font-weight-bold;
+
+$font-family-body: "Karla", sans-serif;
+$font-weight-body: $font-weight-regular;
+$font-weight-body-bold: $font-weight-bold;
 
 // Colors
-$color--primary: #000000;
-$color--primary-hover: rgba($color--primary, .8);
-$color--primary--negatiu: #7c7c7c;
-$color--primary--negatiu-hover: rgba($color--primary--negatiu, .8);
-$color--secundary: #dfdfdf;
-$color--base: #272727;
-$color--base--negatiu: #fdfdfdf;
-$color--black: #000000;
-$color--white: #FFFFFF;
-$color--grey: #dfdfdf;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-grey: #dfdfdf;
+$color-grey-dark: #7c7c7c;
+$color-base: #272727;
+$color-base-negative: #fdfdfd;
+
+// Background
+$color-bg-primary: $color-grey;
+$color-bg-primary-hover: rgba($color-bg-primary, 0.8);
+$color-bg-primary-negative: $color-black;
+$color-bg-primary-negative-hover: rgba($color-bg-primary-negative, 0.8);
+$color-bg-secondary: $color-white;
+$color-bg-secondary-hover: rgba($color-bg-secondary, 0.8);
+$color-bg-dark: $color-black;
+
+// Foreground
+$color-fg-primary: $color-black;
+$color-fg-primary-hover: rgba($color-fg-primary, 0.8);
+$color-fg-primary-negative: $color-grey-dark;
+$color-fg-primary-negative-hover: rgba($color-fg-primary-negative, 0.8);
+$color-fg-secondary: $color-grey;
+
+// Links
+$color-link: #72D8FF;
+$color-link-hover: #B792FF;

@@ -5,13 +5,13 @@
     grid-gap: 16px;
     grid-column-gap: 16px;
     grid-row-gap: 32px;
-    margin-top: $grid-row--xl;
-    margin-bottom: $grid-row--xl;
+    margin-top: $grid-row-xl;
+    margin-bottom: $grid-row-xl;
   }
 
   padding-left: 0;
-  margin-top: $grid-row--lg;
-  margin-bottom: $grid-row--lg;
+  margin-top: $grid-row-lg;
+  margin-bottom: $grid-row-lg;
 
   // Grid
   grid-column: 5 / span 17;
@@ -47,10 +47,10 @@
     dd {
       grid-row: 1;
 
-      font-family: $tipo--primary;
-      font-weight: $bold--primary;
+      font-family: $font-family-heading;
+      font-weight: $font-weight-heading;
       font-size: 72px;
-      color: $color--primary;
+      color: $color-fg-primary;
       letter-spacing: -6px;
       margin-bottom: 0.5em;
       @media (min-width: $bp-tablet) {
@@ -67,10 +67,10 @@
       grid-row: 2;
 
       display: block;
-      font-family: $tipo--primary;
-      font-weight: $bold--primary;
+      font-family: $font-family-heading;
+      font-weight: $font-weight-heading;
       font-size: 20px;
-      color: $color--base;
+      color: $color-base;
       letter-spacing: -0.6px;
       display: flex;
       margin-top: 0.5rem;
