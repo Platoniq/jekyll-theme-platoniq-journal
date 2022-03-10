@@ -16,7 +16,7 @@
   // Grid
   grid-column: 5 / span 17;
 
-  .pj-numbers--item {
+  .pj-numbers-item {
     display: grid;
     grid-template-rows: 72px 24px;
     margin-top: 2rem;
@@ -72,7 +72,7 @@
       }
     }
 
-    .pj-numbers--icon {
+    .pj-numbers-icon {
       width: 24px;
       height: 24px;
       margin-right: 0.125em;

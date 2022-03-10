@@ -28,7 +28,7 @@
            href="{{ previous_post.url | relative_url }}"
            title="{{ t_previous_article | append: ': ' | append: previous_post.title }}">
 
-          <span class="link__icon link__icon--left">
+          <span class="link__icon link__icon-left">
             {% include svg/icon-arrow_left_big.liquid
                        alt=t_previous_article %}
           </span>
@@ -42,7 +42,7 @@
 
     <li>
       {% if next_post %}
-        <a class="link link--right"
+        <a class="link link-right"
            href="{{ next_post.url | relative_url }}"
            title="{{ t_next_article | append: ': ' | append: next_post.title }}">
 
@@ -50,7 +50,7 @@
             {{ next_post.title }}
           </span>
 
-          <span class="link__icon link__icon--right">
+          <span class="link__icon link__icon-right">
             {% include svg/icon-arrow_right_big.liquid
                        alt=t_next_article %}
           </span>

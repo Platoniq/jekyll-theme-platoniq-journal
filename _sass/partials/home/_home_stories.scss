@@ -45,7 +45,7 @@
 
     @media (min-width: $bp-tablet) {
       // Disposició
-      &--fila1 {
+      &-fila1 {
         grid-column: 6 / span 17;
 
         .col1 {
@@ -58,7 +58,7 @@
         }
       }
 
-      &--fila2 {
+      &-fila2 {
         grid-column: 4 / span 17;
 
         .col1 {

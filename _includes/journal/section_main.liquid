@@ -13,8 +13,8 @@
         {% endif %}
 
         {% capture class %}
-          highlighted--{% if mod == 0 %}vertical{% else %}horizontal{% endif %}
-          highlighted--{{ article.category | slu}}
+          highlighted-{% if mod == 0 %}vertical{% else %}horizontal{% endif %}
+          highlighted-{{ article.category | slu}}
         {% endcapture %}
 
         {% assign category_name = site.data.i18n[page.locale].categories[article.category] %}

@@ -1,5 +1,5 @@
 $icon-size: 40px;
-$icon-size--desktop-factor: 4;
+$icon-size-desktop-factor: 4;
 $icon-space-x: -$icon-size / 2;
 $icon-space-y: $icon-size * 2;
 
@@ -7,7 +7,7 @@ $icon-space-y: $icon-size * 2;
 .page .pj-gallery {
   grid-column: 5 / span 17;
 
-  &--button {
+  &-button {
     background: none;
     border: none;
     position: absolute;
@@ -26,33 +26,33 @@ $icon-space-y: $icon-size * 2;
 
     @media (min-width: $bp-tablet) {
       &-previous {
-        left: $icon-space-x * $icon-size--desktop-factor;
-        top: $icon-space-y * $icon-size--desktop-factor;
+        left: $icon-space-x * $icon-size-desktop-factor;
+        top: $icon-space-y * $icon-size-desktop-factor;
       }
 
       &-next {
-        right: $icon-space-x * $icon-size--desktop-factor;
-        bottom: $icon-space-y * $icon-size--desktop-factor;
+        right: $icon-space-x * $icon-size-desktop-factor;
+        bottom: $icon-space-y * $icon-size-desktop-factor;
       }
     }
   }
 
-  &--icon {
+  &-icon {
     fill: $color-fg-primary;
     width: $icon-size;
     height: $icon-size;
 
     @media (min-width: $bp-tablet) {
-      width: $icon-size * $icon-size--desktop-factor;
-      height: $icon-size * $icon-size--desktop-factor;
+      width: $icon-size * $icon-size-desktop-factor;
+      height: $icon-size * $icon-size-desktop-factor;
     }
   }
 
-  &--images {
+  &-images {
     display: grid;
   }
 
-  &--image {
+  &-image {
     margin: 0;
   }
 }

@@ -142,7 +142,7 @@
       }
     }
 
-    &--horizontal {
+    &-horizontal {
       img {
         margin: 0 auto;
         padding-left: 40px;
@@ -151,7 +151,7 @@
       }
     }
 
-    &--vertical {
+    &-vertical {
       img {
         margin: 0 auto;
         padding-left: 40px;
@@ -160,7 +160,7 @@
       }
     }
 
-    &--interviews {
+    &-interviews {
       .interviewee {
         @include font-heading(1em);
 

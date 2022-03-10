@@ -29,7 +29,7 @@
     transition: all 0.25s ease-out;
   }
 
-  &--negative {
+  &-negative {
     background-color: $color-bg-primary-negative;
 
     &:hover {
@@ -41,16 +41,16 @@
     position: relative;
     color: $color-white;
 
-    .btn--negative & {
+    .btn-negative & {
       color: $color-fg-primary-negative;
     }
 
-    &--sufix {
+    &-sufix {
       font-size: 13px;
       color: $color-white;
       display: block;
 
-      .btn--negative & {
+      .btn-negative & {
         color: $color-black;
       }
     }
@@ -63,16 +63,16 @@
     align-items: center;
     justify-content: center;
 
-    &--left {
+    &-left {
       margin-right: 6px;
     }
 
-    &--right {
+    &-right {
       margin-left: 0;
     }
   }
 
-  &--link-extern {
+  &-link-external {
     position: relative;
 
     &::after {
@@ -86,7 +86,7 @@
     }
   }
 
-  &--link-extern-negative {
+  &-link-external-negative {
     position: relative;
 
     &::after {

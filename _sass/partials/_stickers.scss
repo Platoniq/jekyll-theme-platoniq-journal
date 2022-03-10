@@ -91,7 +91,7 @@ $step: random($steps);
 }
 
 // Layout: One (Top left, bottom right)
-.pj-stickers--layout-one {
+.pj-stickers-layout-one {
   @include sticker-layout(2rem, 40vh, -2rem, 80vh);
 
   @media (min-width: $bp-tablet) {
@@ -105,7 +105,7 @@ $step: random($steps);
 }
 
 // Layout: Two (Bottom left, top right)
-.pj-stickers--layout-two {
+.pj-stickers-layout-two {
   @include sticker-layout(2rem, 80vh, -2rem, 40vh);
 
   @media (min-width: $bp-tablet) {
@@ -120,7 +120,7 @@ $step: random($steps);
 
 // Preview for CMS
 
-.pj-sticker--preview {
+.pj-sticker-preview {
   display: flex;
   flex-direction: column;
   max-width: $sticker-width-desktop * 4;
