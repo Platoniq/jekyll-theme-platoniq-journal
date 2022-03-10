@@ -13,14 +13,14 @@
         {% endif %}
 
         {% capture class %}
-          destecat--{% if mod == 0 %}vertical{% else %}horitzontal{% endif %}
-          destecat--{{ article.category | slu}}
+          highlighted--{% if mod == 0 %}vertical{% else %}horitzontal{% endif %}
+          highlighted--{{ article.category | slu}}
         {% endcapture %}
 
         {% assign category_name = site.data.i18n[page.locale].categories[article.category] %}
         {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
 
-        <article class="destecat {{ class }}">
+        <article class="highlighted {{ class }}">
           <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}">
 
           <h4>

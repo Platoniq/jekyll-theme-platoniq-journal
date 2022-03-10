@@ -152,7 +152,7 @@
     }
   }
 
-  .destecat {
+  .highlighted {
     display: flex;
     flex-flow: column;
     align-items: flex-start;
@@ -284,7 +284,7 @@
     grid-row-gap: $grid-row-lg;
   }
 
-  .destecat {
+  .highlighted {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -393,8 +393,7 @@
 
         &.select,
         &:hover {
-          background:
-            transparent linear-gradient(90deg, $color-fg-primary-negative 50%, $color-fg-primary-negative 0)
+          background: transparent linear-gradient(90deg, $color-fg-primary-negative 50%, $color-fg-primary-negative 0)
             no-repeat;
           background-size: 200% 2px;
           background-position: 100% 89%;
@@ -429,7 +428,7 @@
     grid-row-gap: $grid-row-lg;
   }
 
-  .destecat {
+  .highlighted {
     display: flex;
     flex-flow: column;
     align-items: center;

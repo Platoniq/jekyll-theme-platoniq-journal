@@ -3,7 +3,7 @@
     {% for article in articles_reports %}
       {% assign mod = forloop.index0 | modulo: 2 %}
 
-      <article class="destecat destecat--fila{{ mod | plus: 1 }}">
+      <article class="highlighted highlighted--fila{{ mod | plus: 1 }}">
         <div class="col1">
           {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
 

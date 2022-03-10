@@ -1,7 +1,7 @@
 <section id="stories" class="container-fluid">
   <div class="container grid">
     {% for article in articles_stories %}
-      <article class="destecat destecat--fila{{ forloop.index }}">
+      <article class="highlighted highlighted--fila{{ forloop.index }}">
         <div class="col1">
         {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
 
