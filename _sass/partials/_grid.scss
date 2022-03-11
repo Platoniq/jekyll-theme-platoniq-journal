@@ -50,7 +50,6 @@
   margin: 20px 0;
 }
 
-// Grid - Small
 
 @mixin grid-system($size) {
   $padding-size: map-get($padding, $size);
@@ -75,18 +74,19 @@
   }
 
   @for $i from 1 through $grid-columns {
-    $a: (($grid-columns * $i) / $grid-columns) -1;
+    $a: (($grid-columns * $i) / $grid-columns) - 1;
 
-    .sm-cols-#{$i} {
+    .col-#{$size}-#{$i} {
       width:
         calc(
-          (100% - (#{$grid-columns} * #{$column-gap-size})) / #{$grid-columns} * #{$i} + (#{$a} * #{$column-gap-size})
+          (100% - (#{$grid-columns * $column-gap-size})) / #{$grid-columns * $i} + (#{$a * $column-gap-size})
         );
       margin-left: $column-gap-size;
     }
   }
 }
 
+// Grid - Small
 @media (min-width: $bp-phablet) {
   @include grid-system(sm);
 }

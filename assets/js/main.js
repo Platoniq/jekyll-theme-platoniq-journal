@@ -16,7 +16,7 @@ $(document).ready(function() {
 
   /*
    * 
-   * Gallery
+   * Article list
    * 
    */
   var $articles = $(".pj-articles article");

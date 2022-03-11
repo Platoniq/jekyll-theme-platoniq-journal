@@ -26,22 +26,18 @@ layout: default
       {% if page.call_to_action %}
         {% include default/call_to_action_block.liquid %}
       {% endif %}
+      
     </div>
   </article>
 </section>
+
+{% include article/related_articles.liquid %}
 
 {% include article/pagination.liquid %}
 
 {% include default/footer.liquid %}
 
 {% comment %}
-<div class="article--deep-dive">
-
-
-
-  {% include article/deep_dive/related_articles.html %}
-</div>
-
 {% include article/author.liquid %}
 
 
