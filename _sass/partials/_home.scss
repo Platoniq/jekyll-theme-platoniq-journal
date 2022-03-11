@@ -11,6 +11,12 @@
   }
 }
 
+.pj-articles {
+  article {
+    cursor: pointer;
+  }
+}
+
 @import "./home/home_hero";
 @import "./home/home_main";
 @import "./home/home_stories";

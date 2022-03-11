@@ -1,7 +1,7 @@
-<section id="stories" class="container-fluid">
+<section id="stories" class="pj-articles container-fluid">
   <div class="container grid">
     {% for article in articles_stories %}
-      <article class="highlighted highlighted-fila{{ forloop.index }}">
+      <article class="highlighted highlighted-fila{{ forloop.index }}" data-href="{{ article.url | relative_url }}">
         <div class="col1">
         {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
 

@@ -1,6 +1,11 @@
 console.log("jekyll-theme-platoniq-journal");
 
 $(document).ready(function() {
+  /*
+   * 
+   * Burger menu
+   * 
+   */
   var $btn = $(".header__locale-selector button.burger");
   var $menu = $(".menu__locale-selector");
 
@@ -9,6 +14,27 @@ $(document).ready(function() {
     $menu.toggleClass("status-open");
   });
 
+  /*
+   * 
+   * Gallery
+   * 
+   */
+  var $articles = $(".pj-articles article");
+
+  $articles.click(function(e) {
+    var href = $(e.target).attr("href");
+    
+    if (!href) {
+      href = $(e.target).closest("article").data("href");
+      window.location = href;
+    }
+  });
+
+  /*
+   * 
+   * Gallery
+   * 
+   */
   var $gallery = $(".pj-gallery .pj-gallery-images");
 
   $galleryBtnPrevious = $(".pj-gallery-button-previous");
