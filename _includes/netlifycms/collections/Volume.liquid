@@ -17,19 +17,13 @@
       widget: boolean
       default: false
       i18n: duplicate
-
-    - label: Slug
-      name: uid
-      hint: "Identificador unico, compartido entre los idiomas, parte final de la url al recurso"
-      widget: string
-      i18n: duplicate
-
+      
     - label: Layout
       name: layout
       widget: hidden
       default: journal
       i18n: duplicate
-
+      
     - label: "Journal volume number"
       name: volume-number
       widget: number
@@ -39,6 +33,12 @@
       max: 101
       step: 1
       i18n: duplicate
+      
+    - label: Slug
+      name: uid
+      hint: "Identificador único, compartido entre los distintos idiomas, que se usa para componer la URL"
+      widget: string
+      i18n: duplicate
 
     - label: Title
       name: title
@@ -46,7 +46,7 @@
       i18n: translate
 
     - label: Description
-      hint: "Mainly for SEO pourposes"
+      hint: "Principalmente usado para SEO"
       name: description
       widget: string
       i18n: translate
@@ -63,7 +63,7 @@
       fields:
         - {
             label: "Hero Image",
-            hint: Big cover image,
+            hint: Imagen de portada,
             name: "path",
             widget: "image",
             choose_url: true,
@@ -74,7 +74,7 @@
           }
         - {
             label: "Thumbnail Image",
-            hint: Small image used in lists,
+            hint: Imagen pequeña usada en listas,
             name: "thumbnail",
             widget: "image",
             choose_url: true,
@@ -88,13 +88,13 @@
 
     - label: "Share image"
       name: image
-      hint: "Viewed when element is shared in social media, as a preview of the url."
+      hint: Se verá cuando el artículo sea compartido en redes sociales, como previsualización del enlace
       widget: object
       i18n: true
       required: false
       fields:
         - label: Image
-          hint: "Images for summary cards should be 144px × 144px and not more than 1MB in file size."
+          hint: "Las imágenes para las 'summary cards' deben ser de 144px × 144px y de un tamaño menor o igual a 1MB."
           name: path
           widget: image
           default: "/assets/media/no_image-social_media.png"
