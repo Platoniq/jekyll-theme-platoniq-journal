@@ -1,25 +1,26 @@
-<section class="pj-gallery">
-    {% if gallery.images.size > 1 %}
-    <button class="pj-gallery-button pj-gallery-button-previous">
-      {% include svg/icon-arrow_left.liquid
-        class="pj-gallery-icon pj-gallery-icon-left"
-        alt=t_gallery_previous %}
-    </button>
+console.log("jekyll-theme-platoniq-journal");
 
-    <button class="pj-gallery-button pj-gallery-button-next">
-      {% include svg/icon-arrow_right.liquid
-        class="pj-gallery-icon pj-gallery-icon-right"
-        alt=t_gallery_next %}
-    </button> {% endif %}
+$(document).ready(function() {
+  var $btn = $(".header__locale-selector button.burger");
+  var $menu = $(".menu__locale-selector");
 
-    <div class="pj-gallery-images">
-        {% for image in gallery.images %}
-        <div class="pj-gallery-image-container">
-            <figure class="pj-gallery-image">
-                <img src="{{ image.path | relative_url }}" alt="{{ image.alt }}">
-                <figcaption>{{ image.credits }}</figcaption>
-            </figure>
-        </div>
-        {% endfor %}
-    </div>
-</section>
+  $btn.click(function(e) {
+    $btn.toggleClass("status-open");
+    $menu.toggleClass("status-open");
+  });
+
+  var $gallery = $(".pj-gallery .pj-gallery-images");
+
+  $galleryBtnPrevious = $(".pj-gallery-button-previous");
+  $galleryBtnNext = $(".pj-gallery-button-next");
+
+  // https://www.jqueryscript.net/slider/Fully-Responsive-Flexible-jQuery-Carousel-Plugin-slick.html
+  $gallery.slick({
+    prevArrow: $galleryBtnPrevious.prop("outerHTML"),
+    nextArrow: $galleryBtnNext.prop("outerHTML"),
+    infinite: false
+  });
+
+  $galleryBtnPrevious.detach();
+  $galleryBtnNext.detach();
+});
