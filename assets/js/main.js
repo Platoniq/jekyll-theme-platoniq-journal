@@ -7,7 +7,7 @@ $(document).ready(function() {
    * 
    */
   var $btn = $(".header__locale-selector button.burger");
-  var $menu = $(".menu__locale-selector");
+  var $menu = $(".pj-language-menu");
 
   $btn.click(function(e) {
     $btn.toggleClass("status-open");

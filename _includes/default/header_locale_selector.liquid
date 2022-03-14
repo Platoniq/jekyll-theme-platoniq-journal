@@ -13,7 +13,7 @@
         alt=t_locale_menu %}
   </button>
 
-  <ul class="menu__locale-selector">
+  <ul class="pj-language-menu">
     {% for translation in page_translations %}
       <li>
         <a href="{{ translation.url | relative_url }}" class="{% if page.locale == translation.locale %}active{% endif %}">

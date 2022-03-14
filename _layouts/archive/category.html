@@ -27,10 +27,10 @@ layout: default
         </div>
       </header>
 
-      <ul class="llistat-sections">
+      <ul class="pj-category-articles">
         {% for article in articles %}
           <li>
-            <div class="llistat-sections__text">
+            <div class="pj-category-articles__text">
               <h3>
                 <a href="{{ article.url }}">
                   {% if article.category == "interviews" %}
@@ -46,7 +46,7 @@ layout: default
               <h5>{{ author.name | prepend: t_authored_by }}</h5>
             </div>
 
-            <div class="llistat-sections__img">
+            <div class="pj-category-articles__img">
               <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}" class="horizontal">
             </div>
           </li>
