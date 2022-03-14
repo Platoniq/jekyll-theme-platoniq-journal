@@ -17,7 +17,7 @@ url: https://github.com/liquid-utilities/includes-share-page
 
 {% assign figcaption = page.share.figcaption | default: true %}
 {% unless share__figcaption == false or share__figcaption %}
-  {% assign share__figcaption = site.share.figcaption | default: site.data.i18n[page.locale].global.share %}
+  {% assign share__figcaption = site.share.figcaption | default: site.data.i18n[page.locale].article.share %}
 {% endunless %}
 
 
