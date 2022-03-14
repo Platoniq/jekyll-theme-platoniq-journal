@@ -34,7 +34,7 @@ layout: default
               <h3>
                 <a href="{{ article.url }}">
                   {% if article.category == "interviews" %}
-                    <span class="entrevistat">{{ article.interviewee }}</span>
+                    <span class="interviewee">{{ article.interviewee }}</span>
                   {% endif %}
 
                   {{ article.title }}
@@ -47,7 +47,7 @@ layout: default
             </div>
 
             <div class="llistat-sections__img">
-              <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}" class="horitzontal">
+              <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}" class="horizontal">
             </div>
           </li>
         {% endfor %}

@@ -1,7 +1,12 @@
 console.log("jekyll-theme-platoniq-journal");
 
 $(document).ready(function() {
-  var $btn = $(".header__locale-selector button.burguer");
+  /*
+   * 
+   * Burger menu
+   * 
+   */
+  var $btn = $(".header__locale-selector button.burger");
   var $menu = $(".menu__locale-selector");
 
   $btn.click(function(e) {
@@ -9,10 +14,31 @@ $(document).ready(function() {
     $menu.toggleClass("status-open");
   });
 
-  var $gallery = $(".pj-gallery .pj-gallery--images");
+  /*
+   * 
+   * Article list
+   * 
+   */
+  var $articles = $(".pj-articles article");
 
-  $galleryBtnPrevious = $(".pj-gallery--button-previous");
-  $galleryBtnNext = $(".pj-gallery--button-next");
+  $articles.click(function(e) {
+    var href = $(e.target).attr("href");
+    
+    if (!href) {
+      href = $(e.target).closest("article").data("href");
+      window.location = href;
+    }
+  });
+
+  /*
+   * 
+   * Gallery
+   * 
+   */
+  var $gallery = $(".pj-gallery .pj-gallery-images");
+
+  $galleryBtnPrevious = $(".pj-gallery-button-previous");
+  $galleryBtnNext = $(".pj-gallery-button-next");
 
   // https://www.jqueryscript.net/slider/Fully-Responsive-Flexible-jQuery-Carousel-Plugin-slick.html
   $gallery.slick({

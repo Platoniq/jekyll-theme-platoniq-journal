@@ -1,0 +1,29 @@
+.pj-related-articles {
+  grid-column: 5 / span 17;
+
+  .pj-articles {
+    @extend #main;
+    
+    padding-top: $grid-row-lg;
+    padding-bottom: $grid-row-lg;
+  }
+
+  h2 {
+    grid-column: span 24;
+
+    @include font-heading(28px);
+
+    color: $color-base;
+    letter-spacing: -0.2px;
+    line-height: 115%;
+    margin-top: 0;
+
+    @media (min-width: $bp-tablet) {
+      font-size: 40px;
+    }
+  }
+
+  article {
+    grid-column: span 8;
+  }
+}

@@ -1,0 +1,154 @@
+#reports {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @media (min-width: $bp-tablet) {
+    padding-top: 224px;
+    padding-bottom: 224px;
+    grid-row-gap: $grid-row-lg;
+  }
+
+  .highlighted {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 96px;
+    margin-left: 60px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .col1 {
+      padding-left: 40px;
+
+      @media (min-width: $bp-tablet) {
+        padding-left: inherit;
+      }
+    }
+
+    .col2 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: $color-bg-primary;
+      padding: 24px;
+      margin: -40px auto 0 0;
+      width: calc(100% - 20px);
+
+      @media (min-width: $bp-tablet) {
+        padding: 32px;
+        margin: auto;
+        width: 100%;
+      }
+    }
+
+    @media (min-width: $bp-tablet) {
+      margin-left: inherit;
+
+      // Grid
+      display: grid;
+      grid-template-columns: repeat(16, 1fr);
+      grid-gap: 16px;
+      grid-column-gap: 16px;
+      margin-bottom: 96px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      // Disposició
+      &-fila1 {
+        grid-column: 4 / -4;
+
+        .col1 {
+          grid-area: 1 / 1 / 1 / -7;
+          position: relative;
+        }
+
+        .col2 {
+          grid-area: 1 / -9 / 1 / -1;
+          z-index: 1;
+        }
+      }
+
+      &-fila2 {
+        grid-column: 5 / -3;
+
+        .col1 {
+          grid-area: 1 / 8 / 1 / -1;
+          position: relative;
+        }
+
+        .col2 {
+          grid-area: 1 / 1 / 1 / -9;
+          z-index: 1;
+        }
+      }
+    }
+
+    // Elements
+    & h3 {
+      @include font-heading(28px);
+
+      line-height: 110%;
+      color: $color-white;
+      letter-spacing: -0.4px;
+      margin-bottom: 0.6em;
+
+      @media (min-width: $bp-tablet) {
+        font-size: 40px;
+        line-height: 120%;
+      }
+
+      a {
+        color: $color-white;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    & h4 {
+      transform: rotate(-90deg);
+      transform-origin: left top;
+
+      @include font-heading(14px);
+
+      color: $color-fg-primary;
+      letter-spacing: 0.62px;
+      text-transform: uppercase;
+      position: absolute;
+      top: 64px;
+      left: 0;
+
+      @media (min-width: $bp-tablet) {
+        top: 80px;
+        left: -32px;
+      }
+
+      a {
+        color: $color-fg-primary;
+        padding-bottom: 6px;
+
+        &.select,
+        &:hover {
+          background: transparent linear-gradient(90deg, $color-fg-primary 50%, $color-fg-primary 0) no-repeat;
+          background-size: 200% 2px;
+          background-position: 100% 89%;
+          color: $color-fg-primary;
+        }
+      }
+    }
+
+    @media (min-width: $bp-tablet) {
+      &-fila1 h4 {
+        transform-origin: right bottom;
+        right: -32px;
+        top: -12px;
+        left: auto;
+      }
+    }
+  }
+}

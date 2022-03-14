@@ -1,6 +1,6 @@
 <div class="container grid">
   {% for article in articles_stickers %}
-    <article class="destecat destecat--fila{{ forloop.index }}">
+    <article class="highlighted highlighted-fila{{ forloop.index }}">
       <a href="{{ article.url | relative_url }}">
         <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}" width="200px">
 

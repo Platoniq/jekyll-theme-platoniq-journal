@@ -1,9 +1,9 @@
-<section id="reports" class="container-fluid">
+<section id="reports" class="pj-articles container-fluid">
   <div class="container grid">
     {% for article in articles_reports %}
       {% assign mod = forloop.index0 | modulo: 2 %}
 
-      <article class="destecat destecat--fila{{ mod | plus: 1 }}">
+      <article class="highlighted highlighted-fila{{ mod | plus: 1 }}" data-href="{{ article.url | relative_url }}">
         <div class="col1">
           {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
 
@@ -19,11 +19,11 @@
         <div class="col2">
           <h3>{{ article.title }}</h3>
 
-          <a href="{{ article.url | relative_url }}" class="link link--negatiu">
+          <a href="{{ article.url | relative_url }}" class="link link-negative">
             <span class="link__label">{{ t_know_more }}</span>
 
             {% include svg/icon-arrow_right.liquid
-                  class="link__icon link__icon--right"
+                  class="link__icon link__icon-right"
                   alt=t_continue_reading %}
           </a>
         </div>
