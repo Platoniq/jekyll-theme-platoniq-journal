@@ -3,7 +3,9 @@
     <h4>{{ current_volume.volume-number | prepend: "#"}} - {{ current_volume.title }}</h4>
   {% endif %}
 
-  <a href="{{ current_volume.url | default: "/" }}">
+  {% assign first_volume = site.volumes | where: "locale", page.locale | sort: "volume-number", "last" | last %}
+
+  <a href="{{ current_volume.url | default: first_volume.url }}">
     {% include svg/logo-header-wilder-journal.liquid %}
   </a>
 </div>
