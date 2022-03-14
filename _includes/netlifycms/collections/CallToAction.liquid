@@ -4,7 +4,7 @@
   editor:
     preview: false
   files:
-    - label: "Contact"
+    - label: "Contacto"
       name: "contact"
       file: "_call_to_actions/contact.md"
       fields:
@@ -12,30 +12,30 @@
           name: en
           widget: object
           fields: &cta_contact_fields
-            - label: Title
+            - label: Título
               name: title
               widget: string
-            - label: Body
+            - label: Contenido
               name: content
               widget: text
-            - label: Button
+            - label: Botón
               name: button
               widget: object
               fields:
-                - label: "Label"
+                - label: Texto
                   name: label
                   widget: string
-            - label: Image
+            - label: Imagen
               name: image
               widget: object
               fields:
-                - label: Image
+                - label: Imagen
                   name: path
                   widget: image
                   default: "/assets/media/no_image-cta.png"
                   media_library: { config: { multiple: false } }
                   media_folder: "/media/call_to_actions/"
-                - label: Alternative text
+                - label: Texto alternativo a la imagen
                   name: alt
                   widget: string
 
@@ -44,7 +44,7 @@
           widget: object
           fields: *cta_contact_fields
 
-    - label: Donate
+    - label: Donación
       name: donate
       editor:
         preview: false
@@ -54,34 +54,34 @@
           name: en
           widget: object
           fields: &cta_donate_fields
-            - label: Title
+            - label: Título
               name: title
               widget: string
-            - label: Body
+            - label: Contenido
               name: content
               widget: text
-            - label: Button
+            - label: Botón
               name: button
               widget: object
               fields:
-                - label: "Label"
+                - label: Texto
                   name: label
                   widget: string
-                - label: "Link to"
+                - label: Enlace
                   name: link
                   hint: "Inserta una URL válida, por ejemplo 'https://www.goteo.org'"
                   widget: string
-            - label: Image
+            - label: Imagen
               name: image
               widget: object
               fields:
-                - label: Image
+                - label: Imagen
                   name: path
                   widget: image
                   default: "/assets/media/no_image-cta.png"
                   media_library: { config: { multiple: false } }
                   media_folder: "/media/call_to_actions/"
-                - label: Alternative text
+                - label: Texto alternativo a la imagen
                   name: alt
                   widget: string
 
@@ -100,30 +100,30 @@
           name: en
           widget: object
           fields: &cta_newsletter_fields
-            - label: Title
+            - label: Título
               name: title
               widget: string
-            - label: Body
+            - label: Contenido
               name: content
               widget: text
-            - label: Button
+            - label: Botón
               name: button
               widget: object
               fields:
-                - label: "Label"
+                - label: Texto
                   name: label
                   widget: string
-            - label: Image
+            - label: Imagen
               name: image
               widget: object
               fields:
-                - label: Image
+                - label: Imagen
                   name: path
                   widget: image
                   default: "/assets/media/no_image-cta.png"
                   media_library: { config: { multiple: false } }
                   media_folder: "/media/call_to_actions/"
-                - label: Alternative text
+                - label: Texto alternativo a la imagen
                   name: alt
                   widget: string
 

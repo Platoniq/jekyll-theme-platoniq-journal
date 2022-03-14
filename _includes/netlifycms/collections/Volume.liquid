@@ -12,19 +12,24 @@
     preview: true
   # identifier_field: uid
   fields:
-    - label: published
+    - label: Publicado
       name: published
       widget: boolean
       default: false
       i18n: duplicate
       
+    - label: "Fecha de publicación"
+      name: date
+      widget: date
+      i18n: duplicate
+
     - label: Layout
       name: layout
       widget: hidden
       default: journal
       i18n: duplicate
       
-    - label: "Journal volume number"
+    - label: "Número de volumen del Journal"
       name: volume-number
       widget: number
       default: 0
@@ -34,35 +39,24 @@
       step: 1
       i18n: duplicate
       
+    - label: Título
+      name: title
+      widget: string
+      i18n: translate
+
     - label: Slug
       name: uid
       hint: "Identificador único, compartido entre los distintos idiomas, que se usa para componer la URL"
       widget: string
       i18n: duplicate
 
-    - label: Title
-      name: title
-      widget: string
-      i18n: translate
-
-    - label: Description
-      hint: "Principalmente usado para SEO"
-      name: description
-      widget: string
-      i18n: translate
-
-    - label: "Publish Date"
-      name: date
-      widget: date
-      i18n: duplicate
-
-    - label: "Cover image"
+    - label: "Imagen de portada"
       name: "cover"
       widget: "object"
       i18n: true
       fields:
         - {
-            label: "Hero Image",
+            label: "Portada",
             hint: Imagen de portada,
             name: "path",
             widget: "image",
@@ -73,7 +67,7 @@
             i18n: duplicate
           }
         - {
-            label: "Thumbnail Image",
+            label: "Portada (reducida)",
             hint: Imagen pequeña usada en listas,
             name: "thumbnail",
             widget: "image",
@@ -83,17 +77,23 @@
             media_folder: "/media/volumes/thumbnails",
             i18n: duplicate
           }
-        - { label: "Image alt text", name: "alt", widget: "string", i18n: translate }
-        - { label: "Image Credits", name: "credits", widget: "string", i18n: translate }
+        - { label: "Texto alternativo a la imagen", name: "alt", widget: "string", i18n: translate }
+        - { label: "Créditos de la imagen", name: "credits", widget: "string", i18n: translate }
 
-    - label: "Share image"
+    - label: Descripción o resumen de este volumen del Journal
+      hint: "Principalmente usado para SEO"
+      name: description
+      widget: string
+      i18n: translate
+  
+    - label: "Imagen de previsualización"
       name: image
       hint: Se verá cuando el artículo sea compartido en redes sociales, como previsualización del enlace
       widget: object
       i18n: true
       required: false
       fields:
-        - label: Image
+        - label: Imagen
           hint: "Las imágenes para las 'summary cards' deben ser de 144px × 144px y de un tamaño menor o igual a 1MB."
           name: path
           widget: image
@@ -102,7 +102,7 @@
           media_folder: "/media/volumes/social"
           i18n: duplicate
 
-        - label: "Image alt text"
+        - label: "Texto alternativo a la imagen"
           name: alt
           widget: string
           i18n: translate

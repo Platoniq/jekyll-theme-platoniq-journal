@@ -1,6 +1,6 @@
 {% raw %}
 - name: "articles"
-  label: "Articles"
+  label: "Artículos"
   label_singular: "Article"
   folder: "_articles/"
   i18n:
@@ -10,35 +10,35 @@
   slug: "{{uid}}" # Filename template, e.g., YYYY-MM-DD-title.md
   sort: "article-order:asc"
   view_filters:
-    - label: Article order
+    - label: Por orden del artículo
       field: article-order
       pattern: 'This is article #'
-    - label: Article category
+    - label: Por categoría
       field: category
       pattern: front matter category
-    - label: By Volume
+    - label: Por número de volumen
       field: volume-uid
       pattern: true
   view_groups:
-    - label: Journal Volume
+    - label: Volumen del Journal
       field: volume-uid
-    - label: Category
+    - label: Categoría
       field: category
   editor:
     preview: true
   fields: # The fields for each document, usually in front matter
     - { label: "Layout", name: "layout", widget: "hidden", default: "article", i18n: duplicate }
-    - { label: "Article order", name: "article-order", widget: "number", default: 0, value_type: "int", min: 1, max: 101, step: 1, i18n: duplicate }
-    - { label: "Title", name: "title", widget: "string", i18n: translate }
-    - label: "Description"
-      hint: "Principalmente usado para SEO"
+    - { label: "Orden del artículo", name: "article-order", widget: "number", default: 0, value_type: "int", min: 1, max: 101, step: 1, i18n: duplicate }
+    - { label: "Título", name: "title", widget: "string", i18n: translate }
+    - label: "Descripción o resumen del artículo"
+      hint: "Principalmente usada para SEO"
       name: "description"
       widget: "string"
       i18n: translate
-    - { label: "Publish Date", name: "date", widget: "date", i18n: duplicate }
+    - { label: "Fecha de publicación", name: "date", widget: "date", i18n: duplicate }
     - { label: "Slug", name: "uid", widget: "string", i18n: duplicate }
     - {
-        label: "Category",
+        label: "Categoría",
         name: "category",
         widget: "select",
         options: [
@@ -50,14 +50,14 @@
         ],
         i18n: duplicate
       }
-    - label: Entrevistado
+    - label: Entrevistadx
       name: "interviewee"
-      hint: "Añadir el nombre del entrevistado, si la categoria es Interviews"
+      hint: "Añadir el nombre de la persona entrevistada, si la categoria es 'Interviews'"
       widget: "string"
       required: false
       i18n: duplicate
     - {
-        label: "Author",
+        label: "Autorx",
         name: "author",
         widget: "relation",
         collection: "authors",
@@ -67,7 +67,7 @@
         i18n: duplicate
       }
     - {
-        label: "Journal Volume",
+        label: "Volumen del Journal",
         name: "volume-uid",
         widget: "relation",
         collection: "volumes",
@@ -76,13 +76,13 @@
         value_field: "uid",
         i18n: duplicate
       }
-    - label: "Main image"
+    - label: "Portada"
       name: "cover"
       widget: "object"
       i18n: true
       fields:
         - {
-            label: "Hero Image",
+            label: "Portada",
             hint: Imagen de portada,
             name: "path",
             widget: "image",
@@ -93,7 +93,7 @@
             i18n: duplicate
           }
         - {
-            label: "Thumbnail Image",
+            label: "Portada (reducida)",
             hint: Imagen pequeña usada en listas,
             name: "thumbnail",
             widget: "image",
@@ -103,22 +103,22 @@
             media_folder: "/media/articles/thumbnails",
             i18n: duplicate
           }
-        - { label: "Image alt text", name: "alt", widget: "string", i18n: translate }
-        - { label: "Image Credits", name: "credits", widget: "string", i18n: translate }
-        - { label: "Image Caption", name: "caption", widget: "string", i18n: translate }
-    - label: "Article Body"
+        - { label: "Texto alternativo a la imagen", name: "alt", widget: "string", i18n: translate }
+        - { label: "Créditos de la imagen", name: "credits", widget: "string", i18n: translate }
+        - { label: "Pie de imagen", name: "caption", widget: "string", i18n: translate }
+    - label: "Contenido del artículo"
       name: "body"
       widget: "markdown"
       editor_components: ["image", "gallery", "quote-tag", "file-tag", "documents-tag", "links-tag", "numbers-tag", "collapsible-note", "videos"]
       i18n: true
 
-    - label: "Related articles"
+    - label: "Artículos relacionados"
       name: related_articles_uid
       widget: "list"
       required: false
       i18n: false # todo: duplicate to other locales
       field:
-        label: "Related article"
+        label: "Artículo relacionado"
         name: related_article_uid
         widget: relation
         collection: articles
@@ -132,19 +132,19 @@
       collapsed: true
       i18n: true
       fields:
-        - label: "Stickers Layout"
+        - label: "Posición de los stickers"
           name: layout
           widget: select
           default: layout-none
           options:
-            - label: No stickers
+            - label: Sin stickers
               value: layout-none
-            - label: Top left, bottom right
+            - label: ↖️ + ↘️ Superior izquierda, inferior derecha
               value: layout-one
-            - label: Bottom left, top right
+            - label: ↙️ + ↗️ Inferior izquieda, superior derecha
               value: layout-two
           i18n: duplicate
-        - label: Sticker One
+        - label: Sticker Uno
           name: sticker_one
           widget: relation
           collection: stickers
@@ -153,19 +153,19 @@
           value_field: path
           i18n: duplicate
           required: false
-        - label: "Sticker One: Animation"
+        - label: "Sticker Uno: Animación"
           name: sticker_one_animation
           widget: select
           default: animation-none
           options: &sticker-animations
-            - label: No animation
+            - label: Sin animación
               value: animation-none
             - label: Glitch
               value: animation-glitch
             - label: Breathe
               value: animation-breathe
           i18n: duplicate
-        - label: Sticker Two
+        - label: Sticker Dos
           name: sticker_two
           widget: relation
           collection: stickers
@@ -174,7 +174,7 @@
           value_field: path
           i18n: duplicate
           required: false
-        - label: "Sticker Two: Animation"
+        - label: "Sticker Dos: Animación"
           name: sticker_two_animation
           widget: select
           default: animation-none
@@ -188,14 +188,14 @@
       search_fields: [uid]
       value_field: uid
       i18n: duplicate
-    - label: "Share image"
+    - label: "Imagen de previsualización"
       name: image
       hint: Se verá cuando el artículo sea compartido en redes sociales, como previsualización del enlace
       widget: object
       i18n: true
       required: false
       fields:
-        - label: Image
+        - label: Imagen
           hint: "Las imágenes para las 'summary cards' deben ser de 144px × 144px y de un tamaño menor o igual a 1MB."
           name: path
           widget: image
@@ -204,7 +204,7 @@
           media_folder: "/media/volumes/social"
           i18n: duplicate
 
-        - label: "Image alt text"
+        - label: "Texto alternativo a la imagen"
           name: alt
           widget: string
           i18n: translate

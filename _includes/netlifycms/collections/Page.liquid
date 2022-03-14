@@ -1,7 +1,7 @@
 {% raw %}
 - name: pages
-  label: Pages
-  label_singular: Page
+  label: Páginas
+  label_singular: Página
   folder: "_pages/"
   slug: "{{uid}}"
   i18n:
@@ -16,24 +16,24 @@
       widget: string
       i18n: duplicate
 
-    - label: published
+    - label: Publicada
       name: published
       widget: boolean
       default: false
       i18n: duplicate
 
-    - label: Title
+    - label: Título
       name: title
       widget: string
       i18n: translate
 
-    - label: Description
-      hint: Principalmente usado para SEO
+    - label: Descripción o resumen de la página
+      hint: Principalmente usada para SEO
       name: description
       widget: string
       i18n: translate
 
-    - label: Body
+    - label: Contenido de la página
       name: body
       widget: markdown
       editor_components: ["image", "quote-tag", "file-tag", "documents-tag", "links-tag", "numbers-tag"]

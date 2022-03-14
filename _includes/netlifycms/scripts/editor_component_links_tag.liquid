@@ -4,21 +4,21 @@ CMS.registerEditorComponent({
   // Internal id of the component
   id: "links-tag",
   // Visible label
-  label: "List of links",
+  label: "Lista de enlaces",
   // Fields the user need to fill out when adding an instance of the component
   fields: [
     {
       name: 'title',
-      label: 'Title',
+      label: 'Título de la lista',
       widget: 'string'
     },
     {
       name: 'items',
-      label: 'Items',
+      label: 'Enlaces',
       widget: 'list',
       summary: '{{fields.title}} - {{fields.url}}',
       fields: [
-        { label: 'Title', name: 'title',  widget: 'string' },
+        { label: 'Título', name: 'title',  widget: 'string' },
         { label: 'URL', name: 'url',  widget: 'string' }
       ]
     }
