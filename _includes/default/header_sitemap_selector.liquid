@@ -1,0 +1,79 @@
+<div class="header__volume">
+  <button type="button" class="burger" status="on" href="">
+    {% include svg/icon-close.liquid
+        class="burger__icon-close burger__icon-close-left"
+        alt=t_close %}
+
+    {% include svg/icon-dots.liquid
+        class="burger__icon-open burger__icon-open-left"
+        alt=t_volumes_menu %}
+
+    <span class="burger__label">
+      {{ t_volumes_number }}
+    </span>
+  </button>
+
+  <ul class="pj-volume-menu">
+    <li>
+      <a href="{{ about_page.url | relative_url }}" class="{% if page.uid == "about" %}select{% endif%}">
+        <h3 class="pj-volume-menu__title">{{ about_page.title }}</h3>
+      </a>
+    </li>
+
+    {% if sticker_pack_page %}
+      <li>
+        <a href="{{ sticker_pack_page.url | relative_url }}">
+          <h3 class="pj-volume-menu__title">{{ sticker_pack_page.title }}</h3>
+        </a>
+      </li>
+    {% endif %}
+
+    <li>
+      <a href="{{ terms_page.url | relative_url }}">
+        <h3 class="pj-volume-menu__title">{{ terms_page.title }}</h3>
+      </a>
+    </li>
+
+    <li>
+      <a href="{{ privacy_page.url | relative_url }}">
+        <h3 class="pj-volume-menu__title">{{ privacy_page.title }}</h3>
+      </a>
+    </li>
+
+    <hr>
+
+    {% assign archives = site.archives | where: "locale", page.locale %}
+    
+    {% for archive in archives %}
+      {% assign category_articles = site.articles | where: "category", archive.category | where: "locale", page.locale %}
+      {% assign t_category_name = site.data.i18n[page.locale].categories[archive.category] %}
+  
+      {% unless category_articles == empty %}
+        <li>
+          {% capture category_url %}{{ category_key }}{% endcapture %}
+          {% assign category_name = site.data.i18n[page.locale].categories[archive.category] %}
+    
+          <div class="pj-volume-menu__text">
+            <a href="{{ archive.url | relative_url }}" class="{% if page.category == archive.category %}select{% endif%}">
+              <h3 class="pj-volume-menu__title">
+                {{ t_category_name }}
+              </h3>
+            </a>
+          </div>
+
+          <ul>
+            {% for article in category_articles %}
+              <li>
+                <a href="{{ article.url | relative_url }}" class="{% if page.uid == article.uid %}select{% endif%}">
+                  <h4 class="pj-volume-menu__number">
+                    {{ article.title }}
+                  </h4>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+</div>

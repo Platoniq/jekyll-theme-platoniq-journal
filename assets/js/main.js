@@ -3,16 +3,26 @@ console.log("jekyll-theme-platoniq-journal");
 $(document).ready(function() {
   /*
    * 
-   * Burger menu
+   * Menus
    * 
    */
-  var $btn = $(".header__locale-selector button.burger");
-  var $menu = $(".pj-language-menu");
+  function initializeMenu ($btn, $menu) {
+    $btn.click(function(e) {
+      $btn.toggleClass("status-open");
+      $menu.toggleClass("status-open");
+    });
+  }
 
-  $btn.click(function(e) {
-    $btn.toggleClass("status-open");
-    $menu.toggleClass("status-open");
-  });
+  initializeMenu(
+    $(".header__locale-selector button.burger"),
+    $(".pj-language-menu")
+  )
+
+  initializeMenu(
+    $(".header__volume button.burger"),
+    $(".pj-volume-menu")
+  )
+
 
   /*
    * 

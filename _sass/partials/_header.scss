@@ -97,8 +97,11 @@
   justify-content: flex-start;
   overflow: scroll;
 
-  // display: flex;
   display: none;
+
+  &.status-open {
+    display: flex;
+  }
 
   @media (min-width: $bp-desktop) {
     width: 43vw;
@@ -115,13 +118,14 @@
     margin-bottom: 64px;
     opacity: 0.4;
 
-    &:hover {
-      opacity: 1;
-    }
-
+    &:hover,
     &.select {
       opacity: 1;
     }
+  }
+
+  & hr {
+    margin-bottom: 64px;
   }
 
   &__img {
