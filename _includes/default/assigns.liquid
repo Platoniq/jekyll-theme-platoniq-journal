@@ -2,7 +2,7 @@
 {% assign volumes = site.volumes
     | where: "locale", page.locale
     | sort: "volume-number", "last" %}
-{% assign current_volume = volumes | find: "uid", page.uid %}
+{% assign current_volume = volumes | find: "uid", page.volume-uid %}
 {% if page.collection == "volumes" %}
   {% assign current_volume = volumes | find: "uid", page.uid %}
 {% endif %}
@@ -19,9 +19,14 @@
 
 {% assign sticker_pack_page = site.sticker_packs | where: "volume-uid", current_volume.uid | where: "locale", page.locale | first %}
 
+{% capture t_authored_by %}
+ {{ site.data.i18n[page.locale].global.authored_by | append: " "}}
+{% endcapture %}
+
 {% assign t_close = site.data.i18n[page.locale].global.close %}
 {% assign t_volumes_menu = site.data.i18n[page.locale].global.volumes_menu %}
 {% assign t_locale_menu = site.data.i18n[page.locale].global.locale_menu %}
 {% assign t_volumes_number = site.data.i18n[page.locale].global.journal_number %}
 {% assign t_gallery_previous = site.data.i18n[page.locale].global.gallery_previous %}
 {% assign t_gallery_next = site.data.i18n[page.locale].global.gallery_next %}
+
