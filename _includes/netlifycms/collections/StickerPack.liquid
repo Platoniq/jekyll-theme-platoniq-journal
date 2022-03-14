@@ -17,7 +17,11 @@
       name: volume-uid
       widget: hidden
       i18n: duplicate
-    - label: Título
+    - label: Autorx del pack de stickers
+      name: author
+      widget: string
+      i18n: duplicate
+    - label: Título de la página
       name: title
       widget: string
       i18n: translate
@@ -25,14 +29,6 @@
       hint: Principalmente usada para SEO
       name: description
       widget: string
-      i18n: translate
-    - label: Autorx
-      name: author
-      widget: string
-      i18n: duplicate
-    - label: Licencia
-      name: license
-      widget: text
       i18n: translate
     - label: Contenido de la página de stickers
       name: body
@@ -69,6 +65,10 @@
         - { label: "Texto alternativo a la imagen", name: "alt", widget: "string", i18n: translate }
         - { label: "Créditos de la imagen", name: "credits", widget: "string", i18n: translate }
         - { label: "Pie de imagen", name: "caption", widget: "string", i18n: translate }
+    - label: Licencia
+      name: license
+      widget: text
+      i18n: translate
     - label: "Archivo ZIP"
       name: "file"
       widget: "object"
