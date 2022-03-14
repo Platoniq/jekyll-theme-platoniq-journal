@@ -28,54 +28,55 @@
     preview: true
   fields: # The fields for each document, usually in front matter
     - { label: "Layout", name: "layout", widget: "hidden", default: "article", i18n: duplicate }
+    - {
+      label: "Volumen del Journal",
+      name: "volume-uid",
+      widget: "relation",
+      collection: "volumes",
+      display_fields: [title],
+      search_fields: [title],
+      value_field: "uid",
+      i18n: duplicate
+    }
+    - {
+      label: "Categoría",
+      name: "category",
+      widget: "select",
+      options: [
+        { label: "Blueprints", value: "blueprints" },
+        { label: "Deep dives", value: "deep-dives" },
+        { label: "Interviews", value: "interviews" },
+        { label: "Reports", value: "reports" },
+        { label: "Stories", value: "stories" }
+      ],
+      i18n: duplicate
+    }
+    - { label: "Fecha de publicación", name: "date", widget: "date", i18n: duplicate }
     - { label: "Orden del artículo", name: "article-order", widget: "number", default: 0, value_type: "int", min: 1, max: 101, step: 1, i18n: duplicate }
+    - { label: "Slug", name: "uid", widget: "string", i18n: duplicate }
     - { label: "Título", name: "title", widget: "string", i18n: translate }
     - label: "Descripción o resumen del artículo"
       hint: "Principalmente usada para SEO"
       name: "description"
       widget: "string"
       i18n: translate
-    - { label: "Fecha de publicación", name: "date", widget: "date", i18n: duplicate }
-    - { label: "Slug", name: "uid", widget: "string", i18n: duplicate }
     - {
-        label: "Categoría",
-        name: "category",
-        widget: "select",
-        options: [
-          { label: "Blueprints", value: "blueprints" },
-          { label: "Deep dives", value: "deep-dives" },
-          { label: "Interviews", value: "interviews" },
-          { label: "Reports", value: "reports" },
-          { label: "Stories", value: "stories" }
-        ],
-        i18n: duplicate
-      }
+      label: "Autorx",
+      name: "author",
+      widget: "relation",
+      collection: "authors",
+      display_fields: [name],
+      search_fields: [name],
+      value_field: "uid",
+      i18n: duplicate
+    }
     - label: Entrevistadx
       name: "interviewee"
       hint: "Añadir el nombre de la persona entrevistada, si la categoria es 'Interviews'"
       widget: "string"
       required: false
       i18n: duplicate
-    - {
-        label: "Autorx",
-        name: "author",
-        widget: "relation",
-        collection: "authors",
-        display_fields: [name],
-        search_fields: [name],
-        value_field: "uid",
-        i18n: duplicate
-      }
-    - {
-        label: "Volumen del Journal",
-        name: "volume-uid",
-        widget: "relation",
-        collection: "volumes",
-        display_fields: [title],
-        search_fields: [title],
-        value_field: "uid",
-        i18n: duplicate
-      }
+    
     - label: "Portada"
       name: "cover"
       widget: "object"
@@ -111,7 +112,6 @@
       widget: "markdown"
       editor_components: ["image", "gallery", "quote-tag", "file-tag", "documents-tag", "links-tag", "numbers-tag", "collapsible-note", "videos"]
       i18n: true
-
     - label: "Artículos relacionados"
       name: related_article_uids
       widget: "list"
