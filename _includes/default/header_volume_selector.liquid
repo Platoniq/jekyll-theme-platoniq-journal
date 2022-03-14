@@ -1,4 +1,4 @@
-<div class="header__volum">
+<div class="header__volume">
   <a class="burger" status="on" href="">
     {% include svg/icon-close.liquid
         class="burger__icon-close burger__icon-close-left"
@@ -13,20 +13,20 @@
     </span>
   </a>
 
-  <ul class="menu-volum">
+  <ul class="pj-volume-menu">
     {% for volume in volumes %}
     <li>
       <a class="{% if volume.uid == current_volume.uid %} select {% endif%}"
           aria-label="{{ volume.title }}"
           href="{{ volume.url | relative_url }}">
-        <img src="{{ volume.thumbnail | relative_url }}" alt="{{ volume.title }}" class="menu-volum__img">
+        <img src="{{ volume.thumbnail | relative_url }}" alt="{{ volume.title }}" class="pj-volume-menu__img">
 
-        <div class="menu-volum__text">
-          <h4 class="menu-volum__numero">
+        <div class="pj-volume-menu__text">
+          <h4 class="pj-volume-menu__number">
             {{ volume.volume-number | prepend: "#"}}
           </h4>
 
-          <h3 class="menu-volum__titol">
+          <h3 class="pj-volume-menu__title">
             {{ volume.title }}
           </h3>
         </div>

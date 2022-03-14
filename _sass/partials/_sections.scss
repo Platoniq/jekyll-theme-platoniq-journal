@@ -21,7 +21,7 @@
     }
   }
 
-  .llistat-sections {
+  .pj-category-articles {
     margin-bottom: $grid-row-xxl;
     grid-column: 4 / -3;
 
@@ -40,14 +40,14 @@
       padding-bottom: $grid-row-lg;
     }
 
-    .llistat-sections__text {
+    .pj-category-articles__text {
       display: flex;
       flex-flow: column;
       align-items: flex-start;
       grid-column: 2 / span 11;
     }
 
-    .llistat-sections__img {
+    .pj-category-articles__img {
       margin-top: 1.5em;
 
       @media (min-width: $bp-tablet) {
