@@ -4,27 +4,27 @@ CMS.registerEditorComponent({
   // Internal id of the component
   id: "file-tag",
   // Visible label
-  label: "File Tag",
+  label: "Archivo destacado",
   // Fields the user need to fill out when adding an instance of the component
   fields: [
     {
       name: "title",
-      label: "Title",
+      label: "Título",
       widget: "string"
     },
     {
       name: "info",
-      label: "Info",
+      label: "Información (tamaño y formato)",
       widget: "string"
     },
     {
       name: "file",
-      label: "File", 
+      label: "Archivo", 
       widget: "file"
     },
     {
       name: "image",
-      label: "Image", 
+      label: "Imagen", 
       widget: "image",
       default: "/assets/media/no_image-file.png",
       media_library: { config: { multiple: false } },

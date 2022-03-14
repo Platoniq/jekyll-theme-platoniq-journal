@@ -2,17 +2,12 @@ authored_by: by
 close: Close
 continue_reading: Continue reading
 download: Download
-gallery_next: Next image
-gallery_previous: Previous image
-home: Home # not used?
-volume_number: Volume
-volumes_menu: Volumes menu
 know_more: Know more
 license: License
-locale_menu: Language menu
+locale_menu: Change language
 locales:
   en: English
   es: Español
-share: "Share:"
 skip_to_content: Skip to content
 sticker_emoji: Emoji related to the sticker
+volumes_menu: See other volumes of the Journal

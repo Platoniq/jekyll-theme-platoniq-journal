@@ -1,18 +1,13 @@
 authored_by: por
 close: Cerrar
 continue_reading: Sigue leyendo
-download: Download
-gallery_next: Imagen siguiente
-gallery_previous: Imagen anterior
-home: Inicio # not used?
-volume_number: Volumen
-volumes_menu: Menú de volúmenes
+download: Descargar
 know_more: Saber más
 license: Licencia
-locale_menu: Menú de idiomas
+locale_menu: Cambiar de idioma
 locales:
   en: English
   es: Español
-share: "Compartir:"
 skip_to_content: Ir al contenido
 sticker_emoji: Emoji relacionado con el sticker
+volumes_menu: Ver otros volumenes del Journal

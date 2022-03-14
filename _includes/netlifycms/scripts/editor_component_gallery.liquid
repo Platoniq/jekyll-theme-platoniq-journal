@@ -4,17 +4,17 @@ CMS.registerEditorComponent({
   // Internal id of the component
   id: "gallery",
   // Visible label
-  label: "Image Gallery",
+  label: "Galería",
   // Fields the user need to fill out when adding an instance of the component
   fields: [
     {
       name: "images",
-      label: "Images",
+      label: "Imágenes",
       widget: "list",
       fields: [
         {
           name: "path",
-          label: "Image",
+          label: "Imagen",
           widget: "image",
           default: "/assets/media/no_image-gallery.png",
           media_library: {
@@ -23,12 +23,12 @@ CMS.registerEditorComponent({
         },
         {
           name: "alt",
-          label: "Image description",
+          label: "Texto alternativo a la imagen",
           widget: "string"
         },
         {
           name: "credits",
-          label: "Image credits",
+          label: "Créditos de la imagen",
           widget: "string"
         }
       ]

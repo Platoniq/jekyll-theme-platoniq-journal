@@ -4,7 +4,7 @@ CMS.registerEditorComponent({
   // Internal id of the component
   id: "numbers-tag",
   // Visible label
-  label: "Big Numbers Tag",
+  label: "Big Numbers",
   // Fields the user need to fill out when adding an instance of the component
   fields: [
     {
@@ -13,8 +13,8 @@ CMS.registerEditorComponent({
       widget: 'list',
       summary: '{{fields.label}}: {{fields.number}}',
       fields: [
-        { label: 'Label', name: 'label',  widget: 'string' },
-        { label: 'Number', name: 'number',  widget: 'string' }
+        { label: 'Descripción', name: 'label',  widget: 'string' },
+        { label: 'Número', name: 'number',  widget: 'string' }
       ]
     }
   ],

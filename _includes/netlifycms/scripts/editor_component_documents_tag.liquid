@@ -4,22 +4,22 @@ CMS.registerEditorComponent({
   // Internal id of the component
   id: "documents-tag",
   // Visible label
-  label: "Documents Tag",
+  label: "Lista de documentos",
   // Fields the user need to fill out when adding an instance of the component
   fields: [
     {
       name: 'title',
-      label: 'Title',
+      label: 'Título de la lista',
       widget: 'string'
     },
     {
       name: 'items',
-      label: 'Items',
+      label: 'Documentos',
       widget: 'list',
-      summary: '{{fields.title}} - {{fields.url}}',
+      summary: '{{fields.title}}',
       fields: [
-        { label: 'Title', name: 'title',  widget: 'string' },
-        { label: 'File', name: 'file',  widget: 'file', default: "", media_library: { media_folder: "documents" } }
+        { label: 'Título del documento', name: 'title',  widget: 'string' },
+        { label: 'Archivo', name: 'file',  widget: 'file', default: "", media_library: { media_folder: "documents" } }
       ]
     }
   ],
