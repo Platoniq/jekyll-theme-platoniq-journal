@@ -71,8 +71,8 @@ CMS.registerEditorComponent({
   toPreview: function(data) {
     let images = data.images.map(image => {
       return `
-        <div class="pj-gallery--images">
-          <figure class="pj-gallery--image">
+        <div class="pj-gallery-images">
+          <figure class="pj-gallery-image">
             <img src="${image.path}" alt="${image.alt}"/>  
             <figcaption>${image.credits}</figcaption>
           </figure>

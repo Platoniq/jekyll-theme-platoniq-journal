@@ -1,3 +1,19 @@
+$gt-cinetype-bold_paths: (
+  "otf": "/assets/fonts/gt-cinetype-bold-webfont.otf",
+  "woff": "/assets/fonts/gt-cinetype-bold-webfont.woff",
+  "woff2": "/assets/fonts/gt-cinetype-bold-webfont.woff2"
+);
+
+@font-face {
+  font-family: "gt_cinetypebold";
+  src:
+    url(map-get($gt-cinetype-bold_paths, "otf")) format("otf"),
+    url(map-get($gt-cinetype-bold_paths, "woff2")) format("woff2"),
+    url(map-get($gt-cinetype-bold_paths, "woff")) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @mixin font-heading($size: 1rem) {
   font-family: $font-family-heading;
   font-weight: $font-weight-heading;

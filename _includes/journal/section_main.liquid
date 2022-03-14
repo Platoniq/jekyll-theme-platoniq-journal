@@ -4,7 +4,7 @@
                  | uniq
                  | sort: "article-order", "last" %}
 
-<section id="varis" class="container-fluid">
+<section id="main" class="pj-articles container-fluid">
   <div class="container grid">
     {% for article in articles_mixed %}
       {% assign mod = forloop.index0 | modulo: 2 %}
@@ -13,14 +13,14 @@
         {% endif %}
 
         {% capture class %}
-          destecat--{% if mod == 0 %}vertical{% else %}horitzontal{% endif %}
-          destecat--{{ article.category | slu}}
+          highlighted-{% if mod == 0 %}vertical{% else %}horizontal{% endif %}
+          highlighted-{{ article.category | slugify }}
         {% endcapture %}
 
         {% assign category_name = site.data.i18n[page.locale].categories[article.category] %}
         {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
 
-        <article class="destecat {{ class }}">
+        <article class="highlighted {{ class }}" data-href="{{ article.url | relative_url }}">
           <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}">
 
           <h4>
@@ -30,7 +30,7 @@
           <h3>
             <a href="{{ article.url | relative_url }}">
               {% if article.category == "interviews" %}
-                <span class="entrevistat">{{ article.interviewee }}</span>
+                <span class="interviewee">{{ article.interviewee }}</span>
               {% endif %}
               {{ article.title }}
             </a>

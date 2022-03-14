@@ -1,0 +1,67 @@
+.cta-box {
+  padding: 16px;
+  margin-top: $grid-row-xl;
+  margin-bottom: $grid-row-lg;
+  grid-column: 5 / span 17;
+  background-color: $color-bg-primary;
+
+  @include grid-align;
+
+  @media (min-width: $bp-tablet) {
+    display: grid;
+    grid-template-columns: minmax(149px, 149px) 1fr auto;
+    grid-gap: 32px;
+    padding: 32px;
+    margin-top: $grid-row-xl;
+    margin-bottom: $grid-row-xl;
+  }
+
+  &__img {
+    img {
+      @media (max-width: $bp-tablet) {
+        max-width: 50%;
+      }
+
+      margin-top: -84px;
+    }
+  }
+
+  &__text {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    @media (min-width: $bp-tablet) {
+      justify-self: start;
+      margin: 0;
+    }
+
+    h3 {
+      @include font-heading(28px);
+
+      color: $color-fg-primary-negative;
+      letter-spacing: -0.4px;
+      margin-bottom: 0.25em;
+      margin-top: 0;
+
+      @media (min-width: $bp-tablet) {
+        font-size: 32px;
+      }
+    }
+
+    p {
+      @include font-body-medium(18px);
+
+      color: $color-fg-primary-negative;
+      letter-spacing: -0.5px;
+      line-height: 120%;
+
+      @media (min-width: $bp-tablet) {
+        font-size: 19px;
+      }
+    }
+  }
+
+  &__cta {
+    justify-self: self-end;
+  }
+}

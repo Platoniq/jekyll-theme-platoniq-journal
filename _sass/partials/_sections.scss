@@ -57,7 +57,7 @@
         margin-top: 0;
       }
 
-      img.horitzontal {
+      img.horizontal {
         max-width: 227px;
       }
 
@@ -78,7 +78,7 @@
         font-size: 32px;
       }
 
-      .entrevistat {
+      .interviewee {
         @include font-heading(1em);
 
         line-height: 115%;

@@ -1,6 +1,6 @@
-// Burguer
+// Burger menu
 
-.burguer {
+.burger {
   position: relative;
   background-color: transparent;
   border: none;
@@ -31,36 +31,35 @@
 
   &__icon-close,
   &__icon-open {
-    display: flex;
+    @include flex-center;
+
     width: 24px;
     height: 24px;
-    align-items: center;
-    justify-content: center;
     fill: $color-base;
 
-    &--left {
+    &-left {
       margin-right: 8px;
     }
 
-    &--right {
+    &-right {
       margin-left: 8px;
     }
   }
 
-  .burguer__icon-open {
+  &__icon-open {
     width: 20px;
     display: block;
   }
 
-  .burguer__icon-close {
+  &__icon-close {
     display: none;
   }
 
-  &.status-open .burguer__icon-open {
+  &.status-open .burger__icon-open {
     display: none;
   }
 
-  &.status-open .burguer__icon-close {
+  &.status-open .burger__icon-close {
     display: block;
   }
 }
