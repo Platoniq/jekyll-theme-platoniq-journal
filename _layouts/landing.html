@@ -11,7 +11,7 @@ layout: base
   {% for volume in volumes reversed %}
     <li>
       <h2>
-        <a href="{{ journal.url | relative_url }}">{{ volume.title }}</a>
+        <a href="{{ volume.url | relative_url }}">{{ volume.title }}</a>
       </h2>
     </li>
   {% endfor %}
