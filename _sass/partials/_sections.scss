@@ -1,11 +1,11 @@
-.page-section {
+.pj-page-section {
   padding-top: 136px;
 
   @media (min-width: $bp-tablet) {
     padding-top: 224px;
   }
 
-  .simple-header {
+  .pj-header-simple {
     grid-column: 4 / -3;
 
     h1 {

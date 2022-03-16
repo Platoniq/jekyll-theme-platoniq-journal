@@ -12,28 +12,28 @@ layout: default
   {{ site.data.i18n[page.locale].global.authored_by | append: " " }}
 {% endcapture %}
 
-<section class="page sticker-pack">
+<section class="pj-page pj-page-sticker-pack">
   <article class="container-fluid">
-    <div class="container grid article__content">
-      <header class="multiple-header">
-        <div class="multiple-header__text">
+    <div class="container grid pj-article">
+      <header class="pj-hero">
+        <div class="pj-hero__text">
           <h1>
             {{ page.title }}
           </h1>
       
-          <div class="multiple-header__dades">
-            <h5 class="multiple-header__dades__autor">
+          <div class="pj-hero__data">
+            <h5 class="pj-hero__data__author">
               {{ page.author | prepend: t_authored_by }}
             </h5>
           </div>
         </div>
       
-        <div class="multiple-header__img">
+        <div class="pj-hero__img">
           <img src="{{ page.cover.path | relative_url }}" alt="{{ article.cover.alt }}">
         </div>
       </header>
 
-      <div class="nav-share">
+      <div id="pj-article-share">
         {% include article/share.liquid %}
       </div>
 

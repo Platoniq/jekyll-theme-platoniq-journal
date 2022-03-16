@@ -1,4 +1,4 @@
-.simple-header {
+.pj-header-simple {
   grid-column: 4 / -3;
 
   h1 {
@@ -14,7 +14,7 @@
   }
 }
 
-.multiple-header {
+.pj-hero {
   @media (min-width: $bp-tablet) {
     margin-bottom: $grid-row-xl;
     display: grid;
@@ -32,7 +32,7 @@
     }
   }
 
-  &__dades {
+  &__data {
     display: flex;
     flex-flow: column;
     margin-bottom: 0.75em;
@@ -60,7 +60,7 @@
       grid-column: 1 / span 3;
     }
 
-    &__autor {
+    &__author {
       grid-column: 4 / -1;
       position: relative;
 

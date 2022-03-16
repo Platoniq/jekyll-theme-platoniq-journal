@@ -1,20 +1,24 @@
-.pj-links,
-.pj-documents {
-  grid-column: 7 / span 13;
+.pj-article {
+  .pj-links,
+  .pj-documents {
+    grid-column: 7 / span 13;
 
-  ul {
-    padding-left: 0;
-  }
+    ul,
+    ol {
+      padding-left: 0;
 
-  li {
-    border-bottom: 1px solid $color-grey;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-    font-size: 18px;
-    letter-spacing: -0.04em;
+      & > li {
+        list-style: none;
+        border-bottom: 1px solid $color-grey;
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+        font-size: 18px;
+        letter-spacing: -0.04em;
 
-    @media (min-width: $bp-tablet) {
-      font-size: 19px;
+        @media (min-width: $bp-tablet) {
+          font-size: 19px;
+        }
+      }
     }
   }
 }

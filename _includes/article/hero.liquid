@@ -1,5 +1,5 @@
-<header class="multiple-header">
-  <div class="multiple-header__text">
+<header class="pj-hero">
+  <div class="pj-hero__text">
     <h4>
       <a href="{{ category_archive.url | relative_url }}">
         {{ category_name }}
@@ -14,18 +14,18 @@
       {{ page.title }}
     </h1>
 
-    <div class="multiple-header__dades">
-      <h5 class="multiple-header__dades__data">
+    <div class="pj-hero__data">
+      <h5 class="pj-hero__data__date">
         {{ article_date }}
       </h5>
 
-      <h5 class="multiple-header__dades__autor">
+      <h5 class="pj-hero__data__author">
         {{ page.author | prepend: t_authored_by }}
       </h5>
     </div>
   </div>
 
-  <div class="multiple-header__img">
+  <div class="pj-hero__img">
     <img src="{{ page.cover.path | relative_url }}" alt="{{ article.cover.alt }}">
     <!-- <div class="caption">{{ article.cover.caption }}</div>
     <div class="credits">{{ article.cover.credits }}</div> -->

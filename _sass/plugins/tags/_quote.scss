@@ -1,4 +1,4 @@
-figure.pj-quote {
+.pj-quote {
   @include font-heading(28px);
 
   position: relative;
@@ -15,12 +15,12 @@ figure.pj-quote {
     margin-bottom: $grid-row-xl;
   }
 
-  blockquote::after {
-    content: "”";
-    margin-left: -1rem;
-  }
+  // blockquote::after {
+  //   content: "”";
+  //   margin-left: -1rem;
+  // }
 
-  figcaption.pj-quote-author {
+  .pj-quote-author {
     @include font-body;
 
     font-style: normal;
@@ -28,6 +28,7 @@ figure.pj-quote {
     letter-spacing: -0.7px;
     display: block;
     margin-top: 1em;
+    text-align: left;
 
     @media (min-width: $bp-tablet) {
       font-size: 16px;

@@ -1,4 +1,4 @@
-.page .article__content .nav-share {
+#pj-article-share {
   @media (min-width: $bp-tablet) {
     position: fixed;
     z-index: 1;
@@ -29,7 +29,7 @@
 
     ul {
       margin: 0;
-      padding-left: 1rem;
+      padding-left: 0;
       display: flex;
       flex-flow: row nowrap;
       justify-content: flex-start;
@@ -37,6 +37,9 @@
     }
 
     & li {
+      &::before {
+        content: none;
+      }
       list-style-type: none;
       margin: auto 0 auto 0.8rem;
     }
