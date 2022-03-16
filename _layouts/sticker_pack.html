@@ -12,18 +12,24 @@ layout: default
   {{ site.data.i18n[page.locale].global.authored_by | append: " " }}
 {% endcapture %}
 
+{% capture t_created_by %}
+  {{ site.data.i18n[page.locale].global.created_by | append: " " }}
+{% endcapture %}
+
 <section class="pj-page pj-page-sticker-pack">
   <article class="container-fluid">
     <div class="container grid pj-article">
       <header class="pj-hero">
         <div class="pj-hero__text">
           <h1>
+            <span class="interviewee">{{ page.stickers_author | prepend: t_created_by }}</span>
+    
             {{ page.title }}
           </h1>
       
           <div class="pj-hero__data">
             <h5 class="pj-hero__data__author">
-              {{ page.author | prepend: t_authored_by }}
+              {{ author.name | prepend: t_authored_by }}
             </h5>
           </div>
         </div>
