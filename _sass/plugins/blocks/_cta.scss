@@ -76,6 +76,9 @@
 
       input,
       textarea {
+        @include font-body;
+        resize: vertical;
+
         background: $color-base-negative;
         color: $color-base;
         border-bottom: 3px solid $color-base-negative;
@@ -106,7 +109,8 @@
     justify-self: self-end;
   }
 
-  &.cta__contact {
+  &.cta__contact,
+  &.cta__newsletter {
     .pj-cta__button {
       align-self: end;
     }
