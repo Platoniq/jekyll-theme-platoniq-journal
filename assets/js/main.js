@@ -19,8 +19,8 @@ $(document).ready(function() {
   )
 
   initializeMenu(
-    $(".header__volume button.burger"),
-    $(".pj-volume-menu")
+    $(".header__sitemap button.burger"),
+    $(".pj-sitemap-menu")
   )
 
 
