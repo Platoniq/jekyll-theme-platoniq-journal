@@ -1,5 +1,5 @@
-.page,
-.page-section {
+.pj-page,
+.pj-page-section {
   blockquote {
     grid-column: 7 / span 13;
   }
@@ -20,29 +20,17 @@
     }
   }
 
+  strong {
+    font-weight: $font-weight-body-bold;
+  }
+
   hr {
     margin-top: 0.75em;
     margin-bottom: 0.75em;
   }
 
-  .article__content ul,
-  .article__content ol {
-    list-style: disc;
-    margin: 1em 0;
-    padding: 0 0 0 40px;
-
-    li {
-      display: list-item;
-      list-style-type: disc;
-    }
-  }
-
-  .article__content ol li {
-    list-style-type: decimal;
-  }
-
   h2,
-  .article__content p:first-of-type {
+  .pj-article p:first-of-type {
     @include font-body(24px);
 
     color: $color-base;
@@ -70,37 +58,18 @@
     }
   }
 
-  figure {
-    margin-top: $grid-row-lg;
-    margin-bottom: $grid-row-lg;
-
-    @media (min-width: $bp-tablet) {
-      grid-column: 4 / span 19;
-      margin-top: $grid-row-xl;
-      margin-bottom: $grid-row-xl;
-    }
-
-    &.first-img {
-      margin-top: 0;
-      margin-bottom: 0;
-      grid-column: 3 / -1;
-    }
-
-    figcaption {
-      @include font-body;
-
-      color: $color-base;
-      letter-spacing: -0.7px;
-      text-align: right;
-      margin-top: 1em;
-
-      @media (min-width: $bp-tablet) {
-        font-size: 16px;
-      }
-    }
+  h4 {
+    @extend h3;
+    @include font-body-bold(18px);
   }
 
-  ul {
+  h4 {
+    @extend h3;
+    @include font-body-bold(16px);
+  }
+
+  ul,
+  ol {
     @include font-body(18px);
 
     color: $color-base;
@@ -116,15 +85,34 @@
       margin-bottom: 1em;
       position: relative;
       line-height: 130%;
+    }
+  }
 
-      &::before {
-        position: absolute;
-        content: "";
-        width: 24px;
-        height: 24px;
-        background: url("../img/ico/dot.svg") 0 0 / cover no-repeat;
-        top: -3px;
-        left: -24px;
+  ul li {
+    &::before {
+      position: absolute;
+      content: "";
+      width: 24px;
+      height: 24px;
+      background: url("/assets/media/icons/icon-dot.svg") 0 0 / cover no-repeat;
+      top: -3px;
+      left: -24px;
+    }
+  }
+
+  .pj-article {
+    ul,
+    ol {
+      padding: 0 0 0 40px;
+
+      li {
+        display: list-item;
+      }
+    }
+
+    ol {
+      li {
+        list-style-type: decimal;
       }
     }
   }

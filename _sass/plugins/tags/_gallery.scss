@@ -4,7 +4,7 @@ $icon-space-x: -$icon-size / 2;
 $icon-space-y: $icon-size * 2;
 
 .pj-gallery,
-.page .pj-gallery {
+.pj-page .pj-gallery {
   grid-column: 5 / span 17;
 
   &-button {
@@ -54,5 +54,35 @@ $icon-space-y: $icon-size * 2;
 
   &-image {
     margin: 0;
+  }
+
+  figure {
+    margin-top: $grid-row-lg;
+    margin-bottom: $grid-row-lg;
+
+    @media (min-width: $bp-tablet) {
+      grid-column: 4 / span 19;
+      margin-top: $grid-row-xl;
+      margin-bottom: $grid-row-xl;
+    }
+
+    &.first-img {
+      margin-top: 0;
+      margin-bottom: 0;
+      grid-column: 3 / -1;
+    }
+
+    figcaption {
+      @include font-body;
+
+      color: $color-base;
+      letter-spacing: -0.7px;
+      text-align: right;
+      margin-top: 1em;
+
+      @media (min-width: $bp-tablet) {
+        font-size: 16px;
+      }
+    }
   }
 }
