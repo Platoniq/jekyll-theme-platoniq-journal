@@ -1,4 +1,4 @@
-.cta-box {
+.pj-cta {
   padding: 16px;
   margin-top: $grid-row-xl;
   margin-bottom: $grid-row-lg;
@@ -27,8 +27,16 @@
   }
 
   &__text {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
     margin-top: 1em;
     margin-bottom: 1em;
+
+    color: $color-fg-primary-negative;
 
     @media (min-width: $bp-tablet) {
       justify-self: start;
@@ -36,32 +44,71 @@
     }
 
     h3 {
-      @include font-heading(28px);
-
-      color: $color-fg-primary-negative;
-      letter-spacing: -0.4px;
       margin-bottom: 0.25em;
       margin-top: 0;
+
+      @include font-heading(28px);
+
+      letter-spacing: -0.4px;
+
+      color: $color-fg-primary-negative;
 
       @media (min-width: $bp-tablet) {
         font-size: 32px;
       }
     }
 
-    p {
+    fieldset {
       @include font-body-medium(18px);
+      display: grid;
 
-      color: $color-fg-primary-negative;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1rem;
+
       letter-spacing: -0.5px;
       line-height: 120%;
+
+      color: $color-fg-primary-negative;
 
       @media (min-width: $bp-tablet) {
         font-size: 19px;
       }
+
+      input,
+      textarea {
+        background: $color-base-negative;
+        color: $color-base;
+        border-bottom: 3px solid $color-base-negative;
+
+        padding: 1rem;
+        grid-row: 2;
+
+        &:focus-visible {
+          border: none;
+          border-bottom: 3px solid $color-bg-primary-negative;
+        }
+      }
+
+      &.pj-cta-contact {
+        label[for="message"] {
+          grid-row: 3;
+        }
+
+        textarea[name="message"] {
+          grid-row: 4;
+          grid-column: span 2;
+        }
+      }
     }
   }
 
-  &__cta {
+  &__button {
     justify-self: self-end;
+  }
+
+  &.cta__contact {
+    .pj-cta__button {
+      align-self: end;
+    }
   }
 }

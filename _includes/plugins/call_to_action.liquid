@@ -7,17 +7,17 @@
 {% endif %}
 
 {% if is_form %}
-  <form name="{{ call_to_action_name }}" netlify class="cta-box {{ call_to_action_name | prepend: 'cta__' }}">
+  <form name="{{ call_to_action_name }}" netlify class="pj-cta {{ call_to_action_name | prepend: 'cta__' }}">
 {% else %}
-  <div class="cta-box {{ call_to_action_name | prepend: 'cta__' }}">
+  <div class="pj-cta {{ call_to_action_name | prepend: 'cta__' }}">
 {% endif %}
 
-  <div class="cta-box__img">
+  <div class="pj-cta__img">
     <img src="{{ call_to_action.image.path | relative_url }}"
          alt="{{ call_to_action.image.alt }}">
   </div>
 
-  <div class="cta-box__text">
+  <div class="pj-cta__text">
     <h3>{{ call_to_action.title }}</h3>
 
       {{ call_to_action.content }}
@@ -31,7 +31,7 @@
     {% endif %}
   </div>
 
-  <div class="cta-box__cta">
+  <div class="pj-cta__button">
     {% if is_form %}
       <button type="submit" name="button" class="btn btn-negative">
         <span class="btn__label">{{ call_to_action.button.label }}</span>
