@@ -1,11 +1,11 @@
-.page-section {
+.pj-page-section {
   padding-top: 136px;
 
   @media (min-width: $bp-tablet) {
     padding-top: 224px;
   }
 
-  .simple-header {
+  .pj-header-simple {
     grid-column: 4 / -3;
 
     h1 {
@@ -33,6 +33,10 @@
         grid-column-gap: 16px;
 
         @include grid-align-center;
+      }
+
+      &::before {
+        content: none;
       }
 
       border-bottom: 1px solid $color-grey;

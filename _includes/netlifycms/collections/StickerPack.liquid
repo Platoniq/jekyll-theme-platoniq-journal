@@ -17,8 +17,18 @@
       name: volume-uid
       widget: hidden
       i18n: duplicate
+    - {
+      label: "Autorx de la página",
+      name: "author",
+      widget: "relation",
+      collection: "authors",
+      display_fields: [name],
+      search_fields: [name],
+      value_field: "uid",
+      i18n: duplicate
+    }
     - label: Autorx del pack de stickers
-      name: author
+      name: stickers_author
       widget: string
       i18n: duplicate
     - label: Título de la página
