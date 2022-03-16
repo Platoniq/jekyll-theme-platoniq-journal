@@ -35,6 +35,10 @@
         @include grid-align-center;
       }
 
+      &::before {
+        content: none;
+      }
+
       border-bottom: 1px solid $color-grey;
       padding-top: $grid-row-lg;
       padding-bottom: $grid-row-lg;
