@@ -169,6 +169,21 @@
   }
 }
 
+.pj-sitemap-menu {
+  @extend .pj-volume-menu;
+
+  &__title,
+  &__category {
+    @extend .pj-volume-menu__title;
+    @extend .pj-volume-menu__title;
+  }
+
+  &__article {
+    @extend .pj-volume-menu__number;
+    text-align: left;
+  }
+}
+
 // Language menu
 .pj-language-menu {
   position: fixed;
