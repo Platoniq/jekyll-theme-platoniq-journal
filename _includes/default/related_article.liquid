@@ -1,4 +1,5 @@
 {% assign category_name = site.data.i18n[page.locale].categories[related_article.category] %}
+{% assign author = site.authors | where: "uid", related_article.author | where: "locale", page.locale | first %}
 
 <article class="highlighted highlighted-vertical {{ class }}" data-href="{{ related_article.url | relative_url }}">
   <img src="{{ related_article.cover.thumbnail | relative_url }}" alt="{{ related_article.cover.alt }}">
@@ -16,5 +17,5 @@
     </a>
   </h3>
 
-  <h5>{{ related_article.author | prepend: t_authored_by }}</h5>
+  <h5>{{ author.name | prepend: t_authored_by }}</h5>
 </article>
