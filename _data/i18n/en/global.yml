@@ -9,6 +9,7 @@ locale_menu: Change language
 locales:
   en: English
   es: Español
+sitemap_menu: Navigate all articles in the Journal
 skip_to_content: Skip to content
 sticker_emoji: Emoji related to the sticker
 volumes_menu: See other volumes of the Journal

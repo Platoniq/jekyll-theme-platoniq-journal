@@ -1,5 +1,5 @@
 <div class="header__volume">
-  <a class="burger" status="on" href="">
+  <button type="button" class="burger">
     {% include svg/icon-close.liquid
         class="burger__icon-close burger__icon-close-left"
         alt=t_close %}
@@ -11,7 +11,7 @@
     <span class="burger__label">
       {{ t_volumes_number }}
     </span>
-  </a>
+  </button>
 
   <ul class="pj-volume-menu">
     {% for volume in volumes %}
