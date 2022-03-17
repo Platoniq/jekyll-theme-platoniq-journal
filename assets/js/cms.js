@@ -10,7 +10,6 @@ scripts:
   - editor_component_documents_tag.liquid
   - editor_component_links_tag.liquid
   - editor_component_numbers_tag.liquid
-  - editor_component_collapsible_note.js
   - editor_component_videos.liquid
 ---
 
