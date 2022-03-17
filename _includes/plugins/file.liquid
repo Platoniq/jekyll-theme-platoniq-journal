@@ -1,14 +1,14 @@
-<section class="resource-box">
-  <div class="resource-box__img">
+<section class="pj-file">
+  <div class="pj-file__img">
     <img src="{{ image | relative_url }}" alt="{{ title }}"/>
   </div>
   
-  <div class="resource-box__text">
-    <h3>{{ title }}</h3>
-    <h4>{{ info }}</h4>
+  <div class="pj-file__text">
+    <span class="pj-file__text__title">{{ title }}</span>
+    <span class="pj-file__text__data">{{ info }}</span>
   </div>
 
-  <div class="resource-box__button">
+  <div class="pj-file__button">
     <a href="{{ file | relative_url }}" target="_blank" class="btn btn-negative">
       {% include svg/icon-download.liquid class="btn__icon" %}
 

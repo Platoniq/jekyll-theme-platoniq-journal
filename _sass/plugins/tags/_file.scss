@@ -1,4 +1,4 @@
-.resource-box {
+.pj-file {
   @include grid-align;
 
   grid-column: 7 / span 13;
@@ -26,10 +26,14 @@
       margin: 0;
     }
 
-    h3 {
+    &__title, &__data {
+      display: block;
+      color: $color-fg-primary-negative;
+    }
+
+    &__title {
       @include font-heading(22px);
 
-      color: $color-fg-primary-negative;
       letter-spacing: -0.4px;
       margin-bottom: 0.25em;
       margin-top: 0;
@@ -39,10 +43,9 @@
       }
     }
 
-    h4 {
+    &__data {
       @include font-body-medium(15px);
 
-      color: $color-fg-primary-negative;
       letter-spacing: -0.7px;
 
       @media (min-width: $bp-tablet) {
