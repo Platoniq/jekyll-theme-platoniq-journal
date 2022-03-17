@@ -1,15 +1,17 @@
-<section class="resource-box">
-  <div class="resource-box__img">
-    <img src="{{ image | relative_url }}" alt="{{ title }}"/>
+<section class="pj-file">
+  <div class="pj-file__img">
+    <img src="{{ file.image | relative_url }}" alt="{{ file.title }}"/>
   </div>
   
-  <div class="resource-box__text">
-    <h3>{{ title }}</h3>
-    <h4>{{ info }}</h4>
+  <div class="pj-file__text">
+    <span class="pj-file__text__title">{{ file.title }}</span>
+    {% if file.info and file.info != "" %}
+      <span class="pj-file__text__data">{{ file.info }}</span>
+    {% endif %}
   </div>
 
-  <div class="resource-box__button">
-    <a href="{{ file | relative_url }}" target="_blank" class="btn btn-negative">
+  <div class="pj-file__button">
+    <a href="{{ file.file | relative_url }}" class="btn btn-negative">
       {% include svg/icon-download.liquid class="btn__icon" %}
 
       <span class="btn__label">{{ site.data.i18n[page.locale].global.download }}</span>
