@@ -64,6 +64,10 @@
         background-position: 100% 89%;
         color: $color-fg-primary;
       }
+
+      &::after {
+        content: none;
+      }
     }
   }
 }
