@@ -4,7 +4,7 @@ CMS.registerEditorComponent({
   // Internal id of the component
   id: "file-tag",
   // Visible label
-  label: "Archivo destacado",
+  label: "Archivo o link destacado",
   // Fields the user need to fill out when adding an instance of the component
   fields: [
     {
@@ -29,6 +29,20 @@ CMS.registerEditorComponent({
       default: "/assets/media/no_image-file.png",
       media_library: { config: { multiple: false } },
       media_folder: "/media/files/"
+    },
+    {
+      name: "button_text",
+      label: "Texto del botón",
+      widget: "string"
+    },
+    {
+      name: "button_icon",
+      label: "Icono del botón",
+      widget: "select",
+      options: [
+        { label: "Ninguno", value: "" },
+        { label: "Descarga", value: "icon-download" }
+      ]
     }
   ],
   // Regex pattern used to search for instances of this block in the markdown document.
@@ -40,7 +54,7 @@ CMS.registerEditorComponent({
   //
   // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
   // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-  pattern: /{% file { "title": "(.*)", "info": "(.*)", "file": "(.*)", "image": "(.*)" } %}/,
+  pattern: /{% file { "title": "(.*)", "info": "(.*)", "file": "(.*)", "image": "(.*)", "button_text": "(.*)", "button_icon": "(.*)" } %}/,
   // Given a RegExp Match object
   // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
   // return an object with one property for each field defined in `fields`.
@@ -51,8 +65,10 @@ CMS.registerEditorComponent({
     const info = match[2];
     const file = match[3];
     const image = match[4];
+    const button_text = match[5];
+    const button_icon = match[6];
     
-    return { title, info, file, image };
+    return { title, info, file, image, button_text, button_icon };
   },
   // Given an object with one property for each field defined in `fields`,
   // return the string you wish to be inserted into your markdown.
@@ -61,7 +77,7 @@ CMS.registerEditorComponent({
   // markdown document
   toBlock: function(data) {
     return (
-      `{% file { "title": "${data.title}", "info": "${data.info}", "file": "${data.file}", "image": "${data.image}" } %}`
+      `{% file { "title": "${data.title}", "info": "${data.info}", "file": "${data.file}", "image": "${data.image}", "button_text": "${data.button_text}", "button_icon": "${data.button_icon}" } %}`
     );
   },
   // Preview output for this component. Can either be a string or a React component
@@ -84,7 +100,7 @@ CMS.registerEditorComponent({
               </svg>
             </span>
 
-            <span class="btn__label">Download</span>
+            <span class="btn__label">${data.button_text}</span>
           </a>
         </div>
       </section>

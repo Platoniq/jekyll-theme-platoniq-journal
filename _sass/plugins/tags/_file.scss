@@ -55,6 +55,10 @@
   }
 
   &__button {
+    .btn__icon {
+      fill: $color-fg-primary-negative;
+    }
+
     justify-self: self-end;
   }
 }
