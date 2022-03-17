@@ -51,7 +51,6 @@
       {% unless category_articles == empty %}
         <li>
           {% capture category_url %}{{ category_key }}{% endcapture %}
-          {% assign category_name = site.data.i18n[page.locale].categories[archive.category] %}
     
           <div class="pj-sitemap-menu__text">
             <a href="{{ archive.url | relative_url }}" class="{% if page.category == archive.category %}select{% endif%}">

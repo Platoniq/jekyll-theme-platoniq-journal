@@ -68,15 +68,15 @@ CMS.registerEditorComponent({
   // (component gives better render performance)
   toPreview: function(data) {
     return  `
-      <section class="resource-box">
-        <div class="resource-box__img">
+      <section class="pj-file">
+        <div class="pj-file__img">
           <img src="${data.image}"/>
         </div>
-        <div class="resource-box__text">
-          <h3>${data.title}</h3>
-          <h4>${data.info}</h4>
+        <div class="pj-file__text">
+          <span class="pj-file__text__title">${data.title}</span>
+          <span class="pj-file__text__data">${data.info}</span>
         </div>
-        <div class="resource-box__button">
+        <div class="pj-file__button">
           <a href="${data.file}" target="_blank" class="btn btn-negative">
             <span class="btn__icon btn__icon-left">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon-download">

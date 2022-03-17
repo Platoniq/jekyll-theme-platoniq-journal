@@ -44,7 +44,8 @@
       grid-column-gap: 16px;
     }
 
-    h5 {
+    &__date,
+    &__author {
       @include font-body;
 
       color: $color-base;
