@@ -5,7 +5,11 @@
 # This ruby script is to create the front matter files which contain
 # the data for each sticker, given a sticker folder with .png images.
 #
-# Example source directory: `jekyll-theme-platoniq-journal/assets/media/stickers/volume-1/`
+# Usage: 
+# `./scripts/create_sticker_collection.rb `
+#
+#
+# Example source directory: `jekyll-theme-platoniq-journal/media/stickers/volume-1/`
 # Example target directory: `journal-content/_stickers/`
 #
 # Example output:
@@ -14,7 +18,7 @@
 # ---
 # volume-uid: journal-0
 # uid: journal-0-thumbs_up
-# path: /assets/media/stickers/journal-0/thumbs_up.png
+# path: /media/stickers/journal-0/thumbs_up.png
 # emoji: 🏳️ (Check https://unicode.org/emoji/charts/full-emoji-list.html)
 # name: Fill in with sticker description
 # ---
