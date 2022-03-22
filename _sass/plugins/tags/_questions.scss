@@ -1,0 +1,45 @@
+.pj-page .pj-questions {
+  // Grid
+  grid-column: 5 / span 17;
+
+  ul {
+    @extend .pj-numbers;
+
+    @media (min-width: $bp-tablet) {
+      margin-top: 0 !important;
+    }
+  }
+
+  .pj-question {
+    @include font-heading(18px);
+
+    @media (min-width: $bp-tablet) {
+      font-size: 36px;
+      margin-bottom: 0;
+    }
+
+    grid-column: 1 / span 11;
+
+    &:nth-of-type(2n) {
+      grid-column: 5 / span 11;
+    }
+
+    &:nth-of-type(3n) {
+      grid-column: 3 / span 11;
+    }
+
+    &:nth-of-type(4n) {
+      grid-column: 7 / span 11;
+    }
+
+    &::before {
+      content: "?";
+      color: $color-fg-primary;
+      @include font-heading(36px);
+
+      @media (min-width: $bp-tablet) {
+        font-size: 72px;
+      }
+    }
+  }
+}
