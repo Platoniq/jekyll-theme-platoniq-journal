@@ -1,5 +1,6 @@
-$sticker-width-desktop: 20rem;
-$sticker-width-mobile: 5rem;
+$sticker-width-desktop: 256px;
+$sticker-width-tablet: 128px;
+$sticker-width-mobile: 64px;
 $steps: 100;
 $step: random($steps);
 
@@ -10,7 +11,7 @@ $step: random($steps);
       opacity: 1;
 
       @if $i == $step {
-        transform: skew(#{random(15)}deg) scale(#{random(2) / 2});
+        transform: skew(#{random(15)}deg) translate(0, #{random(200) + 200}px);
         opacity: 0.15;
       } @else if $i == $step + 1 {
         transform: scale(0.1);
@@ -48,7 +49,7 @@ $step: random($steps);
   @include sticker-animation;
 
   animation-delay: #{random(10)}s;
-  animation-duration: #{random(10) + 20}s;
+  animation-duration: #{random(5) + 10}s;
   animation-name: breathe-effect;
 }
 
@@ -81,22 +82,36 @@ $step: random($steps);
 }
 
 .pj-sticker {
+  pointer-events: none;
   position: fixed;
   z-index: 2;
   width: $sticker-width-mobile;
 
-  @media (min-width: $bp-tablet) {
+  @media (min-width: $bp-desktop) {
+    width: $sticker-width-tablet;
+  }
+
+  @media (min-width: $bp-desktop-xxl) {
     width: $sticker-width-desktop;
   }
 }
 
 // Layout: One (Top left, bottom right)
 .pj-stickers-layout-one {
-  @include sticker-layout(2rem, 40vh, -2rem, 80vh);
+  @include sticker-layout(calc(16px + $sticker-width-mobile), 40vh, -2rem, 80vh);
 
-  @media (min-width: $bp-tablet) {
+  @media (min-width: $bp-desktop) {
     @include sticker-layout(
-      calc((100vw - #{$container-max-width}) / 2 - #{$sticker-width-desktop}),
+      calc(64px + $sticker-width-tablet),
+      25vh,
+      calc((100vw - #{$container-max-width}) / 2),
+      50vh
+    );
+  }
+
+  @media (min-width: $bp-desktop-xxl) {
+    @include sticker-layout(
+      calc(64px + (100vw - #{$container-max-width}) / 2 - #{$sticker-width-desktop}),
       25vh,
       calc((100vw - #{$container-max-width}) / 2),
       50vh
@@ -108,7 +123,16 @@ $step: random($steps);
 .pj-stickers-layout-two {
   @include sticker-layout(2rem, 80vh, -2rem, 40vh);
 
-  @media (min-width: $bp-tablet) {
+  @media (min-width: $bp-desktop) {
+    @include sticker-layout(
+      calc((100vw) / 2 - #{$sticker-width-tablet}),
+      50vh,
+      calc((100vw - #{$container-max-width}) / 2),
+      25vh
+    );
+  }
+
+  @media (min-width: $bp-desktop-xxl) {
     @include sticker-layout(
       calc((100vw - #{$container-max-width}) / 2 - #{$sticker-width-desktop}),
       50vh,

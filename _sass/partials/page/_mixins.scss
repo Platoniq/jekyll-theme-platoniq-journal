@@ -1,0 +1,13 @@
+@mixin list-item {
+  display: list-item;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: url("/assets/media/icons/icon-dot.svg") 0 0 / cover no-repeat;
+    top: -3px;
+    left: -24px;
+  }
+}
