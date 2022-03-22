@@ -19,7 +19,14 @@
         <figure class="pj-gallery-image">
           <img src="{{ image.path | relative_url }}"
               alt="{{ image.alt }}">
-          <figcaption>{{ image.credits }}</figcaption>
+          <figcaption>
+            <span class="pj-gallery-image__caption">
+              {{ image.caption }}
+            </span>
+            <span class="pj-gallery-image__credits">
+              {{ image.credits }}
+            </span>
+          </figcaption>
         </figure>
       </div>
     {% endfor %}

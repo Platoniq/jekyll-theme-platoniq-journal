@@ -2,34 +2,40 @@
 
 CMS.registerEditorComponent({
   // Internal id of the component
-  id: "gallery",
+  id: 'gallery',
   // Visible label
-  label: "Galería",
+  label: 'Galería',
   // Fields the user need to fill out when adding an instance of the component
   fields: [
     {
-      name: "images",
-      label: "Imágenes",
-      widget: "list",
+      name: 'images',
+      label: 'Imágenes',
+      widget: 'list',
+      summary: '{{fields.caption | default: fields.alt}}',
       fields: [
         {
-          name: "path",
-          label: "Imagen",
-          widget: "image",
-          default: "/assets/media/no_image-gallery.png",
+          name: 'path',
+          label: 'Imagen',
+          widget: 'image',
+          default: '/assets/media/no_image-gallery.png',
           media_library: {
-            media_folder: "/media/gallery"
+            media_folder: '/media/gallery'
           }
         },
         {
-          name: "alt",
-          label: "Texto alternativo a la imagen",
-          widget: "string"
+          name: 'alt',
+          label: 'Texto alternativo a la imagen',
+          widget: 'string'
         },
         {
-          name: "credits",
-          label: "Créditos de la imagen",
-          widget: "string"
+          name: 'caption',
+          label: 'Pie de imagen',
+          widget: 'string'
+        },
+        {
+          name: 'credits',
+          label: 'Créditos de la imagen',
+          widget: 'string'
         }
       ]
     }
@@ -74,7 +80,15 @@ CMS.registerEditorComponent({
         <div class="pj-gallery-images">
           <figure class="pj-gallery-image">
             <img src="${image.path}" alt="${image.alt}"/>  
-            <figcaption>${image.credits}</figcaption>
+            <figcaption>
+              <span class="pj-gallery-image__caption">
+                ${image.caption}
+              </span>
+
+              <span class="pj-gallery-image__credits">
+                ${image.credits}
+              </span>
+            </figcaption>
           </figure>
         </div>
       `;
