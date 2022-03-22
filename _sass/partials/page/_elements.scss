@@ -89,25 +89,16 @@
   }
 
   > ul li {
-    &::before {
-      position: absolute;
-      content: "";
-      width: 24px;
-      height: 24px;
-      background: url("/assets/media/icons/icon-dot.svg") 0 0 / cover no-repeat;
-      top: -3px;
-      left: -24px;
-    }
+    @include list-item;
   }
 
   .pj-article {
     > ul,
     > ol {
       padding: 0 0 0 40px;
-
-      li {
-        display: list-item;
-      }
+    }
+    > ul li {
+      @include list-item;
     }
 
     ol {
@@ -117,30 +108,34 @@
     }
   }
 
-  p > .link-external {
-    position: relative;
+  p,
+  em,
+  strong {
+    .link-external {
+      position: relative;
 
-    &::after {
-      mask-image: url("/assets/media/icons/icon-external-link.svg"), none;
-      mask-mode: alpha;
-      mask-repeat: no-repeat;
-      mask-size: contain;
-      mask-position: .25em;
-
-      content: "";
-
-      display: inline-block;
-      font-size: 0.5em;
-      width: 1.5em;
-      height: 1.5em;
-      margin: 0;
-      background-color: $color-link;
-    }
-
-    &:focus,
-    &:hover {
       &::after {
-        background-color: $color-link-hover;
+        mask-image: url("/assets/media/icons/icon-external-link.svg"), none;
+        mask-mode: alpha;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        mask-position: 0.25em;
+
+        content: "";
+
+        display: inline-block;
+        font-size: 0.5em;
+        width: 1.5em;
+        height: 1.5em;
+        margin: 0;
+        background-color: $color-link;
+      }
+
+      &:focus,
+      &:hover {
+        &::after {
+          background-color: $color-link-hover;
+        }
       }
     }
   }
