@@ -1,5 +1,13 @@
+{% assign multiple = false %}
+{% assign image_class = "pj-gallery-image__single" %}
+
+{% if gallery.images.size > 1 %}
+  {% assign multiple = true %}
+  {% assign image_class = "pj-gallery-image__multiple" %}
+{% endif %}
+
 <section class="pj-gallery">
-  {% if gallery.images.size > 1 %}
+  {% if multiple %}
     <button class="pj-gallery-button pj-gallery-button-previous">
       {% include svg/icon-arrow_left.liquid
         class="pj-gallery-icon pj-gallery-icon-left"
@@ -16,7 +24,7 @@
   <div class="pj-gallery-images">
     {% for image in gallery.images %}
       <div class="pj-gallery-image-container">
-        <figure class="pj-gallery-image">
+        <figure class="pj-gallery-image {{image_class}}">
           <img src="{{ image.path | relative_url }}"
               alt="{{ image.alt }}">
           <figcaption>
@@ -24,7 +32,11 @@
               {{ image.caption }}
             </span>
             <span class="pj-gallery-image__credits">
-              {{ image.credits }}
+              {% if image.credits != "" %}
+                {{ image.credits }}
+              {% else %}
+                {% include default/credits.liquid %}
+              {% endif %}
             </span>
           </figcaption>
         </figure>

@@ -79,13 +79,25 @@ $icon-space-y: $icon-size * 2;
       letter-spacing: -0.7px;
       text-align: right;
       margin-top: 1em;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 1em;
 
       @media (min-width: $bp-tablet) {
+        flex-direction: row;
         font-size: 16px;
+
+        justify-content: space-between;
+
+        .pj-gallery-image__credits {
+          flex: 1 1 auto;
+        }
       }
 
-      display: flex;
-      justify-content: space-between;
+      .pj-gallery-image__caption {
+        text-align: left;
+        max-width: 40em;
+      }
     }
   }
 }
