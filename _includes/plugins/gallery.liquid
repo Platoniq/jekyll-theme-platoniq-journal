@@ -1,12 +1,17 @@
 {% assign multiple = false %}
 {% assign image_class = "pj-gallery-image__single" %}
+{% assign gallery_class = "pj-gallery__full" %}
 
 {% if gallery.images.size > 1 %}
   {% assign multiple = true %}
   {% assign image_class = "pj-gallery-image__multiple" %}
 {% endif %}
 
-<section class="pj-gallery">
+{% if gallery.simple %}
+  {% assign gallery_class = "pj-gallery__simple" %}
+{% endif %}
+
+<section class="pj-gallery {{gallery_class}}">
   {% if multiple %}
     <button class="pj-gallery-button pj-gallery-button-previous">
       {% include svg/icon-arrow_left.liquid
@@ -33,18 +38,21 @@
               title="{{ image.alt }}"
               alt="{{ image.alt }}"
               class="{{ image_bw_class }}">
-          <figcaption>
-            <span class="pj-gallery-image__caption">
-              {{ image.caption }}
-            </span>
-            <span class="pj-gallery-image__credits">
-              {% if image.credits != "" %}
-                {{ image.credits }}
-              {% else %}
-                {% include default/credits.liquid %}
-              {% endif %}
-            </span>
-          </figcaption>
+          
+          {% unless gallery.simple %}
+            <figcaption>
+              <span class="pj-gallery-image__caption">
+                {{ image.caption }}
+              </span>
+              <span class="pj-gallery-image__credits">
+                {% if image.credits != "" %}
+                  {{ image.credits }}
+                {% else %}
+                  {% include default/credits.liquid %}
+                {% endif %}
+              </span>
+            </figcaption>
+          {% endunless %}
         </figure>
       </div>
     {% endfor %}

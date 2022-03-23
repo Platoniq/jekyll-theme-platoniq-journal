@@ -6,7 +6,7 @@ $icon-space-y: $icon-size * 2;
 .pj-gallery,
 .pj-page .pj-gallery {
   grid-column: 5 / span 17;
-
+  
   &-button {
     background: none;
     border: none;
@@ -98,6 +98,15 @@ $icon-space-y: $icon-size * 2;
         text-align: left;
         max-width: 40em;
       }
+    }
+  }
+
+  &__simple {
+    grid-column: 7 / span 13;
+
+    figure {
+      margin-top: $grid-row-sm;
+      margin-bottom: $grid-row-sm;
     }
   }
 }
