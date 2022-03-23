@@ -19,9 +19,9 @@
         {{ article_date }}
       </span>
 
-      <span class="pj-hero__data__author">
+      <a class="pj-hero__data__author" href="{{ author.url | relative_url }}">
         {{ author.name | prepend: t_authored_by }}
-      </span>
+      </a>
     </div>
   </div>
 
