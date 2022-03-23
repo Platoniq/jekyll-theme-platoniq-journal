@@ -25,8 +25,14 @@
     {% for image in gallery.images %}
       <div class="pj-gallery-image-container">
         <figure class="pj-gallery-image {{image_class}}">
+          {% if image.bw %}
+            {% assign image_bw_class = "bw" %}
+          {% endif %}
+
           <img src="{{ image.path | relative_url }}"
-              alt="{{ image.alt }}">
+              title="{{ image.alt }}"
+              alt="{{ image.alt }}"
+              class="{{ image_bw_class }}">
           <figcaption>
             <span class="pj-gallery-image__caption">
               {{ image.caption }}

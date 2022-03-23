@@ -7,3 +7,7 @@ body {
 
   background-color: $color-bg-secondary;
 }
+
+.bw {
+  filter: saturate(0);
+}

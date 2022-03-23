@@ -36,6 +36,11 @@ CMS.registerEditorComponent({
           name: 'credits',
           label: 'Créditos de la imagen',
           widget: 'string'
+        },
+        {
+          name: 'bw',
+          label: 'Blanco y negro',
+          widget: 'boolean'
         }
       ]
     }
@@ -79,7 +84,7 @@ CMS.registerEditorComponent({
       return `
         <div class="pj-gallery-images">
           <figure class="pj-gallery-image">
-            <img src="${image.path}" alt="${image.alt}"/>  
+            <img src="${image.path}" alt="${image.alt}" class="${ image.bw ? 'image-bw' : ''}"/>  
             <figcaption>
               <span class="pj-gallery-image__caption">
                 ${image.caption}
