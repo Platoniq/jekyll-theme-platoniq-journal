@@ -14,12 +14,14 @@
   </button>
 
   <ul class="pj-sitemap-menu">
-    <li>
-      <a href="{{ about_page.url | relative_url }}" class="{% if page.uid == "about" %}select{% endif%}">
-        <h3 class="pj-sitemap-menu__title">{{ about_page.title }}</h3>
-      </a>
-    </li>
-
+    {% if about_page.published %}
+      <li>
+        <a href="{{ about_page.url | relative_url }}" class="{% if page.uid == "about" %}select{% endif%}">
+          <h3 class="pj-sitemap-menu__title">{{ about_page.title }}</h3>
+        </a>
+      </li>
+    {% endif %}
+    
     {% if sticker_pack_page %}
       <li>
         <a href="{{ sticker_pack_page.url | relative_url }}">
@@ -28,17 +30,21 @@
       </li>
     {% endif %}
 
-    <li>
-      <a href="{{ terms_page.url | relative_url }}">
-        <h3 class="pj-sitemap-menu__title">{{ terms_page.title }}</h3>
-      </a>
-    </li>
+    {% if terms_page.published %}
+      <li>
+        <a href="{{ terms_page.url | relative_url }}">
+          <h3 class="pj-sitemap-menu__title">{{ terms_page.title }}</h3>
+        </a>
+      </li>
+    {% endif %}
 
-    <li>
-      <a href="{{ privacy_page.url | relative_url }}">
-        <h3 class="pj-sitemap-menu__title">{{ privacy_page.title }}</h3>
-      </a>
-    </li>
+    {% if privacy_page.published %}
+      <li>
+        <a href="{{ privacy_page.url | relative_url }}">
+          <h3 class="pj-sitemap-menu__title">{{ privacy_page.title }}</h3>
+        </a>
+      </li>
+    {% endif %}
 
     <hr>
 
