@@ -87,7 +87,7 @@
             hint: Imagen de portada,
             name: "path",
             widget: "image",
-            choose_url: true,
+            choose_url: false,
             default: "/assets/media/no_image-hero.png",
             media_library: { config: { multiple: false } },
             media_folder: "/media/articles/heroes",
@@ -98,7 +98,7 @@
             hint: Imagen pequeña usada en listas,
             name: "thumbnail",
             widget: "image",
-            choose_url: true,
+            choose_url: false,
             default: "/assets/media/no_image-thumbnail.png",
             media_library: { config: { multiple: false } },
             media_folder: "/media/articles/thumbnails",
@@ -110,7 +110,7 @@
     - label: "Contenido del artículo"
       name: "body"
       widget: "markdown"
-      editor_components: ["image", "gallery", "quote-tag", "file-tag", "documents-tag", "links-tag", "numbers-tag", "videos"]
+      editor_components: ["gallery", "quote-tag", "file-tag", "documents-tag", "links-tag", "numbers-tag", "questions-tag"]
       i18n: true
     - label: "Artículos relacionados"
       name: related_article_uids

@@ -2,14 +2,21 @@
 layout: base
 ---
 
-<h1>{{ page.name }}</h1>
+{% include article/assigns.liquid %}
+
+<header class="pj-hero">
+  <div class="pj-hero__text">
+    <h1>
+      {{ page.title }}
+    </h1>
+  </div>
+
+  <div class="pj-hero__img">
+    <img src="{{ page.image.path | relative_url }}" alt="{{ page.name }}">
+  </div>
+</header>
+
 <h2>{{ page.position }}</h2>
-
-<img
-  src="{{ page.image_url }}"
-  alt="{{ page.name }} image"
-  height="250">
-
 
 {{ content }}
 

@@ -27,7 +27,7 @@ CMS.registerEditorComponent({
   //
   // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
   // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-  pattern: /{% quote { "author": "(.*)" } %}(.*){% endquote %}/,
+  pattern: /{% quote ({ "author": "(.*)" } )?%}(.*){% endquote %}/,
   // Given a RegExp Match object
   // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
   // return an object with one property for each field defined in `fields`.
@@ -35,8 +35,8 @@ CMS.registerEditorComponent({
   // This is used to populate the custom widget in the markdown editor in the CMS.
   fromBlock: function(match) {
     return {
-      author: match[1],
-      quote: match[2]
+      author: match[2],
+      quote: match[3]
     };
   },
   // Given an object with one property for each field defined in `fields`,
@@ -45,14 +45,13 @@ CMS.registerEditorComponent({
   // This is used to serialize the data from the custom widget to the
   // markdown document
   toBlock: function(data) {
-    return `{% quote { "author": "${data.author}" } %}${data.quote}{% endquote %}`;
+    var author = data.author ? `{ "author": "${data.author}" } ` : "";
+
+    return `{% quote ${author}%}${data.quote}{% endquote %}`;
   },
   // Preview output for this component. Can either be a string or a React component
   // (component gives better render performance)
   toPreview: function(data) {
-    // var htmlString =`{% include journal/hero_image.liquid %}`;
-
-    // return h('div', {"dangerouslySetInnerHTML": {"__html": htmlString}} );
     return  `
       <figure class="pj-quote">
         <blockquote>

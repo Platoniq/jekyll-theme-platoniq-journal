@@ -47,10 +47,15 @@
     &__date,
     &__author {
       @include font-body;
-
+      
       color: $color-base;
       letter-spacing: -0.7px;
       margin-bottom: 1em;
+      
+      &:focus,
+      &:hover {
+        margin-bottom: 1em;
+      }
 
       @media (min-width: $bp-tablet) {
         font-size: 16px;

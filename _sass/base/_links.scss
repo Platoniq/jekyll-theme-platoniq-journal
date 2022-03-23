@@ -29,14 +29,18 @@ a {
     position: relative;
     padding-bottom: 0.375em;
 
-    &-external::after {
-      content: "";
-      position: absolute;
-      top: -8px;
-      right: -24px;
-      width: 24px;
-      height: 24px;
-      background: url("/assets/media/icons/icon-external-link.svg") 0 0 / cover no-repeat;
+    &-external {
+      white-space: nowrap;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -8px;
+        right: -24px;
+        width: 24px;
+        height: 24px;
+        background: url("/assets/media/icons/icon-external-link.svg") 0 0 / cover no-repeat;
+      }
     }
   }
 
