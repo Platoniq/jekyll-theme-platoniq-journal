@@ -37,4 +37,22 @@
       name: body
       widget: markdown
       i18n: translate
+
+    - label: Imagen
+      name: image
+      widget: object
+      i18n: true
+      fields:
+        - label: Imagen
+          name: path
+          widget: image
+          choose_url: false
+          default: "/assets/media/no_image-hero.png"
+          media_library: { config: { multiple: false } }
+          media_folder: "/media/authors"
+          i18n: duplicate
+        - label: Texto alternativo a la imagen
+          name: alt
+          widget: string
+          i18n: translate
 {% endraw %}
