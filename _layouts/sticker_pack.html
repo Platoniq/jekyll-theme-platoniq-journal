@@ -45,23 +45,6 @@ layout: default
 
       {{ content }}
     </div>
-
-    
-    <div class="container grid">
-      <hr/>
-      <h2>{{ site.data.i18n[page.locale].global.license }}</h2>
-
-      <p>
-        {{ page.license }}
-      </p>
-      
-      {% assign title = page.title %}
-      {% assign image = page.cover.thumbnail %}
-      {% assign file = page.file.path %}
-      {% assign info = page.file.info %}
-      
-      {% include plugins/file.liquid %}
-    </div>
   </article>
 </section>
 
