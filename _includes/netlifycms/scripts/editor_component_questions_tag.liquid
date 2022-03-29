@@ -42,7 +42,6 @@ CMS.registerEditorComponent({
   // This is used to serialize the data from the custom widget to the
   // markdown document
   toBlock: function(data) {
-    console.dir(data)
     const items = data.items || [];
 
     return `{% questions { "items": ${JSON.stringify(items)} } %}`
