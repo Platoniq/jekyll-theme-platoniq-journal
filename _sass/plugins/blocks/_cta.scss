@@ -60,9 +60,10 @@
 
     fieldset {
       @include font-body-medium(18px);
+
       display: grid;
 
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       grid-gap: 1rem;
 
       letter-spacing: -0.5px;
@@ -70,36 +71,54 @@
 
       color: $color-fg-primary-negative;
 
-      @media (min-width: $bp-tablet) {
+      @media (min-width: $bp-desktop) {
+        grid-template-columns: 1fr 1fr;
         font-size: 19px;
+      }
+
+      textarea {
+        resize: vertical;
       }
 
       input,
       textarea {
         @include font-body;
-        resize: vertical;
 
         background: $color-base-negative;
         color: $color-base;
         border-bottom: 3px solid $color-base-negative;
 
         padding: 1rem;
-        grid-row: 2;
 
         &:focus-visible {
           border: none;
           border-bottom: 3px solid $color-bg-primary-negative;
         }
+
+        @media (min-width: $bp-desktop) {
+          grid-row: 2;
+        }
       }
 
       &.pj-cta-contact {
         label[for="message"] {
-          grid-row: 3;
+          grid-row: 5;
         }
 
         textarea[name="message"] {
-          grid-row: 4;
-          grid-column: span 2;
+          grid-row: 6;
+          grid-column: 1;
+        }
+
+        @media (min-width: $bp-desktop) {
+          label[for="message"] {
+            grid-row: 3;
+          }
+
+          textarea[name="message"] {
+            grid-row: 4;
+            grid-column: span 2;
+          }
         }
       }
     }
