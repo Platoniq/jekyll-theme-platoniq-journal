@@ -71,6 +71,8 @@
   }
 
   &__locale-selector {
+    position: fixed;
+    
     @media (min-width: $bp-tablet) {
       grid-column: -4 / span 3;
     }
