@@ -1,0 +1,26 @@
+{% assign article_es = site.articles | where: "uid", page.uid | find: "locale", "es" %}
+{% assign author = site.authors | where: "uid", page.author  | find: "locale", "es" %}
+
+<h1>
+    {{site.collections["authors"]}}
+</h1>
+
+<h1>
+    {{site.authors | where: "uid", page.author }}
+</h1>
+<h1>
+    {{page.author}}
+</h1>
+
+<section class="pj-author">
+    <div class="pj-author__img">
+        <img src="{{ author.image.path | relative_url }}" alt="{{ author.name }}" />
+    </div>
+
+    <div class="pj-author__text">
+        <h3 class="pj-author__text__name">{{ author.name }}</h3>
+        <h4 class="pj-author__text__name">{{ author.position }}</h4>
+
+        <p class="pj-author__text__bio">{{ author.body }}</p>
+    </div>
+</section>
