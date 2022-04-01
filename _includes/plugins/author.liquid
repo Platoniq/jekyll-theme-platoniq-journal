@@ -1,0 +1,12 @@
+<section class="pj-author">
+    <div class="pj-author__img">
+        <img src="{{ author.image.path | relative_url }}" alt="{{ author.name }}" />
+    </div>
+
+    <div class="pj-author__text">
+        <h3 class="pj-author__text__name">{{ author.name }}</h3>
+        <h4 class="pj-author__text__name">{{ author.position }}</h4>
+
+        <p class="pj-author__text__bio">{{ author.body }}</p>
+    </div>
+</section>
