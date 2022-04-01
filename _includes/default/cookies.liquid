@@ -1,0 +1,71 @@
+{% assign privacy_page = site.pages | where: "uid", "privacy" | where: "locale", page.locale | first %}
+{% assign more_info_url = privacy_page.url %}
+
+{% assign title = "We want your consent" %}
+{% assign subtitle = "We would like to use third party cookies and scripts to improve the functionality of this website." %}
+{% assign approve_text = "Approve" %}
+{% assign more_info_text = "More info" %}
+
+<div id="cookie-notice" class="pj-cookie-notice">
+  <div class="pj-cookie-notice__img">
+    <img src="/assets/media/cookies.png" alt="Cookies banner handshake image"/>
+  </div>
+  
+  <div class="pj-cookie-notice__text">
+    <h3 class="pj-cookie-notice__text__title">{{ title }}</h3>
+    <span class="pj-cookie-notice__text__subtitle">{{ subtitle }}</span>
+  </div>
+
+  <div class="pj-cookie-notice__button">
+    <a id="cookie-notice-accept" class="btn">
+      <span class="btn__label">{{ approve_text }}</span>
+    </a>
+  </div>
+  
+  <div class="pj-cookie-notice__button">
+    <a href="{{ more_info_url | relative_url }}" class="btn">
+      <span class="btn__label">{{ more_info_text }}</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+  }
+
+  function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1,c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+  }
+
+  function eraseCookie(name) {   
+      document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  }
+
+  if(getCookie('consentful-cookies-by-platoniq') == 'true') {
+    document.getElementById('cookie-notice').style.visibility = 'hidden';
+    {% include default/analytics.js %}
+  } else {
+    document.getElementById('cookie-notice').style.visibility = 'initial';
+  }
+
+  document.getElementById('cookie-notice-accept').addEventListener("click",function() {
+    setCookie('consentful-cookies-by-platoniq', 'true', 31);
+    document.getElementById('cookie-notice').style.visibility = 'hidden';
+    location.reload();
+  });
+
+</script>
