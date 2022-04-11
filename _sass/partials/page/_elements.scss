@@ -43,7 +43,7 @@
     }
   }
 
-  h3 {
+  @mixin heading-3 {
     @include font-body-bold(21px);
 
     color: $color-base;
@@ -58,13 +58,17 @@
     }
   }
 
+  h3 {
+    @include heading-3;
+  }
+
   h4 {
-    @extend h3;
+    @include heading-3;
     @include font-body-bold(18px);
   }
 
   h5 {
-    @extend h3;
+    @include heading-3;
     @include font-body-bold(16px);
   }
 
