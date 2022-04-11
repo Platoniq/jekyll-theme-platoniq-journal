@@ -19,7 +19,7 @@ CMS.registerEditorComponent({
       summary: '{{fields.title}}',
       fields: [
         { label: 'Título del documento', name: 'title',  widget: 'string' },
-        { label: 'Archivo', name: 'file',  widget: 'file', default: "", media_library: { media_folder: "documents" } }
+        { label: 'Archivo', name: 'file',  widget: 'file', default: "", media_library: { config: { multiple: false } } }
       ]
     }
   ],

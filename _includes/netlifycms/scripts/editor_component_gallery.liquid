@@ -18,9 +18,7 @@ CMS.registerEditorComponent({
           label: 'Imagen',
           widget: 'image',
           default: '/assets/media/no_image-gallery.png',
-          media_library: {
-            media_folder: '/media/gallery/'
-          }
+          media_library: { config: { multiple: false } }
         },
         {
           name: 'alt',
