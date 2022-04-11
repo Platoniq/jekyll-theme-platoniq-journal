@@ -1,15 +1,15 @@
 .pj-related-articles {
   grid-column: 5 / span 17;
 
-  .pj-articles {
-    @extend #main;
-    
-    padding-top: $grid-row-lg;
-    padding-bottom: $grid-row-lg;
-  }
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  
+  // padding-left: 60px;
+  // padding-right: $grid-row-lg;
+  // padding-top: $grid-row-lg;
 
   h2 {
-    grid-column: span 24;
+    grid-column: 4 / span 18;
 
     @include font-heading(28px);
 
@@ -23,7 +23,35 @@
     }
   }
 
-  article {
-    grid-column: span 8;
+  .pj-articles {
+    @extend #main;
+
+    grid-column: 4 / span 18;
+
+    padding-top: $grid-row-lg;
+    padding-bottom: 0;
+
+    @media (min-width: $bp-tablet) {
+      padding-bottom: $grid-row-lg;
+    }
+
+    .highlighted {
+      grid-column: span 8;
+      justify-content: flex-end;
+
+      @media (max-width: $bp-tablet) {
+        &:last-child {
+          margin-bottom: $grid-row-lg;
+        }
+      }
+
+      h3 {
+        font-size: 18px;
+
+        @media (min-width: $bp-tablet) {
+          font-size: 19px;
+        }
+      }
+    }
   }
 }
