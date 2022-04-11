@@ -1,4 +1,5 @@
-.pj-author {
+.pj-page .pj-author,
+.pj-article .pj-author {
   padding: 16px;
   margin-top: $grid-row-xl;
   margin-bottom: $grid-row-lg;
@@ -43,7 +44,8 @@
       margin: 0;
     }
 
-    &__name {
+    &__name,
+    &__position {
       margin-bottom: 0.25em;
       margin-top: 0;
 
@@ -55,6 +57,14 @@
 
       @media (min-width: $bp-tablet) {
         font-size: 32px;
+      }
+    }
+
+    &__position {
+      @include font-heading(18px);
+
+      @media (min-width: $bp-tablet) {
+        font-size: 19px;
       }
     }
 

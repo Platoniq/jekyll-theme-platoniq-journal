@@ -30,7 +30,7 @@
   }
 
   h2,
-  .pj-article p:first-of-type {
+  .pj-article > p:first-of-type {
     @include font-body(24px);
 
     color: $color-base;
