@@ -4,6 +4,10 @@
     grid-column: 7 / span 13;
   }
 
+  iframe {
+    grid-column: 5 / span 17;
+  }
+
   p,
   ul,
   ol,
@@ -92,7 +96,7 @@
     }
   }
 
-  > ul li {
+  ul li {
     @include list-item;
   }
 
@@ -124,6 +128,11 @@
         mask-repeat: no-repeat;
         mask-size: contain;
         mask-position: 0.25em;
+        -webkit-mask-image: url("/assets/media/icons/icon-external-link.svg"), none;
+        -webkit-mask-mode: alpha;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        -webkit-mask-position: 0.25em;
 
         content: "";
 

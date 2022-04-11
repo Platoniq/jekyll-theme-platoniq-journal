@@ -79,7 +79,7 @@ a {
     .link__label {
       color: $color-fg-primary-hover;
       font-weight: $font-weight-body-bold;
-      background: transparent linear-gradient(90deg, $color-fg-primary 50%, $color-fg-primary 0) no-repeat;
+      background: transparent linear-gradient(90deg, $color-fg-primary-hover 50%, $color-fg-primary-hover 0) no-repeat;
       background-size: 200% 2px;
       background-position: 100% 100%;
     }
