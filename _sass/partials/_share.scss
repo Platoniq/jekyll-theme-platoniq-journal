@@ -42,6 +42,10 @@
       }
       list-style-type: none;
       margin: auto 0 auto 0.8rem;
+
+      @media (max-width: $bp-tablet) {
+        display: flex;
+      }
     }
 
     & a {
@@ -51,9 +55,9 @@
 
       color: $color-base;
       letter-spacing: -0.7px;
-      padding-bottom: 6px !important;
 
       @media (min-width: $bp-tablet) {
+        padding-bottom: 6px !important;
         font-size: 16px;
       }
 
