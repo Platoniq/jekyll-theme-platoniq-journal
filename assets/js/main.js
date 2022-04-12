@@ -6,7 +6,7 @@ $(document).ready(function() {
    * Menus
    * 
    */
-  function initializeMenu ($btn, $menu) {
+  function initializeMenu($btn, $menu) {
     $btn.click(function(e) {
       $btn.toggleClass("status-open");
       $menu.toggleClass("status-open");
@@ -33,7 +33,7 @@ $(document).ready(function() {
 
   $articles.click(function(e) {
     var href = $(e.target).attr("href");
-    
+
     if (!href) {
       href = $(e.target).closest("article").data("href");
       window.location = href;
@@ -46,7 +46,7 @@ $(document).ready(function() {
    * 
    */
   var $gallery = $(".pj-gallery .pj-gallery-images");
-  
+
   if ($gallery.children("img").length > 1) {
     $galleryBtnPrevious = $(".pj-gallery-button-previous");
     $galleryBtnNext = $(".pj-gallery-button-next");
@@ -57,9 +57,8 @@ $(document).ready(function() {
       nextArrow: $galleryBtnNext.prop("outerHTML"),
       infinite: false
     });
-  
+
     $galleryBtnPrevious.detach();
     $galleryBtnNext.detach();
   }
-
 });
