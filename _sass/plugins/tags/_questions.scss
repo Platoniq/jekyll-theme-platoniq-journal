@@ -36,9 +36,11 @@
       content: "?";
       color: $color-fg-primary;
       margin-left: -0.7em;
-      
+
+      background: none;
+
       @include font-heading(36px);
-      
+
       @media (min-width: $bp-tablet) {
         font-size: 72px;
       }

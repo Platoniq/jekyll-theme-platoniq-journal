@@ -5,10 +5,11 @@
     @include font-heading(28px);
 
     color: $color-fg-primary;
-    letter-spacing: -6px;
+    letter-spacing: -3px;
     margin-bottom: 0.5em;
 
     @media (min-width: $bp-tablet) {
+      letter-spacing: -6px;
       font-size: 64px;
       margin-bottom: 0;
     }
