@@ -168,9 +168,9 @@ To quote or not to quote: That is the question.
 
 | Option | Type | Description | Example | Default |
 |---|---|---|---|---|
+| **title** | `string` | Video title | `"I love cats"` | `""` |
 | **url** | `string` | Video's embed URL | `"https://videos.com/embed/video-id"` | `""` |
-| **type** | `string` | Video type ("peertube", "vimeo", "youtube") | `"vimeo"` | `""` |
 
 ```
-{% video { "url": "https://videos.com/embed/video-id", "type": "vimeo" } %}
+{% video { "title": "I love cats", "url": "https://videos.com/embed/video-id" } %}
 ```
