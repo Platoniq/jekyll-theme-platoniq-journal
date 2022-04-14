@@ -1,0 +1,62 @@
+.pj-video {
+  grid-column: 7 / span 13;
+
+  background: $color-bg-primary-negative;
+
+  margin: $grid-row-lg 0;
+
+  @media (min-width: $bp-tablet) {
+    margin: $grid-row-xl 0;
+  }
+
+  &__overlay {
+    width: 100%;
+    background: transparentize($color-bg-dark, 0.7);
+    z-index: 1;
+    display: block;
+    position: absolute;
+    height: 33vh;
+
+    cursor: pointer;
+
+    @include flex-center;
+  }
+
+  &__play {
+    position: absolute;
+    background: $color-bg-primary;
+
+    width: 90%;
+    height: 125%;
+
+    clip-path: polygon(20% 0%, 20% 100%, 100% 50%);
+
+    @media (min-width: $bp-phablet) {
+      width: 66%;
+    }
+  }
+
+  &__text {
+    width: 50%;
+    z-index: 1;
+
+    margin-left: -$margin-sm;
+
+    h3 {
+      @include font-heading(28px);
+
+      color: $color-fg-primary-negative;
+      letter-spacing: -0.4px;
+
+      margin-top: 0;
+
+      @media (max-width: $bp-phablet) {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: $bp-phablet) {
+      width: 66%;
+    }
+  }
+}
