@@ -1,6 +1,7 @@
 var thirdPartyCookie = "platoniq-third-party-cookies-consent";
 var newsletterCookie = "platoniq-cta-newsletter";
 var expirationDays = 90;
+var path = "/";
 
 $(document).ready(function() {
   if ($.cookie(thirdPartyCookie) == "true") {
@@ -11,7 +12,7 @@ $(document).ready(function() {
   }
 
   $("#cookie-notice-accept").on("click", () => {
-    $.cookie(thirdPartyCookie, "true", { expires: expirationDays });
+    $.cookie(thirdPartyCookie, "true", { expires: expirationDays, path: path });
     $("#cookie-notice").hide();
     location.reload();
   });
@@ -23,6 +24,6 @@ $(document).ready(function() {
   }
 
   $("form").on("submit", () => {
-    $.cookie(newsletterCookie, "true", { expires: expirationDays });
+    $.cookie(newsletterCookie, "true", { expires: expirationDays, path: path });
   });
 });
