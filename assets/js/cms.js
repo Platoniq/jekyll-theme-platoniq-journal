@@ -12,7 +12,7 @@ scripts:
   - editor_component_numbers_tag.liquid
   - editor_component_questions_tag.liquid
   - editor_component_author_tag.liquid
-  - editor_component_videos.liquid
+  - editor_component_video_tag.liquid
 ---
 
 {% for script in page.scripts %}

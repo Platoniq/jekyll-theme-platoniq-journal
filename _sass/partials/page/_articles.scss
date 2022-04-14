@@ -1,11 +1,11 @@
 [data-category="deep-dives"] {
-  & > h3 {
+  & > h2 {
     grid-column: 3 / span 24;
 
     @include font-heading(28px);
 
     color: $color-fg-primary;
-    letter-spacing: -3px;
+    letter-spacing: -1px;
     margin-bottom: 0.5em;
 
     @media (min-width: $bp-tablet) {

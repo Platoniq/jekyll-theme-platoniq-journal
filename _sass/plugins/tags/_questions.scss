@@ -7,6 +7,7 @@
 
     @media (min-width: $bp-tablet) {
       margin-top: 0 !important;
+      margin-bottom: 0 !important;
     }
   }
 
@@ -19,6 +20,10 @@
     }
 
     grid-column: 1 / span 11;
+
+    &:only-child {
+      grid-column: 2 / span 14;
+    }
 
     &:nth-of-type(2n) {
       grid-column: 5 / span 11;

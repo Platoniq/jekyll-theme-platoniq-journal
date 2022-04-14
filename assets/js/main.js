@@ -61,4 +61,29 @@ $(document).ready(function() {
     $galleryBtnPrevious.detach();
     $galleryBtnNext.detach();
   }
+
+
+  /*
+   * 
+   * Videos
+   * 
+   */
+
+  $.each($(".pj-video"), function(index, pjVideo) {
+    var $video = $(pjVideo);
+    var $overlay = $video.find(".pj-video__overlay");
+
+    var src = $video.data("src");
+
+    var $iframe = $(`<iframe src="${src}" class="bw"></iframe>`);
+    $iframe.height("33vh");
+    $iframe.width("100%");
+
+    $video.append($iframe);
+
+    $overlay.on("click", function(e) {
+      $video.find("iframe").removeClass("bw");
+      $overlay.remove();
+    });
+  });
 });
