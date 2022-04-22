@@ -1,4 +1,5 @@
 .pj-page-section {
+  min-height: calc(100vh - 10em);
   padding-top: 136px;
 
   @media (min-width: $bp-tablet) {

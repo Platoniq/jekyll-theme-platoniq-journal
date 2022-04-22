@@ -42,6 +42,20 @@ $(document).ready(function() {
 
   /*
    * 
+   * Call to action
+   * 
+   */
+  var ctaUrl = $(".pj-cta__button a, .pj-file__button a").attr("href");
+
+  if (ctaUrl) {
+    var url = new URL(ctaUrl);
+    url.searchParams.append("url", window.location);
+    $(".pj-cta__button a, .pj-file__button a").attr("href", url);
+  }
+
+
+  /*
+   * 
    * Gallery
    * 
    */
