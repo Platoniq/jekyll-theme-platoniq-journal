@@ -1,12 +1,8 @@
 .pj-related-articles {
-  grid-column: 5 / span 17;
-
-  display: grid;
-  grid-template-columns: repeat(24, 1fr);
-  
-  // padding-left: 60px;
-  // padding-right: $grid-row-lg;
-  // padding-top: $grid-row-lg;
+  .grid {
+    grid-row-gap: $grid-row-md;
+    padding-left: 60px;
+  }
 
   h2 {
     grid-column: 4 / span 18;
@@ -26,13 +22,17 @@
   .pj-articles {
     @extend #main;
 
-    grid-column: 4 / span 18;
-
     padding-top: $grid-row-lg;
     padding-bottom: 0;
 
     @media (min-width: $bp-tablet) {
       padding-bottom: $grid-row-lg;
+
+      display: grid;
+      grid-template-columns: repeat(24, 1fr);
+      grid-column-gap: 16px;
+
+      grid-column: 4 / span 18;
     }
 
     .highlighted {
@@ -51,6 +51,19 @@
         @media (min-width: $bp-tablet) {
           font-size: 19px;
         }
+      }
+
+      .interviewee {
+        @include font-heading(1em);
+
+        line-height: 115%;
+        color: $color-fg-primary-negative;
+        letter-spacing: -0.4px;
+        background-color: $color-fg-primary;
+        display: block;
+        width: fit-content;
+        padding: 0.188em 0.375em;
+        margin-bottom: 0.25em;
       }
     }
   }

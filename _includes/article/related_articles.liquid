@@ -1,16 +1,18 @@
 {% if related_article_uids %}
 
 <section class="pj-related-articles container-fluid">
-  <h2>
-    {{ site.data.i18n[page.locale].article.related_articles }}
-  </h2>
-
-  <div class="pj-articles container grid">
-    {% for related_article_uid in related_article_uids %}
-      {% assign related_article = site.articles | where: "uid", related_article_uid | where: "locale", page.locale | first %}
-      
-      {% include default/related_article.liquid related_article=related_article %}
-    {% endfor %}
+  <div class="container grid">
+    <h2>
+      {{ site.data.i18n[page.locale].article.related_articles }}
+    </h2>
+  
+    <div class="pj-articles">
+      {% for related_article_uid in related_article_uids %}
+        {% assign related_article = site.articles | where: "uid", related_article_uid | where: "locale", page.locale | first %}
+        
+        {% include default/related_article.liquid related_article=related_article %}
+      {% endfor %}
+    </div>
   </div>
 </section>
 
