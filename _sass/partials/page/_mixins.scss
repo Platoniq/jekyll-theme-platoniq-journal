@@ -11,3 +11,13 @@
     left: -24px;
   }
 }
+
+@mixin blockquote {
+  border-left: 4px solid $color-fg-primary;
+  font-style: italic;
+  padding-left: $margin-sm;
+
+  em {
+    font-style: normal;
+  }
+}
