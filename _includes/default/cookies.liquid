@@ -1,10 +1,10 @@
 {% assign privacy_page = site.pages | where: "uid", "privacy" | where: "locale", page.locale | first %}
 {% assign more_info_url = privacy_page.url %}
 
-{% assign title = "We want your consent" %}
-{% assign subtitle = "We would like to use third party cookies and scripts to improve the functionality of this website." %}
-{% assign approve_text = "Approve" %}
-{% assign more_info_text = "More info" %}
+{% assign t_title = site.data.i18n[page.locale].global.cookies_title %}
+{% assign t_subtitle = site.data.i18n[page.locale].global.cookies_subtitle %}
+{% assign t_approve_text = site.data.i18n[page.locale].global.cookies_approve %}
+{% assign t_more_info_text = site.data.i18n[page.locale].global.cookies_info %}
 
 <div id="cookie-notice" class="pj-cookie-notice" style="display: none;">
   <div class="pj-cookie-notice__img">
@@ -12,19 +12,19 @@
   </div>
   
   <div class="pj-cookie-notice__text">
-    <h3 class="pj-cookie-notice__text__title">{{ title }}</h3>
-    <span class="pj-cookie-notice__text__subtitle">{{ subtitle }}</span>
+    <h3 class="pj-cookie-notice__text__title">{{ t_title }}</h3>
+    <span class="pj-cookie-notice__text__subtitle">{{ t_subtitle }}</span>
   </div>
 
   <div class="pj-cookie-notice__button">
     <a id="cookie-notice-accept" class="btn">
-      <span class="btn__label">{{ approve_text }}</span>
+      <span class="btn__label">{{ t_approve_text }}</span>
     </a>
   </div>
   
   <div class="pj-cookie-notice__button">
     <a href="{{ more_info_url | relative_url }}" class="btn">
-      <span class="btn__label">{{ more_info_text }}</span>
+      <span class="btn__label">{{ t_more_info_text }}</span>
     </a>
   </div>
 </div>
