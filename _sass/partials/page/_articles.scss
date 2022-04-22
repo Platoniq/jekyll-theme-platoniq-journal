@@ -15,3 +15,7 @@
     }
   }
 }
+
+.pj-article > blockquote {
+  @include blockquote;
+}
