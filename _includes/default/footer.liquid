@@ -19,6 +19,14 @@
         </li>
       {% endif %}
       
+      {% if together_page.published %}
+        <li>
+          <a href="{{ together_page.url | relative_url }}">
+            {{ together_page.title }}
+          </a>
+        </li>
+      {% endif %}
+      
       {% if sticker_pack_page %}
         <li>
           <a href="{{ sticker_pack_page.url | relative_url }}">

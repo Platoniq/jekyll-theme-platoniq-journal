@@ -22,6 +22,14 @@
       </li>
     {% endif %}
     
+    {% if together_page.published %}
+      <li>
+        <a href="{{ together_page.url | relative_url }}" class="{% if page.uid == "together" %}select{% endif%}">
+          <h3 class="pj-sitemap-menu__title">{{ together_page.title }}</h3>
+        </a>
+      </li>
+    {% endif %}
+    
     {% if sticker_pack_page %}
       <li>
         <a href="{{ sticker_pack_page.url | relative_url }}">
