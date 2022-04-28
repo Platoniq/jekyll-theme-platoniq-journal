@@ -40,17 +40,44 @@ $(document).ready(function() {
     }
   });
 
+
   /*
    * 
-   * Call to action
+   * Call to action: Donate
    * 
    */
-  var ctaUrl = $(".pj-cta__button a, .pj-file__button a").attr("href");
+  var $donateCtaLink = $(".cta__donate .pj-cta__button a");
+  var donateUrl = $donateCtaLink.attr("href");
 
-  if (ctaUrl) {
-    var url = new URL(ctaUrl);
+  if (donateUrl) {
+    var currentUrl = window.location.toString();
+    var url = new URL(donateUrl);
+
+    var lang = currentUrl.match(/\/(en|es|ca)\//)[1] || "es";
+    var source = currentUrl.match(/\/(wilder\-journal\-\d+)\//)[1];
+    var detail = currentUrl.match(/wilder\-journal\-\d+\/(.*)/)[1];
+
+    url.searchParams.append("source", source);
+    url.searchParams.append("detail", detail);
+    url.searchParams.append("lang", lang);
+
+    $donateCtaLink.attr("href", url);
+  }
+
+  /*
+   * 
+   * Call to action: Custom
+   * 
+   */
+  var $customUrlLink = $(".pj-file__button a");
+  var customUrl = $customUrlLink.attr("href");
+
+  if (customUrl && !(/mailto:/.test(customUrl))) {
+    var url = new URL(customUrl);
+
     url.searchParams.append("url", window.location);
-    $(".pj-cta__button a, .pj-file__button a").attr("href", url);
+
+    $customUrlLink.attr("href", url);
   }
 
 
