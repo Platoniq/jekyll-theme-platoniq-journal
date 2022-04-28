@@ -30,9 +30,9 @@
     {% for image in gallery.images %}
       <div class="pj-gallery-image-container">
         <figure class="pj-gallery-image {{image_class}}">
-          {% if image.bw %}
+          <!-- if image.bw -->
             {% assign image_bw_class = "bw" %}
-          {% endif %}
+          <!-- endif -->
 
           <img src="{{ image.path | relative_url }}"
               title="{{ image.alt }}"
