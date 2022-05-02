@@ -51,9 +51,27 @@
       gap: 32px;
 
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: center;
 
-      filter: saturate(0) brightness();
+      .pj-collaborator {
+        width: 100%;
+
+        img {
+          min-height: 1em;
+          width: 100%;
+        }
+
+        @media (min-width: $bp-desktop) {
+          min-height: 3em;
+          width: auto;
+          align-items: self-end;
+        }
+
+        &__background {
+          padding: $margin;
+          background: $color-base-negative;
+        }
+      }
     }
   }
 }
