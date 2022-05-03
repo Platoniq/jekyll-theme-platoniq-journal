@@ -21,7 +21,7 @@
         {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
 
         <article class="highlighted {{ class }}" data-href="{{ article.url | relative_url }}">
-          <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}">
+          <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}" style="--aspect-ratio:1">
 
           <h4>
             <a href="{{ category_archive.url  | relative_url }}">{{ category_name }}</a>
