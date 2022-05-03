@@ -7,11 +7,9 @@
 {% assign articles_deep_dives = articles_all | where: "category", "deep-dives" %}
 {% assign articles_interviews = articles_all | where: "category", "interviews" %}
 {% assign articles_reports = articles_all | where: "category", "reports" %}
-{% assign articles_stickers = articles_all | where: "category", "stickers" %}
 {% assign articles_stories = articles_all | where: "category", "stories" %}
 
 {% assign t_reports = site.data.i18n[page.locale].categories.reports %}
-{% assign t_stickers = site.data.i18n[page.locale].categories.stickers %}
 {% assign t_stories = site.data.i18n[page.locale].categories.stories %}
 
 {% assign t_continue_reading = site.data.i18n[page.locale].global.continue_reading %}
