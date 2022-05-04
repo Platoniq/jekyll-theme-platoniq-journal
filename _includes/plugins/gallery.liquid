@@ -46,8 +46,9 @@
               <span class="pj-gallery-image__caption">
                 {{ image.caption }}
               </span>
+
               <span class="pj-gallery-image__credits">
-                {% if image.credits != "" %}
+                {% if image.credits && image.credits != "" %}
                   {{ image.credits }}
                 {% else %}
                   {% include default/credits.liquid %}
