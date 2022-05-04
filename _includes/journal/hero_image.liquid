@@ -14,8 +14,10 @@
     {% include svg/icon-arrow_down.liquid alt=t_skip_to_content %}
   </div>
 
-  <div class="img-fullsize">
+  <picture class="img-fullsize">
     {% capture cover_image_path %}{{ page.cover.path | relative_url }}{% endcapture %}
+
+    <source media="(max-width: 768px)" srcset="{{ page.cover.mobile | relative_url }}">
     <img src="{{ cover_image_path | default: cms_cover_image }}" alt="{{ page.cover.alt }}">
-  </div>
+  </picture>
 </section>
