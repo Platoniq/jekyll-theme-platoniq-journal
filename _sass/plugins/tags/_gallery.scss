@@ -6,7 +6,7 @@ $icon-space-y: $icon-size * 2;
 .pj-gallery,
 .pj-page .pj-gallery {
   grid-column: 5 / span 17;
-  
+
   &-button {
     background: none;
     border: none;
@@ -75,12 +75,17 @@ $icon-space-y: $icon-size * 2;
     figcaption {
       @include font-body;
 
-      color: $color-base;
+      background: $color-bg-primary-negative;
+      color: $color-fg-primary-negative;
+
       letter-spacing: -0.7px;
       text-align: right;
-      margin-top: 1em;
+      padding: 1em;
+
+      margin-top: -3px;
+
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
       gap: 1em;
 
       @media (min-width: $bp-tablet) {

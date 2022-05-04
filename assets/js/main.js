@@ -88,7 +88,7 @@ $(document).ready(function() {
    */
   var $gallery = $(".pj-gallery .pj-gallery-images");
 
-  if ($gallery.children("img").length > 1) {
+  if ($gallery.children(".pj-gallery-image-container").length > 1) {
     $galleryBtnPrevious = $(".pj-gallery-button-previous");
     $galleryBtnNext = $(".pj-gallery-button-next");
 
@@ -96,7 +96,8 @@ $(document).ready(function() {
     $gallery.slick({
       prevArrow: $galleryBtnPrevious.prop("outerHTML"),
       nextArrow: $galleryBtnNext.prop("outerHTML"),
-      infinite: false
+      infinite: true,
+      adaptiveHeight: true
     });
 
     $galleryBtnPrevious.detach();

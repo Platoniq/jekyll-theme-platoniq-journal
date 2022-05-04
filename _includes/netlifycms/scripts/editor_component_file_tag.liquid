@@ -43,6 +43,13 @@ CMS.registerEditorComponent({
         { label: "Ninguno", value: "" },
         { label: "Descarga", value: "icon-download" }
       ]
+    },
+    {
+      name: "alt_color",
+      label: "Color alternativo",
+      widget: "boolean",
+      default: false,
+      hint: "Para destacar el bloque en caso que haya otro bloque destacado cerca."
     }
   ],
   // Regex pattern used to search for instances of this block in the markdown document.
@@ -54,7 +61,7 @@ CMS.registerEditorComponent({
   //
   // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
   // `(.*?)` vs `(.*)`), especially if matching against newline characters.
-  pattern: /{% file { "title": "(.*)", "info": "(.*)", "file": "(.*)", "image": "(.*)", "button_text": "(.*)", "button_icon": "(.*)" } %}/,
+  pattern: /{% file { "title": "(.*)", "info": "(.*)", "file": "(.*)", "image": "(.*)", "button_text": "(.*)", "button_icon": "(.*)", "alt_color": (.*) } %}/,
   // Given a RegExp Match object
   // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
   // return an object with one property for each field defined in `fields`.
@@ -67,8 +74,9 @@ CMS.registerEditorComponent({
     const image = match[4];
     const button_text = match[5];
     const button_icon = match[6];
+    const alt_color = match[7];
     
-    return { title, info, file, image, button_text, button_icon };
+    return { title, info, file, image, button_text, button_icon, alt_color };
   },
   // Given an object with one property for each field defined in `fields`,
   // return the string you wish to be inserted into your markdown.
@@ -77,14 +85,14 @@ CMS.registerEditorComponent({
   // markdown document
   toBlock: function(data) {
     return (
-      `{% file { "title": "${data.title}", "info": "${data.info}", "file": "${data.file}", "image": "${data.image}", "button_text": "${data.button_text}", "button_icon": "${data.button_icon}" } %}`
+      `{% file { "title": "${data.title}", "info": "${data.info}", "file": "${data.file}", "image": "${data.image}", "button_text": "${data.button_text}", "button_icon": "${data.button_icon}", "alt_color": ${data.alt_color} } %}`
     );
   },
   // Preview output for this component. Can either be a string or a React component
   // (component gives better render performance)
   toPreview: function(data) {
     return  `
-      <section class="pj-file">
+      <section class="pj-file ${data.alt_color ? 'pj-file__alt' : ''}">
         <div class="pj-file__img">
           <img src="${data.image}"/>
         </div>

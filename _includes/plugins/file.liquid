@@ -1,4 +1,8 @@
-<section class="pj-file">
+{% if file.alt_color %}
+  {% assign alt_color_class = "pj-file__alt" %}
+{% endif %}
+
+<section class="pj-file {{ alt_color_class }}">
   <div class="pj-file__img">
     <img src="{{ file.image | relative_url }}" alt="{{ file.title }}"/>
   </div>
