@@ -26,7 +26,8 @@
       margin: 0;
     }
 
-    &__title, &__data {
+    &__title,
+    &__data {
       display: block;
       color: $color-fg-primary-negative;
     }
@@ -60,5 +61,13 @@
     }
 
     justify-self: self-end;
+  }
+
+  &__alt {
+    background-color: $color-bg-primary-negative;
+
+    .btn {
+      background: $color-bg-primary;
+    }
   }
 }
