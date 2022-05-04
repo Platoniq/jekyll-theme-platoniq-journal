@@ -25,10 +25,11 @@
     </div>
   </div>
 
-  <div class="pj-hero__img">
-    <img src="{{ page.cover.path | relative_url }}" alt="{{ article.cover.alt }}">
-    <!-- <div class="caption">{{ article.cover.caption }}</div>
-    <div class="credits">{{ article.cover.credits }}</div> -->
-  </div>
+  <picture class="pj-hero__img">
+    {% assign image_title = page.cover.caption | append: " | " | append: page.cover.credits %}
+    
+    <source media="(max-width: 768px)" srcset="{{ page.cover.mobile | relative_url }}">
+    <img src="{{ page.cover.path | relative_url }}" alt="{{ page.cover.alt }}" title="{{ image_title }}">
+  </picture>
 </header>
 
