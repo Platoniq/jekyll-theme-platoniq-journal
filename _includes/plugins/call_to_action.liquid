@@ -25,6 +25,7 @@
     {{ call_to_action.form_fields }}
   
     {% if is_form %}
+      <input type="hidden" name="form-name" value="{{ call_to_action_name }}" />
       <input type="hidden" name="lang" value="{{ page.locale }}">
       <input type="hidden" name="page_uid" value="{{ page.uid }}">
       <input type="hidden" name="site_url" value="{{ site.url }}">
