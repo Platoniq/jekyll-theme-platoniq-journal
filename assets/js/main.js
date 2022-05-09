@@ -73,6 +73,9 @@ $(document).ready(function() {
   var customUrl = $customUrlLink.attr("href");
 
   if (customUrl && !(/mailto:/.test(customUrl))) {
+
+    if ((/^\/.*/).test(customUrl)) { return; }
+
     var url = new URL(customUrl);
 
     url.searchParams.append("url", window.location);

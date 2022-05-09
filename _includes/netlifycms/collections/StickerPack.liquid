@@ -40,6 +40,15 @@
       name: description
       widget: string
       i18n: translate
+    - label: Título de la página para el menú
+      name: title_menu
+      widget: string
+      i18n: translate
+    - label: Descripción o resumen de la página
+      hint: Principalmente usada para SEO
+      name: description
+      widget: string
+      i18n: translate
     - label: Contenido de la página de stickers
       name: body
       widget: markdown
@@ -75,4 +84,12 @@
         - { label: "Texto alternativo a la imagen", name: "alt", widget: "string", i18n: translate }
         - { label: "Créditos de la imagen", name: "credits", widget: "string", i18n: translate }
         - { label: "Pie de imagen", name: "caption", widget: "string", i18n: translate }
+    - label: "Call to action"
+      name: call_to_action
+      widget: relation
+      collection: call_to_actions
+      display_fields: [uid]
+      search_fields: [uid]
+      value_field: uid
+      i18n: duplicate
 {% endraw %}
