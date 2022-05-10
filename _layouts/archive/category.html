@@ -41,9 +41,10 @@ layout: default
                 </a>
               </h3>
 
-              {% assign author = site.authors | where: 'uid', article.author | where: 'locale', page.locale | first %}
+              {% comment %} {% assign author = site.authors | where: 'uid', article.author | where: 'locale', page.locale | first %} {% endcomment %}
 
-              <h5>{{ author.name | prepend: t_authored_by }}</h5>
+              {% comment %} <h5>{{ author.name | prepend: t_authored_by }}</h5> {% endcomment %}
+              <h5>{{ article.author | prepend: t_authored_by }}</h5>
             </div>
 
             <div class="pj-category-articles__img">
