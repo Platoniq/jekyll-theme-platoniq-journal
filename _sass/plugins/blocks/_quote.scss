@@ -42,6 +42,8 @@
     width: 40px;
     height: 40px;
 
+    fill: $color-fg-primary;
+
     @media (min-width: $bp-tablet) {
       position: absolute;
       width: 80px;
