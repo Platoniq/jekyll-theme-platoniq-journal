@@ -47,11 +47,11 @@
     &__date,
     &__author {
       @include font-body;
-      
+
       color: $color-base;
       letter-spacing: -0.7px;
       margin-bottom: 1em;
-      
+
       &:focus,
       &:hover {
         margin-bottom: 1em;
@@ -73,7 +73,7 @@
       @media (max-width: $bp-tablet) {
         margin-left: 24px;
       }
-      
+
       @media (min-width: $bp-desktop) {
         grid-column: 4 / -3;
       }
