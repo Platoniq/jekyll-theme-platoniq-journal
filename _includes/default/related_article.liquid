@@ -1,5 +1,5 @@
 {% assign related_article_category_name = site.data.i18n[page.locale].categories[related_article.category] %}
-{% comment %} {% assign reated_article_author = site.authors | where: "uid", related_article.author | where: "locale", page.locale | first %} {% endcomment %}
+{% comment %} {% assign related_article_author = site.authors | where: "uid", related_article.author | where: "locale", page.locale | first %} {% endcomment %}
 
 <article class="highlighted highlighted-vertical {{ class }}" data-href="{{ related_article.url | relative_url }}">
   <img src="{{ related_article.cover.thumbnail | relative_url }}" alt="{{ related_article.cover.alt }}">
@@ -17,6 +17,6 @@
     </a>
   </h3>
 
-  {% comment %} <h5>{{ reated_article_author.name | prepend: t_authored_by }}</h5> {% endcomment %}
-  <h5>{{ reated_article.author | prepend: t_authored_by }}</h5>
+  {% comment %} <h5>{{ related_article_author.name | prepend: t_authored_by }}</h5> {% endcomment %}
+  <h5>{{ related_article.author | prepend: t_authored_by }}</h5>
 </article>
