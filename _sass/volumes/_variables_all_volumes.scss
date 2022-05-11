@@ -44,3 +44,6 @@ $color-fg-secondary: $color-grey;
 // Links
 $color-link: #0099d4;
 $color-link-hover: rgba($color-link, $hover-opacity);
+
+$animation-duration: 300ms;
+$animation-easing: ease-in-out;

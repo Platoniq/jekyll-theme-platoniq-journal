@@ -51,6 +51,11 @@
     height: 48px;
     bottom: 40px;
     left: calc(50% - 24px);
+    cursor: pointer;
+
+    &:hover, &:focus {
+      fill: $color-fg-primary-hover;
+    }
   }
 
   .img-fullsize {
