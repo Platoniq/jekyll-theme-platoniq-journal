@@ -74,8 +74,8 @@
         margin-left: 24px;
       }
 
-      @media (min-width: $bp-desktop) {
-        grid-column: 4 / -3;
+      @media (min-width: $bp-desktop-xl) {
+        grid-column: 4 / -4;
       }
 
       &::before {
