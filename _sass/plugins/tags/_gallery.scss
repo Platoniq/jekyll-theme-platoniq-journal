@@ -7,12 +7,6 @@ $icon-space-y: $icon-size * 2;
 .pj-page .pj-gallery {
   grid-column: 5 / span 17;
 
-  min-height: 30vh;
-
-  @media (min-width: $bp-tablet) {
-    min-height: 50vh;
-  }
-
   &-button {
     background: none;
     border: none;
