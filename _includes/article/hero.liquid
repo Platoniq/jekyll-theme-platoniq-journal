@@ -30,7 +30,7 @@
     {% assign image_title = page.cover.caption | append: " | " | append: page.cover.credits %}
     
     <source media="(max-width: 768px)" srcset="{{ page.cover.mobile | relative_url }}">
-    <img src="{{ page.cover.path | relative_url }}" alt="{{ page.cover.alt }}" title="{{ image_title }}">
+    <img src="{{ page.cover.path | relative_url }}" alt="{{ page.cover.alt }}" title="{{ image_title }}" loading="eager">
   </picture>
 </header>
 
