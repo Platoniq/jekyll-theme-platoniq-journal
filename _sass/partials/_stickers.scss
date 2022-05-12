@@ -1,6 +1,4 @@
-$sticker-width-desktop: 256px;
-$sticker-width-tablet: 128px;
-$sticker-width-mobile: 64px;
+$sticker-width: 10vw;
 
 @mixin sticker-animation {
   animation-direction: alternate-reverse;
@@ -56,61 +54,17 @@ $sticker-width-mobile: 64px;
   pointer-events: none;
   position: fixed;
   z-index: 2;
-  width: $sticker-width-mobile;
-
-  @media (min-width: $bp-desktop) {
-    width: $sticker-width-tablet;
-  }
-
-  @media (min-width: $bp-desktop-xxl) {
-    width: $sticker-width-desktop;
-  }
+  width: $sticker-width;
 }
 
 // Layout: One (Top left, bottom right)
 .pj-stickers-layout-one {
-  @include sticker-layout(calc(16px + $sticker-width-mobile), 40vh, -2rem, 80vh);
-
-  @media (min-width: $bp-desktop) {
-    @include sticker-layout(
-      calc(64px + $sticker-width-tablet),
-      25vh,
-      calc((100vw - #{$container-max-width}) / 2),
-      50vh
-    );
-  }
-
-  @media (min-width: $bp-desktop-xxl) {
-    @include sticker-layout(
-      calc(64px + (100vw - #{$container-max-width}) / 2 - #{$sticker-width-desktop}),
-      25vh,
-      calc((100vw - #{$container-max-width}) / 2),
-      50vh
-    );
-  }
+  @include sticker-layout(10vw, 25vh, 10vw, 50vh);
 }
 
 // Layout: Two (Bottom left, top right)
 .pj-stickers-layout-two {
-  @include sticker-layout(2rem, 80vh, -2rem, 40vh);
-
-  @media (min-width: $bp-desktop) {
-    @include sticker-layout(
-      calc((100vw) / 2 - #{$sticker-width-tablet}),
-      50vh,
-      calc((100vw - #{$container-max-width}) / 2),
-      25vh
-    );
-  }
-
-  @media (min-width: $bp-desktop-xxl) {
-    @include sticker-layout(
-      calc((100vw - #{$container-max-width}) / 2 - #{$sticker-width-desktop}),
-      50vh,
-      calc((100vw - #{$container-max-width}) / 2),
-      25vh
-    );
-  }
+  @include sticker-layout(10vw, 80vh, 10vw, 40vh);
 }
 
 // Preview for CMS
@@ -118,7 +72,7 @@ $sticker-width-mobile: 64px;
 .pj-sticker-preview {
   display: flex;
   flex-direction: column;
-  max-width: $sticker-width-desktop * 4;
+  max-width: $sticker-width * 4;
   gap: 1rem;
   margin: auto;
   margin-top: 3rem;
@@ -126,7 +80,7 @@ $sticker-width-mobile: 64px;
 
   .pj-sticker {
     position: relative;
-    width: $sticker-width-desktop;
+    width: $sticker-width;
     object-fit: contain;
   }
 }
