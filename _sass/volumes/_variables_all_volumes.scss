@@ -26,7 +26,7 @@ $color-base-negative: #fdfdfd;
 $hover-opacity: 0.5;
 
 // Background
-$color-bg-primary: $color-grey;
+$color-bg-primary: $color-grey-dark;
 $color-bg-primary-hover: rgba($color-bg-primary, $hover-opacity);
 $color-bg-primary-negative: $color-black;
 $color-bg-primary-negative-hover: rgba($color-bg-primary-negative, $hover-opacity);
@@ -37,9 +37,9 @@ $color-bg-dark: $color-black;
 // Foreground
 $color-fg-primary: $color-black;
 $color-fg-primary-hover: rgba($color-fg-primary, $hover-opacity);
-$color-fg-primary-negative: $color-grey-dark;
+$color-fg-primary-negative: $color-white;
 $color-fg-primary-negative-hover: rgba($color-fg-primary-negative, $hover-opacity);
-$color-fg-secondary: $color-grey;
+$color-fg-secondary: $color-white;
 
 // Links
 $color-link: #0099d4;
