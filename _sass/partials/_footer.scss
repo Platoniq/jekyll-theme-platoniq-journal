@@ -28,16 +28,24 @@
   }
 
   &__nav {
+    width: 100%;
+
     ul {
-      display: flex;
-      flex-flow: row;
-      justify-content: flex-end;
+      display: grid;
+      justify-content: flex-start;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1em;
+
+      @media (min-width: $bp-tablet) {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+      }
     }
 
     li {
       margin-right: 16px;
     }
-
     a {
       @include font-body;
 
