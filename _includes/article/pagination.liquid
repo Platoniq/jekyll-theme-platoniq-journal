@@ -2,6 +2,7 @@
 {% assign t_previous_article = site.data.i18n[page.locale].pagination.previous %}
 {% assign t_next_article = site.data.i18n[page.locale].pagination.next %}
 {% assign t_interviewing = site.data.i18n[page.locale].pagination.interviewing %}
+{% assign t_stories = site.data.i18n[page.locale].pagination.stories %}
 
 {% for article in articles %}
   {% if article == page %}
@@ -35,8 +36,10 @@
           </span>
 
           <span class="link__label">
-            {% if previous_post.interviewee %}
+            {% if previous_post.interviewee && previous_post.interviewee != "" %}
               {{ t_interviewing | append: " " | append: previous_post.interviewee }}: 
+            {% elsif previous_post.category == "stories" %}
+              {{ t_stories }}: 
             {% endif %}
             
             {{ previous_post.title }}
@@ -52,8 +55,10 @@
            title="{{ t_next_article | append: ': ' | append: next_post.title }}">
 
           <span class="link__label">
-            {% if next_post.interviewee %}
-            {{ t_interviewing | append: " " | append: next_post.interviewee }}: 
+            {% if next_post.interviewee && next_post.interviewee != "" %}
+              {{ t_interviewing | append: " " | append: next_post.interviewee }}: 
+            {% elsif next_post.category == "stories" %}
+              {{ t_stories }}: 
             {% endif %}
 
             {{ next_post.title }}

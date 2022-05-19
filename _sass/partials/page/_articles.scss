@@ -1,21 +1,44 @@
-[data-category="deep-dives"] {
-  & > h2 {
-    grid-column: 3 / span 24;
+.pj-article {
+  &[data-category="deep-dives"] {
+    & > h2 {
+      grid-column: 3 / span 24;
 
-    @include font-heading(28px);
+      @include font-heading(28px);
 
-    color: $color-fg-primary;
-    letter-spacing: -1px;
-    margin-bottom: 0.5em;
+      color: $color-fg-primary;
+      letter-spacing: -1px;
+      margin-bottom: 0.5em;
 
-    @media (min-width: $bp-tablet) {
-      letter-spacing: -6px;
-      font-size: 64px;
-      margin-bottom: 0;
+      @media (min-width: $bp-tablet) {
+        letter-spacing: -6px;
+        font-size: 64px;
+        margin-bottom: 0;
+      }
     }
   }
-}
 
-.pj-article > blockquote {
-  @include blockquote;
+  &[data-category="stories"] {
+    p {
+      font-size: 24px;
+    }
+
+    p:last-of-type::after {
+      content: "";
+      @include font-heading(28px);
+      background-color: $color-fg-primary;
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      margin-left: 0.25rem;
+      margin-bottom: -1px;
+
+      @media (min-width: $bp-tablet) {
+        font-size: 64px;
+      }
+    }
+  }
+
+  & > blockquote {
+    @include blockquote;
+  }
 }
