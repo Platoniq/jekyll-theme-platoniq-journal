@@ -73,12 +73,20 @@ $icon-space-y: $icon-size * 2;
     }
 
     figcaption {
-      @include font-body;
-
       background: $color-bg-primary-negative;
-      color: $color-fg-primary-negative;
 
-      letter-spacing: -0.7px;
+      .pj-gallery-image__caption p,
+      .pj-gallery-image__credits p {
+        @include font-body;
+        color: $color-fg-primary-negative;
+        letter-spacing: -0.7px;
+        line-height: 100%;
+
+        @media (min-width: $bp-tablet) {
+          font-size: 16px;
+        }
+      }
+
       text-align: right;
       padding: 1em;
 
@@ -90,7 +98,6 @@ $icon-space-y: $icon-size * 2;
 
       @media (min-width: $bp-tablet) {
         flex-direction: row;
-        font-size: 16px;
 
         justify-content: space-between;
 

@@ -44,12 +44,12 @@
           {% unless gallery.simple %}
             <figcaption>
               <span class="pj-gallery-image__caption">
-                {{ image.caption }}
+                {{ image.caption | markdownify }}
               </span>
 
               <span class="pj-gallery-image__credits">
                 {% if image.credits && image.credits != "" %}
-                  {{ image.credits }}
+                  {{ image.credits | markdownify }}
                 {% else %}
                   {% include default/credits.liquid %}
                 {% endif %}
