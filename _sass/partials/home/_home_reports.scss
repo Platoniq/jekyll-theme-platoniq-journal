@@ -35,6 +35,7 @@
       padding: 24px;
       margin: -40px auto 0 0;
       width: calc(100% - 20px);
+      z-index: 1;
 
       @media (min-width: $bp-tablet) {
         padding: 32px;
