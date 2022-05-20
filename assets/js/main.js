@@ -69,19 +69,24 @@ $(document).ready(function() {
    * Call to action: Custom
    * 
    */
-  var $customUrlLink = $(".pj-file__button a");
-  var customUrl = $customUrlLink.attr("href");
+  var $customLinks = $(".pj-file__button a");
 
-  if (customUrl && !(/mailto:/.test(customUrl))) {
+  $.each($customLinks, function(index, customLink) {
+    $customLink = $(customLink);
 
-    if ((/^\/.*/).test(customUrl)) { return; }
+    var customUrl = $customLink.attr("href");
 
-    var url = new URL(customUrl);
+    if (customUrl && !(/mailto:/.test(customUrl))) {
 
-    url.searchParams.append("url", window.location);
+      if (!(/^\/.*/).test(customUrl)) {
+        var url = new URL(customUrl);
 
-    $customUrlLink.attr("href", url);
-  }
+        url.searchParams.append("url", window.location);
+
+        $customLink.attr("href", url);
+      }
+    }
+  });
 
 
   /*
