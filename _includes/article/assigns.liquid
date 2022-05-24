@@ -1,6 +1,6 @@
 {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", page.category | first %}
 {% assign category_name = site.data.i18n[page.locale].categories[page.category] %}
-{% comment %} {% assign author = site.authors | where: "uid", page.author | where: "locale", page.locale | first %} {% endcomment %}
+{% assign author = site.authors | where: "uid", page.author | where: "locale", page.locale | first %}
 
 {% assign month_number = page.date | date: "%-m" %}
 {% assign month_name = site.data.i18n[page.locale].month_names[month_number] %}

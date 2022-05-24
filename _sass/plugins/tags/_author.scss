@@ -17,6 +17,10 @@
     margin-bottom: $grid-row-xl;
   }
 
+  #pj-article-share + .pj-author {
+    margin-top: 0;
+  }
+
   &__img {
     img {
       @media (max-width: $bp-tablet) {
