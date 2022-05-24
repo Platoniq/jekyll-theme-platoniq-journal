@@ -43,6 +43,49 @@ $(document).ready(function() {
 
   /*
    * 
+   * Author
+   * 
+   */
+  var $author = $(".pj-author");
+  var $authorName = $(".pj-hero__data__author");
+
+  $author.hide();
+
+  var initialAuthorProperties = { left: "100vw" };
+  var targetAuthorProperties = { left: "0vw" };
+  var duration = 200;
+
+  $authorName.click(function(e) {
+    if ($author.is(":hidden")) {
+      $author.removeClass(".pj-author__hidden");
+
+      $author.css(initialAuthorProperties);
+      $author.slideDown(duration);
+      $author.animate(targetAuthorProperties, {
+        duration: duration,
+        start: function() {
+          $(this).css({
+            display: "grid",
+            left: targetAuthorProperties.left
+          });
+        }
+      });
+    } else {
+      $author.animate(initialAuthorProperties, {
+        duration: duration,
+        start: function() {
+          $(this).css(initialAuthorProperties);
+        },
+        done: function() {
+          $author.slideUp(duration);
+        }
+      })
+    }
+  });
+
+
+  /*
+   * 
    * Call to action: Donate
    * 
    */
