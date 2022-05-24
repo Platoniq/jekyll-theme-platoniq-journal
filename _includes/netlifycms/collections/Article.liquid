@@ -64,8 +64,12 @@
     - {
       label: "Autoría",
       name: "author",
-      widget: "string",
-      i18n: translate
+      widget: "relation",
+      collection: "authors",
+      display_fields: [name],
+      search_fields: [name],
+      value_field: "uid",
+      i18n: duplicate
     }
     - label: Entrevistadx
       name: "interviewee"
@@ -118,7 +122,7 @@
     - label: "Contenido del artículo"
       name: "body"
       widget: "markdown"
-      editor_components: ["gallery", "quote-tag", "file-tag", "documents-tag", "links-tag", "numbers-tag", "questions-tag", "author-tag"]
+      editor_components: ["gallery", "quote-tag", "file-tag", "documents-tag", "links-tag", "numbers-tag", "questions-tag"]
       i18n: true
     - label: "Artículos relacionados"
       name: related_article_uids

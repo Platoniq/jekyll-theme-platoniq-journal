@@ -70,6 +70,14 @@
       grid-column: 4 / -1;
       position: relative;
 
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        transition: all $animation-duration $animation-easing;
+        transform: scale(1.1);
+      }
+
       @media (max-width: $bp-tablet) {
         margin-left: 24px;
       }
