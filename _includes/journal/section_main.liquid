@@ -36,9 +36,7 @@
             </a>
           </h3>
 
-          {% assign author = site.authors | where: "uid", article.author | where: "locale", page.locale | first %}
-
-          <h5>{{ author.name | prepend: t_authored_by }}</h5>
+          <h5>{{ article.author | prepend: t_authored_by }}</h5>
         </article>
       {% if mod != 0 %}
         </div> <!-- mod != 0  -->

@@ -46,41 +46,51 @@ $(document).ready(function() {
    * Author
    * 
    */
-  var $author = $(".pj-author.pj-author__hidden");
+  var $authors = $(".pj-author.pj-author__hidden");
   var $authorName = $(".pj-hero__data__author");
 
-  $author.hide();
+  $authors.hide();
 
   var initialAuthorProperties = { left: "100vw" };
   var targetAuthorProperties = { left: "0vw" };
   var duration = 200;
 
   $authorName.click(function(e) {
-    if ($author.is(":hidden")) {
-      $author.removeClass(".pj-author__hidden");
+    $.each($authors, function(index, author) {
+      var $author = $(author);
 
-      $author.css(initialAuthorProperties);
-      $author.slideDown(duration);
-      $author.animate(targetAuthorProperties, {
-        duration: duration,
-        start: function() {
-          $(this).css({
-            display: "grid",
-            left: targetAuthorProperties.left
-          });
-        }
-      });
-    } else {
-      $author.animate(initialAuthorProperties, {
-        duration: duration,
-        start: function() {
-          $(this).css(initialAuthorProperties);
-        },
-        done: function() {
-          $author.slideUp(duration);
-        }
-      })
-    }
+      if ($author.is(":hidden")) {
+
+        // Show author cards
+        $author.removeClass(".pj-author__hidden");
+        $author.css(initialAuthorProperties);
+        $author.slideDown(duration, function() {
+          if (index == 0) {
+            $(document).scrollTop($author.offset().top - window.innerHeight / 2);
+          }
+        });
+        $author.animate(targetAuthorProperties, {
+          duration: duration,
+          start: function() {
+            $(this).css({
+              display: "grid",
+              left: targetAuthorProperties.left
+            });
+          }
+        });
+      } else {
+        // Hide author cards
+        $author.animate(initialAuthorProperties, {
+          duration: duration,
+          start: function() {
+            $(this).css(initialAuthorProperties);
+          },
+          done: function() {
+            $author.slideUp(duration);
+          }
+        });
+      }
+    });
   });
 
 

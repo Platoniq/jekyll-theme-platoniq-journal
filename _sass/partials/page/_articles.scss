@@ -18,11 +18,11 @@
   }
 
   &[data-category="stories"] {
-    p {
+    & > p {
       font-size: 24px;
     }
 
-    p:last-of-type::after {
+    & > p:last-of-type::after {
       content: "";
       @include font-heading(28px);
       background-color: $color-fg-primary;

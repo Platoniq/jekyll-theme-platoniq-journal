@@ -61,16 +61,24 @@
       name: "description"
       widget: "string"
       i18n: translate
-    - {
-      label: "Autoría",
-      name: "author",
-      widget: "relation",
-      collection: "authors",
-      display_fields: [name],
-      search_fields: [name],
-      value_field: "uid",
-      i18n: duplicate
-    }
+    - label: "Autoría"
+      name: "author"
+      widget: "string"
+      i18n: translate
+    - label: "Autoras"
+      name: author_uids
+      widget: "list"
+      required: true
+      i18n: true
+      field:
+        label: "Autora"
+        name: author_uid
+        widget: relation
+        collection: authors
+        display_fields: [name]
+        search_fields: [name, uid]
+        value_field: uid
+        i18n: duplicate
     - label: Entrevistadx
       name: "interviewee"
       hint: "Añadir el nombre de la persona entrevistada, si la categoría es 'Interviews'"
