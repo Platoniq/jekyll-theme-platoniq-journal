@@ -1,15 +1,14 @@
 {% raw %}
-- name: authors
-  label: Autorías
-  label_singular: Autoría
+- name: "authors"
+  label: "Autorías"
+  label_singular: "Autoría"
   folder: "_authors/"
-  slug: "{{uid}}"
   i18n:
     structure: multiple_folders
     locales: *locales
   create: true
   editor:
-    preview: true
+    preview: false
   fields:
     - label: Slug
       name: uid
