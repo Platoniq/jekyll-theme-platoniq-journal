@@ -14,11 +14,11 @@
     grid-template-columns: minmax(149px, 149px) 1fr auto;
     grid-gap: 32px;
     padding: 32px;
-    margin-top: 0;
+    margin-top: $grid-row-xl;
     margin-bottom: $grid-row-xl;
   }
 
-  #pj-article-share + .pj-author {
+  &__main {
     margin-top: 0;
   }
 

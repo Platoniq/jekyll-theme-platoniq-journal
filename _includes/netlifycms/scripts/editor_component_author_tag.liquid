@@ -20,9 +20,19 @@ CMS.registerEditorComponent({
     {
       name: "image",
       label: "Imagen", 
-      widget: "image",
-      default: "/assets/media/no_image-file.png",
-      media_library: { config: { multiple: false } }
+      widget: "object",
+      fields: {
+        name: 'path',
+        label: 'Imagen',
+        widget: 'image',
+        default: '/assets/media/no_image-file.png',
+        media_library: { config: { multiple: false } }
+      },
+      {
+        name: 'alt',
+        label: 'Texto alternativo a la imagen',
+        widget: 'string'
+      }
     },
     {
       name: "description",
@@ -48,7 +58,7 @@ CMS.registerEditorComponent({
   fromBlock: function(match) {
     const name = match[1];
     const position = match[2];
-    const image = match[3];
+    const image = JSON.parse(match[3]);
     const description = match[4];
     
     return { name, position, image, description };
@@ -60,7 +70,7 @@ CMS.registerEditorComponent({
   // markdown document
   toBlock: function(data) {
     return (
-      `{% author { "name": "${data.name}", "position": "${data.position}", "image": "${data.image}", "description": "${data.description}" } %}`
+      `{% author { "name": "${data.name}", "position": "${data.position}", "image": "${JSON.stringify(data.image)}", "description": "${data.description}" } %}`
     );
   },
   // Preview output for this component. Can either be a string or a React component

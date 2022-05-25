@@ -46,7 +46,7 @@ $(document).ready(function() {
    * Author
    * 
    */
-  var $author = $(".pj-author");
+  var $author = $(".pj-author.pj-author__hidden");
   var $authorName = $(".pj-hero__data__author");
 
   $author.hide();

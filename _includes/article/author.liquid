@@ -1,4 +1,4 @@
-<section class="pj-author pj-author__plugin">
+<section class="pj-author pj-author__main pj-author__hidden">
     <div class="pj-author__img">
         <img src="{{ author.image.path | relative_url }}" alt="{{ author.image.alt }}" />
     </div>
@@ -7,6 +7,6 @@
         <h3 class="pj-author__text__name">{{ author.name }}</h3>
         <h4 class="pj-author__text__position">{{ author.position }}</h4>
 
-        <div class="pj-author__text__bio">{{ author.description }}</div>
+        <div class="pj-author__text__bio">{{ author.content }}</div>
     </div>
 </section>
