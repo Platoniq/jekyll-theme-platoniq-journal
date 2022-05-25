@@ -5,7 +5,7 @@ collections:
   - Volume.liquid
   - Article.liquid
   - Page.liquid
-  # - Author.liquid
+  - Author.liquid
   - CallToAction.liquid
   - Sticker.liquid
   - StickerPack.liquid
