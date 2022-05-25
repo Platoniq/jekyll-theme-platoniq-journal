@@ -16,10 +16,10 @@
     padding: 32px;
     margin-top: $grid-row-xl;
     margin-bottom: $grid-row-xl;
-  }
 
-  &__main {
-    margin-top: 0;
+    &__main {
+      margin-top: 0;
+    }
   }
 
   &__hidden {
@@ -77,8 +77,12 @@
       }
     }
 
-    &__bio {
+    &__bio,
+    &__bio * {
+      color: $color-fg-primary-negative;
       font-size: 18px;
+
+      line-height: 100%;
 
       @media (min-width: $bp-tablet) {
         font-size: 19px;

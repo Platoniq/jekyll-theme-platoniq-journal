@@ -17,8 +17,11 @@ layout: default
         {% include article/share.liquid %}
       </div>
 
-      {% include article/author.liquid %}
-
+      {% for author_uid in page.author_uids %}
+        {% assign author = site.authors | where: "uid", author_uid | where: "locale", page.locale | first %}
+        {% include article/author.liquid author=author %}
+      {% endfor %}
+      
       {{ content }}
 
       {% if page.stickers %}
