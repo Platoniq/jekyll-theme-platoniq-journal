@@ -61,8 +61,7 @@ CMS.registerEditorComponent({
   // This is used to populate the custom widget in the markdown editor in the CMS.
   fromBlock: function(match) {
     const simple = JSON.parse(match[1]);
-    const imagesString = imagesString.replace(/\"/g,'\"'); 
-    const images = JSON.parse(imagesString));
+    const images = JSON.parse(match[2]);
     
     return { simple, images };
   },
