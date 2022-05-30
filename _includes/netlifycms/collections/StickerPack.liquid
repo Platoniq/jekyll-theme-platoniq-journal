@@ -26,7 +26,21 @@
     - label: Autoría del pack de stickers
       name: stickers_author
       widget: string
-      i18n: duplicate
+      i18n: translate
+    - label: "Autoras"
+      name: author_uids
+      widget: "list"
+      required: true
+      i18n: true
+      field:
+        label: "Autora"
+        name: author_uid
+        widget: relation
+        collection: authors
+        display_fields: [name]
+        search_fields: [name, uid]
+        value_field: uid
+        i18n: duplicate
     - label: Título de la página
       name: title
       widget: string
