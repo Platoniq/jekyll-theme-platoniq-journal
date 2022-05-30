@@ -5,5 +5,5 @@
 {% assign month_name = site.data.i18n[page.locale].month_names[month_number] %}
 {% capture article_date %}{{ page.date | date: "%d" }}/{{ month_name }}/{{ page.date | date: "%Y" }}{% endcapture %}
 
-{% assign article_default_locale = site.articles | where: "uid", page.uid | find: "locale", "es" %}
+{% assign article_default_locale = site.articles | where: "published", true | where: "uid", page.uid | find: "locale", "es" %}
 {% assign related_article_uids = article_default_locale.related_article_uids %}
