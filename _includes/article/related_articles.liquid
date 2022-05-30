@@ -8,7 +8,7 @@
   
     <div class="pj-articles">
       {% for related_article_uid in related_article_uids %}
-        {% assign related_article = site.articles | where: "uid", related_article_uid | where: "locale", page.locale | first %}
+        {% assign related_article = site.articles | where: "published", true | where: "uid", related_article_uid | where: "locale", page.locale | first %}
         
         {% include default/related_article.liquid related_article=related_article %}
       {% endfor %}

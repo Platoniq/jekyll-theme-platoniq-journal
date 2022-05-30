@@ -1,4 +1,4 @@
-{% assign articles = site.articles | where:"volume-uid", page.volume-uid | where:"locale", page.locale | sort: "article-order", "last" %}
+{% assign articles = site.articles | where:"volume-uid", page.volume-uid | where: "published", true | where:"locale", page.locale | sort: "article-order", "last" %}
 {% assign t_previous_article = site.data.i18n[page.locale].pagination.previous %}
 {% assign t_next_article = site.data.i18n[page.locale].pagination.next %}
 {% assign t_interviewing = site.data.i18n[page.locale].pagination.interviewing %}
