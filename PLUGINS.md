@@ -84,10 +84,9 @@ A collection of plugins for Jekyll:
 | **images[n].alt** | `string` | Alternative text for the image | `"Picture of the galaxy"` | `""` |
 | **images[n].caption** | `string` | Image caption | `"Picture of the galaxy when it was born"` | `""` |
 | **images[n].credits** | `string` | Image credits | `"by Platoniq"` | `""` |
-| **images[n].bw** | `boolean` | Whether to apply a black and white filter to the image | `true` | `false` |
 
 ```
-{% gallery { "images": [ { "path": "/media/image1.png", "alt": "Picture of the galaxy when it was born", "credits": "Ptolemy" }, { "path": "/media/image2.png", "alt": "Pie chart of my dreams", "caption": "In this pie chart you can see my dreams' evolution during the last year.", "credits": "Anonymous", "bw": true } ] %}
+{% gallery { "images": [ { "path": "/media/image1.png", "alt": "Picture of the galaxy when it was born", "credits": "Ptolemy" }, { "path": "/media/image2.png", "alt": "Pie chart of my dreams", "caption": "In this pie chart you can see my dreams' evolution during the last year.", "credits": "Anonymous" } ] %}
 ```
 
 ## Links Tag
