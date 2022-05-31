@@ -8,24 +8,50 @@
     locales: *locales
   create: true # Allow users to create new documents in this collection
   slug: "{{uid}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  summary: "{{title}} [{{category}} / {{author}}]"
   sort: "article-order:asc"
   view_filters:
-    - label: Orden del artículo
-      field: article-order
-      pattern: 'This is article #'
-    - label: Categoría
+    - label: Blueprints
       field: category
-      pattern: front matter category
-    - label: Volumen del Journal
-      field: volume-uid
+      pattern: blueprints
+    - label: Deep Dives
+      field: category
+      pattern: "deep-dives"
+    - label: Interviews
+      field: category
+      pattern: "interviews"
+    - label: Reports
+      field: category
+      pattern: "reports"
+    - label: Stories
+      field: category
+      pattern: "stories"
+    - label: Published
+      field: published
       pattern: true
+    - label: Unpublished
+      field: "published"
+      pattern: false
+    - label: "#1"
+      field: volume-uid
+      pattern: "1"
+    - label: "#2"
+      field: volume-uid
+      pattern: "2"
   view_groups:
     - label: Volumen del Journal
       field: volume-uid
     - label: Categoría
       field: category
+    - label: Publicado
+      field: published
+    - label: Call to action
+      field: call_to_action
+    - label: Autoría
+      field: author
   editor:
     preview: true
+  sortable_fields: ["article-order", "title", "volume-uid"]
   fields: # The fields for each document, usually in front matter
     - { label: "Layout", name: "layout", widget: "hidden", default: "article", i18n: duplicate }
     - {
