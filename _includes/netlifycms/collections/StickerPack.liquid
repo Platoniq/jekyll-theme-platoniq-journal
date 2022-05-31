@@ -32,6 +32,7 @@
       widget: "list"
       required: true
       i18n: true
+      summary: "{{fields.author_uid}}"
       field:
         label: "Autora"
         name: author_uid
@@ -89,12 +90,4 @@
         - { label: "Texto alternativo a la imagen", name: "alt", widget: "string", i18n: translate }
         - { label: "Créditos de la imagen", name: "credits", widget: "string", i18n: translate }
         - { label: "Pie de imagen", name: "caption", widget: "string", i18n: translate }
-    - label: "Call to action"
-      name: call_to_action
-      widget: relation
-      collection: call_to_actions
-      display_fields: [uid]
-      search_fields: [uid]
-      value_field: uid
-      i18n: duplicate
 {% endraw %}

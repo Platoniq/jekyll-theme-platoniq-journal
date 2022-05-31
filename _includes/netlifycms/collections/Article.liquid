@@ -97,6 +97,7 @@
       widget: "list"
       required: true
       i18n: true
+      summary: "{{fields.author_uid}}"
       field:
         label: "Autora"
         name: author_uid
@@ -164,12 +165,13 @@
       widget: "list"
       required: false
       i18n: false # todo: duplicate to other locales
+      summary: "{{fields.related_article_uid}}"
       field:
         label: "Artículo relacionado"
         name: related_article_uid
         widget: relation
         collection: articles
-        display_fields: [title]
+        display_fields: ["{{title}} [{{category}} / {{author}}]"]
         search_fields: [title, uid]
         value_field: uid
         i18n: duplicate
