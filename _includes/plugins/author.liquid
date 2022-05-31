@@ -7,7 +7,7 @@
         <h3 class="pj-author__text__name">{{ author.name }}</h3>
         {% if author.position and author.position != "" %}
             <h4 class="pj-author__text__position">{{ author.position }}</h4>
-        {% endif
+        {% endif %}
 
         <div class="pj-author__text__bio">{{ author.description | markdownify }}</div>
     </div>
