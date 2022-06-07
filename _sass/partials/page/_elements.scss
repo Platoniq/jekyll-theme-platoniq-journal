@@ -2,6 +2,19 @@ svg {
   fill: $color-fg-primary-negative;
 }
 
+.btn-close {
+  position: absolute;
+  right: $grid-row-lg;
+  top: $grid-row-lg;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  .icon-close {
+    width: $btn-close-size;
+  }
+}
+
 .pj-page,
 .pj-page-section {
   blockquote {

@@ -16,8 +16,9 @@
 
   @media (min-width: $bp-tablet) {
     grid-template-columns: minmax(149px, 149px) 1fr auto auto;
-    grid-gap: 32px;
-    padding: 32px;
+    grid-gap: $grid-row-lg;
+    padding: $grid-row-lg;
+    padding-top: calc(#{$grid-row-lg} + #{$btn-close-size});
   }
 
   &__img {

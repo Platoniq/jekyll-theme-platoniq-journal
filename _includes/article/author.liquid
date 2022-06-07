@@ -1,4 +1,10 @@
 <section class="pj-author pj-author__main pj-author__hidden">
+    <button type="button" class="btn-close">
+        {% include svg/icon-close.liquid
+            class="icon-close"
+            alt=t_close %}
+    </button>
+    
     <div class="pj-author__img">
         <img src="{{ author.image.path | relative_url }}" alt="{{ author.image.alt }}" />
     </div>
