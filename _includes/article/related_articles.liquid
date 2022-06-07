@@ -10,7 +10,9 @@
       {% for related_article_uid in related_article_uids %}
         {% assign related_article = site.articles | where: "published", true | where: "uid", related_article_uid | where: "locale", page.locale | first %}
         
-        {% include default/related_article.liquid related_article=related_article %}
+        {% if related_article.published %}
+          {% include default/related_article.liquid related_article=related_article %}
+        {% endif %}
       {% endfor %}
     </div>
   </div>
