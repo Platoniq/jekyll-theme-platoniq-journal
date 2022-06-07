@@ -33,8 +33,8 @@
   &__icon-open {
     @include flex-center;
 
-    width: 24px;
-    height: 24px;
+    width: $btn-close-size;
+    height: $btn-close-size;
     fill: $color-base;
 
     &-left {

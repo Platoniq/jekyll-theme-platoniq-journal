@@ -53,6 +53,15 @@
         }
       }
 
+      h5 {
+        max-width: 20em;
+        
+        &::before {
+          content: none;
+        }
+      }
+      
+      
       .interviewee {
         @include font-heading(1em);
 

@@ -48,9 +48,9 @@ $(document).ready(function() {
    */
   var $authors = $(".pj-author.pj-author__hidden");
   var $authorName = $(".pj-hero__data__author");
-
+  
   $authors.hide();
-
+  
   var initialAuthorProperties = { left: "100vw" };
   var targetAuthorProperties = { left: "0vw" };
   var duration = 200;
@@ -58,9 +58,11 @@ $(document).ready(function() {
   $authorName.click(function(e) {
     $.each($authors, function(index, author) {
       var $author = $(author);
-
-      if ($author.is(":hidden")) {
-
+      var $authorCloseBtn = $author.find(".btn-close").on("click", function() {
+        hideAuthor($author);
+      });
+      
+      function showAuthor($author) {
         // Show author cards
         $author.removeClass(".pj-author__hidden");
         $author.css(initialAuthorProperties);
@@ -78,7 +80,9 @@ $(document).ready(function() {
             });
           }
         });
-      } else {
+      }
+
+      function hideAuthor($author) {
         // Hide author cards
         $author.animate(initialAuthorProperties, {
           duration: duration,
@@ -89,6 +93,12 @@ $(document).ready(function() {
             $author.slideUp(duration);
           }
         });
+      }
+      
+      if ($author.is(":hidden")) {
+        showAuthor($author);
+      } else {
+        hideAuthor($author);
       }
     });
   });
