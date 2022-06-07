@@ -49,7 +49,8 @@ $column-gap-xl: map-get($column-gap, xl) !default;
 $column-gap-xxl: map-get($column-gap, xxl) !default;
 
 // Breakpoints
-$bp-mobile: 320px;
+$bp-mobile-xs: 320px;
+$bp-mobile: 375px;
 $bp-phablet: 576px;
 $bp-tablet: 768px;
 $bp-desktop: 992px;

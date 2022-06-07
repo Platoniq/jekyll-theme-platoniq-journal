@@ -91,6 +91,10 @@
 
         padding: 1rem;
 
+        @media (max-width: $bp-mobile) {
+          padding: .25rem;
+        }
+
         &:focus-visible {
           border: none;
           border-bottom: 3px solid $color-bg-primary-negative;

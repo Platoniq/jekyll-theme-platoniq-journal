@@ -97,6 +97,10 @@
       letter-spacing: -0.4px;
       margin-bottom: 0.6em;
 
+      @media (max-width: $bp-mobile) {
+        font-size: calc(40px * 0.5);
+      }
+
       @media (min-width: $bp-tablet) {
         font-size: 40px;
         line-height: 120%;
