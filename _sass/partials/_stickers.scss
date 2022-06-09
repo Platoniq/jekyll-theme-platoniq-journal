@@ -54,7 +54,12 @@ $sticker-width: 10vw;
   pointer-events: none;
   position: fixed;
   z-index: 2;
-  width: $sticker-width;
+
+  width: $sticker-width * 2;
+
+  @media (min-width: $bp-tablet) {
+    width: $sticker-width;
+  }
 }
 
 // Layout: One (Top left, bottom right)

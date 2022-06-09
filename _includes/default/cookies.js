@@ -4,15 +4,24 @@ var expirationDays = 90;
 var path = "/";
 
 $(document).ready(function() {
-  if ($.cookie(thirdPartyCookie) == "true") {
+  var thirdPartyCookieValue = $.cookie(thirdPartyCookie);
+  if (thirdPartyCookieValue == "true") {
     $("#cookie-notice").hide();
     {% include default/analytics.js %}
+  } else if (thirdPartyCookieValue == "false") {
+    $("#cookie-notice").hide();
   } else {
     $("#cookie-notice").show();
   }
 
   $("#cookie-notice-accept").on("click", () => {
     $.cookie(thirdPartyCookie, "true", { expires: expirationDays, path: path });
+    $("#cookie-notice").hide();
+    location.reload();
+  });
+  
+  $("#cookie-notice-decline").on("click", () => {
+    $.cookie(thirdPartyCookie, "false", { expires: expirationDays, path: path });
     $("#cookie-notice").hide();
     location.reload();
   });

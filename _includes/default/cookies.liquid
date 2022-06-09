@@ -7,6 +7,12 @@
 {% assign t_more_info_text = site.data.i18n[page.locale].global.cookies_info %}
 
 <div id="cookie-notice" class="pj-cookie-notice" style="display: none;">
+  <button type="button" class="btn-close" id="cookie-notice-decline">
+    {% include svg/icon-close.liquid
+        class="icon-close"
+        alt=t_close %}
+  </button>
+  
   <div class="pj-cookie-notice__img">
     <img src="/assets/media/cookies.png" alt="Cookies banner handshake image"/>
   </div>

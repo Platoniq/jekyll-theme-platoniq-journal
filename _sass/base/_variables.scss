@@ -49,12 +49,16 @@ $column-gap-xl: map-get($column-gap, xl) !default;
 $column-gap-xxl: map-get($column-gap, xxl) !default;
 
 // Breakpoints
-$bp-mobile: 320px;
+$bp-mobile-xs: 320px;
+$bp-mobile: 375px;
 $bp-phablet: 576px;
 $bp-tablet: 768px;
 $bp-desktop: 992px;
 $bp-desktop-xl: 1200px;
 $bp-desktop-xxl: 1520px;
+
+
+$btn-close-size: 24px;
 
 // Aliniar grid
 @mixin grid-align {
