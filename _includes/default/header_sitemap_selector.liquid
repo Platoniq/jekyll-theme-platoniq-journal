@@ -29,6 +29,14 @@
         </a>
       </li>
     {% endif %}
+
+    {% if services_page.published %}
+      <li>
+        <a href="{{ services_page.url | relative_url }}" class="{% if page.uid == "services" %}select{% endif%}">
+          <h3 class="pj-sitemap-menu__title">{{ services_page.title }}</h3>
+        </a>
+      </li>
+    {% endif %}
     
     {% if sticker_pack_page %}
       <li>
