@@ -17,6 +17,7 @@
 {% assign together_page = site.pages | where: "uid", "together" | where: "locale", page.locale | first %}
 {% assign terms_page = site.pages | where: "uid", "terms" | where: "locale", page.locale | first %}
 {% assign privacy_page = site.pages | where: "uid", "privacy" | where: "locale", page.locale | first %}
+{% assign services_page = site.pages | where: "uid", "services" | where: "locale", page.locale | first %}
 
 {% assign sticker_pack_page = site.sticker_packs | where: "volume-uid", current_volume.uid | where: "locale", page.locale | first %}
 
