@@ -33,6 +33,10 @@ Or install it yourself as:
 
 TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
 
+This plugin is intended to be used with different volumes. In order to create different volume styles, you can create a new file in `_sass` folder, with the same id as the volume created in the [journal](https://github.com/platoniq/wilder-journal) repository. The new volume will have the new styles as it will be added to the header of the different pages of the volume.
+
+The new styles variable should be defined in the `_sass/_variables.scss` file, and the new styles should be imported in the `_sass/wilder-journal-id_.scss` file.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
