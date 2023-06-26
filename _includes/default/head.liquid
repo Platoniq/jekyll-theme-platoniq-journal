@@ -8,8 +8,15 @@
 
   {% if page.collection == "pages" %}
     <link rel="stylesheet" href="{{ '/assets/css/pages.css' | relative_url }}">
-  {% else if page.collection == "volumes" %}
-      <link rel="stylesheet" href="{{ "/assets/css/" | append: page.volume-uid | append: ".css" | relative_url }}">
+  {% elsif page.collection == "volumes" %}
+    <link rel="stylesheet" href="{{ "/assets/css/" | append: page.uid | append: ".css" | relative_url }}">
+  {% elsif page.collection == "archives" %}
+  {{ page | debug }}
+    <link rel="stylesheet" href="{{ "/assets/css/" | append: page.volume-uid | append: ".css" | relative_url }}">
+  {% elsif page.collection == "articles" %}
+    <link rel="stylesheet" href="{{ "/assets/css/" | append: page.volume-uid | append: ".css" | relative_url }}">
+  {% elsif page.collection == "sticker_packs" %}
+    <link rel="stylesheet" href="{{ "/assets/css/" | append: page.volume-uid | append: ".css" | relative_url }}">
   {% else %}
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
   {% endif %}
