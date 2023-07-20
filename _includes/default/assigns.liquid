@@ -7,6 +7,11 @@
   {% assign current_volume = volumes | find: "uid", page.uid %}
 {% endif %}
 
+{% assign prev_volume_number = page.volume-number %}
+{% assign prev_volume = volumes | find: "volume-number", prev_volume_uid %}
+{% assign next_volume_number = page.volume-number %}
+{% assign next_volume = volumes | find: "volume-number", next_volume_uid %}
+
 {% assign page_translations = site.pages | where: "uid", page.uid %}
 {% if page.collection %}
   {% capture the_collection %}{{ page.collection }}{% endcapture %}
