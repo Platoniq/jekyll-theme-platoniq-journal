@@ -11,12 +11,14 @@ $.getScript("https://www.googletagmanager.com/gtag/js?id=" + analytics_id, funct
 });
 
 const matomo_id = "{{ site.matomo_id }}";
+const matomo_site = "{{ site.matomo_site }}";
+
 var _paq = window._paq = window._paq || [];
 /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
 _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
 (function() {
-  var u="https://analytics.platoniq.net/";
+  var u=matomo_site;
   _paq.push(['setTrackerUrl', u+'matomo.php']);
   _paq.push(['setSiteId', matomo_id]);
   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
