@@ -9,3 +9,16 @@ $.getScript("https://www.googletagmanager.com/gtag/js?id=" + analytics_id, funct
   gtag('js', new Date());
   gtag('config', analytics_id);
 });
+
+const matomo_id = "{{ site.matomo_id }}";
+var _paq = window._paq = window._paq || [];
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+  var u="https://analytics.platoniq.net/";
+  _paq.push(['setTrackerUrl', u+'matomo.php']);
+  _paq.push(['setSiteId', matomo_id]);
+  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+  g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+})();
