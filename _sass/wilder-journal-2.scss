@@ -14,3 +14,7 @@
         "partials/all",
         
         "plugins/plugins";
+
+#main .highlighted h4, .pj-related-articles .pj-articles .highlighted h4 {
+    transform: unset;
+}
