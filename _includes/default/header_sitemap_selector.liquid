@@ -64,10 +64,10 @@
 
     <hr>
 
-    {% assign archives = site.archives | where: "locale", page.locale %}
+    {% assign archives = site.archives | where: "locale", page.locale | where: "volume-uid", current_volume.uid %}
     
     {% for archive in archives %}
-      {% assign category_articles = site.articles | where: "published", true | where: "category", archive.category | where: "locale", page.locale %}
+      {% assign category_articles = site.articles | where: "published", true | where: "category", archive.category | where: "locale", page.locale | where: "volume-uid", current_volume.uid %}
       {% assign t_category_name = site.data.i18n[page.locale].categories[archive.category] %}
   
       {% unless category_articles == empty %}
