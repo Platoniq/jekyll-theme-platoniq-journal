@@ -27,10 +27,10 @@
 
   {% assign prev_number = page.volume-number | minus: 1 %}
   {% assign next_number = page.volume-number | plus: 1 %}
-  {% assign prev_volume = site.volumes | where: "volume-number", prev_number | first %}
-  {% assign next_volume = site.volumes | where: "volume-number", next_number | first %}
+  {% assign prev_volume = site.volumes | find: "volume-number", prev_number %}
+  {% assign next_volume = site.volumes | find: "volume-number", next_number %}
 
-  {% if prev_number %}
+  {% if prev_volume %}
     <div class="heroimage__arrow heroimage__arrow_prev">
       <a href="{{ prev_volume.url | relative_url }}" title="To previous volume {{ prev_volume.title }}">
         {% include svg/icon-arrow_down.liquid alt=t_skip_to_content %}
@@ -38,7 +38,7 @@
     </div>
   {% endif %}
 
-  {% if next_number %}
+  {% if next_volume %}
     <div class="heroimage__arrow heroimage_arrow_next">
       <a href="{{ next_volume.url | relative_url  }}" title="To next volume">
         {% include svg/icon-arrow_down.liquid alt=t_skip_to_content %}
