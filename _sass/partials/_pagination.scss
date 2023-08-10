@@ -27,6 +27,14 @@
       color: $color-fg-primary;
       letter-spacing: -0.4px;
 
+      svg.svg-icon-arrow_right_big, svg.svg-icon-arrow_left_big {
+        path {
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+          fill: $color-bg-primary;
+        }
+      }
+
       @media (max-width: $bp-tablet) {
         flex-flow: column;
         align-items: flex-start;
