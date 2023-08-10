@@ -1,4 +1,4 @@
-// This are the variables for the first volume of the Journal
+// This are the variables for the second volume of the Journal
 
 // Font families
 $font-family-heading: "gt_cinetypebold", sans-serif;
@@ -38,8 +38,8 @@ $color-bg-secondary-hover: rgba(255, 253, 218, $hover-opacity);
 $color-bg-dark: $color-black;
 
 // Foregrond
-$color-fg-primary: $color-green;
-$color-fg-primary-hover: rgba(240, 0, 64, $hover-opacity);
+$color-fg-primary: $color-white;
+$color-fg-primary-hover: rgba($color-fg-primary, $hover-opacity);
 $color-fg-primary-negative: $color-white;
 $color-fg-primary-negative-hover: rgba($color-fg-primary-negative, $hover-opacity);
 $color-fg-secondary: $color-lila;
