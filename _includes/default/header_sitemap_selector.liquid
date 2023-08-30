@@ -96,5 +96,39 @@
         </li>
       {% endunless %}
     {% endfor %}
+
+    {% assign global_archives = site.archives | where: "locale", page.locale | where: "volume-uid", nil %}
+
+    <h2>{{ global_archives.title }}</h2>
+    {% for global_archive in global_archives %}
+      {% assign category_articles = site.articles | where: "published", true | where: "category", global_archive.category | where: "locale", page.locale | where: "volume-uid", nil %}
+      {% assign t_category_name = site.data.i18n[page.locale].categories[global_archive.category] %}
+
+      {% unless category_articles == empty %}
+        <li>
+          {% capture category_url %}{{ category_key }}{% endcapture %}
+
+          <div class="pj-sitemap-menu__text">
+            <a href="{{ global_archive.url | relative_url }}" class="{% if page.category == global_archive.category %}select{% endif%}">
+              <h3 class="pj-sitemap-menu__category">
+                {{ t_category_name }}
+              </h3>
+            </a>
+          </div>
+
+          <ul>
+            {% for article in category_articles %}
+              <li>
+                <a href="{{ article.url | relative_url }}" class="{% if page.uid == article.uid %}select{% endif%}">
+                  <h4 class="pj-sitemap-menu__article">
+                    {{ article.title }}
+                  </h4>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endunless %}
+    {% endfor %}
   </ul>
 </div>
