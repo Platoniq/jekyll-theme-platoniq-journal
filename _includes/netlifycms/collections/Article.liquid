@@ -26,6 +26,9 @@
     - label: Stories
       field: category
       pattern: "stories"
+    - label: Services
+      field: category
+      pattern: "services"
     - label: Published
       field: published
       pattern: true
@@ -62,7 +65,8 @@
       display_fields: [title],
       search_fields: [title],
       value_field: "uid",
-      i18n: duplicate
+      i18n: duplicate,
+      required: false
     }
     - {
       label: "Categoría",
@@ -73,7 +77,8 @@
         { label: "Deep dives", value: "deep-dives" },
         { label: "Interviews", value: "interviews" },
         { label: "Reports", value: "reports" },
-        { label: "Stories", value: "stories" }
+        { label: "Stories", value: "stories" },
+        { label: "Services", value: "services" }
       ],
       i18n: duplicate
     }

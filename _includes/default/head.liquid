@@ -13,7 +13,11 @@
   {% elsif page.collection == "archives" %}
     <link rel="stylesheet" href="{{ "/assets/css/" | append: page.volume-uid | append: ".css" | relative_url }}">
   {% elsif page.collection == "articles" %}
-    <link rel="stylesheet" href="{{ "/assets/css/" | append: page.volume-uid | append: ".css" | relative_url }}">
+    {% if page.volume-uid == nil %}
+      <link rel="stylesheet" href="{{ "/assets/css/pages.css" | relative_url }}">
+    {% else %}
+      <link rel="stylesheet" href="{{ "/assets/css/" | append: page.volume-uid | append: ".css" | relative_url }}">
+    {% endif %}
   {% elsif page.collection == "sticker_packs" %}
     <link rel="stylesheet" href="{{ "/assets/css/" | append: page.volume-uid | append: ".css" | relative_url }}">
   {% else %}
