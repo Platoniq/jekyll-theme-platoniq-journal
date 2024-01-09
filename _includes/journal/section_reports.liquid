@@ -1,6 +1,6 @@
 <section id="reports" class="pj-articles container-fluid">
   <div class="container grid">
-    {% for article in articles_reports %}
+    {% for article in articles_learnings %}
       {% assign mod = forloop.index0 | modulo: 2 %}
 
       <article class="highlighted highlighted-fila{{ mod | plus: 1 }}" data-href="{{ article.url | relative_url }}">
@@ -9,7 +9,7 @@
 
           <h4>
             <a href="{{ category_archive.url | relative_url }}">
-              {{ t_reports }}
+              {{ t_learnings }}
             </a>
           </h4>
 

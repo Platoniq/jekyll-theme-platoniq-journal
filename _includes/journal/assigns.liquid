@@ -3,13 +3,13 @@
     | where: "locale", page.locale
     | sort: "article-order", "last" %}
 
-{% assign articles_blueprints = articles_all | where: "category", "blueprints" %}
+{% assign articles_futures = articles_all | where: "category", "futures" %}
 {% assign articles_deep_dives = articles_all | where: "category", "deep-dives" %}
 {% assign articles_interviews = articles_all | where: "category", "interviews" %}
-{% assign articles_reports = articles_all | where: "category", "reports" %}
+{% assign articles_learnings = articles_all | where: "category", "learnings" %}
 {% assign articles_stories = articles_all | where: "category", "stories" %}
 
-{% assign t_reports = site.data.i18n[page.locale].categories.reports %}
+{% assign t_learnings = site.data.i18n[page.locale].categories.learnings %}
 {% assign t_stories = site.data.i18n[page.locale].categories.stories %}
 
 {% assign t_continue_reading = site.data.i18n[page.locale].global.continue_reading %}
