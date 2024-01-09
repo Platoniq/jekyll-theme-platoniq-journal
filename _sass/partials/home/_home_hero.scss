@@ -9,12 +9,17 @@
   background-size: cover;
 
   &.grid {
-    align-content: center;
-    justify-content: center;
+    grid-template-rows: repeat(24, 1fr);
+    grid-template-columns: repeat(12, 1fr);
   }
 
   &__text {
-    grid-column: 3 / span 12;
+    grid-column: 2 / span 6;
+    grid-row: 2;
+
+    @media(max-width: $bp-desktop) {
+      grid-column: 2 / span 16;
+    }
   }
 
   h1 {
@@ -24,14 +29,14 @@
     letter-spacing: -1px;
 
 
-    @media (max-width: $bp-mobile) {
-      font-size: calc(56px * 0.75); 
+    @media (min-width: $bp-mobile) {
+      font-size: 2rem;
     }
     @media (min-width: $bp-tablet) {
-      font-size: calc(120px * 0.75);
+      font-size: 4rem;
     }
-    @media (min-width: $bp-desktop-xxl) {
-      font-size: 120px;
+    @media (min-width: $bp-desktop-xl) {
+      font-size: 6rem;
     }
   }
 
@@ -134,7 +139,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $bp-desktop) {
   .heroimage {
     background-image: var(--heroimage-mobile-cover-image);
   }

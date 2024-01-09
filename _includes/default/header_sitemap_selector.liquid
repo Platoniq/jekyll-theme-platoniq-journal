@@ -63,10 +63,9 @@
     {% endif %}
 
     <hr>
+    {% assign volume_archives = site.archives | where: "locale", page.locale | where: "volume-uid", current_volume.uid | sort: "order" %}
 
-    {% assign archives = site.archives | where: "locale", page.locale | where: "volume-uid", current_volume.uid %}
-    
-    {% for archive in archives %}
+    {% for archive in volume_archives %}
       {% assign category_articles = site.articles | where: "published", true | where: "category", archive.category | where: "locale", page.locale | where: "volume-uid", current_volume.uid %}
       {% assign t_category_name = site.data.i18n[page.locale].categories[archive.category] %}
   
@@ -97,9 +96,6 @@
       {% endunless %}
     {% endfor %}
 
-    {% assign global_archives = site.archives | where: "locale", page.locale | where: "volume-uid", nil %}
-
-    <h2>{{ global_archives.title }}</h2>
     {% for global_archive in global_archives %}
       {% assign category_articles = site.articles | where: "published", true | where: "category", global_archive.category | where: "locale", page.locale | where: "volume-uid", nil %}
       {% assign t_category_name = site.data.i18n[page.locale].categories[global_archive.category] %}

@@ -8,9 +8,22 @@
     grid-row-gap: $grid-row-lg;
   }
 
+  .grid {
+    @media (min-width: $bp-mobile) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $bp-tablet) {
+      grid-template-columns: repeat(24, 1fr);
+    }
+  }
+
+
+
   .row-articles {
     width: 100%;
     padding-left: 60px;
+    grid-column: 1 / 3;
 
     @media (min-width: $bp-tablet) {
       padding-left: 0;
@@ -74,7 +87,7 @@
       letter-spacing: -0.4px;
       line-height: 115%;
 
-      @media (min-width: $bp-tablet) {
+      @media (min-width: $bp-desktop) {
         font-size: 40px;
         padding-top: 8px;
       }
@@ -145,7 +158,6 @@
     &-horizontal {
       img {
         margin: 0 auto;
-        padding-left: 40px;
         max-width: calc(100% - 32px);
         align-self: center;
       }
@@ -154,7 +166,6 @@
     &-vertical {
       img {
         margin: 0 auto;
-        padding-left: 40px;
         max-width: calc(100% - 32px);
         align-self: center;
       }

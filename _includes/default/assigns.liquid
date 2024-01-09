@@ -38,3 +38,8 @@
 {% assign t_gallery_previous = site.data.i18n[page.locale].article.gallery_previous %}
 {% assign t_gallery_next = site.data.i18n[page.locale].article.gallery_next %}
 
+{% assign volume_archives = site.archives | where: "locale", page.locale | where: "volume-uid", current_volume.uid | sort: "order" %}
+{% assign global_archives = site.archives | where: "locale", page.locale | where: "volume-uid", nil %}
+
+{% assign archives = volume_archives | join: global_archives %}
+
