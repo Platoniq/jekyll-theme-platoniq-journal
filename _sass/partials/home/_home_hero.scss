@@ -23,7 +23,7 @@
   }
 
   h1 {
-    @include font-heading(56px);
+    @include font-heading(2rem);
 
     color: $color-white;
     letter-spacing: -1px;
