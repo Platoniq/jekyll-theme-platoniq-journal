@@ -13,7 +13,7 @@
         </a>
       </p>
     </li>
-    {% if [page.volume-uid, page.uid].include? 'wilder-journal-2' %}
+    {% if page.volume-uid == "wilder-journal-2" or page.uid == 'wilder-journal-2' %}
       <li>
         <p>
           {{ t_support_by }} <a href="https://www.opensocietyfoundations.org" target="_blank">Open Society Foundations</a>
