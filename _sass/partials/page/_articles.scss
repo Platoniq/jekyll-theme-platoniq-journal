@@ -41,4 +41,8 @@
   & > blockquote {
     @include blockquote;
   }
+
+  iframe {
+    max-width: 100%;
+  }
 }
