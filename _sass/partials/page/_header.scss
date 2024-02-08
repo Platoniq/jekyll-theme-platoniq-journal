@@ -2,11 +2,17 @@
   grid-column: 4 / -3;
 
   h1 {
+
+    span {
+      background-color: $color-bg-primary;
+    }
+
     @include font-heading(36px);
 
     color: $color-fg-primary;
     letter-spacing: -1px;
     line-height: 105%;
+    text-wrap: balance;
 
     @media (min-width: $bp-tablet) {
       font-size: 80px;
