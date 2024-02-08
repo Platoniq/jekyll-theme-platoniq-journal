@@ -1,8 +1,7 @@
 <nav class="pj-nav-vertical">
   <ul>
-  {% assign archives = site.archives | where: "locale", page.locale | where: "volume-uid", current_volume.uid %}
-
-  {% for archive in archives %}
+  {% assign volume_archives = site.archives | where: "locale", page.locale | where: "volume-uid", current_volume.uid | sort: "order" %}
+  {% for archive in volume_archives %}
     {% assign t_category_name = site.data.i18n[page.locale].categories[archive.category] %}
 
     <li>

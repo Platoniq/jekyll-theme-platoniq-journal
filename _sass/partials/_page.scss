@@ -8,6 +8,7 @@
   }
 
   .grid {
+    grid-template-columns: repeat(24, 1fr);
     grid-row-gap: $grid-row-lg;
 
     @media (max-width: $bp-tablet) {
