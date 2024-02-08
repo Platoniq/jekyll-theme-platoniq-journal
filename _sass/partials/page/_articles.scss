@@ -38,6 +38,10 @@
     }
   }
 
+  p {
+    text-wrap: balance;
+  }
+
   & > blockquote {
     @include blockquote;
   }
