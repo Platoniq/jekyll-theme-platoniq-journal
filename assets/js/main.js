@@ -23,6 +23,10 @@ $(document).ready(function() {
     $(".pj-sitemap-menu")
   )
 
+  initializeMenu(
+    $(".header__volume button.burger"),
+    $(".pj-volume-menu")
+  )
 
   /*
    * 

@@ -1,10 +1,10 @@
 <div class="header__volume">
-  <button type="button" class="burger">
+  <button type="button" class="burger" title="{{ t_volumes_menu  }}">
     {% include svg/icon-close.liquid
         class="burger__icon-close burger__icon-close-left"
         alt=t_close %}
 
-    {% include svg/icon-dots.liquid
+    {% include svg/icon-layers.liquid
         class="burger__icon-open burger__icon-open-left"
         alt=t_volumes_menu %}
 
@@ -13,25 +13,27 @@
     </span>
   </button>
 
-  <ul class="pj-volume-menu">
-    {% for volume in volumes %}
-    <li>
-      <a class="{% if volume.uid == current_volume.uid %} select {% endif%}"
-          aria-label="{{ volume.title }}"
-          href="{{ volume.url | relative_url }}">
-        <img src="{{ volume.thumbnail | relative_url }}" alt="{{ volume.title }}" class="pj-volume-menu__img">
+  <nav>
+    <ul class="pj-volume-menu">
+      {% for volume in volumes %}
+      <li>
+        <a class="{% if volume.uid == current_volume.uid %} select {% endif %}"
+            aria-label="{{ volume.title }}"
+            href="{{ volume.url | relative_url }}">
+          <img src="{{ volume.thumbnail | relative_url }}" alt="{{ volume.title }}" class="pj-volume-menu__img">
 
-        <div class="pj-volume-menu__text">
-          <h4 class="pj-volume-menu__number">
-            {{ volume.volume-number | prepend: "#"}}
-          </h4>
+          <div class="pj-volume-menu__text">
+            <h4 class="pj-volume-menu__number">
+              {{ volume.volume-number | prepend: "#"}}
+            </h4>
 
-          <h3 class="pj-volume-menu__title">
-            {{ volume.title }}
-          </h3>
-        </div>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+            <h3 class="pj-volume-menu__title">
+              {{ volume.title }}
+            </h3>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
 </div>
