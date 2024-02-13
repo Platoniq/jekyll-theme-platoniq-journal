@@ -3,6 +3,11 @@
 {% assign cms_volume_number = "${cmsVolumeNumber}" %}
 {% assign cms_cover_image = "${cmsCoverImage}" %}
 
+{% assign prev_number = page.volume-number | minus: 1 %}
+{% assign next_number = page.volume-number | plus: 1 %}
+{% assign prev_volume = site.volumes | find: "volume-number", prev_number %}
+{% assign next_volume = site.volumes | find: "volume-number", next_number %}
+
 {% capture cover_image_path %}{{ page.cover.path | relative_url }}{% endcapture %}
 {% capture mobile_cover_image_path %}{{ page.cover.mobile | relative_url }}{% endcapture %}
 
@@ -15,7 +20,26 @@
 
 <section class="heroimage container-fluid grid">
   <div class="heroimage__text">
-    <h4>#{{ page.volume-number | default: cms_volume_number }}</h4>
+    <div class="heroimage__volume_navigation">
+      {% if prev_volume %}
+        <div class="arrow arrow_prev">
+          <a href="{{ prev_volume.url | relative_url }}" title="To previous volume {{ prev_volume.title }}">
+            {% include svg/icon-arrow_left.liquid alt=t_skip_to_content %}
+          </a>
+        </div>
+      {% endif %}
+
+      <h4>#{{ page.volume-number | default: cms_volume_number }}</h4>
+
+      {% if next_volume %}
+        <div class="arrow arrow_next">
+          <a href="{{ next_volume.url | relative_url  }}" title="To next volume {{ next_volume.title }}">
+            {% include svg/icon-arrow_right.liquid alt=t_skip_to_content %}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+
     <h1>{{ page.title | default: cms_title }}</h1>
   </div>
 
@@ -24,25 +48,4 @@
       {% include svg/icon-arrow_down.liquid alt=t_skip_to_content %}
     </a>
   </div>
-
-  {% assign prev_number = page.volume-number | minus: 1 %}
-  {% assign next_number = page.volume-number | plus: 1 %}
-  {% assign prev_volume = site.volumes | find: "volume-number", prev_number %}
-  {% assign next_volume = site.volumes | find: "volume-number", next_number %}
-
-  {% if prev_volume %}
-    <div class="heroimage__arrow heroimage__arrow_prev">
-      <a href="{{ prev_volume.url | relative_url }}" title="To previous volume {{ prev_volume.title }}">
-        {% include svg/icon-arrow_down.liquid alt=t_skip_to_content %}
-      </a>
-    </div>
-  {% endif %}
-
-  {% if next_volume %}
-    <div class="heroimage__arrow heroimage_arrow_next">
-      <a href="{{ next_volume.url | relative_url  }}" title="To next volume">
-        {% include svg/icon-arrow_down.liquid alt=t_skip_to_content %}
-      </a>
-    </div>
-  {% endif %}
 </section>
