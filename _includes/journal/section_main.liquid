@@ -1,6 +1,7 @@
 {% assign articles_mixed = articles_futures
                  | concat: articles_deep_dives
                  | concat: articles_interviews
+                 | concat: articles_rethink
                  | uniq
                  | sort: "article-order", "last" %}
 
