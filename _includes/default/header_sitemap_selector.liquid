@@ -18,6 +18,14 @@
       </li>
     {% endif %}
     
+    {% if wilder_committee_page.published  %}
+      <li>
+        <a href="{{ wilder_committee_page.url | relative_url }}" class="{% if page.uid == "together" %}select{% endif%}">
+          <h3 class="pj-sitemap-menu__title">{{ wilder_committee_page.title }}</h3>
+        </a>
+      </li>
+    {% endif %}
+
     {% if together_page.published %}
       <li>
         <a href="{{ together_page.url | relative_url }}" class="{% if page.uid == "together" %}select{% endif%}">

@@ -19,6 +19,7 @@
 {% endif %}
 
 {% assign about_page = site.pages | where: "uid", "about" | where: "locale", page.locale | first %}
+{% assign wilder_committee_page = site.pages | where: "uid", "wilder-committee" | where: "locale", page.locale | first %}
 {% assign together_page = site.pages | where: "uid", "together" | where: "locale", page.locale | first %}
 {% assign terms_page = site.pages | where: "uid", "terms" | where: "locale", page.locale | first %}
 {% assign privacy_page = site.pages | where: "uid", "privacy" | where: "locale", page.locale | first %}
