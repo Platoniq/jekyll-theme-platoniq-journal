@@ -18,3 +18,8 @@
 #main .highlighted h4, .pj-related-articles .pj-articles .highlighted h4 {
     transform: unset;
 }
+
+header.pj-hero h1 span {
+    background-color: $color-bg-secondary;
+    color: $color-fg-secondary;
+}
