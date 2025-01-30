@@ -59,7 +59,7 @@
       }
 
       // Disposició
-      &-fila1 {
+      &:nth-child(odd){
         grid-column: 4 / -4;
 
         .col1 {
@@ -73,7 +73,7 @@
         }
       }
 
-      &-fila2 {
+      &:nth-child(even) {
         grid-column: 5 / -3;
 
         .col1 {
@@ -148,7 +148,7 @@
     }
 
     @media (min-width: $bp-tablet) {
-      &-fila1 h4 {
+      &:nth-child(odd) h4 {
         transform-origin: right bottom;
         right: -32px;
         top: -12px;

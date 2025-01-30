@@ -1,9 +1,8 @@
 <section id="reports" class="pj-articles container-fluid">
   <div class="container grid">
     {% for article in articles_learnings %}
-      {% assign mod = forloop.index0 | modulo: 2 %}
 
-      <article class="highlighted highlighted-fila{{ mod | plus: 1 }}" data-href="{{ article.url | relative_url }}">
+      <article class="highlighted" data-href="{{ article.url | relative_url }}">
         <div class="col1">
           {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
 
