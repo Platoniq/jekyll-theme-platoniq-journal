@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-platoniq-journal"
-  spec.version       = "0.0.115"
+  spec.version       = "0.0.116"
   spec.authors       = ["Agustí B.R."]
   spec.email         = ["agusti@platoniq.net"]
 
@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
     f.match(%r!^(assets|_data|_layouts|_includes|_sass|LICENSE|README|_config\.yml)!i)
   end
 
-  spec.required_ruby_version = ">= 2.5"
+  spec.required_ruby_version = ">= 3.2"
 
   spec.add_dependency "jekyll", "~> 4.2"
   spec.add_development_dependency "rubocop-jekyll", "~> 0.12"
