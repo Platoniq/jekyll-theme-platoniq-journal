@@ -11,3 +11,8 @@ body {
 .bw {
   // filter: saturate(0);
 }
+iframe {
+  grid-column: 7 / span 13;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
