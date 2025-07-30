@@ -12,7 +12,7 @@ body {
   // filter: saturate(0);
 }
 iframe {
-  grid-column: 7 / span 13;
-  width: 100%;
-  aspect-ratio: 16 / 9;
+  grid-column: 7 / span 13 !important;
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
 }
