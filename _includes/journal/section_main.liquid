@@ -7,40 +7,55 @@
 
 <section id="main" class="pj-articles container-fluid">
   <div class="container grid">
+    {% assign current_category = "" %}
     {% for article in articles_mixed %}
       {% assign mod = forloop.index0 | modulo: 2 %}
-        {% if mod == 0 %}
-          <div class="row-articles">
-        {% endif %}
+      {% if article.category != current_category %}
+        {% unless forloop.first %}
+          {% if mod != 0 %}</div>{% endif %}
+          </div>
+        {% endunless %}
+        <div class="category-group category-{{ article.category | slugify }}">
+        {% assign current_category = article.category %}
+      {% endif %}
 
-        {% capture class %}
-          highlighted-{% if mod == 0 %}vertical{% else %}horizontal{% endif %}
-          highlighted-{{ article.category | slugify }}
-        {% endcapture %}
+      {% if mod == 0 %}
+        <div class="row-articles">
+      {% endif %}
 
-        {% assign category_name = site.data.i18n[page.locale].categories[article.category] %}
-        {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
+      {% capture class %}
+        highlighted-{% if mod == 0 %}vertical{% else %}horizontal{% endif %}
+        highlighted-{{ article.category | slugify }}
+      {% endcapture %}
 
-        <article class="highlighted {{ class }}" data-href="{{ article.url | relative_url }}">
-          <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}" style="--aspect-ratio:1">
+      {% assign category_name = site.data.i18n[page.locale].categories[article.category] %}
+      {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
 
-          <h4>
-            <a href="{{ category_archive.url  | relative_url }}">{{ category_name }}</a>
-          </h4>
+      <article class="highlighted {{ class }}" data-href="{{ article.url | relative_url }}">
+        <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}" style="--aspect-ratio:1">
 
-          <h3>
-            <a href="{{ article.url | relative_url }}">
-              {% if article.category == "interviews" %}
-                <span class="interviewee">{{ article.interviewee }}</span>
-              {% endif %}
-              {{ article.title }}
-            </a>
-          </h3>
-        </article>
+        <h4>
+          <a href="{{ category_archive.url  | relative_url }}">{{ category_name }}</a>
+        </h4>
+
+        <h3>
+          <a href="{{ article.url | relative_url }}">
+            {% if article.category == "interviews" %}
+              <span class="interviewee">{{ article.interviewee }}</span>
+            {% endif %}
+            {{ article.title }}
+          </a>
+        </h3>
+      </article>
+
       {% if mod != 0 %}
-        </div> <!-- mod != 0  -->
+        </div> <!-- row-articles -->
       {% elsif forloop.last == true %}
-        </div> <!-- forloop.last  -->
+        </div> <!-- row-articles -->
+      {% endif %}
+
+      {% if forloop.last %}
+        </div> <!-- category-group -->
       {% endif %}
     {% endfor %}
   </div>
