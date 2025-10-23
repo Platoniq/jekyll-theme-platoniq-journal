@@ -9,14 +9,26 @@
   <div class="container grid">
     {% if page.url contains "wilder-journal-2" %}
       {% assign current_category = "" %}
+      {% assign row_open = false %}
       {% for article in articles_mixed %}
-        {% assign mod = forloop.index0 | modulo: 2 %}
 
-        {% if mod == 0 %}
-          {% if article.category != current_category %}
-            {% assign current_category = article.category %}
+        {% if article.category != current_category %}
+          {% if row_open %}
+            </div>
+            {% assign row_open = false %}
           {% endif %}
-          <div class="row-articles category-{{ current_category | slugify }}">
+          {% unless forloop.first %}
+            </div>
+          {% endunless %}
+          <div class="category-group category-{{ article.category | slugify }}">
+          {% assign current_category = article.category %}
+          {% assign category_mod = 0 %}
+        {% endif %}
+
+        {% assign mod = category_mod | modulo: 2 %}
+        {% if mod == 0 %}
+          <div class="row-articles">
+          {% assign row_open = true %}
         {% endif %}
 
         {% capture class %}
@@ -46,7 +58,15 @@
 
         {% if mod != 0 %}
           </div>
-        {% elsif forloop.last == true %}
+          {% assign row_open = false %}
+        {% endif %}
+
+        {% assign category_mod = category_mod | plus: 1 %}
+
+        {% if forloop.last %}
+          {% if row_open %}
+            </div>
+          {% endif %}
           </div>
         {% endif %}
       {% endfor %}
