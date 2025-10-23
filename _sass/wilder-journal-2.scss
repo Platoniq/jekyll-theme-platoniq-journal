@@ -12,7 +12,7 @@
         "base/links",
 
         "partials/all",
-        
+
         "plugins/plugins";
 
 #main .highlighted h4, .pj-related-articles .pj-articles .highlighted h4 {
@@ -22,4 +22,12 @@
 header.pj-hero h1 span {
     background-color: $color-bg-secondary;
     color: $color-fg-secondary;
+}
+
+.category-deep-dives {
+  background-color: #84D8FB;
+}
+
+.category-interviews {
+  background-color: #A78BE4;
 }
