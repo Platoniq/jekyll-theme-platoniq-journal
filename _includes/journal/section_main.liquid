@@ -12,17 +12,11 @@
       {% for article in articles_mixed %}
         {% assign mod = forloop.index0 | modulo: 2 %}
 
-        {% if article.category != current_category %}
-          {% unless forloop.first %}
-            {% if mod != 0 %}</div>{% endif %}
-            </div>
-          {% endunless %}
-          <div class="category-group category-{{ article.category | slugify }}">
-          {% assign current_category = article.category %}
-        {% endif %}
-
         {% if mod == 0 %}
-          <div class="row-articles">
+          {% if article.category != current_category %}
+            {% assign current_category = article.category %}
+          {% endif %}
+          <div class="row-articles category-{{ current_category | slugify }}">
         {% endif %}
 
         {% capture class %}
@@ -53,10 +47,6 @@
         {% if mod != 0 %}
           </div>
         {% elsif forloop.last == true %}
-          </div>
-        {% endif %}
-
-        {% if forloop.last %}
           </div>
         {% endif %}
       {% endfor %}
