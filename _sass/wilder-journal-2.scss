@@ -31,3 +31,12 @@ header.pj-hero h1 span {
 .category-interviews {
   background-color: #A78BE4;
 }
+.category-group {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 2rem 0;
+}
