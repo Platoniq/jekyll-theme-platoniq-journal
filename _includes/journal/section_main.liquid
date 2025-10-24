@@ -5,7 +5,7 @@
                  | uniq
                  | sort: "article-order", "last" %}
 
-<section id="main" class="pj-articles container-fluid">
+<section id="main" class="pj-articles container-fluid{% if page.url contains 'wilder-journal-2' %} wilder-journal-2{% endif %}">
   {% if page.url contains "wilder-journal-2" %}
     {% assign current_category = "" %}
     {% assign row_open = false %}
