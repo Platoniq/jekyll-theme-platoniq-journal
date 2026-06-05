@@ -1,9 +1,15 @@
+{% comment %}
+  Section order (1-3): Futures, Interviews, Deep Dive.
+  Categories are concatenated as clean, label-grouped blocks in this order.
+  Each sublist is already sorted by article-order (see assigns.liquid), so we
+  intentionally do NOT re-sort the combined list — a global sort would
+  interleave the categories instead of keeping them as distinct blocks.
+  Reconsider (rethink) lives in its own section: section_rethink.liquid.
+{% endcomment %}
 {% assign articles_mixed = articles_futures
-                 | concat: articles_deep_dives
                  | concat: articles_interviews
-                 | concat: articles_rethink
-                 | uniq
-                 | sort: "article-order", "last" %}
+                 | concat: articles_deep_dives
+                 | uniq %}
 
 <section id="main" class="pj-articles container-fluid{% if page.url contains 'wilder-journal-2' %} wilder-journal-2{% endif %}">
   {% if page.url contains "wilder-journal-2" %}
