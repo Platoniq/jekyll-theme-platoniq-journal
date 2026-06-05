@@ -24,14 +24,25 @@ header.pj-hero h1 span {
     color: $color-fg-secondary;
 }
 
-.category-deep-dives,
-.category-rethink {
-  background-color: #84D8FB;
+// Section -> colour map (boss's reference: Purple / Green / Sky Blue)
+.category-futures {
+  background-color: $color-section-purple;
 }
 
 .category-interviews {
-  background-color: #A78BE4;
+  background-color: $color-section-green;
 }
+
+.category-deep-dives,
+.category-rethink {
+  background-color: $color-section-sky;
+}
+
+// Stories band: override the shared green default with purple (volume 2 only).
+#stories {
+  background-color: $color-section-purple;
+}
+
 .category-group {
   width: 100vw;
   position: relative;

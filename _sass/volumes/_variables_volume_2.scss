@@ -28,6 +28,15 @@ $color-lila:#ae8beb;
 $color-green: #2e9779;
 $color-green-light: #42cca5;
 
+// Journal section band colours (see the section -> colour map).
+// Reuse the existing palette; the boss's reference names map as:
+//   Purple   -> futures, stories
+//   Green    -> interviews, learnings
+//   Sky Blue -> deep-dives, rethink (Reconsider)
+$color-section-purple: #a78be4;       // existing band purple
+$color-section-green: $color-green-light; // #42cca5
+$color-section-sky: #84d8fb;          // existing band sky blue
+
 // Backgrounds
 $color-bg-primary: $color-green-light;
 $color-bg-primary-hover: rgba(253, 64, 34, $hover-opacity);
