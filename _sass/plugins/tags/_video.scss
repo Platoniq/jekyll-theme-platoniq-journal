@@ -1,5 +1,8 @@
 .pj-video {
+  position: relative;
   grid-column: 7 / span 13;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
 
   background: $color-bg-primary-negative;
 
@@ -9,54 +12,87 @@
     margin: $grid-row-xl 0;
   }
 
-  &__overlay {
-    width: 100%;
-    background: transparentize($color-bg-dark, 0.7);
-    z-index: 1;
-    display: block;
+  // Poster thumbnail shown until the viewer clicks play.
+  &__thumb {
     position: absolute;
-    height: 33vh;
-
-    cursor: pointer;
-
-    @include flex-center;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
+  // The iframe is injected by main.js on click; size it to fill the 16:9 container.
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    z-index: 2;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0) 100%);
+
+    cursor: pointer;
+  }
+
+  // Centred circular play badge — reads on any video frame.
   &__play {
     position: absolute;
-    background: $color-bg-primary;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    width: 90%;
-    height: 125%;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
 
-    clip-path: polygon(20% 0%, 20% 100%, 100% 50%);
+    transition: background 0.2s ease, transform 0.2s ease;
 
-    @media (min-width: $bp-phablet) {
-      width: 66%;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-42%, -50%);
+
+      border-style: solid;
+      border-width: 14px 0 14px 23px;
+      border-color: transparent transparent transparent #fff;
     }
   }
 
+  &__overlay:hover &__play {
+    background: $color-bg-primary;
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+
   &__text {
-    width: 50%;
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 20px;
     z-index: 1;
 
-    margin-left: -$margin-sm;
-
     h3 {
-      @include font-heading(28px);
+      @include font-heading(24px);
 
-      color: $color-fg-primary-negative;
+      color: #fff;
       letter-spacing: -0.4px;
 
-      margin-top: 0;
+      margin: 0;
 
       @media (max-width: $bp-phablet) {
         font-size: 18px;
       }
-    }
-
-    @media (max-width: $bp-phablet) {
-      width: 66%;
     }
   }
 }

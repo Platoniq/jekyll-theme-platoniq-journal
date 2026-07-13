@@ -5,8 +5,10 @@
 
 {% assign prev_number = page.volume-number | minus: 1 %}
 {% assign next_number = page.volume-number | plus: 1 %}
-{% assign prev_volume = site.volumes | find: "volume-number", prev_number %}
-{% assign next_volume = site.volumes | find: "volume-number", next_number %}
+{% comment %} Stay within the current locale (volume-number is duplicated across locales). {% endcomment %}
+{% assign locale_volumes = site.volumes | where: "locale", page.locale %}
+{% assign prev_volume = locale_volumes | where: "volume-number", prev_number | first %}
+{% assign next_volume = locale_volumes | where: "volume-number", next_number | first %}
 
 {% capture cover_image_path %}{{ page.cover.path | relative_url }}{% endcapture %}
 {% capture mobile_cover_image_path %}{{ page.cover.mobile | relative_url }}{% endcapture %}

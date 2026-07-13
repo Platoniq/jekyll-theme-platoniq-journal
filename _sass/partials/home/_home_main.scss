@@ -1,4 +1,8 @@
-#main {
+// #rethink is its own sibling <section> (split out of section_main so it can
+// render last) but reuses the same markup, so it must share this whole layout
+// block — otherwise it inherits none of the grid/card/label rules and collapses.
+#main,
+#rethink {
   padding-top: 80px;
   padding-bottom: 24px;
 

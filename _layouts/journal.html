@@ -9,6 +9,9 @@ layout: default
 
 {% include journal/hero_image.liquid %}
 
+{% comment %} Editorially-featured articles (CMS `featured` flag) pinned above the sections. {% endcomment %}
+{% include journal/section_featured.liquid %}
+
 {% comment %} Section display order: 1 Futures / 2 Interviews / 3 Deep Dive (section_main),
    4 Stories, 5 Learnings, 6 Reconsider. Independent of the vertical menu order. {% endcomment %}
 {% include journal/section_main.liquid %}
@@ -16,10 +19,15 @@ layout: default
 {% include journal/section_reports.liquid %}
 {% include journal/section_rethink.liquid %}
 
+{% comment %} Videos for this edition, with a link out to the YouTube channel. {% endcomment %}
+{% include journal/section_videos.liquid %}
+
 <article class="container-fluid">
   <div class="container">
     {{ content }}
   </div>
 </article>
+
+{% include journal/edition_pager.liquid %}
 
 {% include default/footer.liquid %}
