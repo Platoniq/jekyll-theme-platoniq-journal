@@ -39,7 +39,22 @@
   &__channel {
     display: inline-flex;
     align-items: center;
-    margin-top: $grid-row-xl;
+    margin-top: $grid-row-lg;
+
+    // The neutral palette's generic link hover (grey wash + a second
+    // native underline over the gradient one) reads as broken here;
+    // keep the theme's single underline affordance in the text colour.
+    &.link:hover,
+    &.link:focus {
+      text-decoration: none;
+
+      .link__label {
+        color: $color-base;
+        background: transparent linear-gradient(90deg, currentColor 50%, currentColor 0) no-repeat;
+        background-size: 200% 2px;
+        background-position: 100% 100%;
+      }
+    }
   }
 }
 
