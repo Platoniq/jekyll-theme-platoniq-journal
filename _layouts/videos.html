@@ -27,7 +27,7 @@ layout: default
       {% assign vol_videos = all_videos | where: "volume-uid", volume.uid %}
 
       {% unless vol_videos == empty %}
-        <section class="pj-videos">
+        <section class="pj-videos pj-videos--{{ volume.uid }}">
           <h2 class="pj-videos__title">{{ volume.volume-number | prepend: "#" }} {{ volume.title }}</h2>
 
           <div class="pj-videos__grid">

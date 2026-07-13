@@ -63,6 +63,12 @@
   $band-green: #42cca5;
   $band-sky: #84d8fb;
 
+  // Edition identity colours, mirroring volumes/_variables_volume_*.scss
+  // (this page compiles with the neutral palette, so no $color-* vars).
+  $vol1-red: #fd4022; // volume 1 $color-accent
+  $vol1-rose: #ffdfda; // volume 1 $color-base-negative
+  $vol2-lila: #ae8beb; // volume 2 $color-lila
+
   background-color: #efeaf8; // soft lavender, matching the #2 mood
 
   // Trim the standard .pj-page top whitespace (224px) — just clear the
@@ -92,6 +98,24 @@
     &:nth-of-type(3n + 1) { background-color: $band-purple; }
     &:nth-of-type(3n + 2) { background-color: $band-green; }
     &:nth-of-type(3n + 3) { background-color: $band-sky; }
+
+    // Known editions keep their own volume palette over the positional
+    // cycle above (which remains the fallback for future editions).
+    &.pj-videos--wilder-journal-1 {
+      background-color: $vol1-red;
+
+      .pj-videos__title,
+      .pj-video-card__title,
+      .pj-video-card__description,
+      .link__label,
+      .link__icon {
+        color: $vol1-rose;
+      }
+    }
+
+    &.pj-videos--wilder-journal-2 {
+      background-color: $vol2-lila;
+    }
   }
 
   // Keep text legible on the colour bands.
