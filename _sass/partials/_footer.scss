@@ -70,3 +70,13 @@
     }
   }
 }
+
+// On journal pages the fixed vertical category nav occupies the left
+// gutter all the way down; indent the footer text so they never overlap.
+.pj-nav-vertical ~ .footer {
+  padding-left: 48px;
+
+  @media (min-width: $bp-tablet) {
+    padding-left: 104px;
+  }
+}
