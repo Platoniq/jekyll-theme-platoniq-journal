@@ -1,0 +1,36 @@
+{% comment %}
+  Featured articles block, rendered at the top of an edition (volume) page.
+  Driven by the `featured` boolean editors set in the CMS. Uses `articles_featured`
+  (assigned in journal/assigns.liquid). Uses .pj-featured (a distinct class from the
+  layout term .highlighted used by the category sections).
+{% endcomment %}
+{% assign t_featured = site.data.i18n[page.locale].global.featured %}
+
+{% unless articles_featured == empty %}
+  <section id="featured" class="pj-featured container-fluid">
+    <div class="container">
+      <h2 class="pj-featured__title">{{ t_featured }}</h2>
+
+      <div class="pj-featured__grid">
+        {% for article in articles_featured %}
+          {% assign category_name = site.data.i18n[page.locale].categories[article.category] %}
+
+          <article class="pj-featured__item">
+            <a href="{{ article.url | relative_url }}" class="pj-featured__link">
+              <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}" loading="lazy">
+
+              <h4 class="pj-featured__category">{{ category_name }}</h4>
+
+              <h3 class="pj-featured__heading">
+                {% if article.category == "interviews" and article.interviewee %}
+                  <span class="interviewee">{{ article.interviewee }}</span>
+                {% endif %}
+                {{ article.title }}
+              </h3>
+            </a>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endunless %}

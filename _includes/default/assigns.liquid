@@ -2,15 +2,22 @@
 {% assign volumes = site.volumes
     | where: "locale", page.locale
     | sort: "volume-number", "last" %}
-{% assign current_volume = volumes | find: "uid", page.volume-uid %}
+{% comment %}
+  uid and volume-number are duplicated across locales, and Liquid 4's behaviour
+  for `find` returns the first cross-locale match, ignoring the locale-scoped
+  `volumes` above. Use `where ... | first` so current/prev/next stay in the
+  current locale (otherwise .url / .title leak the other locale's volume).
+{% endcomment %}
+{% assign current_volume = volumes | where: "uid", page.volume-uid | first %}
 {% if page.collection == "volumes" %}
-  {% assign current_volume = volumes | find: "uid", page.uid %}
+  {% assign current_volume = volumes | where: "uid", page.uid | first %}
 {% endif %}
 
-{% assign prev_volume_number = page.volume-number %}
-{% assign prev_volume = volumes | find: "volume-number", prev_volume_uid %}
-{% assign next_volume_number = page.volume-number %}
-{% assign next_volume = volumes | find: "volume-number", next_volume_uid %}
+{% assign current_volume_number = current_volume.volume-number %}
+{% assign prev_volume_number = current_volume_number | minus: 1 %}
+{% assign next_volume_number = current_volume_number | plus: 1 %}
+{% assign prev_volume = volumes | where: "volume-number", prev_volume_number | first %}
+{% assign next_volume = volumes | where: "volume-number", next_volume_number | first %}
 
 {% assign page_translations = site.pages | where: "uid", page.uid %}
 {% if page.collection %}
@@ -24,6 +31,7 @@
 {% assign terms_page = site.pages | where: "uid", "terms" | where: "locale", page.locale | first %}
 {% assign privacy_page = site.pages | where: "uid", "privacy" | where: "locale", page.locale | first %}
 {% assign services_page = site.pages | where: "uid", "services" | where: "locale", page.locale | first %}
+{% assign videos_page = site.pages | where: "uid", "videos" | where: "locale", page.locale | first %}
 
 {% assign sticker_pack_page = site.sticker_packs | where: "volume-uid", current_volume.uid | where: "locale", page.locale | first %}
 

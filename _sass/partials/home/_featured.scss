@@ -1,0 +1,86 @@
+// Featured articles block, pinned at the top of an edition page.
+// Driven by the CMS `featured` flag. Uses .pj-featured (distinct from the
+// layout term .highlighted used by the category sections).
+
+.pj-featured {
+  padding-top: 80px;
+  padding-bottom: 0;
+  // Clear the fixed vertical category nav on the left (matches the journal sections).
+  padding-left: 60px;
+
+  @media (min-width: $bp-tablet) {
+    padding-top: 160px;
+    padding-left: 128px;
+    padding-right: 60px;
+  }
+
+  &__title {
+    @include font-body;
+
+    color: $color-fg-primary;
+    text-transform: uppercase;
+    letter-spacing: 0.62px;
+    margin-bottom: $grid-row-lg;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: $grid-row-lg;
+
+    @media (min-width: $bp-phablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    color: $color-base;
+
+    img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__category {
+    @include font-body;
+
+    color: $color-fg-primary;
+    text-transform: uppercase;
+    letter-spacing: 0.62px;
+    margin: 0 0 4px;
+  }
+
+  &__heading {
+    @include font-heading(24px);
+
+    color: $color-base;
+    line-height: 115%;
+    margin: 0;
+
+    @media (min-width: $bp-desktop) {
+      font-size: 32px;
+    }
+
+    .interviewee {
+      display: block;
+      width: fit-content;
+      background-color: $color-bg-primary;
+      color: $color-fg-primary-negative;
+      padding: 0.188em 0.375em;
+      margin-bottom: 0.25em;
+    }
+  }
+}
+
+// Distinguish the edition pager from the in-article pager (same .pager base).
+.pj-edition-pager {
+  .pager {
+    border-top-width: 2px;
+  }
+}

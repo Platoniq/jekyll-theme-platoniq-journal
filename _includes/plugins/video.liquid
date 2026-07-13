@@ -1,7 +1,12 @@
+{% include journal/youtube_embed.liquid url=video.url %}
 <section class="pj-video" title="{{ video.title }}" data-src="{{ video.url }}">
+  {% if youtube_thumb != "" %}
+    <img class="pj-video__thumb" src="{{ youtube_thumb }}" alt="{{ video.title }}" loading="lazy">
+  {% endif %}
+
   <div class="pj-video__overlay">
     <div class="pj-video__play"></div>
-    
+
     <div class="pj-video__text">
       {% if video.title != "" %}
         <h3>

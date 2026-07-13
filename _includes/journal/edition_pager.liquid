@@ -1,0 +1,42 @@
+{% comment %}
+  Previous / next edition (volume) navigation, shown at the bottom of an edition page.
+  Relies on prev_volume / next_volume assigned in default/assigns.liquid.
+{% endcomment %}
+{% assign t_previous_edition = site.data.i18n[page.locale].global.previous_edition %}
+{% assign t_next_edition = site.data.i18n[page.locale].global.next_edition %}
+
+{% if prev_volume or next_volume %}
+  <nav class="pj-edition-pager" aria-label="{{ t_previous_edition }} / {{ t_next_edition }}">
+    <ul class="pager grid">
+      <li>
+        {% if prev_volume %}
+          <a class="link" href="{{ prev_volume.url | relative_url }}"
+             title="{{ t_previous_edition }}: {{ prev_volume.title }}">
+            <span class="link__icon link__icon-left">
+              {% include svg/icon-arrow_left_big.liquid alt=t_previous_edition %}
+            </span>
+
+            <span class="link__label">
+              {{ t_previous_edition }}: {{ prev_volume.title }}
+            </span>
+          </a>
+        {% endif %}
+      </li>
+
+      <li>
+        {% if next_volume %}
+          <a class="link link-right" href="{{ next_volume.url | relative_url }}"
+             title="{{ t_next_edition }}: {{ next_volume.title }}">
+            <span class="link__label">
+              {{ t_next_edition }}: {{ next_volume.title }}
+            </span>
+
+            <span class="link__icon link__icon-right">
+              {% include svg/icon-arrow_right_big.liquid alt=t_next_edition %}
+            </span>
+          </a>
+        {% endif %}
+      </li>
+    </ul>
+  </nav>
+{% endif %}

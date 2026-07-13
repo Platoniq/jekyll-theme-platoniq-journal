@@ -15,7 +15,7 @@
 
         "plugins/plugins";
 
-#main .highlighted h4, .pj-related-articles .pj-articles .highlighted h4 {
+#main .highlighted h4, #rethink .highlighted h4, .pj-related-articles .pj-articles .highlighted h4 {
     transform: unset;
 }
 
@@ -53,6 +53,13 @@ header.pj-hero h1 span {
   padding: 2rem 0;
 }
 
-#main.wilder-journal-2 {
+#main.wilder-journal-2,
+#rethink.wilder-journal-2 {
   padding-bottom: 0rem;
+}
+
+// #rethink inherits #main's large top padding, but it sits mid-page (after
+// Stories), not under the hero — so don't push it down with the hero-sized gap.
+#rethink.wilder-journal-2 {
+  padding-top: 0;
 }

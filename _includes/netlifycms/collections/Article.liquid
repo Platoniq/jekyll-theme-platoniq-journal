@@ -38,6 +38,9 @@
     - label: Unpublished
       field: "published"
       pattern: false
+    - label: Featured
+      field: featured
+      pattern: true
     - label: "#1"
       field: volume-uid
       pattern: "1"
@@ -87,6 +90,7 @@
       i18n: duplicate
     }
     - { label: "Publicado", name: "published", widget: "boolean", default: false, i18n: duplicate }
+    - { label: "Destacado", name: "featured", hint: "Resáltalo en la parte superior de la página del volumen", widget: "boolean", default: false, i18n: duplicate }
     - { label: "Fecha de publicación", name: "date", widget: "datetime", i18n: duplicate }
     - { label: "Fecha de actualización", name: "date-updated", widget: "datetime", i18n: duplicate }
     - { label: "Orden del artículo", name: "article-order", widget: "number", default: 0, value_type: "int", min: 1, max: 101, step: 1, i18n: duplicate }

@@ -1,0 +1,41 @@
+{% comment %}
+  "Watch the related video" block on an article page.
+  Reverse lookup: videos whose related_article_uid points at this article.
+  Reuses the inline .pj-video component (lazy iframe via main.js).
+{% endcomment %}
+{% assign related_videos = site.videos
+    | where: "locale", page.locale
+    | where: "related_article_uid", page.uid
+    | where: "published", true
+    | sort: "video-order" %}
+
+{% assign t_watch_related_video = site.data.i18n[page.locale].global.watch_related_video %}
+
+{% unless related_videos == empty %}
+  <section class="pj-related-video container-fluid">
+    <div class="container grid">
+      <h2>{{ t_watch_related_video }}</h2>
+
+      {% for video in related_videos %}
+        {% include journal/youtube_embed.liquid url=video.youtube_url %}
+        {% assign video_thumb = video.thumbnail | default: youtube_thumb %}
+
+        <section class="pj-video" title="{{ video.title }}" data-src="{{ youtube_embed }}">
+          {% if video_thumb != "" %}
+            <img class="pj-video__thumb" src="{{ video_thumb }}" alt="{{ video.title }}" loading="lazy">
+          {% endif %}
+
+          <div class="pj-video__overlay">
+            <div class="pj-video__play"></div>
+
+            <div class="pj-video__text">
+              {% if video.title != "" %}
+                <h3>{{ video.title }}</h3>
+              {% endif %}
+            </div>
+          </div>
+        </section>
+      {% endfor %}
+    </div>
+  </section>
+{% endunless %}

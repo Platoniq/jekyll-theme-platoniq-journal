@@ -1,0 +1,21 @@
+{% comment %}
+  Derives a normalized embed URL and a thumbnail URL from a YouTube link.
+  Accepts /embed/ID, watch?v=ID and youtu.be/ID forms.
+  Assigns (leak to the including scope): youtube_id, youtube_embed, youtube_thumb.
+{% endcomment %}
+{% assign yt_url = include.url %}
+{% assign youtube_id = "" %}
+{% if yt_url contains "/embed/" %}
+  {% assign youtube_id = yt_url | split: "/embed/" | last | split: "?" | first | split: "/" | first %}
+{% elsif yt_url contains "watch?v=" %}
+  {% assign youtube_id = yt_url | split: "watch?v=" | last | split: "&" | first %}
+{% elsif yt_url contains "youtu.be/" %}
+  {% assign youtube_id = yt_url | split: "youtu.be/" | last | split: "?" | first | split: "/" | first %}
+{% endif %}
+{% if youtube_id != "" %}
+  {% assign youtube_embed = "https://www.youtube.com/embed/" | append: youtube_id %}
+  {% assign youtube_thumb = "https://img.youtube.com/vi/" | append: youtube_id | append: "/hqdefault.jpg" %}
+{% else %}
+  {% assign youtube_embed = yt_url %}
+  {% assign youtube_thumb = "" %}
+{% endif %}

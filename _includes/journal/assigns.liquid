@@ -10,6 +10,8 @@
 {% assign articles_stories = articles_all | where: "category", "stories" %}
 {% assign articles_rethink = articles_all | where: "category", "rethink" %}
 
+{% assign articles_featured = articles_all | where: "featured", true %}
+
 {% assign t_learnings = site.data.i18n[page.locale].categories.learnings %}
 {% assign t_stories = site.data.i18n[page.locale].categories.stories %}
 

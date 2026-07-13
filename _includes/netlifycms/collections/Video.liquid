@@ -1,0 +1,93 @@
+{% raw %}
+- name: "videos"
+  label: "Vídeos"
+  label_singular: "Vídeo"
+  folder: "_videos/"
+  i18n:
+    structure: multiple_folders
+    locales: *locales
+  create: true
+  delete: true
+  slug: "{{uid}}"
+  summary: "{{title}} [{{volume-uid}}]"
+  sort: "video-order:asc"
+  view_filters:
+    - label: Destacado
+      field: featured
+      pattern: true
+    - label: Publicado
+      field: published
+      pattern: true
+    - label: No publicado
+      field: published
+      pattern: false
+    - label: "#1"
+      field: volume-uid
+      pattern: "1"
+    - label: "#2"
+      field: volume-uid
+      pattern: "2"
+  view_groups:
+    - label: Volumen del Journal
+      field: volume-uid
+    - label: Publicado
+      field: published
+  editor:
+    preview: false
+  sortable_fields: ["video-order", "title", "volume-uid"]
+  fields:
+    - { label: "Publicado", name: "published", widget: "boolean", default: false, i18n: duplicate }
+    - { label: "Slug", name: "uid", widget: "string", i18n: duplicate }
+    - { label: "Título", name: "title", widget: "string", i18n: translate }
+    - {
+        label: "Descripción",
+        name: "description",
+        widget: "text",
+        required: false,
+        i18n: translate
+      }
+    - {
+        label: "URL del vídeo (YouTube)",
+        name: "youtube_url",
+        hint: "Pega la URL del vídeo (formato embed, watch o youtu.be). La miniatura se genera automáticamente.",
+        widget: "string",
+        i18n: duplicate
+      }
+    - {
+        label: "Miniatura (opcional)",
+        name: "thumbnail",
+        hint: "Solo si quieres reemplazar la miniatura automática de YouTube (p. ej. para vídeos de Vimeo).",
+        widget: "image",
+        required: false,
+        choose_url: true,
+        media_library: { config: { multiple: false } },
+        media_folder: "/media/videos/thumbnails",
+        i18n: duplicate
+      }
+    - { label: "Fecha", name: "date", widget: "datetime", i18n: duplicate }
+    - { label: "Orden", name: "video-order", widget: "number", default: 0, value_type: "int", min: 1, max: 101, step: 1, i18n: duplicate }
+    - {
+        label: "Volumen del Journal",
+        name: "volume-uid",
+        widget: "relation",
+        collection: "volumes",
+        display_fields: [title],
+        search_fields: [title],
+        value_field: "uid",
+        required: false,
+        i18n: duplicate
+      }
+    - {
+        label: "Artículo relacionado",
+        name: "related_article_uid",
+        hint: "Vincula este vídeo a un artículo del Journal.",
+        widget: "relation",
+        collection: "articles",
+        display_fields: ["{{title}} [{{category}} / {{author}}]"],
+        search_fields: [title, uid],
+        value_field: "uid",
+        required: false,
+        i18n: duplicate
+      }
+    - { label: "Destacado", name: "featured", widget: "boolean", default: false, i18n: duplicate }
+{% endraw %}

@@ -195,15 +195,40 @@ $(document).ready(function() {
 
     var src = $video.data("src");
 
-    var $iframe = $(`<iframe src="${src}" class="bw"></iframe>`);
-    $iframe.height("33vh");
-    $iframe.width("100%");
-
-    $video.append($iframe);
-
+    // Lazy: show the poster + play badge until clicked, then load and autoplay.
     $overlay.on("click", function(e) {
-      $video.find("iframe").removeClass("bw");
+      if (!src) return;
+
+      var sep = src.indexOf("?") === -1 ? "?" : "&";
+      var $iframe = $(
+        `<iframe src="${src}${sep}autoplay=1" ` +
+        `allow="autoplay; encrypted-media; fullscreen" allowfullscreen frameborder="0"></iframe>`
+      );
+
+      $video.append($iframe);
       $overlay.remove();
     });
+  });
+
+  /*
+   *
+   * Video cards (videos section / videos page)
+   * Lazily swap the thumbnail for an autoplaying iframe on click.
+   *
+   */
+
+  $(document).on("click", ".pj-video-card__thumb", function() {
+    var $thumb = $(this);
+    var src = $thumb.closest(".pj-video-card").data("embed");
+
+    if (!src) return;
+
+    var sep = src.indexOf("?") === -1 ? "?" : "&";
+    var $iframe = $(
+      `<iframe src="${src}${sep}autoplay=1" class="pj-video-card__iframe" ` +
+      `allow="autoplay; encrypted-media; fullscreen" allowfullscreen frameborder="0"></iframe>`
+    );
+
+    $thumb.replaceWith($iframe);
   });
 });

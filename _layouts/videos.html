@@ -1,0 +1,66 @@
+---
+layout: default
+---
+{% include default/header.liquid %}
+
+{% assign all_videos = site.videos
+    | where: "locale", page.locale
+    | where: "published", true
+    | sort: "video-order" %}
+{% assign page_volumes = site.volumes
+    | where: "locale", page.locale
+    | sort: "volume-number", "last" %}
+
+{% assign t_visit_channel = site.data.i18n[page.locale].global.visit_channel %}
+
+<section class="pj-page pj-videos-page">
+  <div class="container-fluid">
+    <header class="pj-header-simple">
+      <div class="header-page__text">
+        <h1>{{ page.title }}</h1>
+      </div>
+    </header>
+
+    {{ content }}
+
+    {% for volume in page_volumes %}
+      {% assign vol_videos = all_videos | where: "volume-uid", volume.uid %}
+
+      {% unless vol_videos == empty %}
+        <section class="pj-videos">
+          <h2 class="pj-videos__title">{{ volume.volume-number | prepend: "#" }} {{ volume.title }}</h2>
+
+          <div class="pj-videos__grid">
+            {% for video in vol_videos %}
+              {% include journal/video_card.liquid video=video %}
+            {% endfor %}
+          </div>
+        </section>
+      {% endunless %}
+    {% endfor %}
+
+    {% assign unassigned_videos = all_videos | where_exp: "v", "v.volume-uid == nil" %}
+    {% unless unassigned_videos == empty %}
+      <section class="pj-videos">
+        <div class="pj-videos__grid">
+          {% for video in unassigned_videos %}
+            {% include journal/video_card.liquid video=video %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endunless %}
+
+    {% if site.youtube_channel %}
+      <a href="{{ site.youtube_channel }}" class="link link-external pj-videos__channel"
+         target="_blank" rel="noopener noreferrer nofollow">
+        <span class="link__label">{{ t_visit_channel }}</span>
+
+        {% include svg/icon-external_link.liquid
+            class="link__icon link__icon-right"
+            alt=t_visit_channel %}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+{% include default/footer.liquid %}
