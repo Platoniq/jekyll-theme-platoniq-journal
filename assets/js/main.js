@@ -212,27 +212,6 @@ $(document).ready(function() {
 
   /*
    *
-   * Vertical category nav
-   * The nav is position: fixed, so it would overlay the edition pager
-   * and footer; fade it out once the articles section scrolls past.
-   *
-   */
-
-  var $verticalNav = $(".pj-nav-vertical");
-  var $articlesSection = $(".pj-articles");
-
-  if ($verticalNav.length && $articlesSection.length) {
-    var toggleVerticalNav = function() {
-      var articlesBottom = $articlesSection[0].getBoundingClientRect().bottom;
-      $verticalNav.toggleClass("status-hidden", articlesBottom < window.innerHeight / 2);
-    };
-
-    $(window).on("scroll resize", toggleVerticalNav);
-    toggleVerticalNav();
-  }
-
-  /*
-   *
    * Video cards (videos section / videos page)
    * Lazily swap the thumbnail for an autoplaying iframe on click.
    *
