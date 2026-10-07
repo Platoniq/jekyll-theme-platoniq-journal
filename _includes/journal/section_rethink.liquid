@@ -1,0 +1,45 @@
+{% comment %}
+  Section order (6): Reconsider (rethink).
+  Split out of section_main so it can render last, after Stories and Learnings.
+  Renders nothing when the volume has no rethink articles (e.g. volume 1).
+{% endcomment %}
+{% if articles_rethink.size > 0 %}
+<section id="rethink" class="pj-articles container-fluid{% if page.url contains 'wilder-journal-2' %} wilder-journal-2{% endif %}">
+  <div class="category-group category-rethink">
+    <div class="container grid">
+      {% for article in articles_rethink %}
+        {% assign mod = forloop.index0 | modulo: 2 %}
+        {% if mod == 0 %}
+          <div class="row-articles">
+        {% endif %}
+
+        {% capture class %}
+          highlighted-{% if mod == 0 %}vertical{% else %}horizontal{% endif %}
+          highlighted-{{ article.category | slugify }}
+        {% endcapture %}
+
+        {% assign category_name = site.data.i18n[page.locale].categories[article.category] %}
+        {% assign category_archive = site.archives | where: "locale", page.locale | where: "category", article.category | first %}
+
+        <article class="highlighted {{ class }}" data-href="{{ article.url | relative_url }}">
+          <img src="{{ article.cover.thumbnail | relative_url }}" alt="{{ article.cover.alt }}" style="--aspect-ratio:1">
+
+          <h4>
+            <a href="{{ category_archive.url | relative_url }}">{{ category_name }}</a>
+          </h4>
+
+          <h3>
+            <a href="{{ article.url | relative_url }}">{{ article.title }}</a>
+          </h3>
+        </article>
+
+        {% if mod != 0 %}
+          </div>
+        {% elsif forloop.last %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

@@ -9,9 +9,12 @@ layout: default
 
 {% include journal/hero_image.liquid %}
 
+{% comment %} Section display order: 1 Futures / 2 Interviews / 3 Deep Dive (section_main),
+   4 Stories, 5 Learnings, 6 Reconsider. Independent of the vertical menu order. {% endcomment %}
 {% include journal/section_main.liquid %}
 {% include journal/section_stories.liquid %}
 {% include journal/section_reports.liquid %}
+{% include journal/section_rethink.liquid %}
 
 <article class="container-fluid">
   <div class="container">
