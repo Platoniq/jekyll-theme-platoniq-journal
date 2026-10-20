@@ -11,8 +11,19 @@
                  | concat: articles_deep_dives
                  | uniq %}
 
-<section id="main" class="pj-articles container-fluid{% if page.url contains 'wilder-journal-2' %} wilder-journal-2{% endif %}">
-  {% if page.url contains "wilder-journal-2" %}
+{% comment %}
+  From volume 2 on, each category gets its own full-width colour band
+  (.category-group.category-<slug>), coloured by the volume's stylesheet.
+  Volume 1 keeps the single mixed grid. This used to check the URL for
+  "wilder-journal-2" only, so volume 3's section colours never applied.
+{% endcomment %}
+{% assign grouped_sections = false %}
+{% if current_volume_number >= 2 %}
+  {% assign grouped_sections = true %}
+{% endif %}
+
+<section id="main" class="pj-articles container-fluid{% if grouped_sections %} wilder-journal-{{ current_volume_number }}{% endif %}">
+  {% if grouped_sections %}
     {% assign current_category = "" %}
     {% assign row_open = false %}
     {% for article in articles_mixed %}
