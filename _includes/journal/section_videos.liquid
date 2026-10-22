@@ -1,0 +1,38 @@
+{% comment %}
+  Videos section on an edition (volume) page.
+  Lists published videos for the current volume + locale, sorted by video-order,
+  and links out to Platoniq's YouTube channel.
+{% endcomment %}
+{% assign videos_for_volume = site.videos
+    | where: "locale", page.locale
+    | where: "volume-uid", current_volume.uid
+    | where: "published", true
+    | sort: "video-order" %}
+
+{% assign t_videos_title = site.data.i18n[page.locale].global.videos_title %}
+{% assign t_visit_channel = site.data.i18n[page.locale].global.visit_channel %}
+
+{% unless videos_for_volume == empty %}
+  <section id="videos" class="pj-videos pj-videos--in-journal container-fluid">
+    <div class="container">
+      <h2 class="pj-videos__title">{{ t_videos_title }}</h2>
+
+      <div class="pj-videos__grid">
+        {% for video in videos_for_volume %}
+          {% include journal/video_card.liquid video=video %}
+        {% endfor %}
+      </div>
+
+      {% if site.youtube_channel %}
+        <a href="{{ site.youtube_channel }}" class="link link-external pj-videos__channel"
+           target="_blank" rel="noopener noreferrer nofollow">
+          <span class="link__label">{{ t_visit_channel }}</span>
+
+          {% include svg/icon-external_link.liquid
+              class="link__icon link__icon-right"
+              alt=t_visit_channel %}
+        </a>
+      {% endif %}
+    </div>
+  </section>
+{% endunless %}

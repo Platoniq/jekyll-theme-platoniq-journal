@@ -1,0 +1,42 @@
+{% comment %}
+  A video card for grids (edition video section + videos page).
+  Param: video (a document from the `videos` collection).
+  Shows a YouTube thumbnail + play button (lazy click-to-play via main.js),
+  the title, and a link to the related article when one is set.
+{% endcomment %}
+{% include journal/youtube_embed.liquid url=video.youtube_url %}
+{% assign card_thumb = video.thumbnail | default: youtube_thumb | default: "/assets/media/no_image-hero.png" %}
+
+{% assign related_article = site.articles
+    | where: "uid", video.related_article_uid
+    | where: "locale", page.locale
+    | where: "published", true
+    | first %}
+
+{% assign t_watch_video = site.data.i18n[page.locale].global.watch_video %}
+{% assign t_continue_reading = site.data.i18n[page.locale].global.continue_reading %}
+
+<article class="pj-video-card{% if video.featured %} pj-video-card--featured{% endif %}" data-embed="{{ youtube_embed }}">
+  <button type="button" class="pj-video-card__thumb" aria-label="{{ t_watch_video }}: {{ video.title }}">
+    <img src="{{ card_thumb }}" alt="{{ video.title }}" loading="lazy">
+    <span class="pj-video-card__play" aria-hidden="true"></span>
+  </button>
+
+  <div class="pj-video-card__text">
+    <h3 class="pj-video-card__title">{{ video.title }}</h3>
+
+    {% if video.description and video.description != "" %}
+      <p class="pj-video-card__description">{{ video.description }}</p>
+    {% endif %}
+
+    {% if related_article %}
+      <a href="{{ related_article.url | relative_url }}" class="link pj-video-card__article">
+        <span class="link__label">{{ t_continue_reading }}</span>
+
+        {% include svg/icon-arrow_right.liquid
+            class="link__icon link__icon-right"
+            alt=t_continue_reading %}
+      </a>
+    {% endif %}
+  </div>
+</article>
